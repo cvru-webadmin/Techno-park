@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [hoveredTab, setHoveredTab] = useState(null);
+  const [submenuTimeout, setSubmenuTimeout] = useState(null);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -15,6 +16,30 @@ const Navbar = () => {
     { name: "Admission", path: "/admission" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // Cleanup function to clear the timeout
+  useEffect(() => {
+    return () => {
+      if (submenuTimeout) {
+        clearTimeout(submenuTimeout);
+      }
+    };
+  }, [submenuTimeout]);
+
+  const handleMouseEnter = (name) => {
+    if (submenuTimeout) {
+      clearTimeout(submenuTimeout);
+    }
+    setHoveredTab(name);
+  };
+
+  const handleMouseLeave = () => {
+    // Set a timeout before closing the submenu
+    const timeoutId = setTimeout(() => {
+      setHoveredTab(null);
+    }, 200); // Adjust the delay as needed
+    setSubmenuTimeout(timeoutId);
+  };
 
   return (
     <nav className="bg-gray-900 text-white py-4 px-6 shadow-lg">
@@ -30,8 +55,8 @@ const Navbar = () => {
           {navLinks.map((link, index) => (
             <li
               key={index}
-              onMouseEnter={() => setHoveredTab(link.name)}
-              onMouseLeave={() => setHoveredTab(null)}
+              onMouseEnter={() => handleMouseEnter(link.name)}
+              onMouseLeave={handleMouseLeave}
               className="relative group"
             >
               <NavLink
@@ -48,8 +73,17 @@ const Navbar = () => {
               </NavLink>
 
               {/* Animated Dropdown Submenu */}
-              {link.submenu && hoveredTab === link.name && (
-                <ul className="absolute top-full left-0 bg-gray-800 mt-2 py-2 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-95 group-hover:scale-100">
+              {link.submenu && (
+                <ul
+                  className={`absolute top-full left-0 bg-gray-800 mt-2 py-2 rounded-md shadow-lg transition-opacity duration-300 ${
+                    hoveredTab === link.name ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                  }`}
+                  style={{
+                    pointerEvents: hoveredTab === link.name ? 'auto' : 'none',
+                  }}
+                  onMouseEnter={() => handleMouseEnter(link.name)} // Keep the dropdown open
+                  onMouseLeave={handleMouseLeave} // Close the dropdown when mouse leaves
+                >
                   {link.submenu.map((subitem, subIndex) => (
                     <li key={subIndex} className="px-4 py-2 hover:bg-gray-700">
                       <NavLink
