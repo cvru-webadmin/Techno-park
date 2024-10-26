@@ -7,11 +7,11 @@ import Course5 from '../../../assets/Course5.webp'
 import Course6 from '../../../assets/Course6.webp'
 const CourseCard = ({ image, title, description }) => {
     return (
-        <div className="bg-gray-800 text-white flex flex-col sm:flex-row items-center rounded-lg shadow-lg p-4 sm:p-6 transition-transform transform hover:scale-105">
+        <div className="bg-gray-800 w-full text-white flex flex-col sm:flex-row items-center rounded-lg shadow-lg p-4 sm:p-6 transition-transform transform hover:scale-105">
             <img 
                 src={image} 
                 alt={title} 
-                className="w-full sm:w-1/3 h-40 sm:h-auto object-scale-down sm:rounded-none sm:rounded-l-lg" 
+                className="w-full sm:w-1/3 h-auto object-scale-down rounded-none rounded-l-lg" 
             />
             <div className="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
                 <h3 className="text-lg font-bold mb-2">{title}</h3>
@@ -57,8 +57,9 @@ const FeaturedCourses = () => {
 
     return (
         <div className='flex justify-center'> 
-        <section className="bg-gray-900 border rounded-xl shadow-md mt-8 w-[98%] py-10 px-6">
-            <h2 className="text-2xl sm:text-4xl font-semibold text-white text-center mb-14">Featured Courses</h2>
+        <section className="bg-gray-900 border rounded-xl shadow-md mt-4 w-[98%] py-10 px-6">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-white text-center mb-3">Featured Courses</h2>
+            <p className='text-base text-gray-300 sm:ml-6 mt-4 sm:mt-0 text-center mb-8'>Offering a diverse range of cutting-edge courses designed to equip students with in-demand skills and hands-on experience across various industries.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course, index) => (
                     <CourseCard
