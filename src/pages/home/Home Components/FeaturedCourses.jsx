@@ -11,7 +11,7 @@ const CourseCard = ({ image, title, description }) => {
             <img 
                 src={image} 
                 alt={title} 
-                className="w-full sm:w-1/3 h-40 sm:h-40 object-fill rounded-lg sm:rounded-none sm:rounded-l-lg" 
+                className="w-full sm:w-1/3 h-40 sm:h-auto object-scale-down sm:rounded-none sm:rounded-l-lg" 
             />
             <div className="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
                 <h3 className="text-lg font-bold mb-2">{title}</h3>

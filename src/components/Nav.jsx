@@ -22,7 +22,7 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="text-center">
           <h1 className="text-2xl font-extrabold tracking-wide">Techno Park</h1>
-          <p className="text-sm font-light text-gray-300">Department of Computer Science and Technology</p>
+          <p className="text-sm font-light text-gray-300">School of Computer Science and Technology</p>
         </div>
 
         {/* Navigation Links */}
