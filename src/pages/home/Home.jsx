@@ -4,7 +4,7 @@ import FeaturedCourses from './Home Components/FeaturedCourses'
 export default function Home() {
   return (
     <>
-    <div className='bg-red-900'>
+    <div>
     <FeaturedCourses/>
     </div>
     </>
