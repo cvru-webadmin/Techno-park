@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [hoveredTab, setHoveredTab] = useState(null);
   const [submenuTimeout, setSubmenuTimeout] = useState(null);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -34,24 +35,47 @@ const Navbar = () => {
   };
 
   const handleMouseLeave = () => {
-    // Set a timeout before closing the submenu
     const timeoutId = setTimeout(() => {
       setHoveredTab(null);
     }, 200); // Adjust the delay as needed
     setSubmenuTimeout(timeoutId);
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((prev) => !prev);
+  };
+
   return (
-    <nav className="bg-gray-900 text-white py-4 px-6 shadow-lg">
+    <nav className="bg-gray-900 text-white py-2 lg:px-6 px-4 shadow-lg">
       <div className="flex items-center justify-between">
         {/* Logo Section */}
-        <div className="text-center">
-          <h1 className="text-2xl font-extrabold tracking-wide">Techno Park</h1>
-          <p className="text-sm font-light text-gray-300">School of Computer Science and Technology</p>
+        <div className="lg:text-center text-left">
+          <h1 className="lg:text-2xl text-xl font-extrabold tracking-wide">Techno Park</h1>
+          <p className="lg:text-sm text-[0.65rem] font-light text-gray-300">School of Computer Science and Technology</p>
         </div>
 
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="block lg:hidden focus:outline-none"
+          onClick={toggleMobileMenu}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
         {/* Navigation Links */}
-        <ul className="flex space-x-6">
+        <ul
+          className={`flex-col lg:flex-row lg:flex lg:space-x-6 absolute z-30 lg:z-0 lg:space-y-0 space-y-5 lg:py-0 py-5 top-[3.6rem] lg:top-0 w-full lg:w-auto lg:right-0 right-0 pl-5 lg:relative bg-gray-900 lg:bg-transparent ${
+            isMobileMenuOpen ? "flex" : "hidden"
+          } lg:flex`}
+        >
           {navLinks.map((link, index) => (
             <li
               key={index}

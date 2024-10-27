@@ -1,0 +1,32 @@
+.parallax-bg {
+    background-image: url('src/assets/cvru_campus.jpg'); /* Background image */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.75); /* Darkens the image slightly for better text readability */
+  }
+  
+  .hero-content h1, .hero-content p, .hero-content h2, .hero-content ul {
+    color: white;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle text shadow for readability */
+  }
+  
+  /* Additional styles for a professional look */
+  .max-w-3xl {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Adds depth to the highlight section */
+  }
+  
+  .bg-opacity-80 {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darkens background in highlight section */
+  }
+  
+  .list-disc {
+    list-style-type: disc;
+    padding-left: 1.25rem; /* Indent bullet points */
+  }
+  
