@@ -4,12 +4,14 @@ import ExploreCampus from './Home Components/ExploreCampus'
 import Achievements from './Home Components/Achievements'
 import HeroSection from './Home Components/HeroSection'
 import WhyChooseUs from './Home Components/WhyWeus'
+import UniversityLanding from './Home Components/HeroSection'
 
 export default function Home() {
   return (
     <>
     <div>
-    <HeroSection />
+    {/* <HeroSection /> */}
+    <UniversityLanding />
     <WhyChooseUs />
     <FeaturedCourses/>
     <Achievements/>
