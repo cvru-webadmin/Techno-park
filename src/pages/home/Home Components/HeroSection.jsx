@@ -28,7 +28,7 @@ function HomePage() {
 
           {/* Department Name and Sub-name */}
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide uppercase text-blue-500">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-wide uppercase text-blue-500">
               Techno Park
             </h1>
             <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-300 mt-2 lg:mt-4">
