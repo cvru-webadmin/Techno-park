@@ -6,6 +6,7 @@ import HeroSection from './Home Components/HeroSection'
 import WhyChooseUs from './Home Components/WhyWeus'
 import UniversityLanding from './Home Components/HeroSection'
 import HomePage from './Home Components/HeroSection'
+import PlacementSection from './Home Components/Placments'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
     {/* <UniversityLanding /> */}
     <WhyChooseUs />
     <FeaturedCourses/>
+    <PlacementSection />
     <Achievements/>
     <ExploreCampus/>
     </div>
