@@ -12,7 +12,7 @@ function HomePage() {
       ></div>
 
       {/* Content Section with Transparent Background */}
-      <div className="bg-gray-800 bg-opacity-90 text-white py-20 px-6 sm:px-10 md:px-16 lg:px-28 text-center backdrop-blur-md">
+      <div className="bg-gray-800 text-white py-20 px-6 sm:px-10 md:px-16 lg:px-28 text-center backdrop-blur-md">
         
         {/* First Row: Logo and Department Name */}
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between mb-10 lg:mb-16">
