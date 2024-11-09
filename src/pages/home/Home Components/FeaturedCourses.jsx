@@ -12,7 +12,7 @@ const CourseCard = ({ image, title, description }) => {
          <img src="https://th.bing.com/th/id/OIP.-iDV_N_fUDEjW0uy2PwmAgHaE8?rs=1&pid=ImgDetMain" alt={title} className="rounded-t-lg" />
          <div className="px-4 py-4">
          <h2 className="text-xl font-semibold group-hover:text-white mb-2">{title}</h2>
-         <p className="mt-2 text-sm group-hover:text-gray-300 line-clamp-3 text-gray-500">{description}</p>
+         <p className="mt-2 text-sm group-hover:text-slate-300 line-clamp-3 text-gray-500">{description}</p>
          </div>
        </div>
     );
@@ -69,7 +69,7 @@ const FeaturedCourses = () => {
             </div>
             </div>
             <div className="text-center mt-4 mb-2">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
                 Explore More
             </button>
                 {/* <button className="bg-gray-800 text-white py-3 px-10 text-lg rounded-full hover:bg-gray-700 transition">
