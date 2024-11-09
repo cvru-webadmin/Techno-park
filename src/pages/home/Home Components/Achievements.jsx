@@ -5,8 +5,8 @@ const Achievements = () => {
   return (
     <>
       <div className="flex justify-center">
-        <section className="bg-white rounded-xl mt-4 w-[96%] py-10 px-6">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 text-center">
+        <section className="bg-white rounded-xl w-[96%] py-10 px-6">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-blue-600 text-center">
             Achievements
           </h2>
             <div className="flex mt-4 flex-col md:flex-row bg-gray-100 rounded-lg shadow-md h-[600px] mx-auto">
