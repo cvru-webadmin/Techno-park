@@ -99,8 +99,6 @@ function PlacementSection() {
       <button className="bg-gradient-to-r mt-4 from-blue-500 to-purple-600 text-white py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
           Explore More Placements
         </button>
-      <button className="bg-white text-gray-800 font-semibold px-6 py-2 rounded-full hover:bg-gray-300 transition duration-300">
-        </button>
       </div>
     </div>
   );

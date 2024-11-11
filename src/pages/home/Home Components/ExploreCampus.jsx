@@ -12,7 +12,7 @@ const campusImages = [
 
 const CampusExplore = () => {
   return (
-    <section className="flex flex-col items-center bg-white py-12 px-4 sm:px-8 lg:px-16">
+    <section className="flex flex-col items-center bg-white pb-12 px-4 sm:px-8 lg:px-16">
       <div className="max-w-[93%] w-full text-center">
         {/* Main Heading */}
         <h2 className="text-3xl sm:text-4xl font-semibold text-blue-600 mb-6">
