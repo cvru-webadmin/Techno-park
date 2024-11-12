@@ -8,6 +8,7 @@ import UniversityLanding from './Home Components/HeroSection'
 import HomePage from './Home Components/HeroSection'
 import PlacementSection from './Home Components/Placments'
 import CultureAndActivities from './Home Components/culture'
+import ChatBot from '../../components/ChatBot/Assitent'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
     {/* <UniversityLanding /> */}
     <WhyChooseUs />
     <FeaturedCourses/>
+    <ChatBot />
     <PlacementSection />
     <CampusExplore/>
     <Achievements/>
