@@ -40,7 +40,6 @@ const students = [
     position: 'Frontend Developer',
     image: 'https://img.freepik.com/premium-photo/female-student-home-office-learning-working-laptop-young-woman-engaged-remote-learning_94120-2490.jpg',
   },
-  // Add more students as needed
 ];
 
 function PlacementSection() {
@@ -48,23 +47,21 @@ function PlacementSection() {
     <div className="bg-gray-50 py-20 px-6 lg:px-20">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl lg:text-4xl font-bold text-blue-600">
-          Campus Placements
-        </h2>
-        <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-          Our students have secured positions in leading tech companies, proving their skills and dedication to excellence.
+        <h2 className="text-3xl lg:text-4xl font-bold text-blue-600">Campus Placements</h2>
+        <p className="text-gray-600 mt-2 max-w-5xl mx-auto">
+          Our department has placed students in top tech companies, highlighting our commitment to excellence in technical education and industry partnerships.
         </p>
       </div>
 
       {/* Recruitment Companies */}
-      <div className="mb-16 overflow-x-auto">
+      <div className="mb-16 overflow-hidden">
         <div className="flex space-x-8 items-center justify-start px-4 lg:px-8">
           {companies.map((company, index) => (
             <div
               key={index}
-              className="flex flex-col items-center w-52 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+              className="flex flex-col items-center w-40 bg-gradient-to-r from-gray-50 to-gray-100 p-5 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              <img src={company.logo} alt={`${company.name} logo`} className="object-contain h-24 mb-2" />
+              <img src={company.logo} alt={`${company.name} logo`} className="object-contain h-20 mb-2" />
               <p className="text-sm font-semibold text-gray-700 text-center">{company.name}</p>
             </div>
           ))}
@@ -72,23 +69,35 @@ function PlacementSection() {
       </div>
 
       {/* Selected Students */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
         {students.map((student, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <div
+            key={index}
+            className="relative bg-white p-8 rounded-lg shadow-md hover:shadow-2xl transition duration-300"
+          >
+            {/* Ribbon for Placement */}
+            <div className="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 rounded-bl-lg text-xs font-semibold">
+              Placed by Techno Park
+            </div>
             <div className="flex items-center space-x-6 mb-4">
-              <img src={student.image} alt={student.name} className="w-24 h-24 rounded-full object-cover" />
+              <img
+                src={student.image}
+                alt={student.name}
+                className="w-28 h-28 rounded-full object-cover border-4 border-blue-500"
+              />
               <div>
                 <h3 className="text-lg font-semibold text-blue-600">{student.name}</h3>
                 <p className="text-sm text-gray-500">{student.course}</p>
               </div>
             </div>
-            <div>
-              <p className="text-gray-700 text-sm">
+            <div className="text-gray-700 text-sm mt-4">
+              <p>
                 <span className="font-semibold text-gray-600">Company:</span> {student.company}
               </p>
-              <p className="text-gray-700 text-sm">
+              <p>
                 <span className="font-semibold text-gray-600">Position:</span> {student.position}
               </p>
+              {/* <p className="text-green-600 font-semibold mt-2">Empowered by Techno Park</p> */}
             </div>
           </div>
         ))}
@@ -96,7 +105,7 @@ function PlacementSection() {
 
       {/* Explore Placements Button */}
       <div className="text-center">
-      <button className="bg-gradient-to-r mt-4 from-blue-500 to-purple-600 text-white py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+        <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
           Explore More Placements
         </button>
       </div>
