@@ -9,7 +9,7 @@ const Achievements = () => {
           <h2 className="text-3xl sm:text-4xl font-semibold text-blue-600 text-center">
             Achievements
           </h2>
-            <div className="flex mt-4 flex-col md:flex-row bg-gray-100 rounded-lg shadow-md h-[600px] mx-auto">
+            <div className="flex mt-7 flex-col md:flex-row bg-gray-100 rounded-lg shadow-md h-[600px] mx-auto">
               {/* Left Side: Content */}
               <div className="p-4 px-6 md:w-96">
                 {/* Main Heading */}
@@ -30,7 +30,7 @@ const Achievements = () => {
 
                 {/* Explore More Button */}
                 <div className='flex justify-center'>
-                <button className="bg-gradient-to-r mt-4 from-blue-500 to-purple-600 text-white py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+                <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
                   View Achievements
                 </button>
                 </div>
