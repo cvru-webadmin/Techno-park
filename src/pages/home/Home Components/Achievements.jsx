@@ -1,5 +1,5 @@
 import React from 'react';
-import Campus from '../../../assets/cvru_campus.jpg';
+import Award from '../../../assets/acsilentes award.png';
 
 const Achievements = () => {
   return (
@@ -21,7 +21,7 @@ const Achievements = () => {
                 {/* Small Image with Preview */}
                 <div className="flex justify-center w-full mb-3">
                   <img
-                    src={Campus} // replace with the preview image URL
+                    src={Award} // replace with the preview image URL
                     alt="Next Achievement Preview"
                     className="w-full h-32 object-cover rounded-sm"
                   />
@@ -39,7 +39,7 @@ const Achievements = () => {
               {/* Right Side: Large Image */}
               <div className="md:w-full">
                 <img
-                  src={Campus} // replace with the main image URL
+                  src={Award} // replace with the main image URL
                   alt="Campus or Achievement"
                   className="w-full h-full object-cover"
                 />
