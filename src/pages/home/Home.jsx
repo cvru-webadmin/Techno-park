@@ -10,6 +10,7 @@ import PlacementSection from './Home Components/Placments'
 import CultureAndActivities from './Home Components/culture'
 import ChatBot from '../../components/ChatBot/Assitent'
 import FacultyList from './Home Components/team'
+import GoToFeedback from './Home Components/Feedback'
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
     <Achievements/>
     <CultureAndActivities/>
     <FacultyList/>
+    <GoToFeedback />
     </div>
     </>
   )
