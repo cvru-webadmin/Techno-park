@@ -23,12 +23,17 @@ function Our_Team() {
         className="group border-2 w-[250px] relative mb-20 flex flex-col items-center text-center bg-white shadow-xl rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-gray-50"
       >
         {/* Unique Shape for Image */}
-        <div className="relative -mt-24 w-40 h-40 flex items-center justify-center rounded-full shadow-lg overflow-hidden group-hover:shadow-2xl transition-shadow duration-500">
-          <div className="absolute inset-0 opacity-70 rounded-full transition-opacity duration-300 group-hover:opacity-100"></div>
+        <div className="relative -mt-24 w-40 h-40 flex items-center justify-center rounded-full overflow-hidden group">
+          {/* Gradient Border */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r  from-blue-500 via-teal-500 to-green-500 p-0.5 transition-transform duration-1000 group-hover:scale-105">
+            {/* <div className="w-full h-full bg-white rounded-full"></div> */}
+          </div>
+          
+          {/* Image Element */}
           <img
             src={member.imageUrl}
             alt={member.name}
-            className="w-full h-full object-cover rounded-full border-4 border-white transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+            className="absolute inset-0 w-full h-full object-cover rounded-full border-4 group-hover:border-[3px] border-white group-hover:border-transparent"
           />
         </div>
 
