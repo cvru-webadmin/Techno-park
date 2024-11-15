@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
+import {getDatabase,ref,set} from 'firebase/database'
+import { app } from '../../../Firebase';
 
 const FeedbackForm = () => {
+
+  //firebase database import -----
+  const db=getDatabase(app);
+
+  //end database
+
   const [formData, setFormData] = useState({ name: '', feedback: '', feedbackBy: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -11,6 +19,11 @@ const FeedbackForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    set(ref(db,"feedback/fedback2"),{
+      Name:formData.name,
+      feedback:formData.feedback,
+      feedbackBy:formData.feedbackBy
+    })
     // Here, you could send `formData` to your server or API if needed
     setIsSubmitted(true); // Show thank you message
     setFormData({ name: '', feedback: '', feedbackBy: '' }); // Reset form fields
