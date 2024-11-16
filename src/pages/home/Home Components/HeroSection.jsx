@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import CvruLogo from '../../../assets/LOGO_CVRUMP.png';
 import './Home.css';
+import About from './About';
 
 function HomePage() {
   const myRef = useRef(null);
@@ -28,13 +29,13 @@ function HomePage() {
            >
              Techno Park
            </h1>
-           <h2 className="uppercase typing text-amber-400 text-lg md:text-xl font-semibold bg-black/30 px-5 py-2 tracking-wider">
+           <h2 className="uppercase typing text-[var(--Gold)] text-lg md:text-xl font-semibold bg-black/30 px-5 py-2 tracking-wider">
              School of Computer Science and Information Technology
            </h2>
            <button
              onClick={scrollToRef}
              title="Scroll for more information"
-             className="capitalize border text-md md:text-lg flex items-center gap-2 border-gray-300/30 bg-gray-800/30 text-gray-200 px-6 py-2 rounded-md hover:text-[#ffc107] hover:bg-[#212121]/50 hover:scale-105 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+             className="capitalize border text-md md:text-lg flex items-center gap-2 border-gray-300/30 bg-gray-800/30 text-gray-200 px-6 py-2 rounded-md hover:text-[var(--Gold)] hover:bg-[#212121]/50 hover:scale-105 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
            >
              Explore More
              <svg
@@ -56,62 +57,62 @@ function HomePage() {
       </div>  
 
       {/* Content Section with Transparent Background */}
-      <div ref={myRef} className='h-14 bg-gray-800'></div>
-
-      <div  id='secondSection' className="bg-gray-800 text-white py-20 px-6 sm:px-10 md:px-16 lg:px-28 text-center backdrop-blur-md">
-        
-        {/* First Row: Logo and Department Name */}
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between mb-10 lg:mb-16">
-          {/* University Logo */}
-          <div  className="mb-6 lg:mb-0 lg:mr-12 ">
-            <img
-              src={CvruLogo}
-              alt="University Logo"
-              className="w-60 bg-white md:w-[70%] lg:w-11/12 p-3 rounded-lg shadow-xl object-scale-down mx-auto lg:mx-0 border border-gray-300"
-            />
-          </div>
-
-
-          {/* Department Name and Sub-name */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-wide uppercase text-blue-500">
-              Techno Park
-            </h1>
-            <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-300 mt-2 lg:mt-4">
-              School of Computer Science & Technology
-            </p>
-          </div>
-        </div>
-
-        {/* Second Row: University, Department, and Placement Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-left">
-          {/* University Section */}
-          <div className="bg-gray-700 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
-            <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-400">About the University</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
-              C.V. Raman University is renowned for its commitment to excellence in education, research, and innovation. Our university provides state-of-the-art facilities and a highly qualified faculty, preparing students to be future leaders.
-            </p>
-          </div>
-
-          {/* Department Section */}
-          <div className="bg-gray-700 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
-            <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-400">About the Department</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
-              The School of Computer Science & Technology focuses on equipping students with advanced skills in technology and software development, ensuring they are ready to meet the demands of a dynamic IT industry.
-            </p>
-          </div>
-
-          {/* Tech Placements Section */}
-          <div className="bg-gray-700 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
-            <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-400">Tech Placements & Future</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
-              Our graduates achieve high placement rates in top technology companies. We partner with industry leaders to offer hands-on experience and career opportunities in tech.
-            </p>
-          </div>
-        </div>
-      </div>
+      <div ref={myRef} className='h-14 bg-[#012970]'></div>
+       <About />
     </div>
   );
 }
 
+      // <div  id='secondSection' className="bg-gray-800 text-white py-20 px-6 sm:px-10 md:px-16 lg:px-28 text-center backdrop-blur-md">
+        
+      //   {/* First Row: Logo and Department Name */}
+      //   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between mb-10 lg:mb-16">
+      //     {/* University Logo */}
+      //     <div  className="mb-6 lg:mb-0 lg:mr-12 ">
+      //       <img
+      //         src={CvruLogo}
+      //         alt="University Logo"
+      //         className="w-60 bg-white md:w-[70%] lg:w-11/12 p-3 rounded-lg shadow-xl object-scale-down mx-auto lg:mx-0 border border-gray-300"
+      //       />
+      //     </div>
+
+
+      //     {/* Department Name and Sub-name */}
+      //     <div className="text-center lg:text-left">
+      //       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-wide uppercase text-blue-500">
+      //         Techno Park
+      //       </h1>
+      //       <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-300 mt-2 lg:mt-4">
+      //         School of Computer Science & Technology
+      //       </p>
+      //     </div>
+      //   </div>
+
+      //   {/* Second Row: University, Department, and Placement Information */}
+      //   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-left">
+      //     {/* University Section */}
+      //     <div className="bg-gray-700 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+      //       <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-400">About the University</h3>
+      //       <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
+      //         C.V. Raman University is renowned for its commitment to excellence in education, research, and innovation. Our university provides state-of-the-art facilities and a highly qualified faculty, preparing students to be future leaders.
+      //       </p>
+      //     </div>
+
+      //     {/* Department Section */}
+      //     <div className="bg-gray-700 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+      //       <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-400">About the Department</h3>
+      //       <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
+      //         The School of Computer Science & Technology focuses on equipping students with advanced skills in technology and software development, ensuring they are ready to meet the demands of a dynamic IT industry.
+      //       </p>
+      //     </div>
+
+      //     {/* Tech Placements Section */}
+      //     <div className="bg-gray-700 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+      //       <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-400">Tech Placements & Future</h3>
+      //       <p className="text-sm md:text-base font-light leading-relaxed text-gray-200">
+      //         Our graduates achieve high placement rates in top technology companies. We partner with industry leaders to offer hands-on experience and career opportunities in tech.
+      //       </p>
+      //     </div>
+      //   </div>
+      // </div>
 export default HomePage;

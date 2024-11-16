@@ -4,3 +4,8 @@
 *{
     font-family: "Poppins", sans-serif;
 }
+:root{
+    --Gold:#e6b806;
+    --DarkBlue:#012970;
+    --LiteBlue:blue-500;
+}

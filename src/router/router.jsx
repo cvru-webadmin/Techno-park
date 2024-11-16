@@ -14,7 +14,7 @@ const router =createBrowserRouter([
               },
             {
              path:"/about",
-             element:<h1>featured couress</h1>
+             element:<h1 className='h-screen flex items-center justify-center'>this is about page</h1>
             }
         ]
     }
