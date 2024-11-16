@@ -7,10 +7,7 @@ function HomePage() {
   const myRef = useRef(null);
   const scrollToRef = () => {
     if (myRef.current) {
-      console.log("Scrolling to element:", myRef.current); // Debugging
       myRef.current.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.log("Reference is null");
     }
   };
 

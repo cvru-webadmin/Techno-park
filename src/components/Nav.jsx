@@ -74,15 +74,16 @@ const Navbar = () => {
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
+                  onClick={() => settab(link.name)} // Update state when the tab is clicked
                   className="xl:text-base lg:text-xs font-semibold transition duration-300 text-white  group-hover:text-amber-400">
-                    {({ isActive }) =>{isActive ?settab(link.name):settab("Home")}}
                   {link.name}
               
                   {link.submenu?
                   // for dorpdown tabs
                   (<span
-                    className="absolute left-0 -bottom-1 w-[75%] h-[1.5px] bg-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                  ></span>):
+                    className={`absolute left-0 -bottom-1 w-[75%] h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
+                      tab==link.name?"scale-100":"scale-x-0"
+                    }`}></span>):
                   //for all tab 
                   (<span
                     className={`absolute left-0 -bottom-1 w-full h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
@@ -94,12 +95,12 @@ const Navbar = () => {
 
                 {/* Toggle Submenu Button */}
                 {link.submenu && (
-                  <button
+                  <button 
                     onClick={() => toggleSubmenu(link.name)}
                     className="ml-2 focus:outline-none"
                   >
                     {openSubmenu === link.name ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 text-amber-300 -rotate-45 transform duration-150" viewBox="0 0 24 24">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 text-white -rotate-45 transform duration-150" viewBox="0 0 24 24">
                         <rect width="24" height="24" fill="none" />
                         <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M16 16V8H8" />
                       </svg>
@@ -119,7 +120,7 @@ const Navbar = () => {
 
               {/* Animated Dropdown Submenu */}
               {link.submenu && openSubmenu === link.name && (
-                <ul
+                <ul  key={index} 
                   onMouseLeave={() => setOpenSubmenu(false)}
                   className={`absolute w-48 z-30 top-10 left-0 bg-gray-800 mt-2 py-3 px-2 rounded-lg shadow-xl transition-transform duration-500 ease-in-out transform ${
                     openSubmenu === link.name ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
