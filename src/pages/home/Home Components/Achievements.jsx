@@ -24,7 +24,7 @@ const Achievements = () => {
                   <img
                     src={Award2023} // replace with the preview image URL
                     alt="Next Achievement Preview"
-                    className="w-full h-32 object-fill rounded-sm"
+                    className="w-full h-32 object-cover rounded-sm"
                   />
                 </div>
                     <h3 className="text-lg font-semibold">Department Excellence Award (2023)</h3>
