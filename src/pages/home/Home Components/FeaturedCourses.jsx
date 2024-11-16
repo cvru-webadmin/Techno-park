@@ -1,15 +1,13 @@
 import React from "react";
-import Course3 from '../../../assets/Course1.jpeg';
-import Course1 from '../../../assets/Course2.jpg';
-import Course2 from '../../../assets/Course3.jpg';
-import Course4 from '../../../assets/Course4.png';
-import Course5 from '../../../assets/Course5.webp';
-import Course6 from '../../../assets/Course6.webp';
+import Course3 from '../../../assets/images/BCA.jpeg';
+import Course1 from '../../../assets/images/DCA.jpg';
+import Course2 from '../../../assets/images/PGDCA.png';
+import Course4 from '../../../assets/images/mca stu lab.jpeg';
 
 const CourseCard = ({ image, title, description }) => {
   return (
     <div className="w-full sm:w-72 bg-white group hover:bg-[#365071] text-gray-800 border transform transition-transform shadow-md duration-500 hover:scale-105 hover:shadow-lg border-gray-200 rounded-lg">
-      <img src="https://th.bing.com/th/id/OIP.-iDV_N_fUDEjW0uy2PwmAgHaE8?rs=1&pid=ImgDetMain" alt={title} className="rounded-t-lg w-full h-48 object-cover" />
+      <img src={image} alt={title} className="rounded-t-lg w-full h-48 object-cover" />
       <div className="px-4 py-4">
         <h2 className="text-xl font-semibold group-hover:text-white mb-2">{title}</h2>
         <p className="mt-2 text-sm group-hover:text-slate-300 line-clamp-3 text-gray-500">{description}</p>
@@ -26,12 +24,12 @@ const FeaturedCourses = () => {
       description: 'DCA or Diploma in Computer Applications, is a 1-year diploma course in the field of Computer Applications that involves the study of numerous computer applications...',
     },
     {
-      image: Course3,
+      image: Course2,
       title: 'PGDCA (Post Graduate Diploma in Computer Applications)',
       description: 'PGDCA Full Form is a Post Graduate Diploma in Computer Application. PGDCA is a 1-year postgraduate course that focuses on computer applications...',
     },
     {
-      image: Course2,
+      image: Course3,
       title: 'BCA (Bachelor of Computer Applications)',
       description: 'BCA is an undergraduate degree programme in the field of computer application and information technology...',
     },

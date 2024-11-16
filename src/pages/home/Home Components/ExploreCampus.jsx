@@ -1,13 +1,19 @@
 import React from 'react';
-
+import IOT from '../../../assets/images/IOT.png'
+import Library from '../../../assets/images/Library.jpeg'
+import ProgrammingLab from '../../../assets/images/ProgrammingLab.jpeg';
+import Seminar from '../../../assets/images/Seminar.jpeg'
+import ProjectLab from '../../../assets/images/LanguageLab.jpeg'
+import Lab from '../../../assets/images/Lab.png'
+import Cabin from '../../../assets/images/FacultyCabin.png'
 // Example images array with names (replace URLs and names with actual campus image URLs and place names)
 const campusImages = [
-  { src: "src/assets/cvru_campus.jpg", name: "Main Library" },
-  { src: "src/assets/cvru_campus.jpg", name: "Science Lab" },
-  { src: "src/assets/cvru_campus.jpg", name: "Student Center" },
-  { src: "src/assets/cvru_campus.jpg", name: "Sports Complex" },
-  { src: "src/assets/cvru_campus.jpg", name: "Engineering Building" },
-  { src: "src/assets/cvru_campus.jpg", name: "Art and Design Studio" },
+  { src: IOT, name: "IOT Lab" },
+  { src: ProgrammingLab, name: "Programming Lab" },
+  { src: Cabin, name: "Faculty Cabin" },
+  { src: ProjectLab, name: "Project Lab" },
+  { src: Library, name: "Main Library" },
+  { src: Seminar, name: "Seminar Hall" },
 ];
 
 const CampusExplore = () => {
@@ -60,7 +66,7 @@ const CampusExplore = () => {
         {/* Right Side: Large Feature Image */}
         <div className="w-full md:w-1/2">
           <img
-            src="src/assets/cvru_campus.jpg" // Replace with main feature campus image
+            src={Lab} // Replace with main feature campus image
             alt="Main Campus"
             className="w-full h-64 md:h-[200px] object-cover rounded-lg shadow-md"
           />

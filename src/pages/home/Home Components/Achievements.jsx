@@ -1,5 +1,6 @@
 import React from 'react';
 import Award from '../../../assets/acsilentes award.png';
+import Award2023 from '../../../assets/images/Award2023.jpeg'
 
 const Achievements = () => {
   return (
@@ -21,9 +22,9 @@ const Achievements = () => {
                 {/* Small Image with Preview */}
                 <div className="flex justify-center w-full mb-3">
                   <img
-                    src={Award} // replace with the preview image URL
+                    src={Award2023} // replace with the preview image URL
                     alt="Next Achievement Preview"
-                    className="w-full h-32 object-cover rounded-sm"
+                    className="w-full h-32 object-fill rounded-sm"
                   />
                 </div>
                     <h3 className="text-lg font-semibold">Department Excellence Award (2023)</h3>
