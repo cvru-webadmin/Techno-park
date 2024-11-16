@@ -6,38 +6,59 @@ import Course4 from '../../../assets/images/mca stu lab.jpeg';
 
 const CourseCard = ({ image, title, description }) => {
   return (
-    <div className="w-full sm:w-72 bg-white group hover:bg-[#365071] text-gray-800 border transform transition-transform shadow-md duration-500 hover:scale-105 hover:shadow-lg border-gray-200 rounded-lg">
+    <div className="w-full sm:w-72 h-[52vh] bg-white group text-gray-800 border transform transition-transform shadow-md duration-400 hover:shadow-lg border-gray-200 rounded-lg">
       <img src={image} alt={title} className="rounded-t-lg w-full h-48 object-cover" />
-      <div className="px-4 py-4">
-        <h2 className="text-xl font-semibold group-hover:text-white mb-2">{title}</h2>
+      <div className="px-4 py-4 relative z-30">
+        <h2 className="text-xl font-semibold transition-all duration-500 group-hover:text-white mb-2">{title}</h2>
         <p className="mt-2 text-sm group-hover:text-slate-300 line-clamp-3 text-gray-500">{description}</p>
       </div>
-    </div>
+      <div
+    className="bg-[#365071] w-full h-48 absolute bottom-0 left-0 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-[700ms] ease-in-out rounded-b-lg">
+   </div>
+  </div>
   );
 };
 
 const FeaturedCourses = () => {
-  const courses = [
+  const courses = [ 
     {
       image: Course1,
       title: 'DCA (Diploma in Computer Application)',
-      description: 'DCA or Diploma in Computer Applications, is a 1-year diploma course in the field of Computer Applications that involves the study of numerous computer applications...',
+      description: `
+        DCA or Diploma in Computer Applications, is a 1-year diploma course in the field of Computer Applications that involves the study of numerous computer applications. 
+        This course has a duration of 1 year, with eligibility criteria of 12th Pass with any stream. The annual intake is 60 students, with a total enrollment of 180. 
+        Evaluation methods include Class Tests.
+      `
     },
     {
       image: Course2,
       title: 'PGDCA (Post Graduate Diploma in Computer Applications)',
-      description: 'PGDCA Full Form is a Post Graduate Diploma in Computer Application. PGDCA is a 1-year postgraduate course that focuses on computer applications...',
+      description: `
+        PGDCA Full Form is a Post Graduate Diploma in Computer Application. PGDCA is a 1-year postgraduate course that focuses on computer applications. 
+        The eligibility criteria are graduation in any discipline. The course has an annual intake of 60 students and a total enrollment of 180. 
+        Evaluation methods include Class Tests.
+      `
     },
     {
       image: Course3,
       title: 'BCA (Bachelor of Computer Applications)',
-      description: 'BCA is an undergraduate degree programme in the field of computer application and information technology...',
+      description: `
+        BCA is an undergraduate degree programme in the field of computer application and information technology. 
+        The course spans 3 years, with eligibility criteria of 12th Pass with any stream. It has an annual intake of 60 students and a total enrollment of 148. 
+        Evaluation methods include Mid-Semester Test (MST), End-Semester Test (PUT), Project Presentations, Internships, and Problem-solving Activities.
+      `
     },
     {
       image: Course4,
       title: 'MCA (Master of Computer Applications)',
-      description: 'MCA (Master of Computer Applications) is a master’s level course focusing on computer applications and software development...',
-    },
+      description: `
+        MCA (Master of Computer Applications) is a master’s level course focusing on computer applications and software development. 
+        The duration is 2 years, with eligibility criteria of graduation with at least 50% marks (45% for reserved categories), ideally with math at 10+2 or graduation level. 
+        The annual intake is 60 students, and the total enrollment is 14. 
+        Evaluation methods include Mid-Semester Test (MST), End-Semester Test (PUT), Project Presentations, Internships, and Problem-solving Activities.
+      `
+    }
+
     // {
     //   image: Course5,
     //   title: 'BSc IT (Bachelor of Science in Information Technology)',
