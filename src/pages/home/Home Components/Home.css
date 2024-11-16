@@ -1,33 +1,37 @@
 .parallax-bg {
-    background-image: url('src/assets/cvru_campus.jpg'); /* Background image */
+    background-image: linear-gradient(rgba(1, 1, 35, 0.402),rgba(1, 1, 35, 0.402)), url('src/assets/cvru_campus.jpg'); /* Background image */
     background-attachment: fixed;
     background-size: cover;
     z-index: -10;
     background-position: center;
-    filter: brightness(0.75); /* Darkens the image slightly for better text readability */
+    /* filter: brightness(0.75); Darkens the image slightly for better text readability */
   }
   
   .hero-content h1, .hero-content p, .hero-content h2, .hero-content ul {
     color: white;
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle text shadow for readability */
   }
-  
-  /* Additional styles for a professional look */
-  .max-w-3xl {
-    margin: 0 auto;
-    text-align: center;
+   
+  .typing{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
   }
-  
-  .shadow-lg {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Adds depth to the highlight section */
+  .cursor{
+    animation: blink-caret .75s step-end infinite;
   }
-  
-  .bg-opacity-80 {
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly darkens background in highlight section */
-  }
-  
-  .list-disc {
-    list-style-type: disc;
-    padding-left: 1.25rem; /* Indent bullet points */
-  }
-  
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+ /* The typewriter cursor effect */
+ @keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState(null); // State to manage opened submenu
+  const [openSubmenu, setOpenSubmenu] = useState(null); 
+  const [tab,settab]=useState("Home");
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -26,14 +27,25 @@ const Navbar = () => {
     setOpenSubmenu((prev) => (prev === name ? null : name)); // Toggle the submenu
   };
 
+  const [sticky,setSticky]=useState(false);
+  useEffect(()=>{
+    window.addEventListener('scroll',(e)=>{
+      window.scrollY>50?setSticky(true):setSticky(false);
+    })
+  },[])
+
+  // console.log(tab)
   return (
-    <nav className="bg-gray-900 fixed lg:relative w-full top-0 z-50 text-white py-2 lg:px-6 px-4 shadow-lg">
+    <nav className={`fixed w-full top-0 z-50 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-transparent transition-all duration-200 ease-in-out transform"}`}>
       <div className="flex items-center justify-between">
-        {/* Logo Section */}
-        <div className="lg:text-center text-left">
-          <h1 className="lg:text-2xl text-xl font-extrabold tracking-wide">Techno Park</h1>
-          <p className="lg:text-sm text-[0.65rem] font-light text-gray-300">School of Computer Science and Technology</p>
-        </div>
+       {/* Logo Section */}
+         <div className="flex items-center space-x-2">
+           <div className="text-left">
+             <h1 className="text-md lg:text-xl font-extrabold tracking-wide text-white">Techno Park</h1>
+             <p className={`text-[10px] lg:text-xs font-normal  ${sticky?"text-gray-400":"text-gray-300"}`}>School of Computer Science and Technology</p>
+           </div>
+         </div>
+         
 
         {/* Hamburger Menu for Mobile */}
         <button
@@ -53,7 +65,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul
-          className={`flex-col lg:flex-row lg:flex lg:space-x-6 absolute z-30 lg:z-0 lg:space-y-0 space-y-5 lg:py-0 py-5 top-[3.6rem] lg:top-0 w-full lg:w-auto lg:right-0 right-0 pl-5 lg:relative bg-gray-900 lg:bg-transparent ${
+          className={`flex-col lg:flex-row lg:flex xl:space-x-6 lg:space-x-3 absolute z-30 lg:z-0 lg:space-y-0 space-y-5 lg:py-0 py-5 top-[3.6rem] lg:top-0 w-full lg:w-auto lg:right-0 right-0 pl-5 lg:relative bg-gray-900 lg:bg-transparent ${
             isMobileMenuOpen ? "flex" : "hidden"
           } lg:flex`}
         >
@@ -62,15 +74,22 @@ const Navbar = () => {
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
-                  className={({ isActive }) =>
-                    `text-base font-semibold transition duration-300 ${
-                      isActive
-                        ? "text-blue-400 underline decoration-2 decoration-blue-500 underline-offset-4"
-                        : "text-white"
-                    } hover:text-blue-300`
-                  }
-                >
+                  className="xl:text-base lg:text-xs font-semibold transition duration-300 text-white  group-hover:text-amber-400">
+                    {({ isActive }) =>{isActive ?settab(link.name):settab("Home")}}
                   {link.name}
+              
+                  {link.submenu?
+                  // for dorpdown tabs
+                  (<span
+                    className="absolute left-0 -bottom-1 w-[75%] h-[1.5px] bg-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></span>):
+                  //for all tab 
+                  (<span
+                    className={`absolute left-0 -bottom-1 w-full h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
+                      tab==link.name?"scale-100":"scale-x-0"
+                    }`}
+                    ></span> )}
+                
                 </NavLink>
 
                 {/* Toggle Submenu Button */}
@@ -80,24 +99,18 @@ const Navbar = () => {
                     className="ml-2 focus:outline-none"
                   >
                     {openSubmenu === link.name ? (
-                      <svg
-                        className="w-4 h-4 transform rotate-90" // Rotate for open state
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h12m-6-6l6 6-6 6" />
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 text-amber-300 -rotate-45 transform duration-150" viewBox="0 0 24 24">
+                        <rect width="24" height="24" fill="none" />
+                        <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M16 16V8H8" />
                       </svg>
                     ) : (
                       <svg
-                        className="w-4 h-4 -rotate-90"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 rotate-[135deg] transform duration-150"
+                        viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h12m-6 6l6-6-6-6" />
+                        <rect width="24" height="24" fill="none" />
+                        <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M16 16V8H8" />
                       </svg>
                     )}
                   </button>
@@ -106,16 +119,21 @@ const Navbar = () => {
 
               {/* Animated Dropdown Submenu */}
               {link.submenu && openSubmenu === link.name && (
-                <ul  onMouseLeave={()=>setOpenSubmenu(false)} className={`absolute z-30 top-full left-0 bg-gray-800 mt-2 py-2 rounded-md shadow-lg transition-all duration-300`}>
+                <ul
+                  onMouseLeave={() => setOpenSubmenu(false)}
+                  className={`absolute w-48 z-30 top-10 left-0 bg-gray-800 mt-2 py-3 px-2 rounded-lg shadow-xl transition-transform duration-500 ease-in-out transform ${
+                    openSubmenu === link.name ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
+                  }`}
+                >
                   {link.submenu.map((subitem, subIndex) => (
-                    <li key={subIndex} className="px-4 py-2 hover:bg-blue-600 transition-colors duration-200 rounded-md">
-                      <NavLink
-                        to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}
-                        className="text-sm text-gray-200 hover:text-white transition-colors duration-200"
-                      >
+                    <NavLink to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}>
+                    <li
+                      key={subIndex}
+                      className="px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-700 hover:shadow-md text-sm text-gray-200 hover:text-gray-200"
+                    >
                         {subitem}
-                      </NavLink>
                     </li>
+                      </NavLink>
                   ))}
                 </ul>
               )}
