@@ -21,7 +21,7 @@ const About = () => {
 
         {/* Column 2: University Name */}
         <div className="text-center flex-1">
-          <h1 className="text-2xl font-bold uppercase tracking-wide">
+          <h1 className="text-2xl font-bold uppercase tracking-wider">
             Dr. C.V. Raman University
           </h1>
         </div>
@@ -32,7 +32,7 @@ const About = () => {
             to="https://cvrump.ac.in/"
             target="_blank"
             // rel="noopener noreferrer"
-            className="bg-[#ffc107] text-black px-4 py-2 rounded-md font-medium hover:bg-[#e6b806] transition-all"
+            className="bg-[#ffc107] capitalize text-black px-4 py-2 rounded-md font-medium hover:bg-[#e6b806] transition-all"
           >
             Visit University site
           </NavLink>
@@ -54,17 +54,18 @@ const About = () => {
 
         {/* Column 2: Department Name */}
         <div className="flex flex-col lg:h-36 justify-center">
-          <h2 className="text-3xl font-bold text-gray-900 tracking-wide">
+          <h2 className="text-4xl uppercase font-bold text-gray-900 tracking-wide pl-2">
             Techno Park
           </h2>
-          <p className="mt-2 text-lg text-gray-600 font-semibold">
+          <p className="mt-2 text-xl relative z-10 text-white bg-blue-900 shadow-md font-semibold border border-gray-500 w-10/12 pl-2">
             School of Computer Science and Information Technology
           </p>
+          <span className='h-6 w-6 absolute z-0 translate-y-10 right-[9.5rem] shadow-md rotate-45 bg-blue-900'></span>
         </div>
       </div>
 
       {/* Row 3 */}
-      <div className="grid grid-cols-3 bg-white py-8 px-6 gap-6">
+      <div className="grid grid-cols-3 bg-white py-8 px-6 gap-7">
         {/* Column 1: About Computer Science */}
         <div className="flex flex-col justify-center h-52">
           <h3 className="text-xl font-bold text-gray-800">About Computer Science & Technology</h3>
@@ -98,7 +99,7 @@ const About = () => {
       </div>
       
 
-     <div className='grid grid-cols-3 bg-white'>
+     <div className='grid grid-cols-3 gap-10 bg-white'>
      <div></div>
       <NavLink
             to="/About"
