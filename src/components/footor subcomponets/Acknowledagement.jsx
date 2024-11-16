@@ -15,7 +15,7 @@ export default function Acknowledagement() {
     </p>
     <p className="text-gray-300 text-sm mt-4">
       We extend our gratitude to{" "}
-      <span className="font-medium text-gray-100">Miss Swati Atre</span>, Head
+      <span className="font-medium text-gray-100">Ms. Swati Atre</span>, Head
       of the Department, for her support and encouragement throughout the
       project.
     </p>

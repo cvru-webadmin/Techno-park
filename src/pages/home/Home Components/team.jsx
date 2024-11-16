@@ -17,9 +17,9 @@ function Our_Team() {
 
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 max-w-7xl mx-auto">
     {teamMembers.map((member, index) => (
-      <>
+    
       <div
-        key={index}
+        key={index+member.name}
         className="group border-2 w-[250px] relative mb-20 flex flex-col items-center text-center bg-white shadow-xl rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-gray-50"
       >
         {/* Unique Shape for Image */}
@@ -47,7 +47,6 @@ function Our_Team() {
         {/* Decorative Line */}
         <div className="w-10 h-1 mt-5 bg-blue-400 rounded-md mx-auto mb-4 group-hover:w-16 group-hover:bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 group-hover:rounded-md transition-all duration-300"></div>
       </div>
-    </>
     ))}
   </div>
 </div>
