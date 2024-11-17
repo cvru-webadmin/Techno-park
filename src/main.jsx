@@ -4,9 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './router/router.jsx'
+import FireBaseProvider from './Context/context.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FireBaseProvider>
+      <RouterProvider router={router} />
+    </FireBaseProvider>
   </StrictMode>,
 )
