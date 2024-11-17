@@ -4,13 +4,13 @@
     font-family: "Arial", sans-serif;
   }
   
-  .container {
+  /* .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }
+  } */
   
   .about-content {
     display: flex;
@@ -51,7 +51,7 @@
   }
   
   .about-description strong {
-    color: #2980b9;
+    color: var(--Gold);
   }
   
   @media (max-width: 768px) {

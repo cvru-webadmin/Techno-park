@@ -1,27 +1,37 @@
 import React from "react";
 
-const MainImage = () => {
+const AboutTopImage = () => {
   return (
-    <>
-      <div className="h-[300px] mt-[60px] flex flex-col items-center justify-center">
-      <div className="w-full h-full shadow-lg rounded-lg">
+    <div className="relative h-[300px] mt-[60px] flex items-center justify-center">
+      {/* Image container with rounded corners and shadow */}
+      <div className="w-full h-full shadow-lg rounded-lg overflow-hidden">
+        {/* Background Image */}
         <img
-          src="src/assets/images/mca stu lab.jpeg" // Replace with the correct image path
+          src="src/assets/images/mca stu lab.jpeg" // Update with the correct image path
           alt="Science & Technology"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-70 flex h-[300px] mt-[60px] flex-col items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
-          About Us
-        </h1>
-        <p className="text-lg md:text-xl text-gray-300 mt-3">
-        Is more than just a place to earn a degree - it's place where you can discover your potential...
-        </p>
-        </div>
+        {/* Overlay with text */}
+         <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4">
+           {/* Main Heading */}
+           <h1
+             className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight text-center"
+             style={{
+               textShadow: "3px 3px 8px rgba(0, 0, 0, 0.6)",
+             }}
+           >
+             About Us
+           </h1>
+         
+           {/* Subtitle/Description */}
+           <p className="text-base md:text-lg lg:text-xl text-gray-300 mt-4 text-center max-w-4xl tracking-wide">
+             Discover a world beyond academics — where learning meets innovation, 
+             and dreams transform into achievements.
+           </p>
+         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 };
 
-export default MainImage;
+export default AboutTopImage;

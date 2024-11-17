@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css"; // Link to external CSS for professional styling
 
-const AboutUniversity = () => {
+const AboutUniversity2 = () => {
   const handleRedirect = () => {
     window.open("https://www.cvrump.ac.in", "_blank"); // Replace with your university's main website URL
   };
@@ -40,4 +40,4 @@ const AboutUniversity = () => {
   );
 };
 
-export default AboutUniversity;
+export default AboutUniversity2;
