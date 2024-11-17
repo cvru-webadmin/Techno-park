@@ -1,6 +1,6 @@
 import { Children, createContext } from "react";
 import { initializeApp } from "firebase/app";
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signOut} from "firebase/auth";
 
 
 //Configation of firebase 
@@ -45,6 +45,19 @@ const LoginAdmin = async(email,password)=>{
         return "pls cheak the details that you enter"
     }
 }
+
+//logout admin method
+const LogoutAdmin = async()=>{
+    signOut(adminAuth);
+}
+
+onAuthStateChanged(adminAuth,(user) => {
+    if (user) {
+        console.log(user)
+    } else {
+        console.log("user not login")
+    }
+  });
 
 //create useing context context provider 
 const FireBaseProvider = ({ children }) =>{

@@ -1,11 +1,11 @@
-import { LogIn } from 'lucide-react'
 import React from 'react'
-import AdminLogin from './Login'
+import { Outlet } from 'react-router-dom'
 
 export default function Admin() {
   return (
     <>
-    <AdminLogin />
+    {/* <AdminLogin /> */}
+    <Outlet></Outlet>
     </>
   )
 }
