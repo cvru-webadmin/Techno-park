@@ -19,15 +19,22 @@ const AboutSchool = () => {
           {/* First Image */}
           <div className="relative h-64 w-80 rounded-lg overflow-hidden shadow-md">
             <img
-              src="src/assets/images/Birthday.jpeg" // Replace with the correct image path
+              src="src/assets/images/techAbout.jpeg" // Replace with the correct image path
               alt="Professional Faculty"
               className="w-full h-full object-cover"
             />
           </div>
           {/* Highlight Card */}
-          <div className="relative h-28 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-700 text-white flex items-center justify-center rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-  <p className="text-center text-lg font-bold text-shadow-lg">8+ Years of Experience</p>
-</div>
+          <div className="relative h-28 group flex-col text-white flex items-center justify-center rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300"
+          style={{
+            height: '100px',
+            width: '100%',
+            background: 'linear-gradient(to right,  #9d50bb, #6e48aa, #7a08fa)',
+          }}
+          >
+          <span className="text-center text-3xl font-bold duration-500 transition-all text-shadow-lg ">8+</span> 
+          <p className="text-center text-xl font-bold duration-500 transition-all text-shadow-lg ">Years of Experience</p>
+          </div>
 
         </div>
       </div>
