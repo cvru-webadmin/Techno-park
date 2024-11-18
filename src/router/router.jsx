@@ -2,8 +2,10 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/home/Home';
 import App from '../App';
-import Admin from '../Admin_ Panel/Admin_App';
-import AdminLogin from '../Admin_ Panel/Login';
+import AdminRoute from './AdminRoute';
+import Admin from '../admin_panel/Admin_App';
+import AdminLogin from '../admin_panel/componet/Login';
+import Dashbord from '../admin_panel/componet/Dashbord';
 
 const router =createBrowserRouter([
     {
@@ -21,15 +23,21 @@ const router =createBrowserRouter([
         ]
     },
     {
-        path:"/admin",
-        element:<Admin />,
-        children:[
-            {
-                path:"/admin",
-                element:<AdminLogin />
-            }
-        ]
+        path: "/admin",
+        element: (
+            <AdminRoute>
+                <Admin /> 
+            </AdminRoute>
+        ),
+        children: [
+            { path: "/admin",element: <Dashbord /> }
+        ],
+    },
+    {
+        path: "/AdminLogin",
+        element: <AdminLogin />
     }
+    
 ])
  
 
