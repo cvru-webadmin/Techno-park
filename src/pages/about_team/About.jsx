@@ -3,6 +3,7 @@ import AboutTopImage from './AboutComponent/AboutMain'
 import AboutUniversity from './AboutComponent/AboutCVRU'
 import AboutSchool from './AboutComponent/AboutTechno'
 import VisionMission from './AboutComponent/vision_mission'
+import IntroCoS from './AboutComponent/CoSIntro'
 
 export default function About() {
   return (
@@ -11,6 +12,7 @@ export default function About() {
     <AboutUniversity/>
     <AboutSchool/>
     <VisionMission/>
+    <IntroCoS/>
     </>
   )
 }
