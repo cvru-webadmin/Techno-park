@@ -1,4 +1,5 @@
 import React from "react";
+import MainImage from "../../../assets/images/mca stu lab.jpeg"
 
 const AboutTopImage = () => {
   return (
@@ -7,8 +8,8 @@ const AboutTopImage = () => {
       <div className="w-full h-full shadow-lg rounded-lg overflow-hidden">
         {/* Background Image */}
         <img
-          src="src/assets/images/mca stu lab.jpeg" // Update with the correct image path
-          alt="Science & Technology"
+          src={MainImage} // Update with the correct image path
+          alt="About Image"
           className="w-full h-full object-cover"
         />
         {/* Overlay with text */}

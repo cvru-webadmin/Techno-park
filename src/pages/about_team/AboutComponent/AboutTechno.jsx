@@ -1,6 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./About.css";
+import TechAbout from "../../../assets/images/techAbout.jpeg"
+import FrontImage from "../../../assets/images/Front.jpeg"
+
 const AboutSchool = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-evenly p-6 md:p-12">
@@ -9,8 +12,8 @@ const AboutSchool = () => {
               {/* Right Column: Single Image */}
               <div className="relative h-64 md:h-auto w-[45%] rounded-lg overflow-hidden shadow-md">
           <img
-            src="src/assets/images/Front.jpeg" // Replace with the correct image path
-            alt="Collaborative Work"
+            src={FrontImage} // Replace with the correct image path
+            alt="Department Image"
             className="w-full h-full object-cover"
           />
         </div>
@@ -19,8 +22,8 @@ const AboutSchool = () => {
           {/* First Image */}
           <div className="relative h-64 w-80 rounded-lg overflow-hidden shadow-md">
             <img
-              src="src/assets/images/techAbout.jpeg" // Replace with the correct image path
-              alt="Professional Faculty"
+              src={TechAbout} // Replace with the correct image path
+              alt="Lab Image"
               className="w-full h-full object-cover"
             />
           </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import "./About.css";
 import { NavLink } from "react-router-dom";
+import Campus from "../../../assets/cvru_campus.jpg"
+
 const AboutUniversity = () => {
   return (
       <div className="w-full bg-gray-50 rounded-lg p-8 flex justify-evenly">
@@ -31,7 +33,7 @@ const AboutUniversity = () => {
         
         <div className="flex items-center w-[45%] justify-center">
           <img
-            src="src/assets/cvru_campus.jpg" // Replace with your actual image path
+            src={Campus} // Replace with your actual image path
             alt="University"
             className="w-full h-4/5 ml-[2.5%] object-cover rounded-2xl shadow-xl"
           />
