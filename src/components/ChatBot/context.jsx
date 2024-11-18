@@ -168,34 +168,6 @@ const chatbotContext = {
   branding: {
     logoText: ["Techno Park", "School of Computer Science and Technology"]
   },
-  searchResultEnhancement: {
-    responses: {
-      "programs": function(query) {
-        return Object.values(chatbotContext.programsOffered).filter(program => 
-          program.name.toLowerCase().includes(query.toLowerCase())
-        );
-      },
-      "faculty": function(query) {
-        return chatbotContext.faculty.filter(faculty => 
-          faculty.name.toLowerCase().includes(query.toLowerCase()) || faculty.expertise.some(expertise => expertise.toLowerCase().includes(query.toLowerCase()))
-        );
-      },
-      "achievements": function(query) {
-        return chatbotContext.studentAchievements[query] || "No relevant achievements found.";
-      },
-      "facilities": function(query) {
-        return chatbotContext.labs.filter(lab => lab.name.toLowerCase().includes(query.toLowerCase()));
-      },
-      "resources": function(query) {
-        return chatbotContext.libraryResources.filter(resource => 
-          resource.program.toLowerCase().includes(query.toLowerCase())
-        );
-      },
-      "contact": function() {
-        return chatbotContext.contactInfo;
-      }
-    }
-  }
 };
 
 export default chatbotContext;

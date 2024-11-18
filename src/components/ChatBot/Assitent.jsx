@@ -46,7 +46,7 @@ const ChatBot = () => {
                            text: `
                              Context: ${JSON.stringify(chatbotContext)}
                        
-                             Instruction: Please respond to the user's question based on the information in the context. If only part of the answer is available, provide that information in a friendly and helpful manner, even if it does not fully address the question. If there is no relevant information in the context, respond with "I'm sorry, I don't have that information right now."
+                             Instruction: Please respond to the user's question based on the information in the context. If only part of the answer is available, provide that information in a friendly and helpful manner, even if it does not fully address the question. If there is no relevant information in the context,dont inlude ** , respond with "I'm sorry, I don't have that information right now."
                        
                              User question: ${userInput}
                            `
@@ -179,7 +179,7 @@ const ChatBot = () => {
                 </svg>
               </div>
               <div className="px-4 py-2 'bg-white text-gray-900 border border-gray-200 rounded-bl-md text-[0.80rem] font-medium shadow-md">
-                Techno Bot is typing...
+                Techno Bot is typing<span className='animate-pulse'>...</span>
               </div>
             </div>
           )}
@@ -198,7 +198,7 @@ const ChatBot = () => {
                      onClick={
                       () => {
                       setUserInput(suggestion);
-                      handleSend();
+                        handleSend;
                     }}
                      className="px-4 py-2 bg-gradient-to-r  from-gray-200 to-gray-300 text-gray-800 text-[0.80rem] text-nowrap font-medium rounded-full shadow-sm hover:bg-gray-400 transition-transform transform hover:scale-105"
                    >
