@@ -96,9 +96,9 @@ const ChatBot = () => {
 
       {/* Chat modal */}
       {isOpen && (
-        <div className="mt-4 w-96 bg-white rounded-lg shadow-lg p-4 transition-transform transform-gpu duration-300 ease-out">
+        <div className="mt-4 w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 p-2 px-0 transition-transform transform-gpu duration-300 ease-out">
          {/* Header with chatbot name and close button */}
-         <div className="flex justify-between items-center pb-2 border-b border-gray-300 bg-white px-4 py-2">
+         <div className="flex justify-between items-center pb-2 border-b bg-white border-gray-300 px-4 py-2">
            <div className="flex items-center space-x-2">
              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
                <rect width="20" height="20" fill="none" />
@@ -116,22 +116,39 @@ const ChatBot = () => {
 
 
        {/* Chat messages */}
-       <div className="flex flex-col chatbot space-y-3 h-64 overflow-y-auto mb-4 p-3 bg-white rounded-lg shadow-inner">
+       <div className="flex flex-col chatbot space-y-3 h-72 overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
          {messages.map((msg, index) => (
-           <div key={index} className={`flex ${msg.sender === 'User' ? 'justify-end' : 'justify-start'}`}>
+           <div
+             key={index}
+             className={`flex ${
+               msg.sender === 'User' ? 'justify-end' : 'justify-start'
+             } items-start`}
+           >
+             {msg.sender !== 'User' && (
+               <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white shadow-md mr-2">
+               <svg xmlns="http://www.w3.org/2000/svg" height={18} width={18} viewBox="0 0 24 24">
+                	<rect width="24" height="24" fill="none" />
+                	<path fill="currentColor" d="M22.078 8.347a1.4 1.4 0 0 0-.488-.325V4.647a.717.717 0 1 0-1.434 0V7.85h-.21a5.48 5.48 0 0 0-5.25-3.92H9.427a5.48 5.48 0 0 0-5.25 3.92H3.9V4.647a.717.717 0 1 0-1.434 0v3.385a1.5 1.5 0 0 0-.469.315A1.72 1.72 0 0 0 1.5 9.552v4.896a1.7 1.7 0 0 0 1.702 1.702h.956a5.48 5.48 0 0 0 5.25 3.92h5.183a5.48 5.48 0 0 0 5.25-3.92h.955a1.7 1.7 0 0 0 1.702-1.702V9.552c.02-.44-.131-.872-.42-1.205M3.996 14.716H3.24a.27.27 0 0 1-.191-.077a.3.3 0 0 1-.076-.191V9.552a.26.26 0 0 1 .248-.268h.775a.6.6 0 0 0 0 .125v5.182a.6.6 0 0 0 0 .125m4.695-3.118a.813.813 0 0 1-1.386-.578c0-.217.086-.425.238-.579l.956-.956a.813.813 0 0 1 1.148 0l.956.956a.812.812 0 0 1-.574 1.387a.8.8 0 0 1-.573-.23l-.412-.41zm5.9 4.074a3.605 3.605 0 0 1-5.068 0a.813.813 0 0 1 .885-1.326a.8.8 0 0 1 .262.178a2.017 2.017 0 0 0 2.773 0a.804.804 0 0 1 1.148 0a.813.813 0 0 1 0 1.148m1.912-4.074a.813.813 0 0 1-1.148 0l-.41-.41l-.402.41a.82.82 0 0 1-.574.23a.8.8 0 0 1-.574-.23a.82.82 0 0 1 0-1.157l.957-.956a.813.813 0 0 1 1.147 0l.956.956a.82.82 0 0 1 .077 1.157zm4.609 2.869a.3.3 0 0 1-.077.191a.27.27 0 0 1-.191.077h-.755a.6.6 0 0 0 0-.125V9.37a.6.6 0 0 0 0-.124h.765a.25.25 0 0 1 .181.077c.049.052.076.12.077.19z" />
+                </svg>
+             </div>
+             
+             )}
              <span
-               className={`max-w-xs px-4 py-2 rounded-2xl text-sm font-medium shadow-sm ${
+               className={`max-w-xs px-4 py-3 rounded-lg text-[0.80rem] leading-none font-medium shadow ${
                  msg.sender === 'User'
-                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-br-none'
-                   : 'bg-gray-200 text-gray-900 rounded-bl-none'
+                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-br-md'
+                   : 'bg-white text-gray-900 border border-gray-200 rounded-bl-md'
                }`}
-               style={{ whiteSpace: 'pre-wrap' }}
+               style={{
+                 whiteSpace: 'pre-wrap',
+                 wordBreak: 'break-word',
+               }}
              >
                {msg.text}
              </span>
            </div>
          ))}
-         
+       
          {/* Loading indicator for bot typing */}
          {isLoading && (
            <div className="flex justify-start">
