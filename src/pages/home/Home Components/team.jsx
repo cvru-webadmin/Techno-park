@@ -1,13 +1,20 @@
 import React from 'react';
+import SwatiAtre from "../../../assets/images/SwatiAtre (1).png"
+import Vaidehi from "../../../assets/images/Vaidehi.png"
+import Shruti from "../../../assets/images/Shruti.png"
+import Amit from "../../../assets/images/Amit.png"
+import Kunal from "../../../assets/images/Kunal.png"
+import Gourav from "../../../assets/images/Gourav.png"
+import Ganesh from "../../../assets/images/Ganesh_Nimje.jpeg"
 
 const teamMembers = [
-  { name: "Ms. Swati Atre", title: "Chair of the School", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/SwatiAtre.png" },
-  { name: "Ms. Vaidehi Bakshi", title: "Assistant Professor", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/Vaidehi.png" },
-  { name: "Ms. Shruti Sriwas", title: "Assistant Professor", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/Shruti.png" },
-  { name: "Mr. Amit Sawanni", title: "Assistant Professor", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/Amit.png" },
-  { name: "Mr. Kunal Mishra", title: "Network Administrator", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/Kunal.png" },
-  { name: "Mr. Gourav Soni", title: "Research Assistant", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/Gourav.png" },
-  { name: "Mr. Ganesh Nimje", title: "Research Assistant", imageUrl: "https://cvrump.ac.in/Images/School/School%20Staff/ITCS/Ganesh_Nimje.jpeg" },
+  { name: "Ms. Swati Atre", title: "Chair of the School", imageUrl: SwatiAtre},
+  { name: "Ms. Vaidehi Bakshi", title: "Assistant Professor", imageUrl: Vaidehi },
+  { name: "Ms. Shruti Sriwas", title: "Assistant Professor", imageUrl: Shruti },
+  { name: "Mr. Amit Sawanni", title: "Assistant Professor", imageUrl: Amit },
+  { name: "Mr. Kunal Mishra", title: "Network Administrator", imageUrl: Kunal },
+  { name: "Mr. Gourav Soni", title: "Research Assistant", imageUrl: Gourav },
+  { name: "Mr. Ganesh Nimje", title: "Research Assistant", imageUrl: Ganesh },
 ];
 
 function Our_Team() {
