@@ -5,7 +5,7 @@ import AdminSidebar from './componet/Navigation';
 export default function Admin() {
   return (
     <>
-    <div>
+    <div className='flex'>
       <AdminSidebar />
       <Outlet></Outlet>
     </div>
