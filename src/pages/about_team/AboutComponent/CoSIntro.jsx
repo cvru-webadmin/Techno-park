@@ -6,16 +6,22 @@ const IntroCoS = () => {
   return (
     <section className="p-6 lg:p-12 justify-center flex items-center">
       <div className="w-[100%] text-justify flex justify-evenly overflow-hidden lg:flex">
-        {/* Left Column: Image */}
-        <div className="w-[25%]">
-        <div className="lg:w-full lg:h-[500px]">
-          <img
-            src={SwatiAtre} // Replace with the actual image URL
-            alt="COS"
-            className="object-cover rounded-lg h-full shadow-lg"
-          />
-        </div>
-          </div>
+        {/* Image Container */}
+  <div className="relative lg:h-[500px] overflow-hidden rounded-lg shadow-lg group">
+    <img
+      src={SwatiAtre} // Replace with the actual image URL
+      alt="Chief of Staff"
+      className="object-cover rounded-lg h-full w-full transition-transform duration-300 group-hover:scale-105"
+    />
+    {/* Overlay Effect */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+    {/* Image Label */}
+    <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded-lg shadow-md">
+      <span className="text-gray-800 font-semibold text-lg">Miss Swati Atre</span>
+      <p className="text-sm text-gray-600">Head of Department</p>
+    </div>
+  </div>
+
 
 
         {/* Right Column: Content */}
