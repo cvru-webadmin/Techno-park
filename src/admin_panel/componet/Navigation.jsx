@@ -23,7 +23,7 @@ export default function AdminSidebar() {
 
   const tabs=[
     {name:"home",path:"/admin",icon:<FaHome size={20}/>},
-    {name:"faulty",path:"/admin/facult",icon:<FaFolder size={20}/>},
+    {name:"faculty",path:"/admin/faculty",icon:<FaFolder size={20}/>},
     {name:"event",path:"/admin/event",icon:<FaImages size={20}/>},
     {name:"feedbacks",path:"/admin/feedbacks",icon:<FaUsers size={20}/>},
   ]
