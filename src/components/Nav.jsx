@@ -40,7 +40,7 @@ const Navbar = () => {
 
   // console.log(tab)
   return (
-    <nav className={`fixed w-full top-0 z-50 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-transparent transition-all duration-200 ease-in-out transform"}`}>
+    <nav className={`fixed w-full top-0 z-50 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-gray-900 transition-all duration-200 ease-in-out transform"}`}>
       <div className="flex items-center justify-between">
        {/* Logo Section */}
          <div className="flex items-center space-x-2">
