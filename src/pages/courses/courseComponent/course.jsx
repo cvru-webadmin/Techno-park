@@ -1,5 +1,9 @@
 import React from "react";
+import { useRef } from 'react'
+import { useContext } from 'react'
+import {ScrollContext} from '../../../context/DropDownScrollContext'
 import './course.css'
+import { useEffect } from "react";
 import BCA from '../../../assets/images/BCA.jpeg';
 import DCA from '../../../assets/images/DCA.jpg';
 import PGDCA from '../../../assets/images/PGDCA.png';
@@ -66,11 +70,29 @@ const courses = {
 };
 
 const CoursePage = () => {
+  const {dropDown}=useContext(ScrollContext)
+  const ScrollCourses=useRef([])
+  function ScrollToSection(index){
+    if (ScrollCourses.current[index]) {
+      ScrollCourses.current[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  useEffect(()=>{
+    if(dropDown=="Diploma"){
+      ScrollToSection(0)
+    }
+    if(dropDown=="Undergraduate"){
+      ScrollToSection(1)
+    }
+    if(dropDown=="Postgraduate"){
+      ScrollToSection(2)
+    }
+  },[dropDown])
   return (
     <div className="bg-gray-50 min-h-screen px-4 py-8"> 
       {/* Main Sections */}
-      {Object.entries(courses).map(([section, sectionCourses]) => (
-        <div key={section} className="mb-16">
+      {Object.entries(courses).map(([section, sectionCourses],index) => (
+        <div key={section} className="mb-16"  ref={(e) => (ScrollCourses.current[index] = e)}>
           {/* Section Heading with Enhanced Separator */}
           <div className="relative text-center mb-10">
             <h2 className="course-title">

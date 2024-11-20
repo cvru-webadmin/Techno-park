@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ScrollContext } from "../context/DropDownScrollContext";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null); 
   const [tab,settab]=useState("Home");
+  const {setDropDown}=useContext(ScrollContext)
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about", submenu: ["Our Mission", "Faculty", "Facilities"] },
-    { name: "Courses", path: "/courses", submenu: ["Undergraduate", "Postgraduate", "Diploma"] },
+    { name: "Courses", path: "/courses", submenu: ["Diploma", "Undergraduate", "Postgraduate"] },
     { name: "Activities", path: "/activities" },
     { name: "Campus", path: "/campus" },
     { name: "Achievements", path: "/achievements" },
@@ -131,8 +134,10 @@ const Navbar = () => {
                   }`}
                 >
                   {link.submenu.map((subitem, subIndex,index) => (
-                    <NavLink key={subIndex+index} to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}>
+                    // {`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}
+                    <NavLink key={subIndex+index} to={link.path}>
                     <li
+                      onClick={()=>{setDropDown(subitem)}}
                       key={subIndex}
                       className="px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-700 hover:shadow-md text-sm text-gray-200 hover:text-gray-200"
                     >
