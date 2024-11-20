@@ -52,7 +52,7 @@
   }
   
   .about-description strong {
-    color: var(--Gold);
+    color:#3b82f6;
   }
   
   @media (max-width: 768px) {

@@ -8,11 +8,11 @@ import dinMamaActivityImage from "../../../assets/images/DINMAMA_activete.jpg"
 
 const AboutSchool = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 py-12 bg-gray-100">
+    <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 py-12 bg-white">
    {/* Left Side Section: Images */}
    <div className="flex flex-col md:flex-row w-full md:w-1/2 gap-6">
       {/* Single Large Image */}
-      <div className="relative h-64 md:h-auto w-full md:w-[40%] rounded-lg overflow-hidden shadow-lg">
+      <div className="relative h-64 md:h-auto w-full md:w-[50%] rounded-lg overflow-hidden shadow-lg">
         <img
           src={FrontImage}
           alt="Department Entrance"
@@ -24,7 +24,7 @@ const AboutSchool = () => {
       </div>
     
       {/* Two Stacked Images */}
-      <div className="flex flex-col gap-6 w-full md:w-[60%]">
+      <div className="flex flex-col gap-6 w-full md:w-[50%]">
         {/* First Image */}
         <div className="relative h-64 md:h-72 rounded-lg overflow-hidden shadow-lg">
           <img
@@ -44,7 +44,7 @@ const AboutSchool = () => {
           style={{
             height: '100px',
             width: '100%',
-            background: 'linear-gradient(to right,  #9d50bb, #6e48aa, #7a08fa)',
+            background: 'linear-gradient(to right,  #3b82f6, #9333ea)',
           }}
           >
           <span className="text-center text-3xl font-bold duration-500 transition-all text-shadow-lg ">8+</span> 
@@ -59,14 +59,14 @@ const AboutSchool = () => {
 
 
      {/* Right Side Section: About the Department */}
-    <div className="w-full md:w-[45%] space-y-8">
+    <div className="w-full md:w-[45%]">
       {/* Main Heading */}
-      <h2 className="text-4xl font-extrabold text-gray-800 tracking-wide border-b-4 border-indigo-600 pb-2">
+      <h2 className="about-title -mt-4">
         About Our Department
       </h2>
     
       {/* Introduction Paragraph */}
-      <p className="text-lg text-gray-700 leading-relaxed">
+      <p className="about-description">
         Techno Park School of Computer Science and Information Technology, affiliated with
         <strong className="text-indigo-600"> Dr. C.V. Raman University</strong> and ISO 9001:2015 certified,
         is a premier institution offering programs like BCA, PGDCA, DCA, B.Sc. (IT), M.Sc. (IT), and MCA.
@@ -75,26 +75,19 @@ const AboutSchool = () => {
       </p>
     
       {/* Trust and Achievements Section */}
-      <div className="space-y-4">
-        <p className="text-lg text-gray-700 leading-relaxed">
+        <p className="about-description">
           Equipped with <strong>modern labs</strong>, a digital library, and a focus on
           <strong> outcome-based learning</strong>, our students are prepared for
           <strong className="text-indigo-600"> dynamic tech careers</strong>. We collaborate with
           top-tier companies like TCS, Infosys, and Wipro to provide internships, workshops, and live projects, ensuring
           outstanding <strong>placement opportunities</strong>.
         </p>
-        {/* <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>State-of-the-art computing labs and infrastructure.</li>
-          <li>Collaborations with leading tech firms for internships and workshops.</li>
-          <li>Highly qualified faculty with extensive industry experience.</li>
-          <li>Proven track record of successful placements.</li>
-        </ul> */}
-      </div>
     
       {/* Call-to-Action */}
+      <div className="h-2.5"></div>
       <NavLink
         to="/contact"
-        className="inline-block px-8 py-3 text-white bg-indigo-600 rounded-md shadow-lg font-semibold hover:bg-indigo-700 transition-all duration-300"
+        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105"
       >
         Contact Us
       </NavLink>

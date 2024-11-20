@@ -15,6 +15,9 @@ const VisionMission = () => {
           <p className="text-gray-800">
             Towards ubiquitous computing technology...
           </p>
+          <p className="text-gray-800">
+          To be a leading institution in the field of computing technology, shaping future leaders who will drive innovation and advancements in IT, making technology more accessible and impactful for society.
+          </p>
         </div>
 
         {/* Card: Our Mission */}
@@ -29,9 +32,9 @@ const VisionMission = () => {
         </div>
 
         {/* Card: Our History */}
-        <div className="bg-purple-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-purple-300">
+        {/* <div className="bg-purple-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-purple-300">
           <div className="flex items-center gap-3 mb-3">
-            <FaHistory className="text-purple-600 text-3xl" /> {/* Icon */}
+            <FaHistory className="text-purple-600 text-3xl" />
             <h3 className="text-2xl font-semibold text-purple-900">Our History</h3>
           </div>
           <p className="text-gray-800">
@@ -39,7 +42,7 @@ const VisionMission = () => {
             condimentum, turpis neque commodo mauris, in rutrum lacus nisl a
             risus.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* Right Column */}

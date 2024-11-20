@@ -9,13 +9,18 @@ import { useEffect } from 'react'
 import { ExampleContext } from '../../context/ExampleContext'
 
 export default function About() {
-  const {about}=useContext(ExampleContext)
+  const {about,setAbout}=useContext(ExampleContext)
   const Mission=useRef([])
   function ScrollToSection(index){
     if (Mission.current[index]) {
-      Mission.current[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const offset = 80; // Adjust this offset for fixed headers
+      const elementPosition = Mission.current[index].getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth',
+      });
     }
-  }
+  } 
   useEffect(()=>{
     if(about=="Our Mission"){
       ScrollToSection(0)
@@ -23,6 +28,7 @@ export default function About() {
     if(about=="Faculty"){
       ScrollToSection(1)
     }
+    setAbout("")
   },[about])
   return (
     <>

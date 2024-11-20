@@ -17,8 +17,8 @@ const IntroCoS = () => {
     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
     {/* Image Label */}
     <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded-lg shadow-md">
-      <span className="text-gray-800 font-semibold text-lg">Miss Swati Atre</span>
-      <p className="text-sm text-gray-600">Head of Department</p>
+      <span className="text-gray-800 font-semibold text-lg">Ms. Swati Atre</span>
+      <p className="text-sm text-gray-600">Head of the Department</p>
     </div>
   </div>
 

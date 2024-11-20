@@ -23,7 +23,7 @@ const AboutUniversity = () => {
               skill development.
             </p>
           <div className="w-full md:w-1/2 flex mt-4 justify-left md:justify-left">
-          <NavLink to="https://cvrump.ac.in/" target="_blank" className="bg-gradient-to-r uppercase from-amber-300 to-amber-500 text-white py-3 px-10 text-base font-bold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+          <NavLink to="https://cvrump.ac.in/" target="_blank" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105">
             Visit University Website
           </NavLink>
           </div>
