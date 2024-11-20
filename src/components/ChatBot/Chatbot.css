@@ -1,3 +1,17 @@
 .chatbot::-webkit-scrollbar{
   display: none;
 }
+.ChatBotBG{
+  background: linear-gradient(rgba(251, 255, 232, 0.8),rgba(255, 255, 255, 0.8)),url("src/components/ChatBot/ChatBotBg.jpg");
+  background-size: 50%;
+  background-blend-mode: lighten;
+  
+}
+/* .suggestion {
+  scroll-behavior: smooth;
+  scrollbar-width: thin; 
+  scrollbar-color: #c0c0c0 transparent; 
+} */
+.suggestion::-webkit-scrollbar{
+  display: none;
+}
