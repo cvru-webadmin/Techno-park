@@ -10,8 +10,8 @@ const chatbotContext = {
     vision: "Towards ubiquitous computing technology",
     mission: "To provide access to higher educational opportunities in computing technology programs that cultivate theoretical, practical, and ethical skills, aiming to boost productivity and foster innovation in society."
   },
-  programsOffered: [
-    {
+  programsOffered: {
+    BCA: {
       name: "Bachelor of Computer Applications (BCA)",
       duration: "3 Years",
       eligibility: "12th Pass with any stream",
@@ -19,7 +19,7 @@ const chatbotContext = {
       totalEnrollment: 148,
       evaluationMethods: ["Mid-Semester Test (MST)", "End-Semester Test (PUT)", "Project Presentations", "Internships", "Problem-solving Activities"]
     },
-    {
+    PGDCA: {
       name: "Post Graduate Diploma in Computer Applications (PGDCA)",
       duration: "1 Year",
       eligibility: "Any Graduate",
@@ -27,7 +27,7 @@ const chatbotContext = {
       totalEnrollment: 180,
       evaluationMethods: ["Class Tests"]
     },
-    {
+    DCA: {
       name: "Diploma in Computer Applications (DCA)",
       duration: "1 Year",
       eligibility: "12th Pass with any stream",
@@ -35,20 +35,20 @@ const chatbotContext = {
       totalEnrollment: 180,
       evaluationMethods: ["Class Tests"]
     },
-    {
+    BScIT: {
       name: "B.Sc. in IT",
       duration: "3 Years",
       eligibility: "12th Pass with Mathematics",
       annualIntake: 60
     },
-    {
+    MScIT: {
       name: "M.Sc. in IT",
       duration: "2 Years",
       eligibility: "B.Sc. (IT/CS/BCA), BE (CS/IT)",
       annualIntake: 30,
       totalEnrollment: 7
     },
-    {
+    MCA: {
       name: "Master of Computer Applications (MCA)",
       duration: "2 Years",
       eligibility: "Graduation with at least 50% marks (45% for reserved categories), ideally with math at 10+2 or graduation level",
@@ -56,7 +56,7 @@ const chatbotContext = {
       totalEnrollment: 14,
       evaluationMethods: ["Mid-Semester Test (MST)", "End-Semester Test (PUT)", "Project Presentations", "Internships", "Problem-solving Activities"]
     }
-  ],
+  },
   educationalApproach: {
     values: [
       "Programs emphasize foundational scientific and engineering principles essential to IT, which serve as the core of its skill-based curriculum.",
@@ -167,7 +167,7 @@ const chatbotContext = {
   },
   branding: {
     logoText: ["Techno Park", "School of Computer Science and Technology"]
-  }
+  },
 };
 
 export default chatbotContext;
