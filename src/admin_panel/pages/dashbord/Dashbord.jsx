@@ -37,7 +37,7 @@ export default function Dashbord() {
      <Welocome_model isOpen={isModalOpen} isClose={closeModal} isTime={isTime} />
 
       {/* main dashbord start here---- */}
-      <div className='min-h-screen bg-gray-100 px-8 pb-6 w-full'>
+      <div className='min-h-screen bg-gray-100 px-3 pb-6 w-full'>
       <Topcards isTime={isTime} />
       <UnansweredQuestions />
       </div>

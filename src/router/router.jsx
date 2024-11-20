@@ -2,13 +2,14 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/home/Home';
 import App from '../App';
-import AdminRoute from './AdminRoute';
 import Admin from '../admin_panel/Admin_App';
-import AdminLogin from '../admin_panel/componet/Login';
 import Dashbord from '../admin_panel/pages/dashbord/Dashbord';
 import Contact from '../pages/contact us/Contact';
 import { Contact2 } from 'lucide-react';
 import ContactPage from '../pages/contact us/Contact2';
+import AdminLogin from '../admin_panel/componet/sub Componet/Login';
+import NotFoundPage from './Componet/NotFound';
+import AdminRoute from './Componet/AdminRoute';
 
 const router =createBrowserRouter([
     {
@@ -48,7 +49,8 @@ const router =createBrowserRouter([
             { path: "/admin",element: <Dashbord /> }
         ],
     },
-    { path: "/AdminLogin",element: <AdminLogin /> }
+    { path: "/AdminLogin",element: <AdminLogin /> },
+    { path: "*",element: <NotFoundPage />}
     
 ])
  

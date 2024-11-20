@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FireContext } from "../../Context/context";
+import { FireContext } from "../../../Context/context";
 import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {

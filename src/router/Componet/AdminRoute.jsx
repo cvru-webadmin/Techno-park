@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FireContext } from "../Context/context";
+import { FireContext } from "../../Context/context";
 import { Link, Navigate } from "react-router-dom"; // Use Navigate for programmatic redirection
 
 export default function AdminRoute({ children }) {

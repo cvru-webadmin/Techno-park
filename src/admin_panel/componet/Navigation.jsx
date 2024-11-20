@@ -3,7 +3,7 @@ import { LuPanelLeftClose } from "react-icons/lu";
 import { FaBars, FaHome, FaFolder, FaImages, FaUsers, FaTrashAlt, FaSignOutAlt } from "react-icons/fa"; // Example icons
 import { FireContext } from "../../Context/context";
 import { NavLink } from "react-router-dom";
-import LogoutConfirmationModal from "./LogoutConfrom";
+import LogoutConfirmationModal from "./sub Componet/LogoutConfrom";
 
 let homeIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 24 24">
 	<rect width="24" height="24" fill="none" />
@@ -32,6 +32,11 @@ let feedbackIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBo
 	<rect width="24" height="24" fill="none" />
 	<path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-7 12h-2v-2h2zm0-4h-2V6h2z" />
 </svg>);
+
+let EnquiryIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 28 28">
+	<rect width="28" height="28" fill="none" />
+	<path fill="currentColor" d="M11 3a9 9 0 0 0-8.048 13.032l-.908 3.389a1.25 1.25 0 0 0 1.53 1.53l3.387-.906A9 9 0 1 0 11 3m0 14.5a1 1 0 1 1 0-2a1 1 0 0 1 0 2M9.5 9.256A.75.75 0 0 1 8 9.25v-.019a2 2 0 0 1 .007-.127a3 3 0 0 1 .37-1.222C8.789 7.152 9.598 6.5 11 6.5s2.212.652 2.622 1.382A3 3 0 0 1 14 9.2l.001.05v.001c0 1.124-.692 1.88-1.193 2.428l-.125.137c-.546.606-.932 1.11-.932 1.935a.75.75 0 0 1-1.5 0c0-1.425.739-2.296 1.318-2.939l.018-.02c.609-.677.912-1.013.914-1.535v-.003a1.5 1.5 0 0 0-.185-.635C12.163 8.348 11.847 8 11 8s-1.163.348-1.315.618a1.5 1.5 0 0 0-.185.638M17 25a8.98 8.98 0 0 1-6.732-3.026a10 10 0 0 0 2.109-.068A7.47 7.47 0 0 0 17 23.5a7.46 7.46 0 0 0 3.59-.914a.75.75 0 0 1 .555-.066l3.25.87l-.872-3.252a.75.75 0 0 1 .066-.553A7.5 7.5 0 0 0 24.5 16a7.5 7.5 0 0 0-3.825-6.54a10 10 0 0 0-.75-1.974a9.004 9.004 0 0 1 5.123 12.547l.908 3.388a1.25 1.25 0 0 1-1.531 1.53l-3.386-.906A9 9 0 0 1 17 25M12.5 9.256v.002v-.005" />
+</svg>)
 export default function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [LogoutModel,setLogoutModel] = useState(false);
@@ -51,9 +56,10 @@ export default function AdminSidebar() {
   const tabs=[
     {name:"home",path:"/admin",icon:homeIcon},
     {name:"faculty",path:"/admin/faculty",icon:TeamsIcon},
-    {name:"event",path:"/admin/event",icon:eventIcon},
+    {name:"events",path:"/admin/event",icon:eventIcon},
     // {name:"event",path:"/admin/event",icon:eventIcon2},
     {name:"feedbacks",path:"/admin/feedbacks",icon:feedbackIcon},
+    {name:"Enquirys",path:"/admin/Enquiry",icon:EnquiryIcon},
   ]
 
 
