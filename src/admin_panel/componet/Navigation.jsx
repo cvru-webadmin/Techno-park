@@ -3,9 +3,11 @@ import { LuPanelLeftClose } from "react-icons/lu";
 import { FaBars, FaHome, FaFolder, FaImages, FaUsers, FaTrashAlt, FaSignOutAlt } from "react-icons/fa"; // Example icons
 import { FireContext } from "../../Context/context";
 import { NavLink } from "react-router-dom";
+import LogoutConfirmationModal from "./LogoutConfrom";
 
 export default function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const [LogoutModel,setLogoutModel] = useState(false);
 
   const {LogoutAdmin} = useContext(FireContext);
 
@@ -13,10 +15,23 @@ export default function AdminSidebar() {
     setIsOpen(!isOpen);
   };
 
+  const conformation = () => {
+    console.log("click in conform")
+      LogoutAdmin();
+      setLogoutModel(false);
+  }
+
+  const tabs=[
+    {name:"home",path:"/admin",icon:<FaHome size={20}/>},
+    {name:"faulty",path:"/admin/facult",icon:<FaFolder size={20}/>},
+    {name:"event",path:"/admin/event",icon:<FaImages size={20}/>},
+    {name:"feedbacks",path:"/admin/feedbacks",icon:<FaUsers size={20}/>},
+  ]
+
   return (
     <div
       className={`${
-        isOpen ? "w-80" : "w-16"
+        isOpen ? "w-80" : "w-[4rem]"
       } h-screen bg-white border-r-2 border-r-gray-200 shadow-md flex flex-col justify-between transition-all duration-300`}
     >
       {/* Toggle Button */}
@@ -35,88 +50,43 @@ export default function AdminSidebar() {
       {/* Navigation Menu */}
       <nav className="flex-grow">
         <ul>
-          <li>
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                `flex items-center space-x-4 px-4 py-3 transition-all group ${
-                  isActive ? "bg-gray-200 border-l-4 border-blue-500" : "hover:bg-gray-200 hover:border-l-4 hover:border-blue-500"
-                }`
-              }
-            >
-              <FaHome size={20} className="text-gray-600 group-hover:text-blue-500" />
-              <span className={`${isOpen ? "block" : "hidden"} text-gray-700 group-hover:font-semibold`}>
-                Home
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/files"
-              className={({ isActive }) =>
-                `flex items-center space-x-4 px-4 py-3 transition-all group ${
-                  isActive ? "bg-gray-200 border-l-4 border-blue-500" : "hover:bg-gray-200 hover:border-l-4 hover:border-blue-500"
-                }`
-              }
-            >
-              <FaFolder size={20} className="text-gray-600 group-hover:text-blue-500" />
-              <span className={`${isOpen ? "block" : "hidden"} text-gray-700 group-hover:font-semibold`}>
-                My Files
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/photos"
-              className={({ isActive }) =>
-                `flex items-center space-x-4 px-4 py-3 transition-all group ${
-                  isActive ? "bg-gray-200 border-l-4 border-blue-500" : "hover:bg-gray-200 hover:border-l-4 hover:border-blue-500"
-                }`
-              }
-            >
-              <FaImages size={20} className="text-gray-600 group-hover:text-blue-500" />
-              <span className={`${isOpen ? "block" : "hidden"} text-gray-700 group-hover:font-semibold`}>
-                Photos
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/shared"
-              className={({ isActive }) =>
-                `flex items-center space-x-4 px-4 py-3 transition-all group ${
-                  isActive ? "bg-gray-200 border-l-4 border-blue-500" : "hover:bg-gray-200 hover:border-l-4 hover:border-blue-500"
-                }`
-              }
-            >
-              <FaUsers size={20} className="text-gray-600 group-hover:text-blue-500" />
-              <span className={`${isOpen ? "block" : "hidden"} text-gray-700 group-hover:font-semibold`}>
-                Shared
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/recycle"
-              className={({ isActive }) =>
-                `flex items-center space-x-4 px-4 py-3 transition-all group ${
-                  isActive ? "bg-gray-200 border-l-4 border-blue-500" : "hover:bg-gray-200 hover:border-l-4 hover:border-blue-500"
-                }`
-              }
-            >
-              <FaTrashAlt size={20} className="text-gray-600 group-hover:text-blue-500" />
-              <span className={`${isOpen ? "block" : "hidden"} text-gray-700 group-hover:font-semibold`}>
-                Recycle Bin
-              </span>
-            </NavLink>
-          </li>
+          {
+            tabs.map((tab)=>{
+              const isActive = location.pathname === tab.path; // Check if the current path matches the tab's path
+              return(
+              <li>
+                <NavLink
+                  to={tab.path}
+                  className={({ isActive }) =>
+                    `transition-all group mt-3 flex ${
+                      isActive ? " border-l-4 border-indigo-600 :" : " hover:border-l-4 hover:border-indigo-600"
+                    }`
+                  }
+                >
+                  <div className={` ml-2 rounded-md w-11/12 flex items-center space-x-4 px-4 py-3
+                  ${isActive?"bg-gray-200 text-green-600":"group-hover:bg-gray-200"}
+                  `}>
+                  <div
+                  className={`${
+                    isActive ? "text-indigo-600" : "text-gray-500"
+                  } group-hover:text-indigo-600`}
+                >
+                  {tab.icon}
+                </div>
+                  <span className={`${isOpen ? "block"+ isActive?" font-semibold ":" group-hover:font-semibold" : "hidden"} text-gray-700  capitalize`}>
+                    {tab.name}
+                  </span>
+                  </div>
+                </NavLink>
+              </li>)})}
+        
         </ul>
       </nav>
       
       {/* Logout Button */}
       <div className="px-4 py-1 border-y-2 border-indigo-500/10 -shadow-md inset-1">
         <button
-           onClick={LogoutAdmin}
+           onClick={()=>setLogoutModel(true)}
           className="flex items-center w-full group transition-all duration-200 hover:bg-red-600 hover:text-white py-2 rounded-md"
         >
           <span className={`${isOpen ? "block" : "hidden"} text-gray-700 ml-20 mr-5 group-hover:font-semibold group-hover:text-white`}>
@@ -166,7 +136,7 @@ export default function AdminSidebar() {
             </div>)
       }
           </div>
-      
+      <LogoutConfirmationModal isOpen={LogoutModel} onClose={()=>setLogoutModel(false)} onConfirm={()=>conformation()} />
     </div>
   );
 }
