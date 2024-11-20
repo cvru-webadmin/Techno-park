@@ -74,7 +74,7 @@ const Navbar = () => {
           } lg:flex`}
         >
           {navLinks.map((link, index) => (
-            <li key={index} className="relative group">
+            <li key={index+link.path} className="relative group">
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
@@ -130,8 +130,8 @@ const Navbar = () => {
                     openSubmenu === link.name ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
                   }`}
                 >
-                  {link.submenu.map((subitem, subIndex) => (
-                    <NavLink to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}>
+                  {link.submenu.map((subitem, subIndex,index) => (
+                    <NavLink key={subIndex+index} to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}>
                     <li
                       key={subIndex}
                       className="px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-700 hover:shadow-md text-sm text-gray-200 hover:text-gray-200"
