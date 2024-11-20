@@ -1,10 +1,37 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LuPanelLeftClose } from "react-icons/lu";
 import { FaBars, FaHome, FaFolder, FaImages, FaUsers, FaTrashAlt, FaSignOutAlt } from "react-icons/fa"; // Example icons
 import { FireContext } from "../../Context/context";
 import { NavLink } from "react-router-dom";
 import LogoutConfirmationModal from "./LogoutConfrom";
 
+let homeIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 24 24">
+	<rect width="24" height="24" fill="none" />
+	<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
+		<path d="M6.133 21C4.955 21 4 20.02 4 18.81v-8.802c0-.665.295-1.295.8-1.71l5.867-4.818a2.09 2.09 0 0 1 2.666 0l5.866 4.818c.506.415.801 1.045.801 1.71v8.802c0 1.21-.955 2.19-2.133 2.19z" />
+		<path d="M9.5 21v-5.5a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2V21" />
+	</g>
+</svg>);
+
+let TeamsIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 20 20">
+	<rect width="20" height="20" fill="none" />
+	<path fill="currentColor" d="M12.5 4.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0m5 .5a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-13 2a2 2 0 1 0 0-4a2 2 0 0 0 0 4M6 9.25C6 8.56 6.56 8 7.25 8h5.5c.69 0 1.25.56 1.25 1.25V14a4 4 0 0 1-8 0zm-1 0c0-.463.14-.892.379-1.25H3.25C2.56 8 2 8.56 2 9.25V13a3 3 0 0 0 3.404 2.973A5 5 0 0 1 5 14zM15 14c0 .7-.144 1.368-.404 1.973Q14.794 16 15 16a3 3 0 0 0 3-3V9.25C18 8.56 17.44 8 16.75 8h-2.129c.24.358.379.787.379 1.25z" />
+</svg>);
+
+let eventIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 1024 1024">
+	<rect width="1024" height="1024" fill="none" />
+	<path fill="currentColor" d="m960 95.888l-256.224.001V32.113c0-17.68-14.32-32-32-32s-32 14.32-32 32v63.76h-256v-63.76c0-17.68-14.32-32-32-32s-32 14.32-32 32v63.76H64c-35.344 0-64 28.656-64 64v800c0 35.343 28.656 64 64 64h896c35.344 0 64-28.657 64-64v-800c0-35.329-28.656-63.985-64-63.985m0 863.985H64v-800h255.776v32.24c0 17.679 14.32 32 32 32s32-14.321 32-32v-32.224h256v32.24c0 17.68 14.32 32 32 32s32-14.32 32-32v-32.24H960zM736 511.888h64c17.664 0 32-14.336 32-32v-64c0-17.664-14.336-32-32-32h-64c-17.664 0-32 14.336-32 32v64c0 17.664 14.336 32 32 32m0 255.984h64c17.664 0 32-14.32 32-32v-64c0-17.664-14.336-32-32-32h-64c-17.664 0-32 14.336-32 32v64c0 17.696 14.336 32 32 32m-192-128h-64c-17.664 0-32 14.336-32 32v64c0 17.68 14.336 32 32 32h64c17.664 0 32-14.32 32-32v-64c0-17.648-14.336-32-32-32m0-255.984h-64c-17.664 0-32 14.336-32 32v64c0 17.664 14.336 32 32 32h64c17.664 0 32-14.336 32-32v-64c0-17.68-14.336-32-32-32m-256 0h-64c-17.664 0-32 14.336-32 32v64c0 17.664 14.336 32 32 32h64c17.664 0 32-14.336 32-32v-64c0-17.68-14.336-32-32-32m0 255.984h-64c-17.664 0-32 14.336-32 32v64c0 17.68 14.336 32 32 32h64c17.664 0 32-14.32 32-32v-64c0-17.648-14.336-32-32-32" />
+</svg>);
+
+let eventIcon2=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 24 24">
+	<rect width="24" height="24" fill="none" />
+	<path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6zm2 6v-2h10v2zm0 4v-2h7v2z" />
+</svg>);
+
+let feedbackIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 24 24">
+	<rect width="24" height="24" fill="none" />
+	<path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-7 12h-2v-2h2zm0-4h-2V6h2z" />
+</svg>);
 export default function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [LogoutModel,setLogoutModel] = useState(false);
@@ -22,39 +49,57 @@ export default function AdminSidebar() {
   }
 
   const tabs=[
-    {name:"home",path:"/admin",icon:<FaHome size={20}/>},
-    {name:"faculty",path:"/admin/faculty",icon:<FaFolder size={20}/>},
-    {name:"event",path:"/admin/event",icon:<FaImages size={20}/>},
-    {name:"feedbacks",path:"/admin/feedbacks",icon:<FaUsers size={20}/>},
+    {name:"home",path:"/admin",icon:homeIcon},
+    {name:"faculty",path:"/admin/faculty",icon:TeamsIcon},
+    {name:"event",path:"/admin/event",icon:eventIcon},
+    // {name:"event",path:"/admin/event",icon:eventIcon2},
+    {name:"feedbacks",path:"/admin/feedbacks",icon:feedbackIcon},
   ]
+
+
 
   return (
     <div
       className={`${
-        isOpen ? "w-80" : "w-[4rem]"
+        isOpen ? "w-80" : "w-[5rem]"
       } h-screen bg-white border-r-2 border-r-gray-200 shadow-md flex flex-col justify-between transition-all duration-300`}
     >
+       <div className={`flex h-20 mb-5 items-center bg-indigo-500 text-white px-4 py-3 shadow-md ${!isOpen?"justify-evenly":"justify-between"}`}>
+      {/* Admin Text */}
+      <span className={`text-xl font-semibold transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
+        Admin
+      </span>
+
       {/* Toggle Button */}
-      <div className="flex h-20 items-center justify-between px-4 py-3">
-        <span className={`text-xl font-semibold ${isOpen ? "block" : "hidden"}`}>
-         Admin
-        </span>
-        <button
-          className="text-gray-600 hover:text-gray-800"
-          onClick={toggleSidebar}
-        >
-          <LuPanelLeftClose size={20} /> 
-        </button>
-      </div>
+      <button
+        className="flex items-center justify-center w-10 h-10 bg-white rounded-full text-indigo-500 hover:bg-gray-200 hover:text-indigo-700 transition-colors duration-300"
+        onClick={toggleSidebar}
+      >
+        {isOpen ? (
+          // Custom SVG for Close Icon
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 48 48" fill="none">
+            <rect width="48" height="48" fill="none" />
+            <g fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="4">
+              <path d="M6 9a3 3 0 0 1 3-3h30a3 3 0 0 1 3 3v30a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z" />
+              <path strokeLinecap="round" d="M32 6v36M16 20l4 4l-4 4M26 6h12M26 42h12" />
+            </g>
+          </svg>
+        ) : (
+          // React Icon for Sidebar Open Icon
+          <LuPanelLeftClose size={24} />
+        )}
+      </button>
+    </div>
+
 
       {/* Navigation Menu */}
-      <nav className="flex-grow">
+      <nav className={`flex-grow  ${!isOpen&&"pr-2"}`}>
         <ul>
           {
-            tabs.map((tab)=>{
+            tabs.map((tab,index)=>{
               const isActive = location.pathname === tab.path; // Check if the current path matches the tab's path
               return(
-              <li>
+              <li key={tab.path+index}>
                 <NavLink
                   to={tab.path}
                   className={({ isActive }) =>
@@ -84,12 +129,12 @@ export default function AdminSidebar() {
       </nav>
       
       {/* Logout Button */}
-      <div className="px-4 py-1 border-y-2 border-indigo-500/10 -shadow-md inset-1">
+      <div className=" px-2 py-1 border-y-2  border-indigo-500/10 -shadow-md inset-1">
         <button
            onClick={()=>setLogoutModel(true)}
-          className="flex items-center w-full group transition-all duration-200 hover:bg-red-600 hover:text-white py-2 rounded-md"
+          className="flex items-center w-full group justify-center transition-all duration-200 hover:bg-red-500 hover:text-white py-2 rounded-md"
         >
-          <span className={`${isOpen ? "block" : "hidden"} text-gray-700 ml-20 mr-5 group-hover:font-semibold group-hover:text-white`}>
+          <span className={`${isOpen ? "block" : "hidden"} text-gray-700 mr-5 group-hover:font-semibold group-hover:text-white`}>
             Logout
           </span>
           <span>
@@ -103,7 +148,7 @@ export default function AdminSidebar() {
       </div>
       {/* Profile section  */}
       
-          <div className={`w-full flex bg-gray-200 items-center gap-3 py-5 ${!isOpen?"px-1":"px-4"}`}>
+          <div className={`w-full flex bg-gray-200 items-center gap-3 py-5 px-4`}>
             {/* Profile Initials */}
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-300 via-blue-500 to-purple-300 flex justify-center items-center border-4 border-indigo-800/20 font-semibold text-white">
               DD

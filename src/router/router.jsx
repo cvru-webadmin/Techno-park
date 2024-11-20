@@ -5,7 +5,7 @@ import App from '../App';
 import AdminRoute from './AdminRoute';
 import Admin from '../admin_panel/Admin_App';
 import AdminLogin from '../admin_panel/componet/Login';
-import Dashbord from '../admin_panel/componet/Dashbord';
+import Dashbord from '../admin_panel/pages/dashbord/Dashbord';
 
 const router =createBrowserRouter([
     {

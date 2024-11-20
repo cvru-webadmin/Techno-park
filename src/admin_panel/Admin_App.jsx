@@ -7,7 +7,7 @@ export default function Admin() {
     <>
     <div className='flex'>
       <AdminSidebar />
-      <Outlet></Outlet>
+      <Outlet />
     </div>
     {/* <button className='bg-red-500 text-white px-3 py-2 rounded-md capitalize font-semibold' onClick={LogoutAdmin}>logout admin</button> */}
     </>
