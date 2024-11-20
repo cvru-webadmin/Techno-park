@@ -10,7 +10,7 @@ const chatbotContext = {
     vision: "Towards ubiquitous computing technology",
     mission: "To provide access to higher educational opportunities in computing technology programs that cultivate theoretical, practical, and ethical skills, aiming to boost productivity and foster innovation in society."
   },
-  programsOffered: {
+  programsOffered_FeaturedCourses: {
     BCA: {
       name: "Bachelor of Computer Applications (BCA)",
       duration: "3 Years",

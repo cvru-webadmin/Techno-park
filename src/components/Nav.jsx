@@ -34,6 +34,10 @@ const Navbar = () => {
     })
   },[])
 
+  useEffect(()=>{
+    settab(window.location.pathname);
+  },[window.location.pathname])
+
   // console.log(tab)
   return (
     <nav className={`fixed w-full top-0 z-50 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-transparent transition-all duration-200 ease-in-out transform"}`}>
@@ -74,7 +78,7 @@ const Navbar = () => {
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
-                  onClick={() => settab(link.name)} // Update state when the tab is clicked
+                  onClick={()=>settab(link.path)}
                   className="xl:text-base lg:text-xs font-semibold transition duration-300 text-white  group-hover:text-amber-400">
                   {link.name}
               
@@ -82,12 +86,12 @@ const Navbar = () => {
                   // for dorpdown tabs
                   (<span
                     className={`absolute left-0 -bottom-1 w-[75%] h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
-                      tab==link.name?"scale-100":"scale-x-0"
+                      tab==link.path?"scale-100":"scale-x-0"
                     }`}></span>):
                   //for all tab 
                   (<span
                     className={`absolute left-0 -bottom-1 w-full h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
-                      tab==link.name?"scale-100":"scale-x-0"
+                      tab==link.path?"scale-100":"scale-x-0"
                     }`}
                     ></span> )}
                 

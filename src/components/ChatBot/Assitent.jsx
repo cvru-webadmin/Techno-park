@@ -30,6 +30,8 @@ const ChatBot = () => {
     setMessages(prevMessages => [...prevMessages, { sender, text }]);
   };
 
+
+  
   // Handle send message
   const handleSend = async() => {
     if (userInput.trim()) {
@@ -52,9 +54,12 @@ const ChatBot = () => {
                            `
                          }]}]});
           setIsLoading(false);
-          addMessage('Techno Bot',response.data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.");
+          addMessage('Techno Bot', response.data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.");
         }
       catch(error){
+        if(error.status==503){
+          addMessage('Techno Bot',"Sorry, For problem server.");
+        }
         console.log(error)
       }
       finally{
