@@ -70,13 +70,18 @@ const courses = {
 };
 
 const CoursePage = () => {
-  const {dropDown}=useContext(ScrollContext)
+  const {dropDown,setDropDown}=useContext(ScrollContext)
   const ScrollCourses=useRef([])
-  function ScrollToSection(index){
+  function ScrollToSection(index) {
     if (ScrollCourses.current[index]) {
-      ScrollCourses.current[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const offset = 80; // Adjust this offset for fixed headers
+      const elementPosition = ScrollCourses.current[index].getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth',
+      });
     }
-  }
+  } 
   useEffect(()=>{
     if(dropDown=="Diploma"){
       ScrollToSection(0)
@@ -87,19 +92,23 @@ const CoursePage = () => {
     if(dropDown=="Postgraduate"){
       ScrollToSection(2)
     }
-  },[dropDown])
+    setDropDown("")
+  },[dropDown]) 
   return (
     <div className="bg-gray-50 min-h-screen px-4 py-8"> 
       {/* Main Sections */}
       {Object.entries(courses).map(([section, sectionCourses],index) => (
         <div key={section} className="mb-16"  ref={(e) => (ScrollCourses.current[index] = e)}>
           {/* Section Heading with Enhanced Separator */}
-          <div className="relative text-center mb-10">
-            <h2 className="course-title">
-              {section}
-            </h2>
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-[60px] h-1 w-20 bg-blue-500 rounded"></div>
-          </div>
+          <div className="relative text-center mb-12">
+  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide uppercase">
+    {section}
+  </h2>
+  <p className="text-gray-500 text-base mt-3">
+    Explore our {section} courses designed to meet your aspirations.
+  </p>
+  <div className="absolute left-1/2 transform -translate-x-1/2 top-[40px] h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded"></div>
+</div>
 
           {/* Course Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 px-40 gap-20">
@@ -112,7 +121,7 @@ const CoursePage = () => {
                 <img
                   src={course.image}
                   alt={course.name}
-                  className="w-full h-60 object-cover"
+                  className="w-full h-72 object-cover"
                 />
 
                 {/* Course Details */}
@@ -120,10 +129,10 @@ const CoursePage = () => {
                   <h3 className="text-xl font-bold text-blue-700 mb-2">
                     {course.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-gray-600 text-base mb-4">
                     {course.description}
                   </p>
-                  <ul className="text-sm text-gray-700 space-y-2">
+                  <ul className="text-base text-gray-700 space-y-2">
                     <li>
                       <span className="font-semibold">Duration:</span>{" "}
                       {course.duration}
@@ -144,7 +153,7 @@ const CoursePage = () => {
       ))}
       
       {/* Footer Call-to-Action */}
-      <footer className="bg-blue-700 text-white text-center py-6 mt-12 rounded-lg">
+      <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-6 mt-12 rounded-lg">
         <h3 className="text-2xl font-semibold">Need More Information?</h3>
         <p className="text-gray-200 mt-2">Contact our department office for detailed information on admissions and courses.</p>
         <button className="mt-4 px-6 py-2 bg-white text-blue-700 font-semibold rounded-md shadow-md hover:bg-gray-100">

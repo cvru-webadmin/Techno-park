@@ -81,7 +81,9 @@ const Navbar = () => {
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
-                  onClick={()=>settab(link.path)}
+                  onClick={()=>{settab(link.path);  
+                    useEffect(() => {window.scrollTo(0, 0);},[]);
+                }}
                   className="xl:text-base lg:text-xs font-semibold transition duration-300 text-white  group-hover:text-amber-400">
                   {link.name}
               
