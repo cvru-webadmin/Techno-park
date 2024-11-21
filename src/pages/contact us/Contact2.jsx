@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import FAQSection from "./componet/FAQ";
+import { FireContext } from "../../Context/context";
 
 const ContactPage = () => {
+
+  //import Firebase context for send message
+  const {SendMassage}= useContext(FireContext);
+
+  //state define for form
+  const [formData,setFormData] = useState({
+    firstName:"",
+    lastName:"",
+    email:"",
+    number:"",
+    subject:"",
+    message:"",
+  })
+  const handelSend=(e)=>{
+    e.preventDefault();
+    let Name=formData.firstName + " " +formData.lastName ;
+    SendMassage(
+      Name,
+      formData.number,
+      formData.email,
+      formData.subject,
+      formData.message
+    )
+    setFormData({
+      firstName:"",
+      lastName:"",
+      email:"",
+      number:"",
+      subject:"",
+      message:"",
+    })
+    // console.log(formData);
+  }
+
   return (
     <>
     <div className='h-16 bg-[var(--DarkBlue)]'></div>
@@ -101,7 +136,7 @@ const ContactPage = () => {
         {/* Contact Form */}
         <div className="w-full lg:w-2/3 bg-white shadow-md rounded-lg p-6 px-14">
           <h3 className="text-xl font-semibold mb-4 text-blue-800">Send Us a Message</h3>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handelSend}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
@@ -113,6 +148,8 @@ const ContactPage = () => {
                 <input
                   type="text"
                   id="firstName"
+                  value={formData.firstName}
+                  onChange={(data)=>{setFormData({...formData,firstName:data.target.value})}}
                   placeholder="Enter your first name"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -127,6 +164,8 @@ const ContactPage = () => {
                 <input
                   type="text"
                   id="lastName"
+                  value={formData.lastName}
+                  onChange={(data)=>{setFormData({...formData,lastName:data.target.value})}}
                   placeholder="Enter your last name"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -142,6 +181,8 @@ const ContactPage = () => {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={(data)=>{setFormData({...formData,email:data.target.value})}}
                 placeholder="Enter your email"
                 className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
               />
@@ -156,6 +197,8 @@ const ContactPage = () => {
               <input
                 type="text"
                 id="phone"
+                value={formData.number}
+                onChange={(data)=>{setFormData({...formData,number:data.target.value})}}
                 placeholder="Enter your phone number"
                 className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
               />
@@ -170,6 +213,8 @@ const ContactPage = () => {
               <input
                 type="text"
                 id="subject"
+                value={formData.subject}
+                onChange={(data)=>{setFormData({...formData,subject:data.target.value})}}
                 placeholder="Enter your subject"
                 className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
               />
@@ -184,6 +229,8 @@ const ContactPage = () => {
               <textarea
                 id="message"
                 placeholder="Enter your message"
+                value={formData.message}
+                onChange={(data)=>{setFormData({...formData,message:data.target.value})}}
                 className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800 h-28"
               ></textarea>
             </div>
