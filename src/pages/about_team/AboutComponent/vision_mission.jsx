@@ -3,11 +3,20 @@ import { FaEye, FaBullseye, FaHistory } from "react-icons/fa"; // Import icons
 
 const VisionMission = () => {
   return (
+    <>
+    <div className="relative text-center mb-8 mt-14">
+    <h2 className="about-title uppercase">
+      Our Vission & Mission
+    </h2>
+    <p className="text-gray-600 text-lg -mt-3">
+    To foster innovation and excellence in computer science education and research.
+    </p>
+    </div>
     <div className="flex flex-col lg:flex-row gap-8 justify-evenly p-8 bg-gray-50">
       {/* Left Column */}
       <div className="flex flex-col gap-6 w-full lg:w-1/2">
         {/* Card: Our Vision */}
-        <div className="bg-blue-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-blue-300">
+        <div className="bg-white border-t-4 border-blue-600 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
           <div className="flex items-center gap-3 mb-3">
             <FaEye className="text-blue-600 text-3xl" /> {/* Icon */}
             <h3 className="text-2xl font-semibold text-blue-700">Our Vision</h3>
@@ -21,7 +30,7 @@ const VisionMission = () => {
         </div>
 
         {/* Card: Our Mission */}
-        <div className="bg-purple-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-purple-300">
+        <div className="bg-white border-t-4 border-purple-600 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
           <div className="flex items-center gap-3 mb-3">
             <FaBullseye className="text-purple-600 text-3xl" /> {/* Icon */}
             <h3 className="text-2xl font-semibold text-purple-700">Our Mission</h3>
@@ -39,6 +48,7 @@ const VisionMission = () => {
         </h2>
       </div>
     </div>
+    </>
   );
 };
 
