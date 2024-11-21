@@ -53,6 +53,13 @@ export default function AdminSidebar() {
       setLogoutModel(false);
   }
 
+  //current active 
+
+  const [isActive,setTab]=useState("/admin")
+  useEffect(()=>{
+    setIsOpen(location.pathname);
+  },[])
+
   const tabs=[
     {name:"home",path:"/admin",icon:homeIcon},
     {name:"faculty",path:"/admin/faculty",icon:TeamsIcon},
@@ -103,28 +110,28 @@ export default function AdminSidebar() {
         <ul>
           {
             tabs.map((tab,index)=>{
-              const isActive = location.pathname === tab.path; // Check if the current path matches the tab's path
               return(
               <li key={tab.path+index}>
                 <NavLink
+                  onClick={()=>setTab(tab.path)}
                   to={tab.path}
-                  className={({ isActive }) =>
+                  className={
                     `transition-all group mt-3 flex ${
-                      isActive ? " border-l-4 border-indigo-600 :" : " hover:border-l-4 hover:border-indigo-600"
+                      isActive==tab.path ? " border-l-4 border-indigo-600 :" : " hover:border-l-4 hover:border-indigo-600"
                     }`
                   }
                 >
                   <div className={` ml-2 rounded-md w-11/12 flex items-center space-x-4 px-4 py-3
-                  ${isActive?"bg-gray-200 text-green-600":"group-hover:bg-gray-200"}
+                  ${isActive===tab.path?"bg-gray-200 text-green-600":"group-hover:bg-gray-200"}
                   `}>
                   <div
                   className={`${
-                    isActive ? "text-indigo-600" : "text-gray-500"
+                    isActive===tab.path ? "text-indigo-600" : "text-gray-500"
                   } group-hover:text-indigo-600`}
                 >
                   {tab.icon}
                 </div>
-                  <span className={`${isOpen ? "block"+ isActive?" font-semibold ":" group-hover:font-semibold" : "hidden"} text-gray-700  capitalize`}>
+                  <span className={`${isOpen ? "block" : "hidden"} ${(isActive==tab.path)?" font-semibold ":" group-hover:font-semibold"} text-gray-700  capitalize`}>
                     {tab.name}
                   </span>
                   </div>

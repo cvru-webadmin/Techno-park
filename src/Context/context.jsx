@@ -123,19 +123,8 @@ const FireBaseProvider = ({ children }) => {
   };
   //mthod for get message
 
-  const GetMassage = async () => {
-    try {
-      const response = await getDocs(collection(fireStore, "Message"));
-      if (response) {
-        let message=response.docs.map(doc=>{
-          return {id: doc.id,...doc.data()}
-        })
-        console.log(message);
-        return message;
-      }
-    } catch (error) {
-      console.log("some error occured-> ", error);
-    }
+  const GetMessage = async () => {
+    return await getDocs(collection(fireStore, "Message"));
   };
 
   // const GetMassage = async () => {
@@ -162,7 +151,7 @@ const FireBaseProvider = ({ children }) => {
            isAdmin,
            isLoggin,
            SendMassage,
-           GetMassage,
+           GetMessage,
          }}
        >
       {children}
