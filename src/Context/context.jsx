@@ -121,6 +121,37 @@ const FireBaseProvider = ({ children }) => {
       console.log("some error occured-> ", error);
     }
   };
+  //mthod for get message
+
+  const GetMassage = async () => {
+    try {
+      const response = await getDocs(collection(fireStore, "Message"));
+      if (response) {
+        let message=response.docs.map(doc=>{
+          return {id: doc.id,...doc.data()}
+        })
+        console.log(message);
+        return message;
+      }
+    } catch (error) {
+      console.log("some error occured-> ", error);
+    }
+  };
+
+  // const GetMassage = async () => {
+  //   try {
+  //     const querySnapshot = await getDocs(collection(fireStore, "Message"));
+  //     const messages = querySnapshot.docs.map(doc => ({
+  //       id: doc.id, // Include document ID
+  //       ...doc.data() // Spread the document data
+  //     }));
+  //     console.log("Fetched messages: ", messages);
+  //     return messages;
+  //   } catch (error) {
+  //     console.error("Error fetching messages: ", error);
+  //     throw error; // Rethrow if needed for higher-level handling
+  //   }
+  // };
 
   return (
     <FireContext.Provider
@@ -131,6 +162,7 @@ const FireBaseProvider = ({ children }) => {
            isAdmin,
            isLoggin,
            SendMassage,
+           GetMassage,
          }}
        >
       {children}

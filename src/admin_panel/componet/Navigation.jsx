@@ -59,7 +59,7 @@ export default function AdminSidebar() {
     {name:"events",path:"/admin/event",icon:eventIcon},
     // {name:"event",path:"/admin/event",icon:eventIcon2},
     {name:"feedbacks",path:"/admin/feedbacks",icon:feedbackIcon},
-    {name:"Enquirys",path:"/admin/Enquiry",icon:EnquiryIcon},
+    {name:"Enquirys",path:"/admin/enquers",icon:EnquiryIcon},
   ]
 
 

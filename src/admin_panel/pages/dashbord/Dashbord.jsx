@@ -34,7 +34,7 @@ export default function Dashbord() {
 
   return (
     <>
-     <Welocome_model isOpen={isModalOpen} isClose={closeModal} isTime={isTime} />
+     {/* <Welocome_model isOpen={isModalOpen} isClose={closeModal} isTime={isTime} /> */}
 
       {/* main dashbord start here---- */}
       <div className='min-h-screen bg-gray-100 px-3 pb-6 w-full'>

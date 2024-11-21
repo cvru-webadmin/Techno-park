@@ -21,8 +21,8 @@ const ContactPage = () => {
     let Name=formData.firstName + " " +formData.lastName ;
     SendMassage(
       Name,
-      formData.number,
       formData.email,
+      formData.number,
       formData.subject,
       formData.message
     )

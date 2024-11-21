@@ -10,6 +10,7 @@ import ContactPage from '../pages/contact us/Contact2';
 import AdminLogin from '../admin_panel/componet/sub Componet/Login';
 import NotFoundPage from './Componet/NotFound';
 import AdminRoute from './Componet/AdminRoute';
+import Enquery from '../admin_panel/pages/enquery/Enquery';
 
 const router =createBrowserRouter([
     {
@@ -46,7 +47,8 @@ const router =createBrowserRouter([
             </AdminRoute>
         ),
         children: [
-            { path: "/admin",element: <Dashbord /> }
+            { path: "/admin",element: <Dashbord /> },
+            { path: "enquers",element: <Enquery /> }
         ],
     },
     { path: "/AdminLogin",element: <AdminLogin /> },
