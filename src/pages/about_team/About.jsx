@@ -6,10 +6,10 @@ import VisionMission from './AboutComponent/vision_mission'
 import IntroCoS from './AboutComponent/CoSIntro'
 import FacultyCard from './AboutComponent/FacultyCard'
 import { useEffect } from 'react'
-import { ExampleContext } from '../../context/ExampleContext'
+import { ScrollContext } from '../../context/DropDownScrollContext'
 
 export default function About() {
-  const {about,setAbout}=useContext(ExampleContext)
+  const {dropDown,setDropDown}=useContext(ScrollContext)
   const Mission=useRef([])
   function ScrollToSection(index){
     if (Mission.current[index]) {
@@ -22,14 +22,14 @@ export default function About() {
     }
   } 
   useEffect(()=>{
-    if(about=="Our Mission"){
+    if(dropDown=="Our Mission"){
       ScrollToSection(0)
     }
-    if(about=="Faculty"){
+    if(dropDown=="Faculty"){
       ScrollToSection(1)
     }
-    setAbout("")
-  },[about])
+    setDropDown("")
+  },[dropDown])
   return (
     <>
     <AboutTopImage/>

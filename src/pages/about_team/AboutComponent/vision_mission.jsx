@@ -4,7 +4,7 @@ import { FaEye, FaBullseye, FaHistory } from "react-icons/fa"; // Import icons
 const VisionMission = () => {
   return (
     <>
-    <div className="relative text-center mb-8 mt-14">
+    <div className="relative text-center mb-8 mt-8">
     <h2 className="about-title uppercase">
       Our Vission & Mission
     </h2>
