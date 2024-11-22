@@ -1,8 +1,44 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import FAQ from './componet/FAQ';
 import FAQSection from './componet/FAQ';
+import { FireContext } from '../../Context/context';
 
 const ContactUs = () => {
+
+  
+  //import Firebase context for send message
+  const {SendMassage}= useContext(FireContext);
+
+  //state define for form
+  const [formData,setFormData] = useState({
+    firstName:"",
+    lastName:"",
+    email:"",
+    number:"",
+    subject:"",
+    message:"",
+  })
+  const handelSend=(e)=>{
+    e.preventDefault();
+    let Name=formData.firstName + " " +formData.lastName ;
+    SendMassage(
+      Name,
+      formData.email,
+      formData.number,
+      formData.subject,
+      formData.message
+    )
+    setFormData({
+      firstName:"",
+      lastName:"",
+      email:"",
+      number:"",
+      subject:"",
+      message:"",
+    })
+    // console.log(formData);
+  }
+
   return (
     <section>
     {/* Map */}
@@ -12,9 +48,9 @@ const ContactUs = () => {
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.914624760464!2d76.22298377971613!3d21.822229328550034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd8116f759b43d1%3A0x7f69c9b8c7674282!2sDr.%20C.V.%20Raman%20University!5e0!3m2!1sen!2sin!4v1732006828806!5m2!1sen!2sin" 
         title="map"
         className="w-full h-full rounded-md shadow-md"
-        allowfullscreen="" 
+        allowFullScreen="" 
         loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
     {/* Heading */}
@@ -36,15 +72,15 @@ const ContactUs = () => {
                 <span className='h-full'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='text-blue-800 transition-colors duration-300  group-hover:bg-[var(--DarkBlue)] group-hover:text-white  p-3 border-2 shadow-sm rounded-md h-14 w-14 border-gray-400/20' viewBox="0 0 24 24">
                 	<rect width="24" height="24" fill="none" />
-                	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.95">
-                		<path stroke-dasharray="64" stroke-dashoffset="64" d="M8 3c0.5 0 2.5 4.5 2.5 5c0 1 -1.5 2 -2 3c-0.5 1 0.5 2 1.5 3c0.39 0.39 2 2 3 1.5c1 -0.5 2 -2 3 -2c0.5 0 5 2 5 2.5c0 2 -1.5 3.5 -3 4c-1.5 0.5 -2.5 0.5 -4.5 0c-2 -0.5 -3.5 -1 -6 -3.5c-2.5 -2.5 -3 -4 -3.5 -6c-0.5 -2 -0.5 -3 0 -4.5c0.5 -1.5 2 -3 4 -3Z">
+                	<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.95">
+                		<path strokeDasharray="64" strokeDashoffset="64" d="M8 3c0.5 0 2.5 4.5 2.5 5c0 1 -1.5 2 -2 3c-0.5 1 0.5 2 1.5 3c0.39 0.39 2 2 3 1.5c1 -0.5 2 -2 3 -2c0.5 0 5 2 5 2.5c0 2 -1.5 3.5 -3 4c-1.5 0.5 -2.5 0.5 -4.5 0c-2 -0.5 -3.5 -1 -6 -3.5c-2.5 -2.5 -3 -4 -3.5 -6c-0.5 -2 -0.5 -3 0 -4.5c0.5 -1.5 2 -3 4 -3Z">
                 			<animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0" />
                 			<animateTransform id="lineMdPhoneCallLoop0" fill="freeze" attributeName="transform" begin="0.6s;lineMdPhoneCallLoop0.begin+2.7s" dur="0.5s" type="rotate" values="0 12 12;15 12 12;0 12 12;-12 12 12;0 12 12;12 12 12;0 12 12;-15 12 12;0 12 12" />
                 		</path>
-                		<path stroke-dasharray="4" stroke-dashoffset="4" d="M15.76 8.28c-0.5 -0.51 -1.1 -0.93 -1.76 -1.24M15.76 8.28c0.49 0.49 0.9 1.08 1.2 1.72">
+                		<path strokeDasharray="4" strokeDashoffset="4" d="M15.76 8.28c-0.5 -0.51 -1.1 -0.93 -1.76 -1.24M15.76 8.28c0.49 0.49 0.9 1.08 1.2 1.72">
                 			<animate fill="freeze" attributeName="stroke-dashoffset" begin="lineMdPhoneCallLoop0.begin+0s" dur="2.7s" keyTimes="0;0.111;0.259;0.37;1" values="4;0;0;4;4" />
                 		</path>
-                		<path stroke-dasharray="6" stroke-dashoffset="6" d="M18.67 5.35c-1 -1 -2.26 -1.73 -3.67 -2.1M18.67 5.35c0.99 1 1.72 2.25 2.08 3.65">
+                		<path strokeDasharray="6" strokeDashoffset="6" d="M18.67 5.35c-1 -1 -2.26 -1.73 -3.67 -2.1M18.67 5.35c0.99 1 1.72 2.25 2.08 3.65">
                 			<animate fill="freeze" attributeName="stroke-dashoffset" begin="lineMdPhoneCallLoop0.begin+0.2s" dur="2.7s" keyTimes="0;0.074;0.185;0.333;0.444;1" values="6;6;0;0;6;6" />
                 		</path>
                 	</g>
@@ -94,7 +130,7 @@ const ContactUs = () => {
                 <span className='h-full'>
                  <svg xmlns="http://www.w3.org/2000/svg" className='text-blue-800 transition-colors duration-300  group-hover:bg-[var(--DarkBlue)] group-hover:text-white  p-3 border-2 shadow-sm rounded-md h-14 w-14 border-gray-400/20' viewBox="0 0 16 16">
                   	<rect width="16" height="16" fill="none" />
-                  	<path fill="currentColor" fill-rule="evenodd" d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8m7.5-4v3.793l2.854 2.853l-.708.708L7.5 8.207V4zm0-1V2h-1v1zm0 11v-1h-1v1zM13 7.5h1v1h-1zm-10 0H2v1h1z" clip-rule="evenodd" />
+                  	<path fill="currentColor" fillRule="evenodd" d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8m7.5-4v3.793l2.854 2.853l-.708.708L7.5 8.207V4zm0-1V2h-1v1zm0 11v-1h-1v1zM13 7.5h1v1h-1zm-10 0H2v1h1z" clipRule="evenodd" />
                   </svg>
                 </span>
                 
@@ -111,13 +147,16 @@ const ContactUs = () => {
           {/* Contact Form */}
           <div className="bg-white shadow-md rounded-lg p-6 px-16 col-span-2">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handelSend}>
               <div className='grid grid-cols-2 gap-6'>
               <div>
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-1">First Name</label>
                 <input
                   type="text"
+                  required
                   id="name"
+                  value={formData.firstName}
+                  onChange={(e)=>{setFormData({...formData,firstName:e.target.value})}}
                   placeholder="Enter your first name"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -126,7 +165,10 @@ const ContactUs = () => {
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-1">Last Name</label>
                 <input
                   type="text"
+                  required
                   id="name"
+                  value={formData.lastName}
+                  onChange={(e)=>{setFormData({...formData,lastName:e.target.value})}}
                   placeholder="Enter your last name"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -136,7 +178,10 @@ const ContactUs = () => {
                 <label htmlFor="email" className="block text-gray-700 font-medium mb-1">Email</label>
                 <input
                   type="email"
+                  required
                   id="email"
+                  value={formData.email}
+                  onChange={(e)=>{setFormData({...formData,email:e.target.value})}}
                   placeholder="Enter your email"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -145,7 +190,12 @@ const ContactUs = () => {
                 <label htmlFor="number" className="block text-gray-700 font-medium mb-1">Phone Number</label>
                 <input
                   type="tel"
+                  required                  
                   id="number"
+                  maxLength={10}
+                  minLength={10}
+                  value={formData.number}
+                  onChange={(e)=>{setFormData({...formData,number:e.target.value})}}
                   placeholder="Enter your phone number"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -154,7 +204,10 @@ const ContactUs = () => {
                 <label htmlFor="subject" className="block text-gray-700 font-medium mb-1">Subject</label>
                 <input
                   type="text"
+                  required
                   id="subject"
+                  value={formData.subject}
+                  onChange={(e)=>{setFormData({...formData,subject:e.target.value})}}
                   placeholder="Enter your subject"
                   className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
@@ -163,8 +216,11 @@ const ContactUs = () => {
                 <label htmlFor="message" className="block text-gray-700 font-medium mb-1">Message</label>
                 <textarea
                   id="message"
+                  required
+                  value={formData.message}
+                  onChange={(e)=>{setFormData({...formData,message:e.target.value})}}
                   placeholder="Enter your message"
-                  className="w-full border rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800 h-24"
+                  className="w-full border resize-none rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800 h-24"
                 ></textarea>
               </div>
               <div className='flex justify-center'>

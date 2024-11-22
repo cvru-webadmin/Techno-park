@@ -112,7 +112,8 @@ const FireBaseProvider = ({ children }) => {
         PhoneNumber,
         Subject,
         Message,
-        createdAt: new Date(),
+        Answer:"",
+        createdAt: (new Date()).toLocaleString(),
       });
       if (response) {
         alert("message send sucessfull");
