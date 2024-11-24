@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FireContext } from '../../../Context/context'
+import "../../Admin.css"
 
 export default function Enquery() {
 
@@ -28,17 +29,21 @@ export default function Enquery() {
       }
     }
     getdata();
-    
+    todayEnquery()
   },[])
   // console.log(Messages);
   
   const todayEnquery =()=>{
-    Messages.map((date)=>console.log(date.createdAt))
+    const today = new Date().toISOString().split('T')[0];
+    console.log("aaj ki tarik->",today);
+    Messages.map((date)=>{
+      console.log(date.createdAt);
+    })
   }
 
 
   return (
-    <div className="min-h-screen w-full bg-gray-100 p-6">
+    <div className="h-screen w-full bg-gray-100 p-6 overflow-y-auto scrollbar">
     <div className="mx-auto p-6 pt-0">
       {/* Header Section */}
       <header className="bg-white shadow-md p-4 pt-0 mb-6 rounded-lg">
@@ -151,7 +156,7 @@ export default function Enquery() {
                 }`}
               >
                 <td className="px-4 py-2">{index + 1}</td>
-                <td className="px-4 py-2">{inquiry.Name}</td>
+                <td className="px-4 py-2 capitalize text-nowrap">{inquiry.Name}</td>
                 <td className="px-4 py-2">{inquiry.Email}</td>
                 <td className="px-4 py-2">{inquiry.PhoneNumber}</td>
                 <td className="px-4 py-2">{inquiry.Subject}</td>
