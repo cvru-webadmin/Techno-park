@@ -63,13 +63,13 @@ useEffect(()=>{
 },[])
 
   return (
-    <div className="container h-screen w-full mx-auto p-6">
+    <div className="h-screen w-full mx-auto p-12 pt-0">
       {/* model box */}
       <AddEventModal isOpen={isOpen} onClose={()=>setOpen(false)} onAddEvent={addEvent} />
       <EditEventModal isOpen={iseditOpen} onClose={()=>setEditOpen(false)} eventData={events} />
       {/* Cards Row */}
       {/* Header Section */}
-      <header className="bg-white shadow-md p-4 mb-6 rounded-lg">
+      <header className="bg-white shadow-md p-4 mb-6 rounded-lg mt-6">
         <h1 className="text-2xl font-bold text-gray-700">Admin - Events</h1>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -145,7 +145,7 @@ useEffect(()=>{
               <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
                 Status
               </th>
-              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+              <th colSpan={2} className="border-b-2 py-3 px-6 text-center text-sm font-semibold uppercase tracking-wider">
                 Controls
               </th>
             </tr>
@@ -169,23 +169,25 @@ useEffect(()=>{
               <div className="h-4 w-20 bg-gray-300 rounded"></div>
             </td>
             <td className="border-b py-3 px-6 text-sm text-gray-700">
-              <div className="flex space-x-4">
                 <div className="h-8 w-16 bg-gray-300 rounded"></div>
+            </td>
+            <td className="border-b py-3 px-6 text-sm text-gray-700">
                 <div className="h-8 w-16 bg-gray-300 rounded"></div>
-              </div>
             </td>
           </tr>
           ))
           ):<>
           {events.length>0?
             (events.map((event,index) => (
-              <tr key={event.title+index+1} className="bg-white">
-                <td className="border-b py-3 px-6 text-sm text-gray-700">{index+1}</td>
-                <td className="border-b py-3 px-6 text-sm text-gray-700">{event.title}</td>
-                <td className="border-b py-3 px-6 text-sm text-gray-700">{event.description}</td>
-                <td className="border-b py-3 px-6 text-sm text-gray-700">{event.status}</td>
-                <td className="border-b py-3 px-6 text-sm text-gray-700">
+              <tr key={event.title+index+1} className="bg-white  text-sm text-gray-700">
+                <td className="border-b py-3 px-6">{index+1}</td>
+                <td className="border-b py-3 px-6 capitalize text-nowrap">{event.title}</td>
+                <td className="border-b py-3 px-6">{event.description}</td>
+                <td className="border-b py-3 px-6">{event.status}</td>
+                <td className="border-b py-3 px-6">
                   <button onClick={()=>setEditOpen(true)} className="text-blue-500 hover:text-blue-700 mr-4">Edit</button>
+                </td>
+                <td className="border-b py-3 px-6 text-sm text-gray-700">
                   <button onClick={()=>deleteEvent(event.id)} className="text-red-500 hover:text-red-700">Delete</button>
                 </td>
               </tr>

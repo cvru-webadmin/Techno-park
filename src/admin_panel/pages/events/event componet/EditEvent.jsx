@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const EditEventModal = ({ isOpen, onClose, eventData, onSave }) => {
-  const [formData, setFormData] = useState(eventData);
+  const [formData, setFormData] = useState(eventData[1]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
