@@ -11,6 +11,9 @@ import AdminLogin from '../admin_panel/componet/sub Componet/Login';
 import NotFoundPage from './Componet/NotFound';
 import AdminRoute from './Componet/AdminRoute';
 import Enquery from '../admin_panel/pages/enquery/Enquery';
+import FacultyPage from '../admin_panel/pages/faculty/facultyPage';
+import EnevetPage from '../admin_panel/pages/events/enevetPage';
+import FeedbackPage from '../admin_panel/pages/feedback/feedbackPage';
 
 const router =createBrowserRouter([
     {
@@ -48,7 +51,10 @@ const router =createBrowserRouter([
         ),
         children: [
             { path: "/admin",element: <Dashbord /> },
-            { path: "enquers",element: <Enquery /> }
+            { path: "faculty",element: <FacultyPage /> },
+            { path: "events",element: <EnevetPage /> },
+            { path: "feedbacks",element: <FeedbackPage /> },
+            { path: "enquers",element: <Enquery /> },
         ],
     },
     { path: "/AdminLogin",element: <AdminLogin /> },
