@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-import { getFirestore, addDoc, collection, getDocs } from "firebase/firestore";
+import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -9,7 +9,7 @@ const firebaseConfig = {
     authDomain: "techno-park-website.firebaseapp.com",
     databaseURL: "https://techno-park-website-default-rtdb.firebaseio.com",
     projectId: "techno-park-website",
-    storageBucket: "techno-park-website.firebasestorage.app",
+    storageBucket: "techno-park-website.firebasestorage.app", 
     messagingSenderId: "397220797528",
     appId: "1:397220797528:web:e39f1eea81fa16d9067e2d"
 };
@@ -18,8 +18,8 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 // Firebase Authentication
-const adminAuth = getAuth();
-const fireStore = getFirestore();
+const adminAuth = getAuth(firebaseApp);
+const fireStore = getFirestore(firebaseApp);
 
 // Create Context
 export const FireContext = createContext();
@@ -128,7 +128,60 @@ const FireBaseProvider = ({ children }) => {
     return await getDocs(collection(fireStore, "Message"));
   };
 
-  // const GetMassage = async () => {
+  //mthod for add Events 
+
+  const addEvent = async (event) => {
+    try {
+      const response = await addDoc(collection(fireStore, "Event"),event);
+      if (response) {
+        alert("Event add sucessfull");
+      }
+    } catch (error) {
+      console.log("some error occured-> ", error);
+    }
+  };
+   //mthod for get Events
+
+   const GetEvents = async () => {
+    return await getDocs(collection(fireStore, "Event"));
+  };
+  const deleteEvent = async (id) => {
+    try {
+      // Get a reference to the specific document
+      const docRef = doc(fireStore, "Event", id);
+  
+      // Delete the document
+      await deleteDoc(docRef);
+  
+      console.log("Successfully deleted");
+    } catch (error) {
+      console.log("Error occurred while deleting: ", error);
+    }
+  };
+
+  return (
+    <FireContext.Provider
+         value={{
+           createUser,
+           LoginAdmin,
+           LogoutAdmin,
+           isAdmin,
+           isLoggin,
+           SendMassage,
+           GetMessage,
+           addEvent,
+           GetEvents,
+           deleteEvent,
+         }}
+       >
+      {children}
+    </FireContext.Provider>
+  );
+};
+
+export default FireBaseProvider;
+
+// const GetMassage = async () => {
   //   try {
   //     const querySnapshot = await getDocs(collection(fireStore, "Message"));
   //     const messages = querySnapshot.docs.map(doc => ({
@@ -142,22 +195,3 @@ const FireBaseProvider = ({ children }) => {
   //     throw error; // Rethrow if needed for higher-level handling
   //   }
   // };
-
-  return (
-    <FireContext.Provider
-         value={{
-           createUser,
-           LoginAdmin,
-           LogoutAdmin,
-           isAdmin,
-           isLoggin,
-           SendMassage,
-           GetMessage,
-         }}
-       >
-      {children}
-    </FireContext.Provider>
-  );
-};
-
-export default FireBaseProvider;

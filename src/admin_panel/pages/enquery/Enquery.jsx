@@ -46,7 +46,7 @@ export default function Enquery() {
     <div className="h-screen w-full bg-gray-100 p-6 overflow-y-auto scrollbar">
     <div className="mx-auto p-6 pt-0">
       {/* Header Section */}
-      <header className="bg-white shadow-md p-4 pt-0 mb-6 rounded-lg">
+      <header className="bg-white shadow-md p-4 mb-6 rounded-lg">
         <h1 className="text-2xl font-bold text-gray-700">Admin - Incoming Inquiries</h1>
       </header>
 
