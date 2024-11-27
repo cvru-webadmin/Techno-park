@@ -1,10 +1,10 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 const data = [
   {
     title: "IoT Lab",
     description:
-      "An IoT (Internet of Things) Lab is a specialized facility designed to support the development, experimentation, and deployment of Internet of Things (IoT) solutions. It typically features a wide range of IoT hardware such as sensors, actuators, microcontrollers (e.g., Arduino, Raspberry Pi, ESP32), and connectivity modules (Wi-Fi, Zigbee, LoRa, Bluetooth, 5G). The lab provides tools for data collection, analysis, and visualization, often integrating cloud platforms and edge computing systems for real-time processing. It fosters interdisciplinary collaboration, enabling students, researchers, and professionals to prototype smart systems for applications like smart cities, industrial IoT, healthcare, agriculture, and home automation. The IoT Lab serves as a hub for innovation, skill development, and solving real-world challenges using IoT technologies. It is a facility equipped with devices, sensors, microcontrollers, and communication tools for developing and testing IoT systems. It supports prototyping, real-time data processing, and experimentation for applications in areas like smart homes, healthcare, and industrial automation.",
+      "An IoT (Internet of Things) Lab is a specialized facility designed to support the development, experimentation, and deployment of Internet of Things solutions. It typically features a wide range of IoT hardware such as sensors, actuators, microcontrollers (e.g., Arduino, Raspberry Pi, ESP32), and connectivity modules (Wi-Fi, Bluetooth). The lab provides tools for data collection, analysis, and visualization, often integrating cloud platforms and edge computing systems for real-time processing. It fosters interdisciplinary collaboration, enabling students, researchers, and professionals to prototype smart systems for applications like smart cities, industrial IoT, healthcare, agriculture, and home automation. The IoT Lab serves as a hub for innovation, skill development, and solving real-world challenges using IoT technologies. It is a facility equipped with devices, sensors, microcontrollers, and communication tools for developing and testing IoT systems. It supports prototyping, real-time data processing, and experimentation for applications in areas like smart homes, healthcare, and industrial automation.",
     image: "src/assets/images/IOT.png",
   },
   {
@@ -70,7 +70,7 @@ const CampusPage = () => {
             </div>
             <div className={`md:w-[44%] h-[470px] px-14 py-4 ${index % 2 !== 0 ?"":"w-full px-[70px] py-[45px] bg-[#e3e3e373] md:w-[66%] mt-5 md:mt-0"}`}>
               <h2 className="text-2xl font-bold">{section.title}</h2>
-              <p className="mt-4">{section.description}</p>
+              <p className="mt-4 text-gray-600">{section.description} {section.title=="IoT Lab"?<NavLink to="/" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
             </div>
           </div>
         ))}
