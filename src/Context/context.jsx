@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -135,6 +135,7 @@ const FireBaseProvider = ({ children }) => {
       const response = await addDoc(collection(fireStore, "Event"),event);
       if (response) {
         alert("Event add sucessfull");
+        return true;
       }
     } catch (error) {
       console.log("some error occured-> ", error);
@@ -145,6 +146,8 @@ const FireBaseProvider = ({ children }) => {
    const GetEvents = async () => {
     return await getDocs(collection(fireStore, "Event"));
   };
+
+  //method for delete event 
   const deleteEvent = async (id) => {
     try {
       // Get a reference to the specific document
@@ -152,10 +155,25 @@ const FireBaseProvider = ({ children }) => {
   
       // Delete the document
       await deleteDoc(docRef);
-  
+      return true;
       console.log("Successfully deleted");
     } catch (error) {
       console.log("Error occurred while deleting: ", error);
+    }
+  };
+
+  //method for update event 
+  const updateEvent = async (id,data) => {
+    try {
+      // Get a reference to the specific document
+      const docRef = doc(fireStore, "Event", id);
+  
+      // update the document
+      await updateDoc(docRef,data);
+      console.log("Successfully update");
+      return true;
+    } catch (error) {
+      console.log("Error occurred while updating: ", error);
     }
   };
 
@@ -172,6 +190,7 @@ const FireBaseProvider = ({ children }) => {
            addEvent,
            GetEvents,
            deleteEvent,
+           updateEvent,
          }}
        >
       {children}

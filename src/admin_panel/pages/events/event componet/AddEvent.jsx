@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
+const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd }) => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -17,14 +17,18 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddEvent({
+    let res =onAddEvent({
         title:formData.title,
         description:formData.description,
         status:formData.status,
         createdAt:(new Date()).toLocaleString(),
     });
     onClose();
-    // setFormData({ title: "", description: "", status: "Upcoming" });
+    if(res){
+      EventAdd(!add)
+      setFormData({ title: "", description: "", status: "Upcoming" });
+      onClose();
+    }
   };
 
   if (!isOpen) return null;

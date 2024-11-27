@@ -34,39 +34,63 @@ const EventPage = () => {
   const [iseditOpen,setEditOpen] = useState(false);
   const [isloading,setLoading]=useState(false);
   const [events,setEvents]=useState([]);
+  const [isEdit,setEdit]=useState({})
+  const [onEdit,setOnEdit]=useState(false);
+  const [onDelete,setOnDelete]=useState(false);
+  const [add,eventAdd]=useState(false);
 
-// import method for context
-const {addEvent,GetEvents,deleteEvent}=useContext(FireContext);
-
-useEffect(()=>{
-  setLoading(true);
-  async function GetEvent() {
-    try{
-      let res=await GetEvents();
-      let Events=res.docs.map((doc)=>({
-              id: doc.id, // Include document ID
-              ...doc.data() // Spread the document data
-            }));
-      // console.log(res.docs[0]);
-      setEvents(Events);
-      // console.log(Events);
-      setLoading(false)
+  // import method for context
+  const {addEvent,GetEvents,deleteEvent,updateEvent}=useContext(FireContext);
+  
+  useEffect(()=>{
+    setLoading(true);
+    async function GetEvent() {
+      try{
+        let res=await GetEvents();
+        let Events=res.docs.map((doc)=>({
+                id: doc.id, // Include document ID
+                ...doc.data() // Spread the document data
+              }));
+        // console.log(res.docs[0]);
+        setEvents(Events);
+        // console.log(Events);
+        setLoading(false)
+      }
+      catch(error){
+        console.log("some error occure ->",error)
+      }
+      finally{
+        setLoading(false)
+      }
     }
-    catch(error){
-      console.log("some error occure ->",error)
+    GetEvent();
+  },[onEdit,onDelete,add])
+  
+ 
+  const Edit = (eventData) => {
+    if (!eventData || Object.keys(eventData).length === 0) {
+      console.error("Invalid eventData:", eventData);
+      return;
     }
-    finally{
-      setLoading(false)
-    }
+    setEdit(eventData); // Set the event data
+    setEditOpen(true); // Open the modal
+  };
+  
+  const editClose = () => {
+    setEditOpen(false);
+    setEdit({});
   }
-  GetEvent();
-},[])
+
+  const handleDelete= async(id) => {
+    let res = await deleteEvent(id);
+    if(res){setOnDelete(!onDelete)}
+  }
 
   return (
     <div className="h-screen w-full mx-auto p-12 pt-0">
       {/* model box */}
-      <AddEventModal isOpen={isOpen} onClose={()=>setOpen(false)} onAddEvent={addEvent} />
-      <EditEventModal isOpen={iseditOpen} onClose={()=>setEditOpen(false)} eventData={events} />
+      <AddEventModal isOpen={isOpen} add={add} EventAdd={eventAdd} onClose={()=>setOpen(false)} onAddEvent={addEvent} />
+      <EditEventModal isOpen={iseditOpen} onClose={()=>editClose()} edit={onEdit} onEdit={setOnEdit} eventData={isEdit} onSave={updateEvent} />
       {/* Cards Row */}
       {/* Header Section */}
       <header className="bg-white shadow-md p-4 mb-6 rounded-lg mt-6">
@@ -123,7 +147,7 @@ useEffect(()=>{
       </div>
 
       {/* Events Table */}
-      <div className="bg-white shadow-md rounded-lg border border-gray-600/10">
+      <div className="bg-white shadow-md rounded-lg border border-gray-600/10 p-5">
         <div className="flex items-center justify-between p-4">
           <h2 className="text-xl font-bold text-gray-700">Events</h2>
           <button onClick={()=>setOpen(true)} className="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600">
@@ -185,10 +209,10 @@ useEffect(()=>{
                 <td className="border-b py-3 px-6">{event.description}</td>
                 <td className="border-b py-3 px-6">{event.status}</td>
                 <td className="border-b py-3 px-6">
-                  <button onClick={()=>setEditOpen(true)} className="text-blue-500 hover:text-blue-700 mr-4">Edit</button>
+                  <button onClick={()=>Edit(event)} className="text-blue-500 hover:text-blue-700 mr-4">Edit</button>
                 </td>
                 <td className="border-b py-3 px-6 text-sm text-gray-700">
-                  <button onClick={()=>deleteEvent(event.id)} className="text-red-500 hover:text-red-700">Delete</button>
+                  <button onClick={()=>handleDelete(event.id)} className="text-red-500 hover:text-red-700">Delete</button>
                 </td>
               </tr>
             )))
