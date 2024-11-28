@@ -9,7 +9,7 @@ export default function Enquery() {
   const [isLoadding,setLoadding]=useState(false);
   const [Messages,setMessage]=useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
-  // const [query, setQuery] = useState("What is the capital of France?");
+  const [onAnswer, setOnAnswer] = useState(false);
   const [Inquery, setInquery] = useState({});
 
   useEffect(()=>{
@@ -33,8 +33,8 @@ export default function Enquery() {
       }
     }
     getdata();
-    todayEnquery()
-  },[])
+    // todayEnquery()
+  },[onAnswer])
   // console.log(Messages);
   
   const todayEnquery =()=>{
@@ -60,6 +60,8 @@ export default function Enquery() {
         onClose={() => setModalOpen(false)}
         askerDetails={Inquery}
         onSave={InqoeryAnswer}
+        Answer={onAnswer}
+        setAnswer={setOnAnswer}
       />
 
     <div className="mx-auto p-6 pt-0">

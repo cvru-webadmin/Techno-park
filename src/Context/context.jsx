@@ -113,7 +113,7 @@ const FireBaseProvider = ({ children }) => {
         Subject,
         Message,
         Answer:"",
-        createdAt: (new Date()).toLocaleString(),
+        createdAt: new Date().toISOString().split('T')[0],
       });
       if (response) {
         alert("message send sucessfull");
