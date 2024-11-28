@@ -200,8 +200,8 @@ export default function Enquery() {
                 <td className="px-4 py-3">{inquiry.Email}</td>
                 <td className="px-4 py-3">{inquiry.PhoneNumber}</td>
                 <td className="px-3 py-3 w-60 text-wrap">{inquiry.Subject}</td>
-                <td className="px-4 py-3 w-1/2">{inquiry.Message}</td>
-                <td className="px-4 py-3 w-52">
+                <td className="px-4 py-3 w-1/4">{inquiry.Message}</td>
+                <td className="px-4 py-3 w-1/4">
                   {inquiry.Answer === "" ? (
                     <button
                       className="flex items-center space-x-2 px-4 py-2 rounded-md bg-indigo-500 text-white text-sm font-semibold shadow-md hover:bg-indigo-600 focus:ring-2 focus:ring-indigo-300 transition"
