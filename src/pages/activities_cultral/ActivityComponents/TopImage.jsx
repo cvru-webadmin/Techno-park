@@ -64,11 +64,11 @@ const CarouselComponent = () => {
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
             {/* Content */}
-            <div className="relative z-10 top-[550px] left-60 text-center flex flex-col items-center justify-center px-6 max-w-5xl">
+            <div className="relative z-10 top-[500px] left-60 text-center flex flex-col items-center justify-center px-6 max-w-5xl">
               <h1 className="text-white text-5xl md:text-6xl font-bold uppercase">
                 {slide.title}
               </h1>
-              <p className="text-[#f9dd26] font-extrabold uppercase text-base md:text-xl mt-3 md:mt-4 leading-relaxed">
+              <p className="text-[#F9A826] font-extrabold uppercase text-base md:text-xl mt-3 md:mt-4 leading-relaxed">
                 {slide.description}
               </p>
             </div>
@@ -84,8 +84,8 @@ const CarouselComponent = () => {
             onClick={() => handleSlideChange(index)} // Handle slide change on button click
             className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
               currentSlide === index
-                ? "bg-[#f9dd26] border-[#f9dd26] scale-125 shadow-lg" // Active styling
-                : "bg-transparent border-[#f9dd26]"
+                ? "bg-[#F9A826] border-[#F9A826] scale-125 shadow-lg" // Active styling
+                : "bg-transparent border-[#F9A826]"
             }`}
           ></button>
         ))}
