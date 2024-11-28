@@ -99,7 +99,11 @@ export default function Enquery() {
         </div>
       </div>
     </div>
-      <div className="overflow-x-auto px-6">
+    <main className="w-full max-w-full bg-white mt-6 shadow-lg rounded-lg">
+        <div className="p-6">
+          <h2 className="text-xl font-bold text-gray-700 p-4 text-center mb-4">
+            Ask Questions
+          </h2>
         <table className="table-auto w-full bg-white shadow-md rounded-lg">
           <thead className="bg-slate-500 text-white">
             <tr>
@@ -175,6 +179,7 @@ export default function Enquery() {
           </tbody>
           </table>
       </div>
+      </main>
     </div>
   )
 }
