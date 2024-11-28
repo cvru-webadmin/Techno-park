@@ -97,7 +97,7 @@ export default function Enquery() {
           <div className="mt-4 text-3xl font-bold text-yellow-600">0</div>
           <p className="text-sm text-gray-500 mt-2">Inquiries waiting to be addressed.</p>
         </div>
-      </div>
+      </div> 
     </div>
     <main className="w-full max-w-full bg-white mt-6 shadow-lg rounded-lg">
         <div className="p-6">
