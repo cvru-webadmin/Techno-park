@@ -203,7 +203,7 @@ const EventPage = () => {
           ):<>
           {events.length>0?
             (events.map((event,index) => (
-              <tr key={event.title+index+1} className="bg-white  text-sm text-gray-700 hover:bg-gray-200 transition">
+              <tr key={event.title+index+1} className="bg-white text-sm text-gray-700 hover:bg-gray-200 transition">
                 <td className="border-b py-3 px-6">{index+1}</td>
                 <td className="border-b py-3 px-6 capitalize text-nowrap">{event.title}</td>
                 <td className="border-b py-3 px-6">{event.description}</td>

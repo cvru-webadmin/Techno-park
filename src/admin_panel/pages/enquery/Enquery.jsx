@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FireContext } from '../../../Context/context'
 import "../../Admin.css"
+import AnswerModal from './enquery componet/AnswerModel';
 
 export default function Enquery() {
 
-  const {GetMessage}=useContext(FireContext);
+  const {GetMessage, InqoeryAnswer}=useContext(FireContext);
   const [isLoadding,setLoadding]=useState(false);
   const [Messages,setMessage]=useState([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+  // const [query, setQuery] = useState("What is the capital of France?");
+  const [Inquery, setInquery] = useState({});
 
   useEffect(()=>{
     setLoadding(true);
@@ -41,9 +45,23 @@ export default function Enquery() {
     })
   }
 
+  const handleAnswer =(inquiry)=>{
+    setInquery(inquiry);
+    setModalOpen(true);
+  }
+
+
 
   return (
     <div className="h-screen w-full bg-gray-100 p-6 overflow-y-auto scrollbar">
+      {/* Answer Modal */}
+      <AnswerModal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        askerDetails={Inquery}
+        onSave={InqoeryAnswer}
+      />
+
     <div className="mx-auto p-6 pt-0">
       {/* Header Section */}
       <header className="bg-white shadow-md p-4 mb-6 rounded-lg">
@@ -107,12 +125,27 @@ export default function Enquery() {
         <table className="table-auto w-full bg-white shadow-md rounded-lg">
           <thead className="bg-slate-500 text-white">
             <tr>
-              <th className="px-4 py-2.5 text-left" >#</th>
-              <th className="px-4 py-2.5 text-left">Name</th>
-              <th className="px-4 py-2.5 text-left">Email</th>
-              <th className="px-4 py-2.5 text-left">Phone</th>
-              <th className="px-4 py-2.5 text-left">Subject</th>
-              <th className="px-4 py-2.5 text-left">Message</th>
+            <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+                #
+              </th>
+              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+               Name
+              </th>
+              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+              Email
+              </th>
+              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+              Phone
+              </th>
+              <th className="border-b-2 py-3 px-6 text-center text-sm font-semibold uppercase tracking-wider">
+              Subject
+              </th>
+              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+              Message
+              </th>
+              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+              Answer
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -146,6 +179,9 @@ export default function Enquery() {
                   <td className="px-4 py-2.5">
                     <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
                   </td>
+                  <td className="px-4 py-2.5">
+                    <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  </td>
                 </tr>
               ))
           )
@@ -155,16 +191,39 @@ export default function Enquery() {
             Messages.map((inquiry, index) => (
               <tr
                 key={index}
-                className={`border-b ${
+                className={`border-b text-sm ${
                   index % 2 === 0 ? "bg-gray-50" : "bg-white"
                 }`}
               >
-                <td className="px-4 py-2">{index + 1}</td>
-                <td className="px-4 py-2 capitalize text-nowrap">{inquiry.Name}</td>
-                <td className="px-4 py-2">{inquiry.Email}</td>
-                <td className="px-4 py-2">{inquiry.PhoneNumber}</td>
-                <td className="px-4 py-2">{inquiry.Subject}</td>
-                <td className="px-4 py-2">{inquiry.Message}</td>
+                <td className="px-4 py-3">{index + 1}</td>
+                <td className="px-4 py-3 capitalize text-nowrap">{inquiry.Name}</td>
+                <td className="px-4 py-3">{inquiry.Email}</td>
+                <td className="px-4 py-3">{inquiry.PhoneNumber}</td>
+                <td className="px-3 py-3 w-60 text-wrap">{inquiry.Subject}</td>
+                <td className="px-4 py-3 w-1/2">{inquiry.Message}</td>
+                <td className="px-4 py-3 w-52">
+                  {inquiry.Answer === "" ? (
+                    <button
+                      className="flex items-center space-x-2 px-4 py-2 rounded-md bg-indigo-500 text-white text-sm font-semibold shadow-md hover:bg-indigo-600 focus:ring-2 focus:ring-indigo-300 transition"
+                      onClick={() => handleAnswer(inquiry)}
+                    >
+                      {/* Icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M20 6h-1v8c0 .55-.45 1-1 1H6v1c0 1.1.9 2 2 2h10l4 4V8c0-1.1-.9-2-2-2m-3 5V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v13l4-4h9c1.1 0 2-.9 2-2"></path>
+                      </svg>
+                      {/* Button Text */}
+                      <span>Give Answer</span>
+                    </button>
+                  ) : (
+                    <span className="text-gray-700">{inquiry.Answer}</span>
+                  )}
+                </td>
+                
               </tr>
             ))
           ) : (

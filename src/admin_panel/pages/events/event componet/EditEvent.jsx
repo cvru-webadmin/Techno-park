@@ -18,10 +18,15 @@ const EditEventModal = ({ isOpen, onClose, eventData, onSave, onEdit, edit }) =>
     }));
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    let rss= await onSave(formData.id,formData); // Pass the updated formData to the parent
-    if(rss){onEdit(!edit)}
+    let rss = await onSave(formData.id, {
+      ...formData,
+      ["updateAt"]: new Date().toLocaleString(),
+    }); // Pass the updated formData to the parent
+    if (rss) {
+      onEdit(!edit);
+    }
     onClose(); // Close the modal
   };
 

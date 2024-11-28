@@ -128,6 +128,21 @@ const FireBaseProvider = ({ children }) => {
     return await getDocs(collection(fireStore, "Message"));
   };
 
+   //method for update event 
+   const InqoeryAnswer = async (id,awnser) => {
+    try {
+      // Get a reference to the specific document
+      const docRef = doc(fireStore, "Message", id);
+  
+      // update the document
+      await updateDoc(docRef,awnser);
+      console.log("Successfully Add Answer");
+      return true;
+    } catch (error) {
+      console.log("Error occurred upload answer: ", error);
+    }
+  };
+
   //mthod for add Events 
 
   const addEvent = async (event) => {
@@ -187,6 +202,7 @@ const FireBaseProvider = ({ children }) => {
            isLoggin,
            SendMassage,
            GetMessage,
+           InqoeryAnswer,
            addEvent,
            GetEvents,
            deleteEvent,
