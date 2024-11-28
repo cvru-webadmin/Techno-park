@@ -11,22 +11,19 @@ const CarouselComponent = () => {
     {
       id: 1,
       title: "CULTURE & ACTIVITES",
-      description:
-        "Explore a vibrant blend of activities that enhance student life, from cultural events to campus-wide celebrations. Culture includes the traditions, values, and customs that define a community. Activities range from recreational and offering opportunities for creativity, bonding, and personal growth.",
+      description:"Celebrating Diversity, Inspiring Connections.",
       image: "src/assets/images/Front.jpeg", // Replace with actual image paths.
     },
     {
       id: 2,
       title: "SKITT play on social media",
-      description:
-        "These performances combine creativity with purpose, often addressing relatable issues, highlighting societal themes, or delivering inspiring messages. Skitt play on social media leverage the power of visuals,to make a lasting impression on viewers.",
+      description:"Unleashing Creativity and Connection in the Social Media Sphere",
       image: "src/assets/images/Skitt.png",
     },
     {
       id: 3,
       title: "Teacher's Day Celebration",
-      description:
-        "Teacher’s Day is a special occasion to honor the incredible role educators play in shaping minds and building the foundation of our future. It is a day to reflect on the tireless efforts, patience, and dedication that teachers bring to their work and guiding the challenges of life.",
+      description:"A Day to Celebrate Wisdom and Inspiration",
       image: "src/assets/images/TeacherDay.jpeg", // Replace with actual image paths.
     },
   ];
@@ -67,11 +64,11 @@ const CarouselComponent = () => {
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
             {/* Content */}
-            <div className="relative z-10 top-[460px] left-60 text-center flex flex-col items-center justify-center px-6 max-w-5xl">
+            <div className="relative z-10 top-[550px] left-60 text-center flex flex-col items-center justify-center px-6 max-w-5xl">
               <h1 className="text-white text-5xl md:text-6xl font-bold uppercase">
                 {slide.title}
               </h1>
-              <p className="text-white text-sm md:text-base mt-5 w-[70%] leading-relaxed">
+              <p className="text-[#f9dd26] font-extrabold uppercase text-base md:text-xl mt-3 md:mt-4 leading-relaxed">
                 {slide.description}
               </p>
             </div>
@@ -87,8 +84,8 @@ const CarouselComponent = () => {
             onClick={() => handleSlideChange(index)} // Handle slide change on button click
             className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
               currentSlide === index
-                ? "bg-[#F9A826] border-[#F9A826] scale-125 shadow-lg" // Active styling
-                : "bg-transparent border-[#F9A826]"
+                ? "bg-[#f9dd26] border-[#f9dd26] scale-125 shadow-lg" // Active styling
+                : "bg-transparent border-[#f9dd26]"
             }`}
           ></button>
         ))}
