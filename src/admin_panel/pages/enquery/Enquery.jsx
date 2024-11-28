@@ -101,18 +101,18 @@ export default function Enquery() {
     </div>
     <main className="w-full max-w-full bg-white mt-6 shadow-lg rounded-lg">
         <div className="p-6">
-          <h2 className="text-xl font-bold text-gray-700 p-4 text-center mb-4">
+          <h2 className="text-xl font-bold text-gray-700 py-2 text-center mb-4">
             Ask Questions
           </h2>
         <table className="table-auto w-full bg-white shadow-md rounded-lg">
           <thead className="bg-slate-500 text-white">
             <tr>
-              <th className="px-4 py-2.5 text-left rounded-tl-md" >#</th>
+              <th className="px-4 py-2.5 text-left" >#</th>
               <th className="px-4 py-2.5 text-left">Name</th>
               <th className="px-4 py-2.5 text-left">Email</th>
               <th className="px-4 py-2.5 text-left">Phone</th>
               <th className="px-4 py-2.5 text-left">Subject</th>
-              <th className="px-4 py-2.5 text-left rounded-tr-md">Message</th>
+              <th className="px-4 py-2.5 text-left">Message</th>
             </tr>
           </thead>
           <tbody>

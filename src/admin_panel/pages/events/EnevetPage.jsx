@@ -209,7 +209,12 @@ const EventPage = () => {
                 <td className="border-b py-3 px-6">{event.description}</td>
                 <td className="border-b py-3 px-6">{event.status}</td>
                 <td className="border-b py-3 px-6">
-                  <button onClick={()=>Edit(event)} className="text-blue-500 hover:text-blue-700 mr-4">Edit</button>
+                  <button onClick={()=>Edit(event)} className="text-blue-500 flex gap-1 items-center hover:text-blue-700 mr-4">Edit
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3" viewBox="0 0 24 24">
+                   	<rect width="24" height="24" fill="none" />
+                   	<path fill="currentColor" d="M3 21V3h10.925l-2 2H5v14h14v-6.95l2-2V21zm6-6v-4.25L19.625.125L23.8 4.4L13.25 15zM21.025 4.4l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z" />
+                   </svg>
+                  </button>
                 </td>
                 <td className="border-b py-3 px-6 text-sm text-gray-700">
                   <button onClick={()=>handleDelete(event.id)} className="text-red-500 hover:text-red-700">Delete</button>

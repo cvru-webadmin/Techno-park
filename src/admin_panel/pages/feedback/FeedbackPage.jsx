@@ -18,7 +18,7 @@ export default function FeedbackPage() {
       {/* Main Content */}
       <main className="w-full max-w-full bg-white mt-6 shadow-lg rounded-lg">
         <div className="p-6">
-          <h2 className="text-xl font-bold text-gray-700 p-4 text-center mb-4">
+          <h2 className="text-xl font-bold text-gray-700 py-2 text-center mb-4">
             Feedback Overview
           </h2>
           <table className="w-full border-collapse text-left text-gray-700">
