@@ -6,7 +6,7 @@ import Course4 from '../../../assets/images/mca stu lab.jpeg';
 
 const CourseCard = ({ image, title, description }) => {
   return (
-    <div className="w-full sm:w-72 h-[52vh] bg-white group text-gray-800 border transform transition-transform shadow-md duration-400 hover:shadow-lg border-gray-200 rounded-lg">
+    <div className="w-full sm:w-80 h-[52vh] bg-white group text-gray-800 border transform transition-transform shadow-md duration-400 hover:shadow-lg border-gray-200 rounded-lg">
       <img src={image} alt={title} className="rounded-t-lg w-full h-48 object-cover" />
       <div className="px-4 py-4 relative z-30">
         <h2 className="text-xl font-semibold transition-all duration-500 group-hover:text-white mb-2">{title}</h2>
@@ -58,23 +58,12 @@ const FeaturedCourses = () => {
         Evaluation methods include Mid-Semester Test (MST), End-Semester Test (PUT), Project Presentations, Internships, and Problem-solving Activities.
       `
     }
-
-    // {
-    //   image: Course5,
-    //   title: 'BSc IT (Bachelor of Science in Information Technology)',
-    //   description: 'BSc IT stands for Bachelor of Science in Information Technology. BSc Information Technology is an undergraduate science course of 3 years dealing with software...',
-    // },
-    // {
-    //   image: Course6,
-    //   title: 'MSc IT (Master of Science in Information Technology)',
-    //   description: 'Master of Science in information technology (IT) is a 2-year post-graduate level program aimed at providing theoretical as well as practical knowledge...',
-    // },
   ];
 
   return (
     <>
       <div className="flex justify-center">
-        <section className="bg-white border rounded-xl items-center flex flex-col shadow-md w-[93%] py-8 px-6">
+        <section className="bg-white rounded-xl items-center flex flex-col w-[98%] pt-8 px-6">
           <h2 className="text-3xl sm:text-4xl font-semibold text-blue-600 text-center mb-3">
             Featured Courses
           </h2>
@@ -83,7 +72,7 @@ const FeaturedCourses = () => {
           </p>
           
           {/* Course Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 px-4 gap-9 sm:px-6 lg:px-8">
             {courses.map((course, index) => (
               <CourseCard
                 key={index}
