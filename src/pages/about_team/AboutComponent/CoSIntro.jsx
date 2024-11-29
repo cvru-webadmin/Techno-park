@@ -1,6 +1,6 @@
 import React from "react";
 import './About.css'
-import SwatiAtre from "../../../assets/images/SwatiAtre.png"
+import SwatiAtre from "../../../assets/images/SwatiAtre2.png"
 
 const IntroCoS = () => {
   return (
@@ -11,7 +11,7 @@ const IntroCoS = () => {
     <img
       src={SwatiAtre} // Replace with the actual image URL
       alt="Chief of Staff"
-      className="object-cover rounded-lg h-full w-full transition-transform duration-300 group-hover:scale-105"
+      className="object-cover h-full w-full transition-transform duration-300 group-hover:scale-105"
     />
     {/* Overlay Effect */}
     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
