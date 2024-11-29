@@ -205,6 +205,12 @@ const FireBaseProvider = ({ children }) => {
     }
   }
 
+  //method for get feedbacks
+
+  const GetFeedbacks = async() =>{
+       return await getDocs(collection(fireStore,"feedback"));
+  }
+
   return (
     <FireContext.Provider
          value={{
@@ -221,6 +227,7 @@ const FireBaseProvider = ({ children }) => {
            deleteEvent,
            updateEvent,
            SendFeedback,
+           GetFeedbacks,
          }}
        >
       {children}
