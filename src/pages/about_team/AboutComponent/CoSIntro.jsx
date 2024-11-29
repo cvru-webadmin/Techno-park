@@ -25,7 +25,7 @@ const IntroCoS = () => {
 
 
         {/* Right Column: Content */}
-        <div className="lg:w-[55%] py-1">
+        <div className="lg:w-[53%] py-1">
           {/* Section Title */}
           <h2 className="about-title">
                 CHAIR OF THE SCHOOL
@@ -38,11 +38,9 @@ const IntroCoS = () => {
             <p className="about-description">COS, Techno Park School of CS & IT</p>
           </p>
           <p className="text-gray-700 mb-4 text-justify leading-relaxed">
-          Ms. Swati Atre serves as the esteemed Chair of the School of Computer Science and Technology at Dr. C.V. Raman University. She holds a Master's degree in Computer Applications (MCA) and brings 12 years of rich academic and professional experience to her role. In addition to her responsibilities as the Head of Department, Ms. Atre is the University Quality Assurance Coordinator (UQAC), further showcasing her commitment to academic excellence and institutional growth.
-          </p>
+          Ms. Swati Atre is the Chair of the School of Computer Science and Technology at Dr. C.V. Raman University, holding a Master's in Computer Applications (MCA) and 12 years of academic and professional experience. She also serves as the University Quality Assurance Coordinator (UQAC). Specializing in Programming Languages and Web Technology, Ms. Atre has earned several prestigious awards, including the Young Researcher Award 2023 and the Jyestha Acharya Award 2023-2024. Under her leadership, the department fosters innovation and academic excellence.          </p>
           <p className="text-gray-700 mb-4 text-justify leading-relaxed">
-          Her core expertise lies in Programming Languages and Web Technology, areas where she has made significant contributions through teaching and research. Ms. Atre's exceptional dedication has been recognized with numerous prestigious awards, including: Young Researcher Award 2023, Best Academic Professional Award 2023, Jyestha Acharya Award 2023-2024. Under her leadership, the department thrives as a hub of innovation and knowledge, fostering academic growth and excellence for both students and faculty.
-          </p>
+          The Techno-Park School of CS & IT at our university offers a dynamic learning environment focused on nurturing innovation and critical thinking. Led by a dedicated team of faculty, we provide quality education in areas like programming, algorithms, artificial intelligence, and IoT. Our updated curriculum equips students with the skills needed to succeed in the ever-evolving tech industry, with alumni excelling in both corporate and government sectors.          </p>
         </div>
       </div>
     </section>
