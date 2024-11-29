@@ -192,6 +192,19 @@ const FireBaseProvider = ({ children }) => {
     }
   };
 
+  // method for add feedback
+
+  const SendFeedback= async(feedback) =>{ 
+    try {
+      let response= await addDoc(collection(fireStore,"feedback"),feedback);
+      if(response){
+        alert("sucessfuly add feedback")
+      }
+    } catch (error) {
+        console.log("some error ocuured send feedback:",error);
+    }
+  }
+
   return (
     <FireContext.Provider
          value={{
@@ -207,6 +220,7 @@ const FireBaseProvider = ({ children }) => {
            GetEvents,
            deleteEvent,
            updateEvent,
+           SendFeedback,
          }}
        >
       {children}

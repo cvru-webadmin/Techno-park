@@ -13,7 +13,8 @@ import AdminRoute from './Componet/AdminRoute';
 import Enquery from '../admin_panel/pages/enquery/Enquery';
 import FacultyPage from '../admin_panel/pages/faculty/facultyPage';
 import EnevetPage from '../admin_panel/pages/events/enevetPage';
-import FeedbackPage from '../admin_panel/pages/feedback/feedbackPage';
+import FeedbackPage from '../admin_panel/pages/feedback/FeedbackPage';
+import FeedbackForm from '../pages/Feedback form/FeedbackFrom';
 
 const router =createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router =createBrowserRouter([
             {
                 path:"/about",
                 element:<h1 className='h-screen flex items-center justify-center'>this is about page</h1>
+            },
+            {
+                path:"/feedback",
+                element:<FeedbackForm />
             },
             {
                 path:"/contact",
