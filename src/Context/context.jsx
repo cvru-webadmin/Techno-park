@@ -198,7 +198,7 @@ const FireBaseProvider = ({ children }) => {
     try {
       let response= await addDoc(collection(fireStore,"feedback"),feedback);
       if(response){
-        alert("sucessfuly add feedback")
+        return true;
       }
     } catch (error) {
         console.log("some error ocuured send feedback:",error);
@@ -210,6 +210,15 @@ const FireBaseProvider = ({ children }) => {
   const GetFeedbacks = async() =>{
        return await getDocs(collection(fireStore,"feedback"));
   }
+
+  const formatDate = () => {
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2, "0"); // Ensure two digits
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+  
 
   return (
     <FireContext.Provider
@@ -228,6 +237,7 @@ const FireBaseProvider = ({ children }) => {
            updateEvent,
            SendFeedback,
            GetFeedbacks,
+           formatDate,
          }}
        >
       {children}

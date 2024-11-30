@@ -21,7 +21,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd }) => {
         title:formData.title,
         description:formData.description,
         status:formData.status,
-        createdAt:(new Date()).toLocaleString(),
+        createdAt:new Date().toISOString().split('T')[0],
     });
     onClose();
     if(res){

@@ -33,10 +33,10 @@ export default function FeedbackPage() {
   console.log(feedbacks)
 
   return (
-    <div className="min-h-screen w-full p-12 pt-0 bg-gray-50 flex flex-col items-center">
+    <div className="h-screen overflow-y-auto w-full p-12 pt-0 bg-gray-50 flex flex-col items-center">
       {/* Header */}
       <header className="bg-white shadow-md p-4 mb-6 w-full rounded-lg mt-6">
-        <h1 className="text-2xl flex gap-3 font-bold text-gray-700">Admin - University Feedbacks
+        <h1 className="text-2xl flex gap-3 font-bold text-gray-700">Admin - Techno Park Feedbacks
         </h1>
       </header>
 
@@ -76,12 +76,12 @@ export default function FeedbackPage() {
                    } hover:bg-gray-200 transition`}
                  >
                    <td className="border-b py-3 px-6">{index + 1}</td>
-                   <td className="border-b py-3 px-6 capitalize text-nowrap">
+                   <td className="border-b py-3 px-4 capitalize text-nowrap">
                      {feedback.feedbackBy}
                    </td>
-                   <td className="border-b py-3 px-6">{feedback.email}</td>
-                   <td className="border-b py-3 px-6 w-1/3">{feedback.feedback}</td>
-                   <td className="border-b py-3 px-6">{feedback.createdAt}</td>
+                   <td className="border-b py-3 px-3">{feedback.email}</td>
+                   <td className="border-b py-3 px-2 w-2/5">{feedback.feedback}</td>
+                   <td className="border-b py-3 px-4 w-36">{feedback.createdAt}</td>
                  </tr>
                ))
              ) : (

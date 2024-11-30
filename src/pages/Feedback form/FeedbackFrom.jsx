@@ -16,7 +16,7 @@ const FeedbackForm = () => {
 
   //import send feedback method
 
-  const {SendFeedback}=useContext(FireContext);
+  const {SendFeedback,formatDate}=useContext(FireContext);
 
   const handleSelect = (position) => {
     setSelectedPosition(position);
@@ -44,11 +44,19 @@ const FeedbackForm = () => {
       return alert("all field are requerd for feedback")
     }
     e.preventDefault();
-    SendFeedback({
+    let res=SendFeedback({
       ...formData,
-      ["createdAt"]:(new Date()).toLocaleString()
+      ["createdAt"]:formatDate()
     });
-    setIsModalOpen(true); // Open the Thank You modal
+    if(res){
+      setIsModalOpen(true); // Open the Thank You modal
+      setFormData({
+        feedbackBy: "",
+        email: "",
+        position: "",
+        feedback: "",
+      })
+    }
   };
 
   const closeModal = () => {
