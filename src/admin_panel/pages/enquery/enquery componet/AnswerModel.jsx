@@ -26,7 +26,7 @@ const AnswerModal = ({ isOpen, onClose, askerDetails, onSave, Answer, setAnswer 
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
         <div className="bg-white rounded-lg w-full max-w-xl p-6 shadow-lg">
           {/* Header */}
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex border-b justify-between items-center pb-3">
             <h2 className="text-2xl font-bold text-gray-800">Inquiry Answer</h2>
             <button
               onClick={onClose}
@@ -40,7 +40,7 @@ const AnswerModal = ({ isOpen, onClose, askerDetails, onSave, Answer, setAnswer 
            
            
           {/* Askers Details */}
-          <div className="mb-4">
+          <div className="mb-4 mt-2">
              <label className="block text-sm font-medium text-gray-600 mb-1">
                Ask By:
              </label>

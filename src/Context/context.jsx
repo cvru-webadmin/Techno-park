@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import axios from "axios";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -112,6 +113,31 @@ const FireBaseProvider = ({ children }) => {
       const year = date.getFullYear();
       return `${day}-${month}-${year}`;
     };
+
+    //method to upload image in clude
+    const UploadImage = async(Image) =>{
+      const uploadPreset="Technopark-website";
+      const CludeName="dcbniehli";
+
+      if(!Image){
+        return alert("pls select image")
+      }
+
+      let data = new FormData();
+      data.append('file',Image);
+      data.append('upload_preset',uploadPreset);
+      data.append('cloud_name',CludeName);
+
+      try {
+        let response = await axios.post(`https://api.cloudinary.com/v1_1/${CludeName}/image/upload`,data);
+        if(response){
+          return await response.data.url;
+          alert("Image uploaded successfully!");
+        }
+      } catch (error) {
+        console.log("error ocurred uploading image: ",error);
+      }
+    }
     
   //mthod for send message and get message
 

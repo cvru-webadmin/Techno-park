@@ -63,10 +63,10 @@ export default function AdminSidebar() {
   const tabs=[
     {name:"home",path:"/admin",icon:homeIcon},
     // {name:"faculty",path:"/admin/faculty",icon:TeamsIcon},
+    {name:"Enquirys",path:"/admin/enquers",icon:EnquiryIcon},
     {name:"events",path:"/admin/events",icon:eventIcon},
     // {name:"event",path:"/admin/event",icon:eventIcon2},
     {name:"feedbacks",path:"/admin/feedbacks",icon:feedbackIcon},
-    {name:"Enquirys",path:"/admin/enquers",icon:EnquiryIcon},
   ]
 
 

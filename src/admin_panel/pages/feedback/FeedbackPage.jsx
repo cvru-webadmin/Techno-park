@@ -30,7 +30,7 @@ export default function FeedbackPage() {
   }
     getfeedback();
   },[])
-  console.log(feedbacks)
+  // console.log(feedbacks)
 
   return (
     <div className="h-screen overflow-y-auto w-full p-12 pt-0 bg-gray-50 flex flex-col items-center">
@@ -49,7 +49,7 @@ export default function FeedbackPage() {
           <table className="w-full border-collapse text-left text-gray-700">
           <thead>
             <tr className="bg-slate-500 text-white">
-              <th className="border-b-2 py-3 px-2 text-left text-sm font-semibold uppercase tracking-wider">
+              <th className="border-b-2 py-3 px-4 text-left text-sm font-semibold uppercase tracking-wider">
                 #
               </th>
               <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
@@ -58,7 +58,10 @@ export default function FeedbackPage() {
               <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
               email
               </th>
-              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+              <th className="border-b-2 py-3 px-3 text-left text-sm font-semibold uppercase tracking-wider">
+              Role
+              </th>
+              <th className="border-b-2 py-3 px-6 text-center text-sm font-semibold uppercase tracking-wider">
               Feedback
               </th>
               <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
@@ -73,13 +76,16 @@ export default function FeedbackPage() {
                    key={index}
                    className={`${
                      index % 2 === 0 ? "bg-gray-50" : "bg-gray-100"
-                   } hover:bg-gray-200 transition`}
+                   } hover:bg-gray-200 transition text-sm`}
                  >
-                   <td className="border-b py-3 px-6">{index + 1}</td>
+                   <td className="border-b py-3 px-4">{index + 1}</td>
                    <td className="border-b py-3 px-4 capitalize text-nowrap">
                      {feedback.feedbackBy}
                    </td>
                    <td className="border-b py-3 px-3">{feedback.email}</td>
+                   <td className="border-b py-3 px-3 capitalize text-nowrap">
+                     {feedback.position}
+                   </td>
                    <td className="border-b py-3 px-2 w-2/5">{feedback.feedback}</td>
                    <td className="border-b py-3 px-4 w-36">{feedback.createdAt}</td>
                  </tr>
@@ -90,19 +96,19 @@ export default function FeedbackPage() {
                  .map((_, index) => (
                    <tr key={index} className="animate-pulse">
                      <td className="border-b py-3 px-6">
-                       <div className="h-4 bg-gray-300 rounded w-6 mx-auto"></div>
+                       <div className="h-5 bg-gray-300 rounded w-6 mx-auto"></div>
                      </td>
                      <td className="border-b py-3 px-6">
-                       <div className="h-4 bg-gray-300 rounded w-24"></div>
+                       <div className="h-5 bg-gray-300 rounded w-24"></div>
                      </td>
                      <td className="border-b py-3 px-6">
-                       <div className="h-4 bg-gray-300 rounded w-32"></div>
+                       <div className="h-5 bg-gray-300 rounded w-32"></div>
                      </td>
                      <td className="border-b py-3 px-6">
-                       <div className="h-4 bg-gray-300 rounded w-40 mx-auto"></div>
+                       <div className="h-5 bg-gray-300 rounded w-40 mx-auto"></div>
                      </td>
                      <td className="border-b py-3 px-6">
-                       <div className="h-4 bg-gray-300 rounded w-20 mx-auto"></div>
+                       <div className="h-5 bg-gray-300 rounded w-20 mx-auto"></div>
                      </td>
                    </tr>
                  ))

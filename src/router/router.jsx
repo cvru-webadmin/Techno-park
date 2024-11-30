@@ -12,9 +12,11 @@ import NotFoundPage from './Componet/NotFound';
 import AdminRoute from './Componet/AdminRoute';
 import Enquery from '../admin_panel/pages/enquery/Enquery';
 import FacultyPage from '../admin_panel/pages/faculty/facultyPage';
-import EnevetPage from '../admin_panel/pages/events/enevetPage';
+import EventPage from '../admin_panel/pages/events/EnevetPage';
 import FeedbackPage from '../admin_panel/pages/feedback/FeedbackPage';
 import FeedbackForm from '../pages/Feedback form/FeedbackFrom';
+import UploadImage from '../pages/test fiebase/UploadImage';
+import UploadImagePage from '../pages/test fiebase/UploadImage';
 
 const router =createBrowserRouter([
     {
@@ -45,6 +47,10 @@ const router =createBrowserRouter([
                 path:"/contact2",
                 element:<ContactPage/>
             },
+            {
+                path:"/upload",
+                element:<UploadImagePage/>
+            },
         ]
     },
     {
@@ -57,7 +63,7 @@ const router =createBrowserRouter([
         children: [
             { path: "/admin",element: <Dashbord /> },
             { path: "faculty",element: <FacultyPage /> },
-            { path: "events",element: <EnevetPage /> },
+            { path: "events",element: <EventPage /> },
             { path: "feedbacks",element: <FeedbackPage /> },
             { path: "enquers",element: <Enquery /> },
         ],
