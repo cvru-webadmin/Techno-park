@@ -99,9 +99,20 @@ const FireBaseProvider = ({ children }) => {
     // Cleanup function to unsubscribe from auth state listener
     return () => unsubscribe();
   }, []);
-
+  
   const isLoggin = user ? true : false;
-
+  
+  
+    // method for dd/mm/yyyy formate date
+  
+    const formatDate = () => {
+      const date = new Date();
+      const day = String(date.getDate()).padStart(2, "0"); // Ensure two digits
+      const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+      const year = date.getFullYear();
+      return `${day}-${month}-${year}`;
+    };
+    
   //mthod for send message and get message
 
   const SendMassage = async (Name,Email,PhoneNumber,Subject,Message) => {
@@ -113,7 +124,7 @@ const FireBaseProvider = ({ children }) => {
         Subject,
         Message,
         Answer:"",
-        createdAt: new Date().toISOString().split('T')[0],
+        createdAt: formatDate(),
       });
       if (response) {
         alert("message send sucessfull");
@@ -210,15 +221,6 @@ const FireBaseProvider = ({ children }) => {
   const GetFeedbacks = async() =>{
        return await getDocs(collection(fireStore,"feedback"));
   }
-
-  const formatDate = () => {
-    const date = new Date();
-    const day = String(date.getDate()).padStart(2, "0"); // Ensure two digits
-    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
-    const year = date.getFullYear();
-    return `${day}-${month}-${year}`;
-  };
-  
 
   return (
     <FireContext.Provider

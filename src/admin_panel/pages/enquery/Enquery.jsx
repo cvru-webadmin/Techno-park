@@ -5,12 +5,14 @@ import AnswerModal from './enquery componet/AnswerModel';
 
 export default function Enquery() {
 
-  const {GetMessage, InqoeryAnswer}=useContext(FireContext);
+  const {GetMessage, InqoeryAnswer,formatDate}=useContext(FireContext);
   const [isLoadding,setLoadding]=useState(false);
   const [Messages,setMessage]=useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
   const [onAnswer, setOnAnswer] = useState(false);
   const [Inquery, setInquery] = useState({});
+  const [totalInqueris,setTotalInqueries]=useState([]);
+  const [filterMode,setMode]=useState("total");
 
   useEffect(()=>{
     setLoadding(true);
@@ -24,6 +26,7 @@ export default function Enquery() {
           }
         ))
         setMessage(data);
+        setTotalInqueries(data);
       } catch (error) {
         alert("some problem for get data")
         setLoadding(false);
@@ -33,17 +36,27 @@ export default function Enquery() {
       }
     }
     getdata();
-    // todayEnquery()
   },[onAnswer])
-  // console.log(Messages);
-  
+
+  //method for today inqueris
+  const [todayEnquerys,setTodayEnquery]=useState(0);
   const todayEnquery =()=>{
-    const today = new Date().toISOString().split('T')[0];
-    console.log("aaj ki tarik->",today);
-    Messages.map((date)=>{
-      console.log(date.createdAt);
-    })
+    const today=formatDate();
+    const todayCount = totalInqueris.filter((message) => message.createdAt === today).map((message)=>message);
+    setTodayEnquery(todayCount);
   }
+  //method for pandding inqueris
+  const [panddingInquress,setPandding]=useState([]);
+  const paddingInqueris =()=>{
+    const paddingCount=totalInqueris.filter((message)=>message.Answer=="").map((message)=>message);
+    setPandding(paddingCount);
+  }
+
+  //useeefect to manage panddings and today inqueies
+  useEffect(()=>{
+    todayEnquery();
+    paddingInqueris();
+  },[Messages])
 
   const handleAnswer =(inquiry)=>{
     setInquery(inquiry);
@@ -73,7 +86,7 @@ export default function Enquery() {
       {/* Inquiries Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Total Inquiries Card */}
-        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+        <div onClick={()=>{setMessage(totalInqueris);setMode("total")}} className="bg-white cursor-pointer p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-700">Total Inquiries</h2>
             <div className="p-3 bg-indigo-500 text-white rounded-full">
@@ -83,12 +96,12 @@ export default function Enquery() {
              </svg>
             </div>
           </div>
-          <div className="mt-4 text-3xl font-bold text-indigo-600">{Messages.length}</div>
+          <div className="mt-4 text-3xl font-bold text-indigo-600">{totalInqueris.length}</div>
           <p className="text-sm text-gray-500 mt-2">Total number of inquiries received to date.</p>
         </div>
 
         {/* Today's Inquiries Card */}
-        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+        <div onClick={()=>{setMessage(todayEnquerys);setMode("today")}} className="bg-white cursor-pointer p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-700">Today's Inquiries</h2>
             <div className="p-3 bg-green-500 text-white rounded-full">
@@ -99,12 +112,12 @@ export default function Enquery() {
               </svg>
             </div>
           </div>
-          <div className="mt-4 text-3xl font-bold text-green-600">2</div>
+          <div className="mt-4 text-3xl font-bold text-green-600">{todayEnquerys.length}</div>
           <p className="text-sm text-gray-500 mt-2">Inquiries received today. Stay on top of the latest messages.</p>
         </div>
 
         {/* Pending Inquiries Card */}
-        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+        <div onClick={()=>{setMessage(panddingInquress);setMode("pandding")}} className="bg-white cursor-pointer p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-700">Pending Inquiries</h2>
             <div className="p-3 bg-yellow-500 text-white rounded-full">
@@ -114,7 +127,7 @@ export default function Enquery() {
               </svg>
             </div>
           </div>
-          <div className="mt-4 text-3xl font-bold text-yellow-600">0</div>
+          <div className="mt-4 text-3xl font-bold text-yellow-600">{panddingInquress.length}</div>
           <p className="text-sm text-gray-500 mt-2">Inquiries waiting to be addressed.</p>
         </div>
       </div> 
@@ -122,6 +135,8 @@ export default function Enquery() {
     <main className="w-full max-w-full bg-white mt-6 shadow-lg rounded-lg">
         <div className="p-6">
           <h2 className="text-xl font-bold text-gray-700 py-2 text-center mb-4">
+            {filterMode=="today"&&"Today "}
+            {filterMode=="pandding"&&"Pandding "}
             Ask Questions
           </h2>
         <table className="table-auto w-full bg-white shadow-md rounded-lg">
