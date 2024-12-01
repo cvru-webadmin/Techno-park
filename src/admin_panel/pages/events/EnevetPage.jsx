@@ -88,12 +88,25 @@ const EventPage = () => {
     setEdit({});
   };
 
+  const[deleteId,setDeleteId]=useState(null);
+  const[deleteName,setDeleteName]=useState(null);
+  const[isModeldelete,setdeleteModel]=useState(false)
   const handleDelete = async (id) => {
     let res = await deleteEvent(id);
     if (res) {
       setOnDelete(!onDelete);
+      setdeleteModel(false);
+      alert(`${deleteName} sucessfully delete`)
+      setDeleteId(null);
+      setDeleteName(null);
     }
   };
+
+  const handleConformation=(name,id)=>{
+      setdeleteModel(true);
+      setDeleteId(id);
+      setDeleteName(name);
+  }
   
   //upcoming event filter
   const [upcomingEvent,setUpcomingEvent]=useState([]);
@@ -122,7 +135,7 @@ const EventPage = () => {
     UpcomingEvents();
   },[onEdit,onDelete,add,totalEvent])
 
-  const[isModeldelete,setdeelteModel]=useState(false)
+
 
   return (
     <div className="h-screen w-full mx-auto p-12 pt-0 overflow-y-auto">
@@ -143,54 +156,114 @@ const EventPage = () => {
         eventData={isEdit}
         onSave={updateEvent}
       />
-      <DeleteModal isOpen={isModeldelete} onCancel={()=>setdeelteModel(false)}/>
+      <DeleteModal
+        isOpen={isModeldelete}
+        onCancel={() => setdeleteModel(false)}
+        onDelete={() => handleDelete(deleteId)}
+        projectName={deleteName}
+      />
       {/* Cards Row */}
       {/* Header Section */}
       <header className="bg-white shadow-md p-4 mb-6 rounded-lg mt-6">
         <h1 className="text-2xl font-bold text-gray-700">Admin - Events</h1>
       </header>
-      <button className="bg-red-400" onClick={()=>setdeelteModel(true)}>open delete</button>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         {/* Card Component */}
         {[
           {
             title: "Total Events",
             count: totalEvent.length,
-            click:()=>{setMode("total");setEvents(totalEvent)},
+            click: () => {
+              setMode("total");
+              setEvents(totalEvent);
+            },
             description: "Today total number of events.",
-            iconbg:"#38B2AC",
+            iconbg: "#38B2AC",
             icon: (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"  width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M10.74 12.25L12 9.5l1.25 2.75L16 13.5l-2.75 1.26L12 17.5l-1.26-2.74L8 13.5zM16 3V1h2v2h1c.53 0 1.04.21 1.41.59c.38.37.59.88.59 1.41v14c0 .53-.21 1.04-.59 1.41c-.37.38-.88.59-1.41.59H5c-.53 0-1.04-.21-1.41-.59C3.21 20.04 3 19.53 3 19V5c0-.53.21-1.04.59-1.41C3.96 3.21 4.47 3 5 3h1V1h2v2zM5 8v11h14V8z"></path></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M10.74 12.25L12 9.5l1.25 2.75L16 13.5l-2.75 1.26L12 17.5l-1.26-2.74L8 13.5zM16 3V1h2v2h1c.53 0 1.04.21 1.41.59c.38.37.59.88.59 1.41v14c0 .53-.21 1.04-.59 1.41c-.37.38-.88.59-1.41.59H5c-.53 0-1.04-.21-1.41-.59C3.21 20.04 3 19.53 3 19V5c0-.53.21-1.04.59-1.41C3.96 3.21 4.47 3 5 3h1V1h2v2zM5 8v11h14V8z"
+                ></path>
+              </svg>
             ),
           },
           {
             title: "Upcoming Events",
             count: upcomingEvent.length,
-            click:()=>{setMode("upcoming");setEvents(upcomingEvent)},
-            iconbg:"#F6AD55",
+            click: () => {
+              setMode("upcoming");
+              setEvents(upcomingEvent);
+            },
+            iconbg: "#F6AD55",
             description: "Future scheduled events",
             icon: (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M15 13h1.5v2.82l2.44 1.41l-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M15 13h1.5v2.82l2.44 1.41l-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"
+                ></path>
+              </svg>
             ),
           },
           {
             title: "Active Events",
             count: ActiveEvent.length,
-            click:()=>{setMode("active");setEvents(ActiveEvent)},
-            iconbg:"#48BB78",
+            click: () => {
+              setMode("active");
+              setEvents(ActiveEvent);
+            },
+            iconbg: "#48BB78",
             description: "Events currently ongoing.",
             icon: (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="m10.95 15.45l3.475-3.475q.3-.3.725-.3t.725.3t.3.725t-.3.725L11.65 17.65q-.3.3-.7.3t-.7-.3l-2.125-2.125q-.3-.3-.3-.725t.3-.725t.725-.3t.725.3zM5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"></path></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m10.95 15.45l3.475-3.475q.3-.3.725-.3t.725.3t.3.725t-.3.725L11.65 17.65q-.3.3-.7.3t-.7-.3l-2.125-2.125q-.3-.3-.3-.725t.3-.725t.725-.3t.725.3zM5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"
+                ></path>
+              </svg>
             ),
           },
           {
             title: "News",
             count: NewsEvent.length,
-            click:()=>{setMode("news");setEvents(NewsEvent)},
+            click: () => {
+              setMode("news");
+              setEvents(NewsEvent);
+            },
             description: "Latest updates and announcements.",
-            iconbg:"#ED64A6",
+            iconbg: "#ED64A6",
             icon: (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M16.75 4a2.25 2.25 0 0 1 2.245 2.096L19 6.25V17.5a.5.5 0 0 0 .992.09L20 17.5V7.014a2.25 2.25 0 0 1 1.994 2.072L22 9.25v7.5a3.25 3.25 0 0 1-3.066 3.245L18.75 20H5.25a3.25 3.25 0 0 1-3.245-3.066L2 16.75V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4zm-7.502 7h-3.5a.75.75 0 0 0-.75.75v3.5c0 .414.336.75.75.75h3.5a.75.75 0 0 0 .75-.75v-3.5a.75.75 0 0 0-.75-.75m6.004 3.5h-2.498l-.102.007A.75.75 0 0 0 12.754 16h2.498l.102-.007a.75.75 0 0 0-.102-1.493m-6.754-2v2h-2v-2zM15.25 11l-2.498.005l-.102.006a.75.75 0 0 0 .104 1.494l2.499-.005l.101-.007A.75.75 0 0 0 15.251 11m.001-3.496H5.748l-.102.007a.75.75 0 0 0 .102 1.493h9.504l.102-.006a.75.75 0 0 0-.102-1.494"></path></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16.75 4a2.25 2.25 0 0 1 2.245 2.096L19 6.25V17.5a.5.5 0 0 0 .992.09L20 17.5V7.014a2.25 2.25 0 0 1 1.994 2.072L22 9.25v7.5a3.25 3.25 0 0 1-3.066 3.245L18.75 20H5.25a3.25 3.25 0 0 1-3.245-3.066L2 16.75V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4zm-7.502 7h-3.5a.75.75 0 0 0-.75.75v3.5c0 .414.336.75.75.75h3.5a.75.75 0 0 0 .75-.75v-3.5a.75.75 0 0 0-.75-.75m6.004 3.5h-2.498l-.102.007A.75.75 0 0 0 12.754 16h2.498l.102-.007a.75.75 0 0 0-.102-1.493m-6.754-2v2h-2v-2zM15.25 11l-2.498.005l-.102.006a.75.75 0 0 0 .104 1.494l2.499-.005l.101-.007A.75.75 0 0 0 15.251 11m.001-3.496H5.748l-.102.007a.75.75 0 0 0 .102 1.493h9.504l.102-.006a.75.75 0 0 0-.102-1.494"
+                ></path>
+              </svg>
             ),
           },
         ].map((card, index) => (
@@ -203,11 +276,17 @@ const EventPage = () => {
                 <h2 className="text-xl font-semibold text-gray-700">
                   {card.title}
                 </h2>
-                <div className="p-3 text-white rounded-full" style={{backgroundColor:card.iconbg}}>
+                <div
+                  className="p-3 text-white rounded-full"
+                  style={{ backgroundColor: card.iconbg }}
+                >
                   {card.icon}
                 </div>
               </div>
-              <div className="mt-4 text-3xl font-bold" style={{color:card.iconbg}}>
+              <div
+                className="mt-4 text-3xl font-bold"
+                style={{ color: card.iconbg }}
+              >
                 {card.count}
               </div>
               <p className="text-sm py-2 bg-gray-200/50 text-center text-gray-500 mt-2">
@@ -223,11 +302,11 @@ const EventPage = () => {
       <div className="bg-white shadow-md rounded-lg border border-gray-600/10 p-5">
         <div className="flex items-center justify-between p-4">
           <h2 className="text-xl font-bold text-gray-700">
-            {filterMode=="upcoming"&&"Upcoming "}
-            {filterMode=="active"&&"Active "}
-            {filterMode=="news"&&"News "}
+            {filterMode == "upcoming" && "Upcoming "}
+            {filterMode == "active" && "Active "}
+            {filterMode == "news" && "News "}
             Events
-            </h2>
+          </h2>
           <button
             onClick={() => setOpen(true)}
             className="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-4 py-2 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
@@ -321,7 +400,7 @@ const EventPage = () => {
                       </td>
                       <td className="border-b py-3 px-6 text-sm text-gray-700">
                         <button
-                          onClick={() => handleDelete(event.id)}
+                          onClick={() => handleConformation(event.title,event.id)}
                           className="text-red-500 hover:scal-105 hover:shadow-lg hover:bg-white px-3 py-2 rounded-md hover:text-red-700"
                         >
                           Delete

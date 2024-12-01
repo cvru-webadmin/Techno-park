@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UploadModal from "./UploadImg";
+import LeaveConfirmationModal from "../../../componet/LeaveComform";
 
 const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }) => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
 
   const [imageUploadUrl,setImageUrl]=useState("");
   const [ModelImageopen,setImageModel]=useState(false)
+  const [conformOpen,setComfomation]=useState(false);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,20 +40,34 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
     }
   };
 
+  
+  const onConformation=()=>{
+    setComfomation(false);
+    onClose();
+  }
+
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      {/* models  */}
       <UploadModal
         isOpen={ModelImageopen}
         onClose={() => setImageModel(false)}
         setImageUrl={setImageUrl}
       />
+      <LeaveConfirmationModal
+        Open={conformOpen}
+        Close={() => setComfomation(false)}
+        Confirm={onConformation}
+      />
+
       <div className="bg-white shadow-lg rounded-lg w-full max-w-xl p-8">
         <h2 className="text-2xl flex justify-between items-center font-semibold text-gray-800 mb-6 text-center border-b pb-4">
           <span>Add New Event</span>
           <button
-            onClick={onClose}
+            onClick={()=>setComfomation(true)}
             className="text-gray-500 text-[20px] hover:text-gray-700 focus:outline-none"
           >
             ✕
@@ -123,7 +140,6 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
                   />
                 </div>
               )}
-              
             </div>
 
             {/* Status */}
@@ -151,7 +167,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
             <div className="flex justify-end gap-4">
               <button
                 type="button"
-                onClick={onClose}
+                onClick={()=>setComfomation(true)}
                 className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
                 Cancel

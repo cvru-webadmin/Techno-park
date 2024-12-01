@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import LeaveConfirmationModal from "../../../componet/LeaveComform";
 
 const EditEventModal = ({ isOpen, onClose, eventData, onSave, onEdit, edit }) => {
   const [formData, setFormData] = useState(eventData || {});
+  const [conformOpen,setComfomation]=useState(false);
+
 
   // Update formData whenever eventData changes
   useEffect(() => {
@@ -30,16 +33,23 @@ const EditEventModal = ({ isOpen, onClose, eventData, onSave, onEdit, edit }) =>
     onClose(); // Close the modal
   };
 
+  
+  const onConformation=()=>{
+    setComfomation(false);
+    onClose();
+  }
+
   if (!isOpen || !eventData || Object.keys(eventData).length === 0) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <LeaveConfirmationModal Open={conformOpen} Close={()=>setComfomation(false)} Confirm={onConformation} />
       <div className="bg-white shadow-lg rounded-xl w-full max-w-xl p-8">
       <h2 className="text-2xl flex justify-between items-center font-semibold text-gray-800 mb-6 text-center border-b pb-4">
           
           <span>Edit Event</span>
             <button
-              onClick={onClose}
+              onClick={()=>setComfomation(true)}
               className="text-gray-500 text-[20px] hover:text-gray-700 focus:outline-none"
             >
               ✕
@@ -111,7 +121,7 @@ const EditEventModal = ({ isOpen, onClose, eventData, onSave, onEdit, edit }) =>
           <div className="flex justify-end gap-4">
             <button
               type="button"
-              onClick={onClose}
+              onClick={()=>setComfomation(true)}
               className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
             >
               Cancel

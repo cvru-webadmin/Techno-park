@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import LeaveConfirmationModal from "../../../componet/LeaveComform";
 
 const AnswerModal = ({ isOpen, onClose, askerDetails, onSave, Answer, setAnswer }) => {
     const [adminAnswer, setAdminAnswer] = useState("");
+    const [conformOpen,setComfomation]=useState(false);
   
     if (!isOpen) return null;
+  
   
     const handleAnswerChange = (e) => setAdminAnswer(e.target.value);
   
@@ -21,15 +24,21 @@ const AnswerModal = ({ isOpen, onClose, askerDetails, onSave, Answer, setAnswer 
       onClose(); // Close modal
       if(res){setAnswer(!Answer)}
     };
+
+    const onConformation=()=>{
+      setComfomation(false);
+      onClose();
+    }
   
     return (
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+        <LeaveConfirmationModal Open={conformOpen} Close={()=>setComfomation(false)} Confirm={onConformation} />
         <div className="bg-white rounded-lg w-full max-w-xl p-6 shadow-lg">
           {/* Header */}
           <div className="flex border-b justify-between items-center pb-3">
             <h2 className="text-2xl font-bold text-gray-800">Inquiry Answer</h2>
             <button
-              onClick={onClose}
+              onClick={()=>setComfomation(true)}
               className="text-gray-500 hover:text-gray-700 focus:outline-none"
             >
               ✕
@@ -93,7 +102,7 @@ const AnswerModal = ({ isOpen, onClose, askerDetails, onSave, Answer, setAnswer 
           {/* Actions */}
           <div className="flex justify-end">
             <button
-              onClick={onClose}
+              onClick={()=>setComfomation(true)}
               className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg mr-2 hover:bg-gray-300"
             >
               Cancel

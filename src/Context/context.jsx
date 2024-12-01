@@ -6,13 +6,13 @@ import axios from "axios";
 
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAqf_zQY3JJu6IMgUDyHwyD82MrxLShiGE",
-    authDomain: "techno-park-website.firebaseapp.com",
-    databaseURL: "https://techno-park-website-default-rtdb.firebaseio.com",
-    projectId: "techno-park-website",
-    storageBucket: "techno-park-website.firebasestorage.app", 
-    messagingSenderId: "397220797528",
-    appId: "1:397220797528:web:e39f1eea81fa16d9067e2d"
+  apiKey: "AIzaSyAqf_zQY3JJu6IMgUDyHwyD82MrxLShiGE",
+  authDomain: "techno-park-website.firebaseapp.com",
+  databaseURL: "https://techno-park-website-default-rtdb.firebaseio.com",
+  projectId: "techno-park-website",
+  storageBucket: "techno-park-website.firebasestorage.app",
+  messagingSenderId: "397220797528",
+  appId: "1:397220797528:web:e39f1eea81fa16d9067e2d"
 };
 
 // Initialize Firebase
