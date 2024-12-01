@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UploadModal from "./UploadImg";
 
 const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }) => {
   const [formData, setFormData] = useState({
@@ -7,7 +8,8 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
     status: "Upcoming",
   });
 
-  const [image,setImage]=useState(null);
+  const [imageUploadUrl,setImageUrl]=useState("");
+  const [ModelImageopen,setImageModel]=useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,12 +25,14 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
         title:formData.title,
         description:formData.description,
         status:formData.status,
+        image:imageUploadUrl,
         createdAt:formatDate(),
     });
     onClose();
     if(res){
       EventAdd(!add)
       setFormData({ title: "", description: "", status: "Upcoming" });
+      setImageUrl("");
       onClose();
     }
   };
@@ -37,7 +41,12 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-5xl p-8">
+      <UploadModal
+        isOpen={ModelImageopen}
+        onClose={() => setImageModel(false)}
+        setImageUrl={setImageUrl}
+      />
+      <div className="bg-white shadow-lg rounded-lg w-full max-w-xl p-8">
         <h2 className="text-2xl flex justify-between items-center font-semibold text-gray-800 mb-6 text-center border-b pb-4">
           <span>Add New Event</span>
           <button
@@ -47,63 +56,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
             ✕
           </button>
         </h2>
-        <form onSubmit={handleSubmit} className="flex gap-7">
-          <div class="flex items-start justify-center w-2/3">
-            {image ? (
-              <div className="mt-4">
-                <p className="text-sm text-gray-500 relative">Preview:</p>
-                <button
-                  onClick={()=>setImage(null)}
-                  className="text-white absolute mt-6 ml-80 px-2 rounded-full bg-indigo-600/30 text-[20px] hover:text-gray-700 focus:outline-none"
-                >
-                  ✕
-                </button>
-                <img
-                  src={URL.createObjectURL(image)}
-                  alt="Preview"
-                  className="w-full h-72 object-cover rounded-lg shadow-md mt-2"
-                />
-              </div>
-            ) : (
-              <div>
-              <p className="text-sm text-gray-500">Upload Image:</p>
-              <label
-                for="dropzone-file"
-                class="flex flex-col mt-3 items-center justify-center w-full h-72 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
-              >
-                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                  <svg
-                    class="w-8 h-8 mb-4 text-gray-500"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 16"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                    />
-                  </svg>
-                  <p class="mb-2 text-sm text-gray-500">Click to upload</p>
-                  <p class="text-xs text-gray-500">
-                    SVG, PNG, JPG or GIF (MAX. 800x400px)
-                  </p>
-                </div>
-                <input
-                  id="dropzone-file"
-                  type="file"
-                  accept="image/*"
-                  className=" opacity-0"
-                  onChange={(e) => setImage(e.target.files[0])}
-                />
-              </label>
-              </div>
-            )}
-          </div>
-
+        <form onSubmit={handleSubmit}>
           <div className="h-full w-full">
             {/* Event Title */}
             <div className="mb-6">
@@ -145,7 +98,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
               ></textarea>
             </div>
 
-            {/* Upload Image
+            {/* Upload Image */}
             <div className="mb-6">
               <label
                 htmlFor="image"
@@ -153,13 +106,25 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
               >
                 Upload Image
               </label>
-              <input
-                type="file"
-                id="image"
-                accept="image/*"
-                onChange={(e) => setImage(e.target.files[0])}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-800 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              /> */}
+              {!imageUploadUrl ? (
+                <input
+                  type="button"
+                  onClick={() => setImageModel(true)}
+                  value={"Click to upload"}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-800 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+                />
+              ) : (
+                <div className="p-4 py-2 text-sm flex capitalize justify-between items-center bg-gray-100 border rounded-lg text-gray-500">
+                  upload image preview
+                  <img
+                    className="h-10 rounded-sm"
+                    src={imageUploadUrl}
+                    alt="UploadImage"
+                  />
+                </div>
+              )}
+              
+            </div>
 
             {/* Status */}
             <div className="mb-6">

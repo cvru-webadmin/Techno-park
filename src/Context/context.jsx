@@ -132,7 +132,6 @@ const FireBaseProvider = ({ children }) => {
         let response = await axios.post(`https://api.cloudinary.com/v1_1/${CludeName}/image/upload`,data);
         if(response){
           return await response.data.url;
-          alert("Image uploaded successfully!");
         }
       } catch (error) {
         console.log("error ocurred uploading image: ",error);
@@ -266,6 +265,7 @@ const FireBaseProvider = ({ children }) => {
            SendFeedback,
            GetFeedbacks,
            formatDate,
+           UploadImage,
          }}
        >
       {children}

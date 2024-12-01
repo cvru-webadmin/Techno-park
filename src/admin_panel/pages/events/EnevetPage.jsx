@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import AddEventModal from "./event componet/AddEvent";
 import { FireContext } from "../../../Context/context";
 import EditEventModal from "./event componet/EditEvent";
+import DeleteModal from "./event componet/DeleteConformation";
 
 const EventPage = () => {
   const eventsData = [
@@ -121,6 +122,8 @@ const EventPage = () => {
     UpcomingEvents();
   },[onEdit,onDelete,add,totalEvent])
 
+  const[isModeldelete,setdeelteModel]=useState(false)
+
   return (
     <div className="h-screen w-full mx-auto p-12 pt-0 overflow-y-auto">
       {/* model box */}
@@ -140,11 +143,13 @@ const EventPage = () => {
         eventData={isEdit}
         onSave={updateEvent}
       />
+      <DeleteModal isOpen={isModeldelete} onCancel={()=>setdeelteModel(false)}/>
       {/* Cards Row */}
       {/* Header Section */}
       <header className="bg-white shadow-md p-4 mb-6 rounded-lg mt-6">
         <h1 className="text-2xl font-bold text-gray-700">Admin - Events</h1>
       </header>
+      <button className="bg-red-400" onClick={()=>setdeelteModel(true)}>open delete</button>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         {/* Card Component */}
         {[
