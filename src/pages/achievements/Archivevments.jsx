@@ -1,11 +1,21 @@
 import React from "react";
-import Header from "./componet/Header";
-import Trophies from "./componet/Trophies";
+import Header from "./archivment componet/Header";
+import Trophies from "./archivment componet/Trophies";
 import departmet_excel from "../../assets/Trophies/Department excellence.jpg"
 import best_perfomnce from "../../assets/Trophies/bestPerfomace.jpg"
 import best_perfomnce2 from "../../assets/Trophies/Best perfoming.jpg"
 import acadmicAward from "../../assets/Trophies/Acadmic professonal.jpg"
 import InovationAward from "../../assets/Trophies/inovation2.jpg"
+import TeachersAchievements from "./archivment componet/TeachersAchievements";
+import StudentAchievements from "./archivment componet/student";
+import ExcellenceAwards from "./archivment componet/ExcellenceAwards";
+
+import solor from "./../../assets/Student archivment/solar2.jpg"
+import merit from "./../../assets/Student archivment/merit.jpg"
+import Inovation from "./../../assets/Student archivment/Inovation.jpg"
+import hackathon from "./../../assets/images/hackathon.jpg"
+import respectEducationMinistor from "./../../assets/Student archivment/respectEducationMinistor.jpg"
+
 
 const AchievementsPage = () => {
   const departments = [
@@ -23,14 +33,92 @@ const AchievementsPage = () => {
     { title: "Innovation in Teaching Award", year: 2020, image: InovationAward },
   ];
 
+  const achievements = [
+    {
+      name: "Dr. John Smith",
+      title: "Best Educator Award",
+      description: "Recognized for outstanding contributions to educational innovation.",
+      year: 2023,
+      image: "https://via.placeholder.com/400x300",
+    },
+    {
+      name: "Prof. Jane Doe",
+      title: "Research Excellence",
+      description: "Awarded for groundbreaking research in machine learning.",
+      year: 2022,
+      image: "https://via.placeholder.com/400x300",
+    },
+    {
+      name: "Dr. Emily Davis",
+      title: "Teaching Excellence",
+      description: "Acknowledged for inspiring students and advancing pedagogy.",
+      year: 2021,
+      image: "https://via.placeholder.com/400x300",
+    },
+  ];
+
+  const Studentachievements = [
+    {
+      name: "Solar Model",
+      title: "Gold Medalist in Math Olympiad",
+      description:
+        "Emma achieved the gold medal in the International Mathematics Olympiad, showcasing her exceptional analytical and problem-solving skills.",
+      year: 2023,
+      image: solor, // Update with the correct image path
+    },
+    {
+      name: "Hackathon",
+      title: "First Place in Robotics Competition",
+      description:
+        "Ryan's innovative robotics project won first place in the National Robotics Championship.",
+      year: 2022,
+      image: hackathon, // Update with the correct image path
+    },
+    {
+      name: "Education Minister Attribute",
+      title: "Published Research Paper",
+      description:
+        "Sophia published groundbreaking research on AI ethics in a renowned journal.",
+      year: 2023,
+      image: respectEducationMinistor, // Update with the correct image path
+    },
+    {
+      name: "Merit Student",
+      title: "First Place in Robotics Competition",
+      description:
+        "Ryan's innovative robotics project won first place in the National Robotics Championship.",
+      year: 2022,
+      image: merit, // Update with the correct image path
+    },
+    {
+      name: "Innovation IDEA",
+      title: "Published Research Paper",
+      description:
+        "Sophia published groundbreaking research on AI ethics in a renowned journal.",
+      year: 2023,
+      image: Inovation, // Update with the correct image path
+    },
+  ];
+  
+  
+  
+
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className=" min-h-screen">
       {/* Header Section */}
       <Header />
        {/* Trophies  */}
+
+       <ExcellenceAwards />
+
        <Trophies trophies={trophies} />
+
+       <TeachersAchievements achievements={achievements} />
+
+       <StudentAchievements achievements={Studentachievements} />
+
       {/* Categories Section */}
-      <section className="py-10">
+      {/* <section className="py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-gray-800">Excellent Departments</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
@@ -50,7 +138,7 @@ const AchievementsPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       
     </div>

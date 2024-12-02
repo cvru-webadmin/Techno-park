@@ -38,9 +38,15 @@ export default function Trophies({ trophies }) {
     <section className="py-16 bg-gray-100">
       <div className="max-w-[90rem] mx-auto px-6">
         {/* Section Title */}
-        <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-12 tracking-tight">
-          Trophies
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+            Our Trophies
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Showcasing the prestigious awards and accolades we’ve earned over
+            the years.
+          </p>
+        </div>
 
         {/* Trophy Slider */}
         <Slider {...sliderSettings}>
@@ -65,7 +71,8 @@ export default function Trophies({ trophies }) {
 
                   {/* Year */}
                   <p className="text-sm text-gray-700 text-center">
-                    <span className="font-semibold text-gray-600">Year:</span> {trophy.year}
+                    <span className="font-semibold text-gray-600">Year:</span>{" "}
+                    {trophy.year}
                   </p>
                 </div>
               </div>

@@ -35,7 +35,7 @@ export default function Header() {
         />
         <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded-lg">
           <p className="text-sm font-semibold text-blue-900">
-            Celebrating 50+ Excellence Awards
+            Celebrating 6+ Excellence Awards
           </p>
         </div>
       </div>
