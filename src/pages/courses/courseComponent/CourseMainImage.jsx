@@ -3,7 +3,7 @@ import MainImage from "../../../assets/images/mca stu lab.jpeg"
 
 const CourseTopImage = () => {
   return (
-    <div className="relative h-[300px] mt-[60px] flex items-center justify-center">
+    <div className="relative h-[300px] flex items-center justify-center">
       {/* Image container with rounded corners and shadow */}
       <div className="w-full h-full shadow-lg rounded-lg overflow-hidden">
         {/* Background Image */}

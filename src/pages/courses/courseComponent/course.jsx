@@ -98,9 +98,9 @@ const CoursePage = () => {
     <div className="bg-gray-50 min-h-screen px-4 py-8"> 
       {/* Main Sections */}
       {Object.entries(courses).map(([section, sectionCourses],index) => (
-        <div key={section} className="mb-16"  ref={(e) => (ScrollCourses.current[index] = e)}>
+        <div key={section} className="lg:mb-16 mb-10 md:mb-14 flex flex-col items-center"  ref={(e) => (ScrollCourses.current[index] = e)}>
           {/* Section Heading with Enhanced Separator */}
-          <div className="relative text-center mb-12">
+          <div className="relative text-center lg:mb-12 mb-6 md:mb-8">
   <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide uppercase">
     {section}
   </h2>
@@ -111,7 +111,7 @@ const CoursePage = () => {
 </div>
 
           {/* Course Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 px-40 gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:px-40 lg:gap-20 md:gap-14 lg:w-full md:w-[80%] gap-10">
             {sectionCourses.map((course, index) => (
               <div
                 key={index}
@@ -155,8 +155,8 @@ const CoursePage = () => {
       {/* Footer Call-to-Action */}
       <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-6 mt-12 rounded-lg">
         <h3 className="text-2xl font-semibold">Need More Information?</h3>
-        <p className="text-gray-200 mt-2">Contact our department office for detailed information on admissions and courses.</p>
-        <button className="mt-4 px-6 py-2 bg-white text-blue-700 font-semibold rounded-md shadow-md hover:bg-gray-100">
+        <p className="text-gray-200 mt-2 lg:p-0 p-2">Contact our department office for detailed information on admissions and courses.</p>
+        <button className="lg:mt-4 mt-2 px-6 py-2 bg-white text-blue-700 font-semibold rounded-md shadow-md hover:bg-gray-100">
           Contact Us
         </button>
       </footer>
