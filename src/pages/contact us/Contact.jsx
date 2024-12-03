@@ -18,15 +18,15 @@ const ContactUs = () => {
       </div>
     </div>
     {/* Heading */}
-    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 bg-blue-800/80 rounded-lg shadow-lg p-5 flex items-center justify-center">
-      <h2 className="text-4xl font-extrabold text-center text-white tracking-wider uppercase" style={{textShadow:"2px 2px 2px black"}}>
+    <div className="absolute md:top-1/4 top-[36%] left-1/2 -translate-x-1/2 bg-blue-800/80 rounded-lg shadow-lg p-5 md:w-auto w-[59%] flex items-center justify-center">
+      <h2 className="md:text-4xl text-2xl font-extrabold text-center text-white tracking-wider uppercase" style={{textShadow:"2px 2px 2px black"}}>
         Contact Us
       </h2>
     </div>
     
     <div className="bg-gray-100 py-10 px-5 md:px-20">
       <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-7xl">
+        <div className="lg:grid lg:grid-cols-3 gap-8 mx-auto max-w-7xl">
           {/* Contact Info */}
           <div className="bg-white shadow-md rounded-lg p-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
@@ -109,10 +109,10 @@ const ContactUs = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white shadow-md rounded-lg p-6 px-16 col-span-2">
+          <div className="bg-white shadow-md rounded-lg p-6 lg:mt-0 mt-8 md:px-16 col-span-2">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
             <form className="space-y-4">
-              <div className='grid grid-cols-2 gap-6'>
+              <div className='md:grid grid-cols-2 gap-6'>
               <div>
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-1">First Name</label>
                 <input
@@ -123,7 +123,7 @@ const ContactUs = () => {
                 />
               </div>
               <div>
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-1">Last Name</label>
+                <label htmlFor="name" className="block text-gray-700 font-medium mb-1 md:mt-0 mt-4">Last Name</label>
                 <input
                   type="text"
                   id="name"
