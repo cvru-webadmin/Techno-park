@@ -8,9 +8,12 @@ import dinMamaActivityImage from "../../../assets/images/DINMAMA_activete.jpg"
 
 const AboutSchool = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 py-12 bg-white">
+    <section className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-3 px-6 lg:py-12 py-7 bg-white">
    {/* Left Side Section: Images */}
-   <div className="flex flex-col md:flex-row w-full md:w-1/2 gap-6">
+   <h2 className="about-title font-semibold text-center lg:hidden block -mt-4">
+        About Our Department
+      </h2>
+   <div className="flex flex-col md:flex-row w-full lg:w-1/2 gap-6">
       {/* Single Large Image */}
       <div className="relative h-64 md:h-auto w-full md:w-[50%] rounded-lg overflow-hidden shadow-lg">
         <img
@@ -47,26 +50,20 @@ const AboutSchool = () => {
             background: 'linear-gradient(to right,  #3b82f6, #9333ea)',
           }}
           >
-          <span className="text-center text-3xl font-bold duration-500 transition-all text-shadow-lg ">8+</span> 
+          <span className="text-center text-3xl font-bold duration-500 transition-all text-shadow-lg ">6+</span> 
           <p className="text-center text-xl font-bold duration-500 transition-all text-shadow-lg ">Years of Experience</p>
-          </div>
-
-        
+          </div> 
       </div>
     </div>
-    
-    
-
-
      {/* Right Side Section: About the Department */}
-    <div className="w-full md:w-[45%]">
+    <div className="w-full lg:w-[45%]">
       {/* Main Heading */}
-      <h2 className="about-title -mt-4">
+      <h2 className="about-title lg:block hidden font-semibold -mt-4">
         About Our Department
       </h2>
     
       {/* Introduction Paragraph */}
-      <p className="about-description">
+      <p className="about-description ">
         Techno Park School of Computer Science and Information Technology, affiliated with
         <strong className="text-indigo-600"> Dr. C.V. Raman University</strong> and ISO 9001:2015 certified,
         is a premier institution offering programs like BCA, PGDCA, DCA, B.Sc. (IT), M.Sc. (IT), and MCA.
@@ -84,13 +81,11 @@ const AboutSchool = () => {
         </p>
     
       {/* Call-to-Action */}
-      <div className="h-2.5"></div>
-      <NavLink
-        to="/contact"
-        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105"
-      >
-        Contact Us
-      </NavLink>
+      <div className="w-full lg:w-1/2 flex mt-4 justify-center lg:justify-start">
+          <NavLink to="/contact" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105">
+          Contact Us
+          </NavLink>
+          </div>
     </div>
 
     </section>

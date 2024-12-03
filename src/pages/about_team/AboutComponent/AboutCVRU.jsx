@@ -5,10 +5,20 @@ import Campus from "../../../assets/cvru_campus.jpg"
 
 const AboutUniversity = () => {
   return (
-      <div className="w-full bg-gray-50 rounded-lg p-8 flex justify-evenly">
+      <div className="w-full bg-gray-50 rounded-lg p-8 flex flex-col lg:flex-row lg:justify-evenly">
+        <h2 className="about-title font-semibold text-center lg:hidden block">
+            About Our University
+          </h2>
+         <div className="flex items-center lg:hidden lg:w-[45%] lg:mt-0 mt-1 w-full justify-center">
+          <img
+            src={Campus} // Replace with your actual image path
+            alt="University"
+            className="w-full lg:h-4/5 h-80 lg:ml-[2.5%] object-cover rounded-2xl shadow-xl"
+          />
+        </div>
         {/* Left Part */}
-        <div className="w-[50%] mr-[2.5%]">
-          <h2 className="about-title">
+        <div className="lg:w-[50%] lg:mt-0 mt-4 w-full mr-[2.5%]">
+          <h2 className="about-title font-semibold lg:block hidden">
             About Our University
           </h2>
           <p className="about-description">
@@ -22,7 +32,7 @@ const AboutUniversity = () => {
               to excel academically and professionally. The university is committed to empowering the region's youth with quality education and 
               skill development.
             </p>
-          <div className="w-full md:w-1/2 flex mt-4 justify-left md:justify-left">
+          <div className="w-full lg:w-1/2 flex mt-4 justify-center lg:justify-start">
           <NavLink to="https://cvrump.ac.in/" target="_blank" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105">
             Visit University Website
           </NavLink>
@@ -30,12 +40,11 @@ const AboutUniversity = () => {
         </div>
 
         {/* Right Part */}
-        
-        <div className="flex items-center w-[45%] justify-center">
+        <div className="lg:flex items-center hidden lg:w-[45%] lg:mt-0 mt-5 w-full justify-center">
           <img
             src={Campus} // Replace with your actual image path
             alt="University"
-            className="w-full h-4/5 ml-[2.5%] object-cover rounded-2xl shadow-xl"
+            className="w-full lg:h-4/5 h-[100%] ml-[2.5%] object-cover rounded-2xl shadow-xl"
           />
         </div>
       </div>

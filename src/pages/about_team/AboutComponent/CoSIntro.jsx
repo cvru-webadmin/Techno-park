@@ -4,14 +4,18 @@ import SwatiAtre from "../../../assets/images/SwatiAtre2.png"
 
 const IntroCoS = () => {
   return (
-    <section className="p-6 lg:p-12 justify-center flex items-center">
-      <div className="w-[100%] text-justify flex justify-evenly overflow-hidden lg:flex">
+    <section className="p-6 lg:p-12 justify-center flex items-center ">
+      <div className="w-[100%] text-justify flex justify-evenly flex-col lg:flex-row overflow-hidden">
+         {/* Section Title */}
+         <h2 className="about-title lg:hidden text-left font-semibold">
+                CHAIR OF THE SCHOOL
+          </h2>
         {/* Image Container */}
-  <div className="relative lg:h-[500px] overflow-hidden rounded-lg shadow-lg group">
+  <div className="relative lg:h-[500px] h-[400px] overflow-hidden rounded-lg shadow-lg group">
     <img
       src={SwatiAtre} // Replace with the actual image URL
       alt="Chief of Staff"
-      className="object-cover h-full w-full transition-transform duration-300 group-hover:scale-105"
+      className="object-cover object-top h-full w-full transition-transform duration-300 group-hover:scale-105"
     />
     {/* Overlay Effect */}
     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -27,11 +31,11 @@ const IntroCoS = () => {
         {/* Right Column: Content */}
         <div className="lg:w-[53%] py-1">
           {/* Section Title */}
-          <h2 className="about-title">
+          <h2 className="about-title lg:block hidden font-semibold">
                 CHAIR OF THE SCHOOL
           </h2>
           {/* Message Content */}
-          <p className="text-gray-700 mb-2">
+          <p className="text-gray-700 lg:mt-0 mt-5 mb-2">
             <h3 className="text-2xl font-semibold text-blue-700">
               Ms. Swati Atre
             </h3>

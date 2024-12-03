@@ -70,7 +70,7 @@ const Card = ({ image, title, description, name }) => {
           {name}
         </h2>
         <h3 className="text-lg text-blue-600 mb-4">{title}</h3>
-        <p className="about-description">{description}</p>
+        <p className="font-[1.1rem] mb-1 text-[#2c3e50] md:text-justify text-center">{description}</p>
       </div>
     </div>
   );
@@ -78,8 +78,8 @@ const Card = ({ image, title, description, name }) => {
 
 const FacultyCard = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="about-title">
+    <div className="max-w-7xl mx-auto px-4 lg:py-8">
+      <h1 className="about-title font-semibold">
         Meet Our Faculty
       </h1>
       <div className="grid grid-cols-1 gap-8">
