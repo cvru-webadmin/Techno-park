@@ -36,33 +36,49 @@ const CultureAndActivities = () => {
     <section className="flex flex-col items-center bg-white py-6 pb-10 px-4 sm:px-8 lg:px-16">
       <div className="max-w-[93%] w-full text-center">
         {/* Main Heading */}
-        <h2 className="text-3xl sm:text-4xl font-semibold text-blue-600 mb-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-600 mb-6">
           Culture & Activities
         </h2>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 mb-8 text-sm sm:text-base">
           Explore the vibrant culture and engaging activities that bring our community together, fostering creativity, innovation, and unity.
         </p>
       </div>
 
       {/* Events Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 max-w-[97%] mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 max-w-[97%] mb-10">
         {events.map((event, index) => (
-          <div key={index} className="h-[420px] space-y-5">
+          <div key={index} className="flex flex-col h-[500px] lg:h-[420px] space-y-4">
             {index % 2 === 0 ? (
               <>
-                <img src={event.image} alt={event.title} className="h-1/2 w-full object-cover" />
-                <div className="px-6 py-2.5 border h-1/2 w-full">
-                  <h3 className="text-lg font-semibold">{event.title}</h3>
-                  <p className="text-gray-600 text-sm">{event.description}</p>
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="h-1/2 w-full object-cover rounded-lg"
+                />
+                <div className="px-4 py-3 border h-1/2 w-full rounded-lg shadow-sm">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs sm:text-sm">
+                    {event.description}
+                  </p>
                 </div>
               </>
             ) : (
               <>
-                <div className="px-6 py-2.5 h-1/2 border w-full">
-                  <h3 className="text-lg font-semibold">{event.title}</h3>
-                  <p className="text-gray-600 text-sm">{event.description}</p>
+                <div className="px-4 py-3 h-1/2 border w-full rounded-lg shadow-sm">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs sm:text-sm">
+                    {event.description}
+                  </p>
                 </div>
-                <img src={event.image} alt={event.title} className="h-1/2 w-full object-cover" />
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="h-1/2 w-full object-cover rounded-lg"
+                />
               </>
             )}
           </div>
@@ -71,7 +87,7 @@ const CultureAndActivities = () => {
 
       {/* Add More Events Button */}
       <div className="mt-5 text-center">
-        <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105">
+        <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-base sm:text-lg font-semibold rounded-md shadow-md hover:scale-105 transform transition">
           Explore More
         </button>
       </div>
