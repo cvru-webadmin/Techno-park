@@ -4,20 +4,19 @@ const chatbotContext = {
     affiliation: "CVRUK",
     certification: "ISO 9001:2015 certified",
     introduction: {
-      purpose: "To enhance and expand the visibility of innovative computing solutions to both national and global audiences.",
-      objective: "To provide a professional environment ensuring the highest standards in computing technology."
+      purpose: "To lead the development and application of innovative computing technologies, contributing to the advancement of IT solutions that can address both local and global challenges.",
+      objective: "To create a cutting-edge learning environment that fosters excellence in computing technology, ensuring that students are well-prepared for the rapidly evolving tech industry."
     },
-    vision: "Towards ubiquitous computing technology",
-    mission: "To provide access to higher educational opportunities in computing technology programs that cultivate theoretical, practical, and ethical skills, aiming to boost productivity and foster innovation in society."
+    vision: "To be a leading institution in the field of computing technology, shaping future leaders who will drive innovation and advancements in IT, making technology more accessible and impactful for society.",
+    mission: "To provide high-quality education in computing technology, focusing on a blend of theoretical knowledge and hands-on experience. Our mission is to equip students with the necessary skills in programming, problem-solving, and ethical practices, empowering them to contribute meaningfully to the tech industry and society."
   },
-  programsOffered: {
+  programsOffered_FeaturedCourses: {
     BCA: {
       name: "Bachelor of Computer Applications (BCA)",
       duration: "3 Years",
       eligibility: "12th Pass with any stream",
       annualIntake: 60,
       totalEnrollment: 148,
-      evaluationMethods: ["Mid-Semester Test (MST)", "End-Semester Test (PUT)", "Project Presentations", "Internships", "Problem-solving Activities"]
     },
     PGDCA: {
       name: "Post Graduate Diploma in Computer Applications (PGDCA)",
@@ -25,7 +24,6 @@ const chatbotContext = {
       eligibility: "Any Graduate",
       annualIntake: 60,
       totalEnrollment: 180,
-      evaluationMethods: ["Class Tests"]
     },
     DCA: {
       name: "Diploma in Computer Applications (DCA)",
@@ -33,7 +31,6 @@ const chatbotContext = {
       eligibility: "12th Pass with any stream",
       annualIntake: 60,
       totalEnrollment: 180,
-      evaluationMethods: ["Class Tests"]
     },
     BScIT: {
       name: "B.Sc. in IT",
@@ -54,7 +51,6 @@ const chatbotContext = {
       eligibility: "Graduation with at least 50% marks (45% for reserved categories), ideally with math at 10+2 or graduation level",
       annualIntake: 60,
       totalEnrollment: 14,
-      evaluationMethods: ["Mid-Semester Test (MST)", "End-Semester Test (PUT)", "Project Presentations", "Internships", "Problem-solving Activities"]
     }
   },
   educationalApproach: {
@@ -126,28 +122,14 @@ const chatbotContext = {
   ],
   studentAchievements: {
     placements: [
-      { company: "Accenture", roles: ["Various"] },
-      { company: "Central Bank of India", roles: ["Various"] },
-      { company: "Post Office", roles: ["Various"] }
-    ],
-    researchActivities: [
-      "Participation in research projects, paper presentations, earning certificates."
-    ],
-    competitions: [
-      "Awards in hackathons, logo and webpage design competitions."
-    ],
-    otherRecognitions: [
-      "Certificates in workshops on IPR and Professional Advancement Program",
-      "Medals in shooting competitions"
-    ]
+      "Accenture - Various Roles",
+      "Central Bank of India - Various Roles",
+      "Post Office - Various Roles"
+    ],    
+    researchActivities: ["Participation in research projects, paper presentations, earning certificates."],
+    competitions: ["Awards in hackathons, logo and webpage design competitions."],
+    otherRecognitions: ["Certificates in workshops on IPR and Professional Advancement Program","Medals in shooting competitions"]
   },
-  libraryResources: [
-    { program: "MCA", titles: 20, utilization: "50%" },
-    { program: "BCA", titles: 122, utilization: "49.18%" },
-    { program: "PGDCA", titles: 34, utilization: "23.53%" },
-    { program: "DCA", titles: 34, utilization: "26.47%" },
-    { program: "M.Sc. (IT)", titles: 18 }
-  ],
   labs: [
     { name: "Programming Lab", capacity: 56 },
     { name: "Database Lab", capacity: 48 },
@@ -155,16 +137,7 @@ const chatbotContext = {
     { name: "Language Lab", capacity: 48 },
     { name: "IoT Lab", capacity: 28 }
   ],
-  meritStudents: [
-    { name: "Khushi Yadav", program: "BCA II", percentage: "90.25%" },
-    { name: "Ayushi Dashore", program: "BCA II", percentage: "87.87%" },
-    { name: "Divya Tanwar", program: "BCA II", percentage: "85%" }
-  ],
-  contactInfo: {
-    phone: ["+07320-247700/01", "6269001060", "6269001063", "9575916565"],
-    email: "info@cvrump.ac.in",
-    socialMediaIcons: "Interactive social media icons used in the footer for enhanced engagement (e.g., Font Awesome)."
-  },
+  contactInfo: { email: "info@cvrump.ac.in", phone: "+07320-247700" },
   branding: {
     logoText: ["Techno Park", "School of Computer Science and Technology"]
   },

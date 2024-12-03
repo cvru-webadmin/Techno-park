@@ -30,6 +30,8 @@ const ChatBot = () => {
     setMessages(prevMessages => [...prevMessages, { sender, text }]);
   };
 
+
+  
   // Handle send message
   const handleSend = async() => {
     if (userInput.trim()) {
@@ -52,9 +54,12 @@ const ChatBot = () => {
                            `
                          }]}]});
           setIsLoading(false);
-          addMessage('Techno Bot',response.data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.");
+          addMessage('Techno Bot', response.data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.");
         }
       catch(error){
+        if(error.status==503){
+          addMessage('Techno Bot',"Sorry, For problem server.");
+        }
         console.log(error)
       }
       finally{
@@ -81,11 +86,15 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
+  const [isHover,setHover]=useState(false);
+
   return (
     <div className="fixed z-50 bottom-16 right-16">
       {/* Button to open chatbot */}
 <button
   onClick={toggleChat}
+  onMouseEnter={()=>setHover(true)}
+  onMouseLeave={()=>setHover(false)}
   className="relative bg-gradient-to-r from-blue-500 group to-purple-600 text-white py-3 px-3 text-base font-semibold rounded-full shadow-md transform transition-all duration-300 ease-in-out hover:scale-105"
 >
   {/* Chatbot Icon */}
@@ -96,13 +105,13 @@ const ChatBot = () => {
       d="M12 5.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-5 1a1 1 0 1 1 2 0a1 1 0 0 1-2 0m3.5-4a.5.5 0 0 0-1 0V3h-3A1.5 1.5 0 0 0 5 4.5v4A1.5 1.5 0 0 0 6.5 10h6.294l.326-1H6.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v3.583a1.42 1.42 0 0 1 1 .016V4.5A1.5 1.5 0 0 0 13.5 3h-3zm-2 9h1.908a1.42 1.42 0 0 0-.408.997v.006H5.31a.81.81 0 0 0-.81.81v.437c0 .69.131 1.456.802 2.069C5.99 16.446 7.34 17 10 17c1.55 0 2.655-.188 3.444-.47a1.4 1.4 0 0 0 .678.419a1.3 1.3 0 0 0-.117.439c-.916.367-2.137.59-3.755.61V18h-.5v-.002c-2.616-.033-4.195-.595-5.122-1.44c-.875-.8-1.089-1.777-1.123-2.556H3.5v-.69c0-.999.81-1.809 1.81-1.809H8.5zm6.378-2.218l.348 1.071a2.2 2.2 0 0 0 1.399 1.397l1.071.348l.021.006a.423.423 0 0 1 0 .798l-1.071.348a2.2 2.2 0 0 0-1.399 1.397l-.348 1.07a.423.423 0 0 1-.798 0l-.349-1.07a2.2 2.2 0 0 0-.65-.977a2.2 2.2 0 0 0-.748-.426l-1.071-.348a.423.423 0 0 1 0-.798l1.071-.348a2.2 2.2 0 0 0 1.377-1.397l.348-1.07a.423.423 0 0 1 .799 0m4.905 7.931l-.766-.248a1.58 1.58 0 0 1-.998-.998l-.25-.765a.302.302 0 0 0-.57 0l-.248.765a1.58 1.58 0 0 1-.984.998l-.765.248a.303.303 0 0 0-.146.46c.036.05.087.09.146.11l.765.249a1.58 1.58 0 0 1 1 1.002l.248.764a.302.302 0 0 0 .57 0l.249-.764a1.58 1.58 0 0 1 .999-.999l.765-.248a.302.302 0 0 0 0-.57zm-6.174-.527l.07.053Z"
     />
   </svg>
+</button>
 
   {/* Tooltip on hover */}
-  {!isOpen&&<div className="absolute left-[-180px] bottom-12 px-4 py-2 bg-white rounded-br-none text-gray-700 text-[11px] rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-    <p><span className='font-bold'> Assistant: </span>Your Personal Chatbot</p>
-    <div className=' absolute bottom-0 left-1 rounded-l-full rounded-xl h-1 w-[98%] bg-gradient-to-r from-purple-600 via-teal-500  to-amber-400'></div>
+  {!isOpen&&<div className={`absolute left-[-180px] bottom-12 px-4 py-2 bg-white border border-gray-400/40 rounded-br-none text-gray-700 text-[11px] rounded-lg shadow-md opacity-0 transition-opacity duration-300 ${isHover&&"opacity-100"}`}>
+     <p><span className='font-bold'>Techno Bot Assistant:</span><br/>Here to assist you every step of the way!</p>
+    <div className=' absolute bottom-0 left-1 rounded-l-full rounded-xl h-1 w-[96%] bg-gradient-to-r from-purple-600 via-teal-500  to-amber-400'></div>
   </div>}
-</button>
 
 
       {/* Chat modal */}

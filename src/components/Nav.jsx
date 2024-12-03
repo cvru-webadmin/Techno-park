@@ -34,6 +34,10 @@ const Navbar = () => {
     })
   },[])
 
+  useEffect(()=>{
+    settab(window.location.pathname);
+  },[window.location.pathname])
+
   // console.log(tab)
   return (
     <nav className={`fixed w-full top-0 z-50 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-transparent transition-all duration-200 ease-in-out transform"}`}>
@@ -70,11 +74,11 @@ const Navbar = () => {
           } lg:flex`}
         >
           {navLinks.map((link, index) => (
-            <li key={index} className="relative group">
+            <li key={index+link.path} className="relative group">
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
-                  onClick={() => settab(link.name)} // Update state when the tab is clicked
+                  onClick={()=>{settab(link.path); window.scrollTo(0, 0);}}
                   className="xl:text-base lg:text-xs font-semibold transition duration-300 text-white  group-hover:text-amber-400">
                   {link.name}
               
@@ -82,12 +86,12 @@ const Navbar = () => {
                   // for dorpdown tabs
                   (<span
                     className={`absolute left-0 -bottom-1 w-[75%] h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
-                      tab==link.name?"scale-100":"scale-x-0"
+                      tab==link.path?"scale-100":"scale-x-0"
                     }`}></span>):
                   //for all tab 
                   (<span
                     className={`absolute left-0 -bottom-1 w-full h-[1.5px] bg-amber-400 transform group-hover:scale-x-100 transition-transform duration-300 origin-left ${
-                      tab==link.name?"scale-100":"scale-x-0"
+                      tab==link.path?"scale-100":"scale-x-0"
                     }`}
                     ></span> )}
                 
@@ -126,8 +130,8 @@ const Navbar = () => {
                     openSubmenu === link.name ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
                   }`}
                 >
-                  {link.submenu.map((subitem, subIndex) => (
-                    <NavLink to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}>
+                  {link.submenu.map((subitem, subIndex,index) => (
+                    <NavLink key={subIndex+index} to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}>
                     <li
                       key={subIndex}
                       className="px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-700 hover:shadow-md text-sm text-gray-200 hover:text-gray-200"
