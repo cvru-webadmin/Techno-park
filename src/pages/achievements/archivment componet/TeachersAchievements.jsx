@@ -114,7 +114,7 @@ export default function TeachersAchievements({ achievements }) {
                 <img
                   src={achievement.image}
                   alt={`${achievement.name} achievement`}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-60 object-cover"
                 />
 
                 {/* Achievement Details */}

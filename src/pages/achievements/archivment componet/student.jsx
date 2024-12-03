@@ -122,7 +122,7 @@ export default function StudentAchievements({ achievements }) {
                 </h3>
           
                 {/* Award or Title */}
-                <p className="text-lg font-semibold text-blue-700 mb-4">
+                <p className="text-lg h-12 font-semibold text-blue-700 mb-4">
                   {achievement.title}
                 </p>
           

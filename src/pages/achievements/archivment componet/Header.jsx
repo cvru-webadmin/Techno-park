@@ -2,7 +2,7 @@ import React from 'react'
 import Award from '../../../assets/acsilentes award.png';
 
 
-export default function Header() {
+export default function Header({scroll}) {
   return (
     <header className="bg-gradient-to-r pt-24 from-blue-900 to-blue-700 py-16">
   <div className="max-w-[90rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -19,7 +19,7 @@ export default function Header() {
     From academic breakthroughs to groundbreaking innovations, explore the stories 
     behind the awards that shape our community and inspire future generations.
   </p>
-  <button className="mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold rounded-lg shadow-lg transition duration-300">
+  <button onClick={scroll} className="mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold rounded-lg shadow-lg transition duration-300">
     Explore Achievements
   </button>
 </div>
