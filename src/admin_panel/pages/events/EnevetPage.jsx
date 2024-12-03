@@ -157,9 +157,9 @@ const EventPage = () => {
         onSave={updateEvent}
       />
       <DeleteModal
-        isOpen={isModeldelete}
-        onCancel={() => setdeleteModel(false)}
-        onDelete={() => handleDelete(deleteId)}
+        Open={isModeldelete}
+        Close={() => setdeleteModel(false)}
+        Confirm={() => handleDelete(deleteId)}
         projectName={deleteName}
       />
       {/* Cards Row */}
