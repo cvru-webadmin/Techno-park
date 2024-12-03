@@ -26,31 +26,28 @@ const DetailActivities = () => {
   ];
 
   return (
-    <div className="w-[90%] mx-auto p-6 mt-12">
-      {/* <h2 className="text-3xl font-bold text-center mb-10">
-        Our Amenities & How It Looks Like
-      </h2> */}
-      <div className="space-y-16">
+    <div className="lg:w-[90%] mx-auto p-6 mt-4 md:mt-8 lg:mt-12">
+      <div className="lg:space-y-16 space-y-10 md:space-y-12">
         {activities.map((activity, index) => (
           <div
             key={activity.id}
             className={`flex flex-col ${
               index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-            } items-center gap-20`}
+            } items-center lg:gap-20 md:gap-6 gap-4`}
           >
             {/* Image Section */}
-            <div className="w-full relative overflow-hidden lg:w-1/2">
+            <div className="w-full relative overflow-hidden md:w-[95%] lg:w-1/2">
               <img
                 src={activity.image}
                 alt={activity.name}
-                className="shadow-md transform transition duration-300 hover:scale-105 w-full h-[400px] object-cover"
+                className="shadow-md transform transition duration-300 hover:scale-105 w-full md:h-[450px] lg:h-[400px] object-cover"
               />
             </div>
 
             {/* Text Section */}
-            <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <h3 className="text-[2rem] text-[#2c3e50] capitalize mb-2">{activity.name}</h3>
-              <p className="text-[#555] text-justify text-[1.1rem] leading-relaxed">{activity.description}</p>
+            <div className="md:w-[95%] w-full lg:w-1/2 text-center lg:text-left">
+              <h3 className="md:text-[2.5rem] lg:text-[2rem] text-[1.4rem] text-[#2c3e50] font-semibold capitalize mb-2">{activity.name}</h3>
+              <p className="text-[#555] text-justify lg:text-[1.1rem] md:text-[1.3rem] text-[0.9rem] leading-relaxed">{activity.description}</p>
             </div>
           </div>
         ))}

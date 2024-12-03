@@ -64,11 +64,11 @@ const CarouselComponent = () => {
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
             {/* Content */}
-            <div className="relative z-10 top-[500px] left-60 text-center flex flex-col items-center justify-center px-6 max-w-5xl">
-              <h1 className="text-white text-5xl md:text-6xl font-bold uppercase">
+            <div className="relative z-10 lg:top-[500px] lg:left-60 md:top-[250px] top-[100px] text-center flex flex-col items-center justify-center px-6 max-w-5xl">
+              <h1 className="text-white w-[350px] md:w-full lg:w-full text-2xl lg:text-6xl md:text-5xl font-bold uppercase">
                 {slide.title}
               </h1>
-              <p className="text-[#F9A826] font-extrabold uppercase text-base md:text-xl mt-3 md:mt-4 leading-relaxed">
+              <p className="text-[#F9A826] w-[350px] md:w-full lg:w-full font-extrabold uppercase text-sm md:text-xl mt-3 md:mt-4 leading-relaxed">
                 {slide.description}
               </p>
             </div>
