@@ -1,5 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useState, useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import IOT from '../../../assets/images/IOT.png'
 import Library from '../../../assets/images/Library.jpeg'
 import ProgrammingLab from '../../../assets/images/ProgrammingLab.jpeg';
@@ -7,6 +11,30 @@ import Seminar from '../../../assets/images/Seminar.jpeg'
 import ProjectLab from '../../../assets/images/LanguageLab.jpeg'
 import Cabin from '../../../assets/images/FacultyCabin.png'
 import Front from '../../../assets/images/Front.jpeg'
+
+  const slides = [
+    {
+      id: 1,
+      image:IOT, // Replace with actual image paths.
+    },
+    {
+      id: 2,
+      image: Library,
+    },
+    {
+      id: 3,
+      image: ProgrammingLab, // Replace with actual image paths.
+    },
+    {
+      id: 4,
+      image: Cabin,
+    },
+    {
+      id: 5,
+      image: ProjectLab, // Replace with actual image paths.
+    },
+  ];
+
 const data = [
   {
     title: "IoT Lab",
@@ -45,6 +73,32 @@ const data = [
 ];
 
 const CampusPage = () => {
+  const sliderRef = useRef(null); // Create a ref to control the slider
+  const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 800, // Small screens
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 500, // Small screens
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex), // Update current slide index
+  };
   return (
     <div className="font-sans bg-white text-gray-800">
       {/* Hero Section */}
@@ -55,16 +109,42 @@ const CampusPage = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="absolute -inset-[50px] inset-x-10 flex flex-col sm:mt-40 mt-28 text-left">
           <h1 className="md:text-5xl font-bold text-3xl w-full">Discover Your Future with Us</h1>
-          <p className="md:text-xl text-justify text-gray-200 mt-4 text-sm sm:text-base \text-lg w-full sm:w-[650px]">Explore our campus, where learning goes beyond the classroom– it's a place to unlock your potential and shape your future.</p>
+          <p className="lg:text-xl md:text-2xl text-justify text-gray-200 md:mt-4 mt-1 text-[15px] w-full sm:w-[650px]">Explore our campus, where learning goes beyond the classroom– it's a place to unlock your potential and shape your future.</p>
         </div>
       </div>
+
+      {/* slider section */}
+      <div className="flex flex-col items-center">
+      <h1 className="lg:text-4xl md:text-[43px] font-bold text-3xl mt-8 text-gray-800 text-center w-full">Campus Life</h1>
+      <div className="lg:w-[96%] w-[86%] mb-8 mt-4">
+      <Slider {...settings} ref={sliderRef} centerMode={true} centerPadding="0px">
+  {slides.map((slide, index) => (
+    <div key={slide.id} className="p-10 mb-3">
+      <div
+        className={`bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col ${
+          index === currentSlide ? "lg:scale-125 scale-110" : "scale-100 blur-[1px] opacity-75"
+        }`} // Scale the center image
+      >
+        <div className="lg:h-72 md:h-80 w-full h-56 flex items-center justify-center">
+          <img
+            src={slide.image}
+            className="object-cover h-full w-full"
+            alt={`Slide ${slide.id}`} // Add alt for accessibility
+          />
+        </div>
+      </div>
+    </div>
+  ))}
+</Slider>
+        </div>
+        </div>
 
       {/* Content Sections */}
       <div className="px-5 md:px-20">
         {data.map((section, index) => (
           <div
             key={index}
-            className={`flex flex-col lg:flex-row justify-center items-center md:items-start my-16 ${
+            className={`flex flex-col lg:flex-row justify-center items-center md:items-start lg:my-16 my-10 ${
               index % 2 !== 0 ? "" : "lg:flex-row-reverse"
             }`}
           >
@@ -75,9 +155,9 @@ const CampusPage = () => {
                 className="sm:h-[470px] w-full md:mb-5 sm:object-cover object-contain shadow-lg"
               />
             </div>
-            <div className={`lg:w-[44%] lg:h-[470px] h-auto mt-3 w-full sm:px-14 px-6 py-4 ${index % 2 !== 0 ?"lg:py-1":"w-full sm:px-[70px] sm:py-[45px] bg-[#e3e3e373] lg:w-[66%] mt-5 md:mt-0"}`}>
-              <h2 className="text-2xl font-bold">{section.title}</h2>
-              <p className="mt-4 text-gray-600">{section.description} {section.title=="IoT Lab"?<NavLink to="/" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
+            <div className={`lg:w-[44%] lg:h-[470px] h-auto mt-3 w-full lg:px-14 md:px-8 px-6 py-4 ${index % 2 !== 0 ?"lg:py-1 md:py-0":"w-full sm:px-[70px] sm:py-[45px] md:py-[20px] bg-[#e3e3e373] lg:py-10 lg:w-[66%] mt-5 md:mt-0"}`}>
+              <h2 className="md:text-[2.2rem] lg:text-[1.8rem] text-[1.4rem] font-bold">{section.title}</h2>
+              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600">{section.description} {section.title=="IoT Lab"?<NavLink to="/" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
             </div>
           </div>
         ))}
