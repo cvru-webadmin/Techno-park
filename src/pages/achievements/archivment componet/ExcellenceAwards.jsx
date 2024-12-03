@@ -38,10 +38,10 @@ export default function ExcellenceAwards() {
     <div className="max-w-7xl mx-auto px-6 pt-10">
       {/* Section Title */}
       <div className="text-center mb-16 py-10 bg-gray-100 rounded-lg ">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <h2 className="md:text-4xl text-3xl font-bold text-gray-800 mb-4">
           Department Achievements
         </h2>
-        <p className="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed">
+        <p className="text-gray-700 md:text-lg text-base max-w-4xl mx-auto leading-relaxed">
           Celebrating the groundbreaking milestones, innovations, and
           exceptional work of our department.
         </p>
@@ -50,17 +50,17 @@ export default function ExcellenceAwards() {
       {awardsData.map((award, index) => (
         <div
           key={award.year}
-          className={`flex flex-col md:flex-row gap-8 mb-20 ${
-            index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+          className={`flex flex-col lg:flex-row lg:gap-8 mb-8 lg:mb-20 ${
+            index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
         >
           {/* Left Section: Image */}
-          <div className="flex justify-center mb-8 md:mb-0 md:w-1/2">
-            <div className="relative w-full max-w-[560px] mx-auto">
+          <div className="flex justify-center mb-8 lg:mb-0 lg:w-1/2">
+            <div className="relative w-full lg:max-w-[560px] mx-auto">
               <img
                 src={award.image}
                 alt={award.awardName}
-                className="rounded-lg shadow-lg object-cover w-full h-auto"
+                className="rounded-lg shadow-lg object-cover w-full md:h-auto h-72"
               />
               <div className="absolute bottom-4 left-4 bg-white bg-opacity-80 px-6 py-3 rounded-lg shadow-md">
                 <p className="text-sm font-semibold text-blue-800">
@@ -72,7 +72,7 @@ export default function ExcellenceAwards() {
 
           {/* Right Section: Award Information */}
           <div
-            className={`space-y-6 md:w-1/2 ${
+            className={`space-y-6 lg:w-1/2 ${
               index % 2 === 0 ? "text-left " : "text-right"
             }`}
           >

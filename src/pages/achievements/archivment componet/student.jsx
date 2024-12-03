@@ -97,7 +97,7 @@ export default function StudentAchievements({ achievements }) {
           <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
             Student Achievements
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 md:text-lg text-base">
             Celebrating the outstanding accomplishments of our students.
           </p>
         </div>
@@ -106,12 +106,12 @@ export default function StudentAchievements({ achievements }) {
         <Slider {...sliderSettings}>
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+            <div className="bg-white border md:w-[80%] mx-auto w-full lg:w-full border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
               {/* Achievement Image */}
               <img
                 src={achievement.image}
                 alt={`${achievement.name} achievement`}
-                className="w-full h-60 object-top object-cover"
+                className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
               />
           
               {/* Achievement Details */}

@@ -5,7 +5,7 @@ import Award from '../../../assets/acsilentes award.png';
 export default function Header({scroll}) {
   return (
     <header className="bg-gradient-to-r pt-24 from-blue-900 to-blue-700 py-16">
-  <div className="max-w-[90rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <div className="max-w-[90rem] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
     {/* Left Section: Heading and Description */}
     <div className="text-white space-y-6">
   <h1 className="text-5xl font-extrabold leading-tight">
