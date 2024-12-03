@@ -4,6 +4,7 @@ import { FaBars, FaHome, FaFolder, FaImages, FaUsers, FaTrashAlt, FaSignOutAlt }
 import { FireContext } from "../../Context/context";
 import { NavLink } from "react-router-dom";
 import LogoutConfirmationModal from "./sub Componet/LogoutConfrom";
+import ProfileEditModal from "./sub Componet/ProfileModel";
 
 let homeIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox="0 0 24 24">
 	<rect width="24" height="24" fill="none" />
@@ -40,8 +41,12 @@ let EnquiryIcon=(<svg xmlns="http://www.w3.org/2000/svg" className="h-6" viewBox
 export default function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [LogoutModel,setLogoutModel] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const {LogoutAdmin} = useContext(FireContext);
+  //time pas 
+  const [name, setName] = useState(localStorage.getItem("ProfileName") || "Profile Name");
+
+  const {LogoutAdmin,userEmail} = useContext(FireContext);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -77,124 +82,199 @@ export default function AdminSidebar() {
         isOpen ? "w-80" : "w-[5rem]"
       } h-screen bg-white border-r-2 border-r-gray-200 shadow-md flex flex-col justify-between transition-all duration-300`}
     >
-       <div className={`flex h-20 mb-5 items-center bg-indigo-500 text-white px-4 py-3 shadow-md ${!isOpen?"justify-evenly":"justify-between"}`}>
-      {/* Admin Text */}
-      <span className={`text-xl font-semibold transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
-        Admin
-      </span>
-
-      {/* Toggle Button */}
-      <button
-        className="flex items-center justify-center w-10 h-10 bg-white rounded-full text-indigo-500 hover:bg-gray-200 hover:text-indigo-700 transition-colors duration-300"
-        onClick={toggleSidebar}
+      <div
+        className={`flex h-20 mb-5 items-center bg-indigo-500 text-white px-4 py-3 shadow-md ${
+          !isOpen ? "justify-evenly" : "justify-between"
+        }`}
       >
-        {isOpen ? (
-          // Custom SVG for Close Icon
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 48 48" fill="none">
-            <rect width="48" height="48" fill="none" />
-            <g fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="4">
-              <path d="M6 9a3 3 0 0 1 3-3h30a3 3 0 0 1 3 3v30a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z" />
-              <path strokeLinecap="round" d="M32 6v36M16 20l4 4l-4 4M26 6h12M26 42h12" />
-            </g>
-          </svg>
-        ) : (
-          // React Icon for Sidebar Open Icon
-          <LuPanelLeftClose size={24} />
-        )}
-      </button>
-    </div>
+        {/* Admin Text */}
+        <span
+          className={`text-xl font-semibold transition-all duration-300 ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
+          Admin
+        </span>
 
+        {/* Toggle Button */}
+        <button
+          className="flex items-center justify-center w-10 h-10 bg-white rounded-full text-indigo-500 hover:bg-gray-200 hover:text-indigo-700 transition-colors duration-300"
+          onClick={toggleSidebar}
+        >
+          {isOpen ? (
+            // Custom SVG for Close Icon
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 48 48"
+              fill="none"
+            >
+              <rect width="48" height="48" fill="none" />
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinejoin="round"
+                strokeWidth="4"
+              >
+                <path d="M6 9a3 3 0 0 1 3-3h30a3 3 0 0 1 3 3v30a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z" />
+                <path
+                  strokeLinecap="round"
+                  d="M32 6v36M16 20l4 4l-4 4M26 6h12M26 42h12"
+                />
+              </g>
+            </svg>
+          ) : (
+            // React Icon for Sidebar Open Icon
+            <LuPanelLeftClose size={24} />
+          )}
+        </button>
+      </div>
 
       {/* Navigation Menu */}
-      <nav className={`flex-grow  ${!isOpen&&"pr-2"}`}>
+      <nav className={`flex-grow  ${!isOpen && "pr-2"}`}>
         <ul>
-          {
-            tabs.map((tab,index)=>{
-              return(
-              <li key={tab.path+index}>
+          {tabs.map((tab, index) => {
+            return (
+              <li key={tab.path + index}>
                 <NavLink
-                  onClick={()=>setTab(tab.path)}
+                  onClick={() => {
+                    setTab(tab.path);
+                    setIsOpen(false);
+                  }}
                   to={tab.path}
-                  className={
-                    `transition-all group mt-3 flex ${
-                      isActive==tab.path ? " border-l-4 border-indigo-600 :" : " hover:border-l-4 hover:border-indigo-600"
-                    }`
-                  }
+                  className={`transition-all group mt-3 flex ${
+                    isActive == tab.path
+                      ? " border-l-4 border-indigo-600 :"
+                      : " hover:border-l-4 hover:border-indigo-600"
+                  }`}
                 >
-                  <div className={` ml-2 rounded-md w-11/12 flex items-center space-x-4 px-4 py-3
-                  ${isActive===tab.path?"bg-gray-200 text-green-600":"group-hover:bg-gray-200"}
-                  `}>
                   <div
-                  className={`${
-                    isActive===tab.path ? "text-indigo-600" : "text-gray-500"
-                  } group-hover:text-indigo-600`}
-                >
-                  {tab.icon}
-                </div>
-                  <span className={`${isOpen ? "block" : "hidden"} ${(isActive==tab.path)?" font-semibold ":" group-hover:font-semibold"} text-gray-700  capitalize`}>
-                    {tab.name}
-                  </span>
+                    className={` ml-2 rounded-md w-11/12 flex items-center space-x-4 px-4 py-3
+                  ${
+                    isActive === tab.path
+                      ? "bg-gray-200 text-green-600"
+                      : "group-hover:bg-gray-200"
+                  }
+                  `}
+                  >
+                    <div
+                      className={`${
+                        isActive === tab.path
+                          ? "text-indigo-600"
+                          : "text-gray-500"
+                      } group-hover:text-indigo-600`}
+                    >
+                      {tab.icon}
+                    </div>
+                    <span
+                      className={`${isOpen ? "block" : "hidden"} ${
+                        isActive == tab.path
+                          ? " font-semibold "
+                          : " group-hover:font-semibold"
+                      } text-gray-700  capitalize`}
+                    >
+                      {tab.name}
+                    </span>
                   </div>
                 </NavLink>
-              </li>)})}
-        
+              </li>
+            );
+          })}
         </ul>
       </nav>
-      
+
       {/* Logout Button */}
       <div className=" px-2 py-1 border-y-2  border-indigo-500/10 -shadow-md inset-1">
         <button
-           onClick={()=>setLogoutModel(true)}
+          onClick={() => setLogoutModel(true)}
           className="flex items-center w-full group justify-center transition-all duration-200 hover:bg-red-500 hover:text-white py-2 rounded-md"
         >
-          <span className={`${isOpen ? "block" : "hidden"} text-gray-700 mr-5 group-hover:font-semibold group-hover:text-white`}>
+          <span
+            className={`${
+              isOpen ? "block" : "hidden"
+            } text-gray-700 mr-5 group-hover:font-semibold group-hover:text-white`}
+          >
             Logout
           </span>
           <span>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24">
-          	<rect width="24" height="24" fill="none" />
-          	<path fill="currentColor" d="M11.25 19a.75.75 0 0 1 .75-.75h6a.25.25 0 0 0 .25-.25V6a.25.25 0 0 0-.25-.25h-6a.75.75 0 0 1 0-1.5h6c.966 0 1.75.784 1.75 1.75v12A1.75 1.75 0 0 1 18 19.75h-6a.75.75 0 0 1-.75-.75" />
-          	<path fill="currentColor" d="M15.612 13.115a1 1 0 0 1-1 1H9.756q-.035.533-.086 1.066l-.03.305a.718.718 0 0 1-1.025.578a16.8 16.8 0 0 1-4.885-3.539l-.03-.031a.72.72 0 0 1 0-.998l.03-.031a16.8 16.8 0 0 1 4.885-3.539a.718.718 0 0 1 1.025.578l.03.305q.051.532.086 1.066h4.856a1 1 0 0 1 1 1z" />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+            >
+              <rect width="24" height="24" fill="none" />
+              <path
+                fill="currentColor"
+                d="M11.25 19a.75.75 0 0 1 .75-.75h6a.25.25 0 0 0 .25-.25V6a.25.25 0 0 0-.25-.25h-6a.75.75 0 0 1 0-1.5h6c.966 0 1.75.784 1.75 1.75v12A1.75 1.75 0 0 1 18 19.75h-6a.75.75 0 0 1-.75-.75"
+              />
+              <path
+                fill="currentColor"
+                d="M15.612 13.115a1 1 0 0 1-1 1H9.756q-.035.533-.086 1.066l-.03.305a.718.718 0 0 1-1.025.578a16.8 16.8 0 0 1-4.885-3.539l-.03-.031a.72.72 0 0 1 0-.998l.03-.031a16.8 16.8 0 0 1 4.885-3.539a.718.718 0 0 1 1.025.578l.03.305q.051.532.086 1.066h4.856a1 1 0 0 1 1 1z"
+              />
+            </svg>
           </span>
         </button>
       </div>
       {/* Profile section  */}
-      
-          <div className={`w-full flex bg-gray-200 items-center gap-3 py-5 px-4`}>
-            {/* Profile Initials */}
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-300 via-blue-500 to-purple-300 flex justify-center items-center border-4 border-indigo-800/20 font-semibold text-white">
-              DD
-            </div>
-            {/* Profile Info */}
-            { isOpen&&(
-            <div className="flex-1">
-              <p
-                className="font-semibold capitalize text-gray-900 text-sm truncate"
-                title="Deepanshu Dashore"
+
+      <div className={`w-full flex bg-gray-200 items-center gap-3 py-5 px-4`}>
+        {/* Profile Initials */}
+        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-300 via-blue-500 to-purple-300 flex justify-center items-center border-4 border-indigo-800/20 font-semibold text-white">
+          DD
+        </div>
+        {/* Profile Info */}
+        {isOpen && (
+          <div className="flex-1">
+            <p
+              className="font-semibold capitalize text-gray-900 text-sm truncate"
+              title="Deepanshu Dashore"
+            >
+              {name}
+            </p>
+            <div className="flex items-center space-x-2 text-xs text-gray-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-4 h-4 text-gray-400"
               >
-                Deepanshu Dashore
+                <rect width="24" height="24" fill="none" />
+                <path
+                  fill="currentColor"
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-.4 4.25l-6.54 4.09c-.65.41-1.47.41-2.12 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44"
+                />
+              </svg>
+              <p className="truncate" title="deepanshudashore@gmail.com">
+                {userEmail}
               </p>
-              <div className="flex items-center space-x-2 text-xs text-gray-500">
+             
                 <svg
+                onClick={() => setIsModalOpen(true)}
                   xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 cursor-pointer rounded-md text-indigo-500 inline ml-2 p-[1.8px]"
                   viewBox="0 0 24 24"
-                  className="w-4 h-4 text-gray-400"
                 >
                   <rect width="24" height="24" fill="none" />
                   <path
                     fill="currentColor"
-                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-.4 4.25l-6.54 4.09c-.65.41-1.47.41-2.12 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44"
+                    d="M3 21V3h10.925l-2 2H5v14h14v-6.95l2-2V21zm6-6v-4.25L19.625.125L23.8 4.4L13.25 15zM21.025 4.4l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z"
                   />
                 </svg>
-                <p className="truncate" title="deepanshudashore@gmail.com">
-                  deepanshudashore@gmail.com
-                </p>
-              </div>
-            </div>)
-      }
+              
+            </div>
           </div>
-      <LogoutConfirmationModal isOpen={LogoutModel} onClose={()=>setLogoutModel(false)} onConfirm={()=>conformation()} />
+        )}
+      </div>
+      <ProfileEditModal
+        isOpen={isModalOpen}
+        name={name}
+        setName={setName}
+        onClose={() => setIsModalOpen(false)}
+      />
+      <LogoutConfirmationModal
+        isOpen={LogoutModel}
+        onClose={() => setLogoutModel(false)}
+        onConfirm={() => conformation()}
+      />
     </div>
   );
 }

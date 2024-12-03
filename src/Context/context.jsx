@@ -29,6 +29,7 @@ export const FireContext = createContext();
 const FireBaseProvider = ({ children }) => {
   const [isAdmin, setAdmin] = useState(false);
   const [user, setUser] = useState(false);
+  const [userEmail,setuserEmail]=useState(null);
 
   // Create Admin User
   const createUser = async (email, password) => {
@@ -90,6 +91,7 @@ const FireBaseProvider = ({ children }) => {
       if (user) {
         setAdmin(true); // User is logged in
         setUser(user);
+        setuserEmail(user.email)
         console.log("User logged in:");
       } else {
         setAdmin(false); // User is logged out
@@ -131,12 +133,42 @@ const FireBaseProvider = ({ children }) => {
       try {
         let response = await axios.post(`https://api.cloudinary.com/v1_1/${CludeName}/image/upload`,data);
         if(response){
-          return await response.data.url;
+          console.log(response);
+          const ImageObj = {
+            url: response.data.url, // URL of the uploaded image
+            id: response.data.public_id // Public ID of the image
+          };
+        return ImageObj;
         }
       } catch (error) {
         console.log("error ocurred uploading image: ",error);
       }
     }
+
+    //method for delete image 
+
+    const deleteImage = async (publicId) => {
+      const CLOUD_NAME = "dcbniehli"; // Replace with your Cloudinary cloud name
+      const API_KEY = "559291426655972";       // Replace with your API key
+      const API_SECRET = "Q9QaEY0tQgLYZka-JQiAB49mnaQ"; // Replace with your API secret
+    
+      try {
+        const response = await axios.delete(`https://api.cloudinary.com/v2/${CLOUD_NAME}/resources/image/upload`, {
+          auth: {
+              username: API_KEY,
+              password: API_SECRET,
+          },
+          data: {
+              public_ids: [publicId]
+          }
+      });
+        console.log("Deleted successfully:", response.data);
+        return true;
+      } catch (error) {
+        console.error("Error deleting image:", error);
+      }
+    };
+    
     
   //mthod for send message and get message
 
@@ -203,7 +235,7 @@ const FireBaseProvider = ({ children }) => {
     try {
       // Get a reference to the specific document
       const docRef = doc(fireStore, "Event", id);
-  
+      
       // Delete the document
       await deleteDoc(docRef);
       return true;
@@ -255,6 +287,7 @@ const FireBaseProvider = ({ children }) => {
            LogoutAdmin,
            isAdmin,
            isLoggin,
+           userEmail,
            SendMassage,
            GetMessage,
            InqoeryAnswer,
@@ -266,6 +299,7 @@ const FireBaseProvider = ({ children }) => {
            GetFeedbacks,
            formatDate,
            UploadImage,
+           deleteImage,
          }}
        >
       {children}

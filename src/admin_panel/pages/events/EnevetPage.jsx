@@ -48,7 +48,7 @@ const EventPage = () => {
   const [filterMode,setMode]=useState("total");
 
   // import method for context
-  const { addEvent, GetEvents, deleteEvent, updateEvent, formatDate } =
+  const { addEvent, GetEvents, deleteEvent, updateEvent, formatDate, deleteImage } =
     useContext(FireContext);
 
   useEffect(() => {
@@ -89,22 +89,28 @@ const EventPage = () => {
   };
 
   const[deleteId,setDeleteId]=useState(null);
+  const[deleteImageId,setDeleteImageId]=useState(null);
   const[deleteName,setDeleteName]=useState(null);
   const[isModeldelete,setdeleteModel]=useState(false)
-  const handleDelete = async (id) => {
-    let res = await deleteEvent(id);
-    if (res) {
-      setOnDelete(!onDelete);
-      setdeleteModel(false);
-      alert(`${deleteName} sucessfully delete`)
-      setDeleteId(null);
-      setDeleteName(null);
-    }
+  // delete event method
+  const handleDelete = async (id,image_Id) => {
+    // let ImgRes = await deleteImage(image_Id);
+    // if(ImgRes){
+      let res = await deleteEvent(id);
+      if (res) {
+        setOnDelete(!onDelete);
+        setdeleteModel(false);
+        alert(`${deleteName} sucessfully delete`)
+        setDeleteId(null);
+        setDeleteName(null);
+      }
+    // }
   };
 
-  const handleConformation=(name,id)=>{
+  const handleConformation=(name,id,image_Id)=>{
       setdeleteModel(true);
       setDeleteId(id);
+      setDeleteImageId(image_Id)
       setDeleteName(name);
   }
   
@@ -159,7 +165,7 @@ const EventPage = () => {
       <DeleteModal
         Open={isModeldelete}
         Close={() => setdeleteModel(false)}
-        Confirm={() => handleDelete(deleteId)}
+        Confirm={() => handleDelete(deleteId,deleteImageId)}
         projectName={deleteName}
       />
       {/* Cards Row */}
@@ -321,6 +327,9 @@ const EventPage = () => {
                 #
               </th>
               <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
+                Image
+              </th>
+              <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
                 Title
               </th>
               <th className="border-b-2 py-3 px-6 text-left text-sm font-semibold uppercase tracking-wider">
@@ -350,6 +359,9 @@ const EventPage = () => {
                       <div className="h-5 w-24 bg-gray-200 rounded"></div>
                     </td>
                     <td className="border-b py-3 px-6 text-sm text-gray-700">
+                      <div className="h-5 w-24 bg-gray-200 rounded"></div>
+                    </td>
+                    <td className="border-b py-3 px-6 text-sm text-gray-700">
                       <div className="h-5 w-32 bg-gray-200 rounded"></div>
                     </td>
                     <td className="border-b py-3 px-6 text-sm text-gray-700">
@@ -372,7 +384,10 @@ const EventPage = () => {
                       className="bg-white text-sm text-gray-700 hover:bg-gray-200 transition"
                     >
                       <td className="border-b py-3 px-6">{index + 1}</td>
-                      <td className="border-b py-3 px-6 capitalize text-nowrap">
+                      <td className="border-b w-16 py-2">
+                        <img src={event.image} className="h-auto w-full rounded-md" alt="" />
+                      </td>
+                      <td className="border-b py-3 font-semibold px-6 capitalize text-nowrap">
                         {event.title}
                       </td>
                       <td className="border-b py-3 px-6">
@@ -400,7 +415,7 @@ const EventPage = () => {
                       </td>
                       <td className="border-b py-3 px-6 text-sm text-gray-700">
                         <button
-                          onClick={() => handleConformation(event.title,event.id)}
+                          onClick={() => handleConformation(event.title,event.id,event.imageId)}
                           className="text-red-500 hover:scal-105 hover:shadow-lg hover:bg-white px-3 py-2 rounded-md hover:text-red-700"
                         >
                           Delete

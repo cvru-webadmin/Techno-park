@@ -9,7 +9,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
     status: "Upcoming",
   });
 
-  const [imageUploadUrl,setImageUrl]=useState("");
+  const [imageUpload,setImageUrl]=useState("");
   const [ModelImageopen,setImageModel]=useState(false)
   const [conformOpen,setComfomation]=useState(false);
 
@@ -28,7 +28,8 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
         title:formData.title,
         description:formData.description,
         status:formData.status,
-        image:imageUploadUrl,
+        image:imageUpload.url,
+        imageId:imageUpload.id,
         createdAt:formatDate(),
     });
     onClose();
@@ -123,7 +124,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
               >
                 Upload Image
               </label>
-              {!imageUploadUrl ? (
+              {!imageUpload ? (
                 <input
                   type="button"
                   onClick={() => setImageModel(true)}
@@ -135,7 +136,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
                   upload image preview
                   <img
                     className="h-10 rounded-sm"
-                    src={imageUploadUrl}
+                    src={imageUpload.url}
                     alt="UploadImage"
                   />
                 </div>
