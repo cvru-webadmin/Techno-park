@@ -15,6 +15,7 @@ import FacultyPage from '../admin_panel/pages/faculty/facultyPage';
 import EventPage from '../admin_panel/pages/events/EnevetPage';
 import FeedbackPage from '../admin_panel/pages/feedback/FeedbackPage';
 import FeedbackForm from '../pages/Feedback form/FeedbackFrom';
+import EventsPage from '../pages/events/Events';
 
 const router =createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router =createBrowserRouter([
                 path:"/contact2",
                 element:<ContactPage/>
             },
+            {
+             path:"/event",
+             element:<EventsPage />
+            }
         ]
     },
     {

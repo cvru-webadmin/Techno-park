@@ -27,7 +27,7 @@ function Our_Team() {
     
       <div
         key={index+member.name}
-        className="group border-2 w-[250px] h-[280px] relative mb-20 flex flex-col items-center text-center bg-white shadow-xl rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-gray-50"
+        className="group border-2 w-[250px]  mx-auto h-[280px] relative mb-20 flex flex-col items-center text-center bg-white shadow-xl rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-gray-50"
       >
         {/* Unique Shape for Image */}
         <div className="relative -mt-24 w-40 h-40 flex items-center justify-center rounded-full overflow-hidden group">
