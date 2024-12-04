@@ -7,31 +7,39 @@ import "slick-carousel/slick/slick-theme.css";
 import IOT from '../../../assets/images/IOT.png'
 import Library from '../../../assets/images/Library.jpeg'
 import ProgrammingLab from '../../../assets/images/ProgrammingLab.jpeg';
-import Seminar from '../../../assets/images/Seminar.jpeg'
+import Seminar from '../../../assets/images/Seminar.jpg'
 import ProjectLab from '../../../assets/images/LanguageLab.jpeg'
 import Cabin from '../../../assets/images/FacultyCabin.png'
 import Front from '../../../assets/images/Front.jpeg'
+import HardwareLab from '../../../assets/images/HardwareLab.jpg'
+import SolarPark from '../../../assets/images/SolarPark.jpg'
+import Garden from '../../../assets/images/Garden.jpg'
+import MCASlider from '../../../assets/images/MCA Slider.jpeg'
+import BCASlider from '../../../assets/images/BCA Slider.jpg'
+import GroupSlider from '../../../assets/images/Group Slider.jpg'
+import GardenStudents from '../../../assets/images/GardenStudent.jpg'
+import LibraryStudents from '../../../assets/images/LibraryStudent.jpg'
 
   const slides = [
     {
       id: 1,
-      image:IOT, // Replace with actual image paths.
+      image:MCASlider, // Replace with actual image paths.
     },
     {
       id: 2,
-      image: Library,
+      image: BCASlider,
     },
     {
       id: 3,
-      image: ProgrammingLab, // Replace with actual image paths.
+      image: GroupSlider, // Replace with actual image paths.
     },
     {
       id: 4,
-      image: Cabin,
+      image: GardenStudents,
     },
     {
       id: 5,
-      image: ProjectLab, // Replace with actual image paths.
+      image: LibraryStudents, // Replace with actual image paths.
     },
   ];
 
@@ -39,14 +47,25 @@ const data = [
   {
     title: "IoT Lab",
     description:
-      "An IoT (Internet of Things) Lab is a specialized facility designed to support the development, experimentation, and deployment of Internet of Things solutions. It typically features a wide range of IoT hardware such as sensors, actuators, microcontrollers (e.g., Arduino, Raspberry Pi, ESP32), and connectivity modules (Wi-Fi, Bluetooth). The lab provides tools for data collection, analysis, and visualization, often integrating cloud platforms and edge computing systems for real-time processing. It fosters interdisciplinary collaboration, enabling students, researchers, and professionals to prototype smart systems for applications like smart cities, industrial IoT, healthcare, agriculture, and home automation. The IoT Lab serves as a hub for innovation, skill development, and solving real-world challenges using IoT technologies. It is a facility equipped with devices, sensors, microcontrollers, and communication tools for developing and testing IoT systems. It supports prototyping, real-time data processing, and experimentation for applications in areas like smart homes, healthcare, and industrial automation.",
+      "The Internet of Things (IoT) Lab is a well-equipped facility designed to foster innovation, experimentation, and skill development in IoT technologies. It can accommodate up to 28 students simultaneously and offers a variety of tools and components, including diverse sensors, Arduino boards, microcontrollers like ESP32 and Raspberry Pi, relays, camera modules, and communication modules for Wi-Fi and Bluetooth connectivity. The lab supports the creation and testing of IoT solutions for smart systems, providing resources for data collection, analysis, cloud integration, and edge computing. Students actively engage in projects such as smart lighting systems, automatic irrigation systems, and smart roofing systems for unexpected rainfall, while also working on prototypes addressing real-world problems in areas like healthcare, industrial automation, and agriculture. With its emphasis on interdisciplinary collaboration, the lab facilitates the development of intelligent solutions, offering hands-on learning opportunities to prototype, test, and deploy IoT-based innovations.",
     image: IOT,
   },
   {
     title: "Project Lab",
     description:
-      "A Project Lab is a dynamic workspace designed to support the planning, development, and execution of academic, industrial, or research-based projects. It provides essential tools, equipment, and resources to enable hands-on learning and innovation. These labs are equipped with workstations, prototyping tools, electronic components, and software platforms to facilitate interdisciplinary projects. They encourage collaboration among students, researchers, and professionals to design, prototype, and implement solutions in various domains such as engineering, technology, and science. Project labs are crucial for fostering creativity, critical thinking, and practical problem-solving skills in a structured environment.",
+      "A Project Lab is a versatile facility designed to accommodate up to 28 students, providing a collaborative environment for project-based learning and innovation. Equipped with a projector for clear and effective explanations, it supports presentations, demonstrations, and interactive discussions. The lab includes essential tools and resources such as software platforms to aid in designing, developing, and implementing projects. It fosters teamwork, critical thinking, and creativity, making it an ideal space for students to engage in interdisciplinary and practical problem-solving activities in various fields. The structured setting ensures an efficient and immersive learning experience for all participants.",
     image: ProjectLab,
+  },
+  {
+    title: "Hardware Lab",
+    description:
+      "A Hardware Lab is a hands-on facility designed to foster learning through practical exploration of electronic and mechanical systems, guided by the motto `तोड़ो, जोड़ो, सीखो` (Break, Join, Learn). In this lab, students can disassemble hardware components such as computer CPUs, study and understand their internal parts, and then reassemble them to see how they function together. It is equipped with essential tools like multimeters, screwdrivers, soldering kits, and diagnostic devices to aid in the exploration and testing of hardware systems. Beyond computers, students can also work on components like hard drives, motherboards, and power supplies to deepen their understanding of electronics. The lab creates an engaging environment that encourages innovation, collaboration, and critical thinking, allowing students to bridge theoretical concepts with practical application. Regular workshops and hands-on sessions ensure students stay updated with emerging hardware technologies and trends, building a strong foundation for future technical careers.",
+    image: HardwareLab,
+  },
+  {
+    title: "Programming Lab",
+    description: "A Programming Lab is a specialized environment designed for coding, software development, and computational learning, with a capacity of 56 students. Equipped with modern computers, programming tools, compilers, and development environments, it supports a wide range of programming languages like Python, Java, and C++. The lab provides an ideal setting for students to practice coding, debug programs, and develop software applications. Often integrated with internet access and collaboration tools, it facilitates teamwork and innovation. The lab is essential for conducting hands-on exercises, building algorithms, and working on real-world projects, fostering problem-solving skills and technical expertise.",
+    image: ProgrammingLab,
   },
   {
     title: "Main Library",
@@ -55,9 +74,9 @@ const data = [
     image: Library,
   },
   {
-    title: "Programming Lab",
-    description: "A Programming Lab is a specialized environment designed for coding, software development, and computational learning. Equipped with modern computers, programming tools, compilers, and development environments, it supports a wide range of programming languages like Python, Java, C++, and more. The lab provides an ideal setting for students, researchers, and professionals to practice coding, debug programs, and develop software applications. Often integrated with internet access, version control systems, and collaboration tools, programming labs facilitate teamwork and innovation. They are essential for conducting hands-on exercises, building algorithms, and working on real-world projects, fostering problem-solving skills and technical expertise.",
-    image: ProgrammingLab,
+    title: "Faculty Cabin",
+    description: "A Faculty Cabin is a private, designated workspace within educational institutions, typically assigned to professors or academic staff. It provides a quiet, comfortable environment for faculty members to conduct research, grade assignments, meet with students, and plan lessons. Faculty cabins are usually equipped with essential office furniture such as desks, chairs, bookshelves, and storage cabinets, as well as technology like computers, printers, and internet access to facilitate academic tasks. Some cabins also feature a small meeting area for faculty discussions. Designed to support productivity and professional activities, faculty cabins offer a space for focused work while also ensuring privacy and a personal space for academic responsibilities.",
+    image: Cabin,
   },
   {
     title: "Seminar Hall",
@@ -66,9 +85,16 @@ const data = [
     image: Seminar,
   },
   {
-    title: "Faculty Cabin",
-    description: "A Faculty Cabin is a private, designated workspace within educational institutions, typically assigned to professors or academic staff. It provides a quiet, comfortable environment for faculty members to conduct research, grade assignments, meet with students, and plan lessons. Faculty cabins are usually equipped with essential office furniture such as desks, chairs, bookshelves, and storage cabinets, as well as technology like computers, printers, and internet access to facilitate academic tasks. Some cabins also feature a small meeting area for one-on-one student consultations or faculty discussions. Designed to support productivity and professional activities, faculty cabins offer a space for focused work while also ensuring privacy and a personal space for academic responsibilities.",
-    image: Cabin,
+    title: "Solar Park",
+    description:
+      "A small solar park is a sustainable energy initiative designed to harness the power of the sun through various solar-powered devices. It features a solar cooker, which uses solar energy to cook food without the need for conventional fuels, promoting eco-friendly cooking methods. The solar tree is an innovative structure that mimics a real tree, with solar panels as its branches, capturing sunlight to generate clean energy. A solar fountain is also part of the park, using solar energy to power water pumpps. Together, these installations not only provide renewable energy solutions but also demonstrate the diverse applications of solar power, contributing to energy conservation and raising awareness about the benefits of solar energy.",
+    image: SolarPark,
+  },
+  {
+    title: "Garden",
+    description:
+      "A garden is a versatile outdoor space designed to provide a calm and inviting environment for relaxation, activities, and social interactions. It is filled with lush greenery, including a mix of flowering plants, shrubs, and trees, creating a natural ambiance that encourages tranquility. The garden is equipped with tables for sitting, offering a perfect spot for enjoying meals, reading, or socializing with friends and colleagues. There is also ample open space for various activities such as outdoor games, group discussions, creative projects, or simply enjoying the fresh air. The layout of the garden is designed to ensure both comfort and functionality, providing an ideal setting for lunchtime gatherings, casual meetings, or recreational time. This well-balanced design promotes relaxation, well-being, and connection with nature while supporting a variety of outdoor experiences. The peaceful surroundings and natural beauty also make it a perfect venue for mindfulness practices or enjoying a break from busy routines.",
+    image: Garden,
   },
 ];
 
@@ -157,7 +183,7 @@ const CampusPage = () => {
             </div>
             <div className={`lg:w-[44%] lg:h-[470px] h-auto mt-3 w-full lg:px-14 md:px-8 px-6 py-4 ${index % 2 !== 0 ?"lg:py-1 md:py-0":"w-full sm:px-[70px] sm:py-[45px] md:py-[20px] bg-[#e3e3e373] lg:py-10 lg:w-[66%] mt-5 md:mt-0"}`}>
               <h2 className="md:text-[2.2rem] lg:text-[1.8rem] text-[1.4rem] font-bold">{section.title}</h2>
-              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600">{section.description} {section.title=="IoT Lab"?<NavLink to="/" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
+              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
             </div>
           </div>
         ))}
