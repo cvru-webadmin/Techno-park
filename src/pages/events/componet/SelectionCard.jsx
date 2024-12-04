@@ -4,7 +4,7 @@ import active from "./image.png";
 import news from "./news.jpg";
 import all from "./all events.avif";
 
-export default function SelectionCard({Upcoming,Active,News,AllEvent,setEvent}) {
+export default function SelectionCard({Upcoming,Active,News,AllEvent,setEvent,scroll}) {
   // Array of card objects
 const cards = [
   {
@@ -13,7 +13,7 @@ const cards = [
     description: "Explore all events happening at Techno Park.",
     color: "text-blue-700", // Represents inclusiveness and accessibility
     image: all, // Use a suitable placeholder or unique image for this card
-    onClick: () => setEvent(AllEvent),
+    onClick: () => {setEvent(AllEvent);scroll()},
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const cards = [
     description: "Join ongoing events happening right now.",
     color: "text-green-700", // Reflects active and vibrant energy
     image: active,
-    onClick: () => setEvent(Active),
+    onClick: () => {setEvent(Active);scroll()},
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const cards = [
     description: "Discover upcoming events and be part of the excitement.",
     color: "text-indigo-700", // Matches the theme of upcoming events
     image: UpcomingImg,
-    onClick: () => setEvent(Upcoming),
+    onClick: () => {setEvent(Upcoming);scroll()},
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const cards = [
     description: "Get the latest updates and stay informed.",
     color: "text-red-600", // Highlights urgency or importance
     image: news,
-    onClick: () => setEvent(News)
+    onClick: () => {setEvent(News);scroll()}
   },
   
 ];
@@ -45,12 +45,12 @@ const cards = [
   
   return (
     <div className="py-10 px-6 lg:px-16 bg-gray-50">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
         {cards.map((card) => (
           <button
           key={card.id}
           onClick={card.onClick}
-          className="flex flex-col h-auto pb-2 lg:h-72 items-center border border-gray-300 rounded-lg shadow-lg hover:scale-105 overflow-hidden bg-white hover:shadow-xl transition-all duration-300 focus:outline-none"
+          className="flex flex-col h-auto pb-2 md:h-72 items-center border border-gray-300 rounded-lg shadow-lg hover:scale-105 overflow-hidden bg-white hover:shadow-xl transition-all duration-300 focus:outline-none"
         >
           {/* Image Section */}
           <div className="w-full relative">
@@ -63,10 +63,10 @@ const cards = [
         
           {/* Content Section */}
           <div className="p-4 flex-1 lg:text-left">
-            <h3 className={`text-xl lg:text-xl text-center font-semibold ${card.color} mb-1`}>
+            <h3 className={`text-md lg:text-xl text-center font-semibold ${card.color} mb-1`}>
               {card.title}
             </h3>
-            <p className="text-gray-600 text-center text-sm lg:text-[0.80rem]">{card.description}</p>
+            <p className="text-gray-600 text-center text-xs lg:text-[0.80rem]">{card.description}</p>
           </div>
         </button>
         

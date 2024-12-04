@@ -1,35 +1,44 @@
 import React, { useState } from "react";
 
-const EventCard = ({ title, date, description, tag, image }) => {
+const EventCard = ({ title, date, description, status, image }) => {
   // State to track if the description is expanded
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-   
-    <div className="group border flex rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-2xl w-full transition-shadow duration-300">
+    <div className="group flex flex-col md:flex-row border rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-2xl w-full transition-shadow duration-300">
+    {/* Image Section */}
+    <div className="w-full flex justify-center items-center lg:w-1/2 h-full lg:h-auto ">
     {image && (
       <img
         src={image}
         alt={title}
-        className="w-1/3 h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
       />
     )}
-    <div className="p-4">
-      <span className="flex justify-between mt-2">
-      <h3 className="text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
-        {title}
-      </h3>
-      <span className="inline-block text-xs bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-2 py-1 rounded-full font-semibold mb-2">
-        {tag}
-      </span>
-      </span>
-      <p className="text-sm text-gray-500 mt-1">{date}</p>
-      <p className="text-gray-700 mt-2">{description}</p>
-      {/* <button className="mt-4 inline-block text-sm text-purple-600 hover:underline">
-        Read More
-      </button> */}
     </div>
-    </div> 
+  
+    {/* Content Section */}
+    <div className="p-6 flex flex-col w-full">
+      {/* Title and Status */}
+      <div className="flex items-center w-full justify-between mb-4">
+        <h3 className="text-lg text-nowrap lg:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+          {title}
+        </h3>
+        <span className="text-xs bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-3 py-1 rounded-full font-semibold">
+          {status}
+        </span>
+      </div>
+  
+      {/* Date */}
+      <p className="text-sm text-gray-500 mb-3">{date}</p>
+  
+      {/* Description */}
+      <p className="text-sm pr-2 md:text-xs md:text-justify text-gray-700">
+        {description}
+      </p>
+    </div>
+  </div>
+  
   );
 };
 

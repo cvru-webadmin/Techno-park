@@ -1,11 +1,11 @@
 import React from "react";
 import calenderIluustration from "./freepik__retouch__10656.png";
 
-export default function Header() {
+export default function Header({scroll}) {
   return (
     // from-[#fff3e7]
     <header className="bg-gradient-to-r from-gray-100 to-gray-50 py-20">
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10 px-6 lg:px-20">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10 px-6 lg:px-20">
         {/* Right Side: Image or SVG */}
         <div className="flex-shrink-0 w-full lg:w-1/2">
           <img
@@ -24,7 +24,7 @@ export default function Header() {
             Park. Stay connected and never miss an opportunity!
           </p>
           <div className="mt-6">
-            <button className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition duration-300">
+            <button onClick={scroll} className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition duration-300">
               Explore More
             </button>
           </div>
