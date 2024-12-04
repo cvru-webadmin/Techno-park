@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./componet/Header";
 import EventCard from "./componet/EventCard";
 import upcoming from "./componet/upcoming-events-label-collection_662550-1788.jpg";
 import SelectionCard from "./componet/SelectionCard";
 
 const EventsPage = () => {
-  const Events = [
+
+  const [Events,setEvents]=useState([
     {
       id: 1,
       title: "Tech Fest 2024",
@@ -50,7 +51,21 @@ const EventsPage = () => {
       tag: "News",
       image: "https://via.placeholder.com/300x200.png?text=Admissions+Open",
     },
-  ];
+  ])
+  const [allEvents,setAllEvents]=useState([]);
+  const [upcomingEvents,setUpcomingEvents]=useState([]);
+  const [activeEvents,setActiveEvents]=useState([]);
+  const [newsEvents,setNewsEvents]=useState([]);
+
+  useEffect(()=>{
+    setAllEvents(Events)
+    const UpcomingEvents=allEvents.filter((event)=>event.tag==="Upcoming").map(event=>event);
+    setUpcomingEvents(UpcomingEvents);
+    const ActiveEvents=allEvents.filter((event)=>event.tag==="Active").map(event=>event);
+    setActiveEvents(ActiveEvents);
+    const NewsEvents=allEvents.filter((event)=>event.tag==="News").map(event=>event);
+    setNewsEvents(NewsEvents)
+  },[])
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -68,12 +83,18 @@ const EventsPage = () => {
           Select any category to filter events and find out what’s happening
           next!
         </p>
-        <SelectionCard />
+        <SelectionCard
+          Upcoming={upcomingEvents}
+          Active={activeEvents}
+          AllEvent={allEvents}
+          News={newsEvents}
+          setEvent={setEvents}
+        />
       </div>
 
       {/*Events Section */}
       <section className="py-12 px-6 lg:px-16 bg-white">
-      <h2 className="text-3xl lg:text-4xl font-extrabold text-indigo-900 text-center mb-5">
+        <h2 className="text-3xl lg:text-4xl font-extrabold text-indigo-900 text-center mb-5">
           All Events
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
