@@ -47,7 +47,7 @@ const data = [
   {
     title: "IoT Lab",
     description:
-      "The Internet of Things (IoT) Lab is a well-equipped facility designed to foster innovation, experimentation, and skill development in IoT technologies. It can accommodate up to 28 students simultaneously and offers a variety of tools and components, including diverse sensors, Arduino boards, microcontrollers like ESP32 and Raspberry Pi, relays, camera modules, and communication modules for Wi-Fi and Bluetooth connectivity. The lab supports the creation and testing of IoT solutions for smart systems, providing resources for data collection, analysis, cloud integration, and edge computing. Students actively engage in projects such as smart lighting systems, automatic irrigation systems, and smart roofing systems for unexpected rainfall, while also working on prototypes addressing real-world problems in areas like healthcare, industrial automation, and agriculture. With its emphasis on interdisciplinary collaboration, the lab facilitates the development of intelligent solutions, offering hands-on learning opportunities to prototype, test, and deploy IoT-based innovations.",
+      "The Internet of Things (IoT) Lab is a well-equipped facility designed to foster innovation, experimentation, and skill development in IoT technologies. It can accommodate up to 28 students simultaneously and offers a variety of tools and components, including diverse sensors, Arduino boards, microcontrollers like ESP32 and Raspberry Pi, relays, camera modules, and communication modules for Wi-Fi and Bluetooth connectivity. The lab supports the creation and testing of IoT solutions for smart systems, providing resources for data collection, analysis, cloud integration, and edge computing. Students actively engage in projects such as smart lighting systems, automatic irrigation systems, and automatic crop protection systems for unexpected rainfall, while also working on prototypes addressing real-world problems in areas like healthcare, industrial automation, and agriculture. With its emphasis on interdisciplinary collaboration, the lab facilitates the development of intelligent solutions, offering hands-on learning opportunities to prototype, test, and deploy IoT-based innovations.",
     image: IOT,
   },
   {
@@ -183,7 +183,7 @@ const CampusPage = () => {
             </div>
             <div className={`lg:w-[44%] lg:h-[470px] h-auto mt-3 w-full lg:px-14 md:px-8 px-6 py-4 ${index % 2 !== 0 ?"lg:py-1 md:py-0":"w-full sm:px-[70px] sm:py-[45px] md:py-[20px] bg-[#e3e3e373] lg:py-10 lg:w-[66%] mt-5 md:mt-0"}`}>
               <h2 className="md:text-[2.2rem] lg:text-[1.8rem] text-[1.4rem] font-bold">{section.title}</h2>
-              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
+              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/IOT" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
             </div>
           </div>
         ))}

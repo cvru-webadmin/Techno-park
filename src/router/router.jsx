@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/home/Home';
 import App from '../App';
 import Campus from '../pages/campus/Campus';
+import IOT from '../pages/campus/Iot';
 
 const router =createBrowserRouter([
     {
@@ -12,7 +13,7 @@ const router =createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-              },
+            },
             {
              path:"/about",
              element:<h1 className='h-screen flex items-center justify-center'>this is about page</h1>
@@ -20,7 +21,11 @@ const router =createBrowserRouter([
             {
                 path: "/campus",
                 element: <Campus/>,
-              },
+            },
+            {
+                path: "/IOT",
+                element: <IOT/>,
+            },
         ]
     }
 ])
