@@ -185,7 +185,7 @@ const FireBaseProvider = ({ children }) => {
         createdAt: formatDate(),
       });
       if (response) {
-        toast.success("message send sucessfull");
+        return true;
       }
     } catch (error) {
       toast.error("An error occurred while sending your message. Please try again.");

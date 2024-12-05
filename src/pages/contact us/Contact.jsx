@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import FAQ from './componet/FAQ';
 import FAQSection from './componet/FAQ';
 import { FireContext } from '../../Context/context';
+import { Link } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const ContactUs = () => {
 
@@ -18,24 +20,28 @@ const ContactUs = () => {
     subject:"",
     message:"",
   })
-  const handelSend=(e)=>{
+  const handelSend=async(e)=>{
     e.preventDefault();
     let Name=formData.firstName + " " +formData.lastName ;
-    SendMassage(
+    let res=await SendMassage(
       Name,
       formData.email,
       formData.number,
       formData.subject,
       formData.message
     )
-    setFormData({
-      firstName:"",
-      lastName:"",
-      email:"",
-      number:"",
-      subject:"",
-      message:"",
-    })
+    
+    if(res){
+      setFormData({
+        firstName:"",
+        lastName:"",
+        email:"",
+        number:"",
+        subject:"",
+        message:"",
+      })
+    }
+      
     // console.log(formData);
   }
 
@@ -223,6 +229,22 @@ const ContactUs = () => {
                   className="w-full border resize-none rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-800 h-24"
                 ></textarea>
               </div>
+              <div className="text-gray-500 text-xs flex my-3 gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"
+                  ></path>
+                </svg>
+                <h4>
+                 If you want to give feedback, please use the feedback form. This form is for inquiries and messages only.
+                 <NavLink className='text-blue-700 font-semibold capitalize' to="/feedback">Go to feedback page</NavLink>
+                </h4>
+                </div>
               <div className='flex justify-center'>
               <button
                 type="submit"
