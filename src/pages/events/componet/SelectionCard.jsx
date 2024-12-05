@@ -1,10 +1,10 @@
 import React from "react";
-import UpcomingImg from "./upcoming event.avif";
-import active from "./image.png";
-import news from "./news.jpg";
-import all from "./all events.avif";
+import UpcomingImg from "../image/upcoming event.avif";
+import active from "../image/image.png";
+import news from "../image/news.jpg";
+import all from "../image/all events.avif";
 
-export default function SelectionCard({Upcoming,Active,News,AllEvent,setEvent,scroll}) {
+export default function SelectionCard({Upcoming,Active,News,AllEvent,setEvent,scroll,tab}) {
   // Array of card objects
 const cards = [
   {
@@ -13,15 +13,15 @@ const cards = [
     description: "Explore all events happening at Techno Park.",
     color: "text-blue-700", // Represents inclusiveness and accessibility
     image: all, // Use a suitable placeholder or unique image for this card
-    onClick: () => {setEvent(AllEvent);scroll()},
+    onClick: () => {setEvent(AllEvent);scroll();tab("all-event")},
   },
   {
     id: 3,
-    title: "Active Events",
+    title: "Event Spotlight",
     description: "Join ongoing events happening right now.",
     color: "text-green-700", // Reflects active and vibrant energy
     image: active,
-    onClick: () => {setEvent(Active);scroll()},
+    onClick: () => {setEvent(Active);scroll();tab("active")},
   },
   {
     id: 2,
@@ -29,15 +29,15 @@ const cards = [
     description: "Discover upcoming events and be part of the excitement.",
     color: "text-indigo-700", // Matches the theme of upcoming events
     image: UpcomingImg,
-    onClick: () => {setEvent(Upcoming);scroll()},
+    onClick: () => {setEvent(Upcoming);scroll();tab("upcoming")},
   },
   {
     id: 4,
-    title: "News",
+    title: "News  & Announcement",
     description: "Get the latest updates and stay informed.",
     color: "text-red-600", // Highlights urgency or importance
     image: news,
-    onClick: () => {setEvent(News);scroll()}
+    onClick: () => {setEvent(News);scroll();tab("news")}
   },
   
 ];

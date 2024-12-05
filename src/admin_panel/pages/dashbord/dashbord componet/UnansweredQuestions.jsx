@@ -35,8 +35,8 @@ const UnansweredQuestions = ({ Inqueris }) => {
               {!Inqueris.length == 0 ? (
                 Inqueris.filter((message) => message.Answer === "")
                   .slice(0, 4)
-                  .map((message) => (
-                    <tr className="hover:bg-gray-50 w-full">
+                  .map((message,index) => (
+                    <tr key={`${message.Name}${message.Email}${index}`} className="hover:bg-gray-50 w-full">
                       <td className="px-4 py-3 border-b w-[35%]">
                         {message.Message}
                       </td>
@@ -58,8 +58,8 @@ const UnansweredQuestions = ({ Inqueris }) => {
                     </tr>
                   ))
               ) : (
-                Array(3).fill(null).map((data)=>(
-                <tr className="hover:bg-gray-50">
+                Array(3).fill(null).map((data,index)=>(
+                <tr key={index} className="hover:bg-gray-50">
                   <td className="px-4 py-3 border-b w-[35%]">
                     <div className="h-4 bg-gray-200 rounded-md animate-pulse"></div>
                   </td>

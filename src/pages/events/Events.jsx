@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Header from "./componet/Header";
 import EventCard from "./componet/EventCard";
-import upcoming from "./componet/upcoming-events-label-collection_662550-1788.jpg";
+import upcoming from "./image/upcoming-events-label-collection_662550-1788.jpg";
 import SelectionCard from "./componet/SelectionCard";
 import { FireContext } from "../../Context/context";
 
@@ -13,6 +13,7 @@ const EventsPage = () => {
   const [upcomingEvents,setUpcomingEvents]=useState([]);
   const [activeEvents,setActiveEvents]=useState([]);
   const [newsEvents,setNewsEvents]=useState([]);
+  const [tab,setTab]=useState("all-event")
 
   useEffect(()=>{
     const FetchEvents =async()=>{
@@ -54,7 +55,7 @@ const EventsPage = () => {
     UpcomingEvents();
     ActiveEvents();
     NewsEvents();
-  },[])
+  },[allEvents])
   
   const eventSection=useRef(null);
   const expolor=useRef(null);
@@ -93,13 +94,17 @@ const EventsPage = () => {
           News={newsEvents}
           setEvent={setEvents}
           scroll={()=>scroll(eventSection,30)}
+          tab={setTab}
         />
       </div>
 
       {/*Events Section */}
-      <section ref={eventSection} className="py-12 px-6 lg:px-16 bg-white">
-        <h2 className="text-3xl lg:text-4xl font-extrabold text-indigo-900 text-center mb-5">
-          All Events
+      <section ref={eventSection} className="py-12 px-6 lg:px-16 bg-[#fff3e7]">
+        <h2 className="text-3xl lg:text-4xl font-extrabold text-indigo-900 text-center mb-8">
+          {tab==="upcoming"&&"Upcoming Events"}
+          {tab==="all-event"&&"All Events"}
+          {tab==="active"&&"Event Spotlight"}
+          {tab==="news"&&"News & Announcement"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-8 max-w-6xl mx-auto">
           {Events.map((event) => (

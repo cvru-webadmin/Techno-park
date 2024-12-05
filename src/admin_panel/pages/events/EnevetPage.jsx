@@ -3,6 +3,7 @@ import AddEventModal from "./event componet/AddEvent";
 import { FireContext } from "../../../Context/context";
 import EditEventModal from "./event componet/EditEvent";
 import DeleteModal from "./event componet/DeleteConformation";
+import toast from "react-hot-toast";
 
 const EventPage = () => {
   const eventsData = [
@@ -100,7 +101,7 @@ const EventPage = () => {
       if (res) {
         setOnDelete(!onDelete);
         setdeleteModel(false);
-        alert(`${deleteName} sucessfully delete`)
+        toast.success(`${deleteName} sucessfully delete`)
         setDeleteId(null);
         setDeleteName(null);
       }

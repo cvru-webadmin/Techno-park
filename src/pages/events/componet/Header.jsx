@@ -1,5 +1,5 @@
 import React from "react";
-import calenderIluustration from "./freepik__retouch__10656.png";
+import calenderIluustration from "../image/freepik__retouch__10656.png";
 
 export default function Header({scroll}) {
   return (

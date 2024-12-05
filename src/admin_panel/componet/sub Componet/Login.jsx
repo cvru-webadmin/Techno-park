@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FireContext } from "../../../Context/context";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -13,8 +14,7 @@ const AdminLogin = () => {
     e.preventDefault();
     console.log("Admin loging..");
     // Add create user call for login here
-    const Admin = await LoginAdmin(email,password);
-    alert(Admin)
+    await LoginAdmin(email,password);
   };
 
   useEffect(()=>{

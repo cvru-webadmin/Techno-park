@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import axios from "axios";
+import toast, { ToastBar } from "react-hot-toast";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -61,13 +62,13 @@ const FireBaseProvider = ({ children }) => {
       if (response) {
         setAdmin(true); // Set the admin state to true on successful login
         setUser(response.user);
-        return "Successfully logged in as admin";
+        toast.success("Successfully logged in as admin");
       }
     } catch (error) {
       setAdmin(false); // Set the admin state to false on failure
       setUser(false);
       console.error("Login error:", error.message); // Better error logging
-      return "Please check the details you entered.";
+      toast.error("Please check the details you entered.");
     }
   };
 
@@ -75,13 +76,13 @@ const FireBaseProvider = ({ children }) => {
   const LogoutAdmin = () => {
     signOut(adminAuth)
       .then(() => {
-        alert("User successfully logged out!");
+        toast.success("User successfully logged out!");
         setAdmin(false); // Set the admin state to false on logout
         setUser(false);
       })
       .catch((error) => {
-        alert("Error logging out: " + error.message);
-        console.error("Logout error:", error.message); // Better error logging
+        toast.error("Error logging out");
+        // console.error("Logout error:", error.message); // Better error logging
       });
   };
 
@@ -92,10 +93,10 @@ const FireBaseProvider = ({ children }) => {
         setAdmin(true); // User is logged in
         setUser(user);
         setuserEmail(user.email)
-        console.log("User logged in:");
+        // console.log("User logged in:");
       } else {
         setAdmin(false); // User is logged out
-        console.log("User not logged in");
+        // console.log("User not logged in");
       }
     });
 
@@ -122,7 +123,7 @@ const FireBaseProvider = ({ children }) => {
       const CludeName="dcbniehli";
 
       if(!Image){
-        return alert("pls select image")
+        return toast("pls select image")
       }
 
       let data = new FormData();
@@ -133,7 +134,7 @@ const FireBaseProvider = ({ children }) => {
       try {
         let response = await axios.post(`https://api.cloudinary.com/v1_1/${CludeName}/image/upload`,data);
         if(response){
-          console.log(response);
+          // console.log(response);
           const ImageObj = {
             url: response.data.url, // URL of the uploaded image
             id: response.data.public_id // Public ID of the image
@@ -141,7 +142,7 @@ const FireBaseProvider = ({ children }) => {
         return ImageObj;
         }
       } catch (error) {
-        console.log("error ocurred uploading image: ",error);
+        toast.error("error ocurred uploading image: ",error);
       }
     }
 
@@ -184,10 +185,10 @@ const FireBaseProvider = ({ children }) => {
         createdAt: formatDate(),
       });
       if (response) {
-        alert("message send sucessfull");
+        toast.success("message send sucessfull");
       }
     } catch (error) {
-      console.log("some error occured-> ", error);
+      toast.error("An error occurred while sending your message. Please try again.");
     }
   };
   //mthod for get message
@@ -204,10 +205,10 @@ const FireBaseProvider = ({ children }) => {
   
       // update the document
       await updateDoc(docRef,awnser);
-      console.log("Successfully Add Answer");
+      toast.success("Successfully Add Answer");
       return true;
     } catch (error) {
-      console.log("Error occurred upload answer: ", error);
+      toast.error("Error occurred while uploading the answer.");
     }
   };
 
@@ -217,11 +218,11 @@ const FireBaseProvider = ({ children }) => {
     try {
       const response = await addDoc(collection(fireStore, "Event"),event);
       if (response) {
-        alert("Event add sucessfull");
+        toast.success("Event add sucessfull");
         return true;
       }
     } catch (error) {
-      console.log("some error occured-> ", error);
+      toast.error("Error occurred while uploading the event.");
     }
   };
    //mthod for get Events
@@ -239,9 +240,9 @@ const FireBaseProvider = ({ children }) => {
       // Delete the document
       await deleteDoc(docRef);
       return true;
-      console.log("Successfully deleted");
+      toast.success("Event successfully deleted.");
     } catch (error) {
-      console.log("Error occurred while deleting: ", error);
+      toast.error("Error occurred while deleting the event.");
     }
   };
 
@@ -253,10 +254,10 @@ const FireBaseProvider = ({ children }) => {
   
       // update the document
       await updateDoc(docRef,data);
-      console.log("Successfully update");
+      toast.success("Successfully updated.");
       return true;
     } catch (error) {
-      console.log("Error occurred while updating: ", error);
+      toast.error("Error occurred while updating the event");
     }
   };
 
@@ -269,7 +270,7 @@ const FireBaseProvider = ({ children }) => {
         return true;
       }
     } catch (error) {
-        console.log("some error ocuured send feedback:",error);
+        toast.error("An error occurred send feedback. Please try again");
     }
   }
 
