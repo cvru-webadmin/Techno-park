@@ -2,6 +2,9 @@ import React from 'react'
 import Intro from './Placement Component/Intro'
 import VIHAN from './Placement Component/VIHAN'
 import CareerInternship from './Placement Component/Career&Internship'
+import IntroTPO from './Placement Component/TPOMessage'
+import Companies from './Placement Component/Companies'
+import StudentPlaced from './Placement Component/StudentPlaced'
 
 export default function Placement() {
   return (
@@ -12,6 +15,9 @@ export default function Placement() {
     <Intro/>
     <VIHAN/>
     <CareerInternship/>
+    <IntroTPO/>
+    <Companies/>
+    <StudentPlaced/>
     </>
   )
 }
