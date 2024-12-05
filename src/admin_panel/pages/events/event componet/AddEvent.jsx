@@ -28,8 +28,8 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, add, EventAdd,formatDate }
         title:formData.title,
         description:formData.description,
         status:formData.status,
-        image:imageUpload.url,
-        imageId:imageUpload.id,
+        image:imageUpload.url||"",
+        imageId:imageUpload.id||"",
         createdAt:formatDate(),
     });
     onClose();

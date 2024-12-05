@@ -223,6 +223,7 @@ const FireBaseProvider = ({ children }) => {
       }
     } catch (error) {
       toast.error("Error occurred while uploading the event.");
+      console.log(error)
     }
   };
    //mthod for get Events

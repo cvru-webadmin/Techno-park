@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Notimage from '../image/not_image.jpg'
 
 const EventCard = ({ title, date, description, status, image }) => {
   // State to track if the description is expanded
@@ -7,21 +8,29 @@ const EventCard = ({ title, date, description, status, image }) => {
   return (
     <div className="group flex flex-col md:flex-row border rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-2xl w-full transition-shadow duration-300">
     {/* Image Section */}
-    <div className="w-full flex justify-center items-center lg:w-1/2 h-full lg:h-auto ">
-    {image && (
+    <div className={`w-full flex justify-center items-center lg:w-1/2 h-full ${image? "lg:h-auto":"lg:h-40"}`}>
+    {image? (
       <img
         src={image}
         alt={title}
         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
       />
-    )}
+    ):
+    (
+      <img
+        src={Notimage}
+        alt={title}
+        className="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-300"
+      />
+    )
+    }
     </div>
   
     {/* Content Section */}
     <div className="p-6 flex flex-col w-full">
       {/* Title and Status */}
       <div className="flex items-center w-full justify-between mb-4">
-        <h3 className="text-lg text-nowrap lg:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+        <h3 className="text-lg capitalize text-nowrap lg:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
           {title}
         </h3>
         <span className="text-xs bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-3 py-1 rounded-full font-semibold">
