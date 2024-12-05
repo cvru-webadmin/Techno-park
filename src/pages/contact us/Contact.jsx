@@ -4,12 +4,16 @@ import FAQSection from './componet/FAQ';
 import { FireContext } from '../../Context/context';
 import { Link } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import MessageReply from './componet/Replay';
 
 const ContactUs = () => {
 
   
   //import Firebase context for send message
   const {SendMassage}= useContext(FireContext);
+
+  const [Replay,setReplay]=useState(false);
+  const [MessageDetails,setMessageDetails]=useState(null);
 
   //state define for form
   const [formData,setFormData] = useState({
@@ -32,6 +36,8 @@ const ContactUs = () => {
     )
     
     if(res){
+      setMessageDetails(formData);
+      setReplay(true);
       setFormData({
         firstName:"",
         lastName:"",
@@ -49,6 +55,8 @@ const ContactUs = () => {
     <section>
     {/* Map */}
     <div className='h-16 bg-[var(--DarkBlue)]'></div>
+    <MessageReply onOpen={Replay} MessageDetails={MessageDetails} onClose={()=>{setReplay(false);setMessageDetails(null)}} />
+
     <div>
       <div className="w-full h-72">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.914624760464!2d76.22298377971613!3d21.822229328550034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd8116f759b43d1%3A0x7f69c9b8c7674282!2sDr.%20C.V.%20Raman%20University!5e0!3m2!1sen!2sin!4v1732006828806!5m2!1sen!2sin" 
