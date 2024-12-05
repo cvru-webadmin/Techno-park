@@ -7,11 +7,7 @@
   background-blend-mode: lighten;
   
 }
-/* .suggestion {
-  scroll-behavior: smooth;
-  scrollbar-width: thin; 
-  scrollbar-color: #c0c0c0 transparent; 
-} */
+
 .suggestion::-webkit-scrollbar{
   display: none;
 }

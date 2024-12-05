@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import MobilNavbar from "./MobileNav";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,7 +41,9 @@ const Navbar = () => {
 
   // console.log(tab)
   return (
-    <nav className={`fixed w-full top-0 z-50 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-transparent transition-all duration-200 ease-in-out transform"}`}>
+    <> 
+    <MobilNavbar />
+    <nav className={`fixed w-full top-0 z-30 text-white py-2 lg:px-6 px-4   ${sticky?"bg-gray-900 transition-all duration-200 ease-in-out transform":"bg-transparent transition-all duration-200 ease-in-out transform"}`}>
       <div className="flex items-center justify-between">
        {/* Logo Section */}
          <div className="flex items-center space-x-2">
@@ -53,7 +56,7 @@ const Navbar = () => {
 
         {/* Hamburger Menu for Mobile */}
         <button
-          className="block lg:hidden focus:outline-none"
+          className="hidden focus:outline-none"
           onClick={toggleMobileMenu}
         >
           <svg
@@ -147,6 +150,7 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+    </>
   );
 };
 
