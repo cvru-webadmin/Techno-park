@@ -250,7 +250,7 @@ const ContactUs = () => {
                 </svg>
                 <h4>
                  If you want to give feedback, please use the feedback form. This form is for inquiries and messages only.
-                 <NavLink className='text-blue-700 font-semibold capitalize' to="/feedback">Go to feedback page</NavLink>
+                 <NavLink className='text-blue-700 font-semibold capitalize ml-1' to="/feedback">Go to feedback page</NavLink>
                 </h4>
                 </div>
               <div className='flex justify-center'>
