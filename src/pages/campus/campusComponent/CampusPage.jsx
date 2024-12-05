@@ -148,13 +148,15 @@ const CampusPage = () => {
     <div key={slide.id} className="p-10 mb-3">
       <div
         className={`bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col ${
-          index === currentSlide ? "lg:scale-125 scale-110" : "scale-100 blur-[1px] opacity-75"
-        }`} // Scale the center image
+          index === currentSlide
+            ? "lg:scale-125 scale-110 transition-transform duration-500 ease-in-out"
+            : "scale-100 blur-[0.5px] opacity-80 transition-all duration-500 ease-in-out"
+        }`} // Apply scale to center image and blur + opacity to others
       >
-        <div className="lg:h-72 md:h-80 w-full h-56 flex items-center justify-center">
+        <div className="lg:h-72 md:h-80 w-full h-52 flex items-center justify-center">
           <img
             src={slide.image}
-            className="object-cover h-full w-full"
+            className="object-cover object-center h-full w-full"
             alt={`Slide ${slide.id}`} // Add alt for accessibility
           />
         </div>
@@ -162,11 +164,14 @@ const CampusPage = () => {
     </div>
   ))}
 </Slider>
+
         </div>
         </div>
 
       {/* Content Sections */}
       <div className="px-5 md:px-20">
+      <h1 className="lg:text-4xl md:text-[43px] font-bold text-3xl mt-8 text-gray-800 text-center w-full">Campus Tour</h1>
+
         {data.map((section, index) => (
           <div
             key={index}
