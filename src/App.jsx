@@ -3,16 +3,16 @@ import './App.css'
 import { Outlet } from 'react-router-dom'
 import Navbar from './components/Nav'
 import Footer from './components/Footer'
-import { ExampleProvider } from './context/ExampleContext'
+import { ScrollProvider } from './context/DropDownScrollContext'
 
 function App() {
   return (
     <>
-    <ExampleProvider>
+    <ScrollProvider>
     <Navbar />
     <Outlet />
     <Footer />
-    </ExampleProvider>
+    </ScrollProvider>
 
     </>
   )
