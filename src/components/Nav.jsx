@@ -9,10 +9,11 @@ const Navbar = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null); 
   const [tab,settab]=useState("Home");
   const {setDropDown}=useContext(ScrollContext)
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about", submenu: ["Our Mission", "Faculty"] },
-    { name: "Courses", path: "/courses", submenu: ["Undergraduate", "Postgraduate", "Diploma"] },
+    { name: "Courses", path: "/courses", submenu: ["Diploma", "Undergraduate", "Postgraduate"] },
     { name: "Activities", path: "/activities" },
     { name: "Campus", path: "/campus" },
     { name: "Achievements", path: "/achievements" },
@@ -83,7 +84,9 @@ const Navbar = () => {
               <div className="flex items-center">
                 <NavLink
                   to={link.path}
-                  onClick={()=>{settab(link.path); window.scrollTo(0, 0);}}
+                  onClick={()=>{settab(link.path);  
+                    useEffect(() => {window.scrollTo(0, 0);},[]);
+                }}
                   className="xl:text-base lg:text-xs font-semibold transition duration-300 text-white  group-hover:text-amber-400">
                   {link.name}
               
