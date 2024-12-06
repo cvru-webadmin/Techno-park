@@ -5,6 +5,8 @@ import App from '../App';
 import About from '../pages/about_team/About';
 import Courses from '../pages/courses/Courses';
 import Activity from '../pages/activities_cultral/Activity';
+import Campus from '../pages/campus/Campus';
+import IOT from '../pages/campus/Iot';
 
 const router =createBrowserRouter([
     {
@@ -14,7 +16,7 @@ const router =createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-              },
+            },
             {
              path:"/about",
              element:<About/>
@@ -26,7 +28,15 @@ const router =createBrowserRouter([
             {
                 path: "/activities",
                 element: <Activity />,
-              },
+            },
+            {
+                path: "/campus",
+                element: <Campus/>,
+            },
+            {
+                path: "/IOT",
+                element: <IOT/>,
+            },
         ]
     }
 ])
