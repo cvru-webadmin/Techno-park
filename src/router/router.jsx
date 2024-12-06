@@ -7,6 +7,7 @@ import Courses from '../pages/courses/Courses';
 import Activity from '../pages/activities_cultral/Activity';
 import Campus from '../pages/campus/Campus';
 import IOT from '../pages/campus/Iot';
+import Archivevments from '../pages/achievements/Archivevments';
 
 const router =createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router =createBrowserRouter([
                 path: "/IOT",
                 element: <IOT/>,
             },
+            {
+             path:"/achievements",
+             element:<Archivevments />
+            }
         ]
     }
 ])
