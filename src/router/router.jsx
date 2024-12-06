@@ -8,6 +8,7 @@ import Activity from '../pages/activities_cultral/Activity';
 import Campus from '../pages/campus/Campus';
 import IOT from '../pages/campus/Iot';
 import Archivevments from '../pages/achievements/Archivevments';
+import Placement from '../pages/placement/Placement';
 
 const router =createBrowserRouter([
     {
@@ -41,7 +42,11 @@ const router =createBrowserRouter([
             {
              path:"/achievements",
              element:<Archivevments />
-            }
+            },
+            {
+                path: "/placement",
+                element: <Placement />,
+            },
         ]
     }
 ])
