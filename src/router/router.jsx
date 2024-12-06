@@ -4,6 +4,7 @@ import Home from '../pages/home/Home';
 import App from '../App';
 import About from '../pages/about_team/About';
 import Courses from '../pages/courses/Courses';
+import Activity from '../pages/activities_cultral/Activity';
 
 const router =createBrowserRouter([
     {
@@ -21,7 +22,11 @@ const router =createBrowserRouter([
             {
              path:"/courses",
              element:<Courses/>
-            }
+            },
+            {
+                path: "/activities",
+                element: <Activity />,
+              },
         ]
     }
 ])
