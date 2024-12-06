@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import axios from "axios";
 import toast, { ToastBar } from "react-hot-toast";
+import { getMessaging } from "firebase/messaging";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -18,6 +19,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
+
+// Initialize Firebase Cloud Messaging and get a reference to the service
+export const messaging = getMessaging(firebaseApp);
 
 // Firebase Authentication
 const adminAuth = getAuth(firebaseApp);
