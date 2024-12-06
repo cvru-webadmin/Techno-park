@@ -164,7 +164,6 @@ const CampusPage = () => {
     </div>
   ))}
 </Slider>
-
         </div>
         </div>
 

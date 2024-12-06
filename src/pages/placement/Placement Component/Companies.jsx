@@ -41,6 +41,12 @@ export default function Companies() {
       {
         breakpoint: 768, // Small screens
         settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 500, // Small screens
+        settings: {
           slidesToShow: 1,
         },
       },
@@ -80,10 +86,6 @@ export default function Companies() {
         image:Wellsun
     },
     {
-        Title:"Kalptaru Agro ",
-        image:Kalptaru
-    },
-    {
         Title:"Hindustan Abhikaran",
         image:HindustanAbhikaran
     },
@@ -102,11 +104,11 @@ export default function Companies() {
   ]
 
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-100 to-gray-50">
-      <div className="max-w-[90rem] mx-auto px-6">
+    <section className="lg:py-16 py-8 pb-12 bg-gradient-to-r from-gray-100 to-gray-50">
+      <div className="lg:max-w-[90rem] lg:mx-auto px-6">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
+        <div className="text-center mb-3 lg:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 lg:mb-4">
           Campus Drives with Prominent Recruiters
           </h2>
         </div>
@@ -114,7 +116,7 @@ export default function Companies() {
         {/* Trophy Slider */}
         <Slider {...sliderSettings}>
           {companies.map((company, index) => (
-            <div key={index} className="p-4">
+            <div key={index} className="p-4 lg:mb-2 w-full mb-1">
               <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
                 {/* Trophy Image */}
                 <div className="h-52 w-full flex items-center justify-center bg-gray-50">
