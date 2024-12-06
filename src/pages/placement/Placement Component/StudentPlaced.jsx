@@ -140,37 +140,65 @@ export default function StudentPlaced() {
           STAR ACHIEVERS OF TRAINING AND PLACEMENT CELL
           </h2>
     </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 w-[85%] mx-auto gap-12 mb-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[85%] mx-auto gap-10 mb-12">
   {StuData.map((student, index) => {
     return (
-      <div
-        key={index}
-        className="w-52 mx-auto shadow-lg rounded-lg overflow-hidden border border-gray-200 transform hover:scale-105 transition-transform duration-300"
-      >
-        <div className="relative h-60">
-          <img
-            src={student.image}
-            alt={`${student.name}'s photo`}
-            className="w-full h-full object-top object-cover"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-3">
-            <h3 className="font-bold text-lg">{student.name}</h3>
-            <p className="text-sm font-light">{student.companyname}</p>
+      <div className="w-[400px] h-[200px] mx-auto p-4 bg-white shadow-sm border rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+      <div className="flex items-center h-full">
+        {/* Left Side - Image with Gradient Border */}
+        <div className="relative w-24 h-24 flex-shrink-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full p-[3.5px]">
+            <img
+              src={student.image}
+              alt={student.name}
+              className="w-full h-full object-cover object-top rounded-full"
+            />
           </div>
         </div>
-        <div className="p-4">
-          <div className="mb-2">
-            <p className="text-gray-700 text-sm">
-              <span className="font-semibold">Passing Year:</span>{" "}
-              {student.passingyear}
-            </p>
-            <p className="text-gray-700 text-sm">
-              <span className="font-semibold">Annual Package:</span> ₹
-              {student.Package}
-            </p>
-          </div>
+
+        {/* Right Side - Details */}
+        <div className="ml-4 flex flex-col justify-center">
+          <h3 className="text-xl font-semibold text-gray-800">{student.name}</h3>
+          <p className="text-sm text-gray-600 mt-1">
+            Passing Year: <span className="font-medium text-gray-800">{student.passingyear}</span>
+          </p>
+          <p className="text-sm text-gray-600 mt-1">
+            Company: <span className="font-medium text-gray-800">{student.companyname}</span>
+          </p>
+          <p className="text-sm text-gray-600 mt-1">
+            Package: <span className="font-medium text-gray-800">{student.Package}</span>
+          </p>
         </div>
       </div>
+    </div>
+      // <div
+      //   key={index}
+      //   className="w-52 mx-auto shadow-lg rounded-lg overflow-hidden border border-gray-200 transform hover:scale-105 transition-transform duration-300"
+      // >
+      //   <div className="relative h-60">
+      //     <img
+      //       src={student.image}
+      //       alt={`${student.name}'s photo`}
+      //       className="w-full h-full object-top object-cover"
+      //     />
+      //     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-3">
+      //       <h3 className="font-bold text-lg">{student.name}</h3>
+      //       <p className="text-sm font-light">{student.companyname}</p>
+      //     </div>
+      //   </div>
+      //   <div className="p-4">
+      //     <div className="mb-2">
+      //       <p className="text-gray-700 text-sm">
+      //         <span className="font-semibold">Passing Year:</span>{" "}
+      //         {student.passingyear}
+      //       </p>
+      //       <p className="text-gray-700 text-sm">
+      //         <span className="font-semibold">Annual Package:</span> ₹
+      //         {student.Package}
+      //       </p>
+      //     </div>
+      //   </div>
+      // </div>
     );
   })}
 </div>

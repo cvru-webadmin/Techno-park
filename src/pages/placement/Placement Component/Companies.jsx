@@ -125,7 +125,7 @@ export default function Companies() {
                   />
                 </div>
                   {/* Title */}
-                  <h3 className="text-lg font-bold h-14 text-gray-800 mb-2 text-center">
+                  <h3 className="text-base font-semibold h-14 text-gray-600 px-2 text-wrap mb-2 text-center">
                     {company.Title}
                   </h3>
               </div>
