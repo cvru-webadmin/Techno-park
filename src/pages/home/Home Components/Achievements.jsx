@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Award from '../../../assets/acsilentes award.png';
 import Award2023 from '../../../assets/images/Award2023.jpeg'
 
@@ -31,9 +32,9 @@ const Achievements = () => {
 
                 {/* Explore More Button */}
                 <div className='flex justify-center'>
-                <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+                <NavLink to="/achievements" onClick={()=>{("/achievements");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
                   View Achievements
-                </button>
+                </NavLink>
                 </div>
               </div>
 
@@ -83,9 +84,9 @@ const Achievements = () => {
               Department Excellence Award (2023)
             </h3>
             <div className="flex justify-center sm:justify-start">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-2 px-6 sm:py-3 sm:px-10 text-sm sm:text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+              <NavLink to="/achievements" onClick={()=>{("/achievements");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-2 px-6 sm:py-3 sm:px-10 text-sm sm:text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
                 View Achievements
-              </button>
+              </NavLink>
             </div>
           </div>
 

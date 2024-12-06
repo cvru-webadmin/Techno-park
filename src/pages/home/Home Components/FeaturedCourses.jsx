@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Course3 from '../../../assets/images/BCA.jpeg';
 import Course1 from '../../../assets/images/DCA.jpg';
 import Course2 from '../../../assets/images/PGDCA.png';
@@ -98,9 +99,9 @@ const FeaturedCourses = () => {
 
           {/* Explore More Button */}
           <div className="text-center mt-8">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 sm:px-10 text-base md:text-lg font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+            <NavLink to="/courses" onClick={()=>{("/courses");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 sm:px-10 text-base md:text-lg font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
               Explore More
-            </button>
+            </NavLink>
           </div>
         </section>
       </div>

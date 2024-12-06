@@ -3,19 +3,19 @@ import TrainingIllustration from "../../../assets/images/TrainingIllustrationbg.
 
 export default function Intro() {
   return (
-    <header className="bg-gradient-to-r from-gray-100 to-gray-50 py-10">
+    <header className="bg-gradient-to-r from-gray-100 to-gray-50 py-14">
       <div className="w-[90%] mx-auto flex flex-col lg:flex-row gap-10 px-6 lg:px-20">
         {/* Right Side: Image or SVG */}
         <div className="flex-shrink-0 w-full lg:w-[33%]">
           <img
             src={TrainingIllustration}
             alt="Events Calendar"
-            className="w-full bg-blue-100 rounded-lg h-96 max-w-md lg:max-w-lg mx-auto"
+            className="w-full  rounded-lg h-96 max-w-md lg:max-w-lg mx-auto"
           />
         </div>
         {/* Left Side: Content */}
         <div className="text-center lg:text-left w-[65%] flex flex-col justify-center h-auto lg:h-[25rem]">
-          <h1 className="text-3xl lg:text-5xl font-bold flex flex-col gap-3 text-gray-800 leading-tight">
+          <h1 className="text-3xl lg:text-5xl font-bold py-4 flex flex-col gap-3 text-gray-800 leading-tight">
             TRAINING & PLACEMENT CELL
           </h1>
           <p className="mt-4 text-2xl text-blue-600 font-semibold">

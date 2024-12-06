@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import IOT from '../../../assets/images/IOT.png';
 import Library from '../../../assets/images/Library.jpeg';
 import ProgrammingLab from '../../../assets/images/ProgrammingLab.jpeg';
@@ -60,12 +61,12 @@ const CampusExplore = () => {
           <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
             Experience the Heart of Our College
           </h3>
-          <p className="text-gray-600 mb-6 text-sm sm:text-base lg:text-lg">
+          <p className="text-gray-600 mb-8 text-sm sm:text-base lg:text-lg">
             Techno Park School: Empowering future innovators with cutting-edge technology and hands-on learning in a vibrant, collaborative environment.
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+          <NavLink to="/campus" onClick={()=>{("/campus");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
             Take a Virtual Tour
-          </button>
+          </NavLink>
         </div>
 
         {/* Right Side: Large Feature Image */}

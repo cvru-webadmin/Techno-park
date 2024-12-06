@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Hackathon from '../../../assets/images/hackathon.jpg';
 import Skitt from '../../../assets/images/Skitt.png';
 import TeachersDay from '../../../assets/images/TeachersDay.jpeg';
@@ -87,9 +88,9 @@ const CultureAndActivities = () => {
 
       {/* Add More Events Button */}
       <div className="mt-5 text-center">
-        <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-base sm:text-lg font-semibold rounded-md shadow-md hover:scale-105 transform transition">
+        <NavLink to="/activities" onClick={()=>{("/activities");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-base sm:text-lg font-semibold rounded-md shadow-md hover:scale-105 transform transition">
           Explore More
-        </button>
+        </NavLink>
       </div>
     </section>
   );
