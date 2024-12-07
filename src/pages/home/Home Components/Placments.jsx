@@ -1,44 +1,55 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import TCS from '../../../assets/images/TCS.png'
+import ICICI from '../../../assets/images/ICICI.png'
+import IDFC from '../../../assets/images/IDFC.png'
+import NextEducation  from '../../../assets/images/Next Education.png'
+import SKFinance  from '../../../assets/images/SK Finance.png'
+import UPL from '../../../assets/images/UPL.png'
+import Equitas from '../../../assets/images/Equitas.png'
+import AtulBhaisare from '../../../assets/images/Atul-Bhaisare.png'
+import FalguniRana from '../../../assets/images/Falguni-Rana.png'
+import PranavAtre from '../../../assets/images/Pranav-Atre.png'
+import GaneshJadhav from '../../../assets/images/Ganesh-Jadhav.png'
 
 const companies = [
-  { name: 'Google', logo: 'https://img.freepik.com/premium-vector/google-logo-icon-set-google-icon-searching-icons-vector_981536-453.jpg?w=740' },
-  { name: 'Amazon', logo: 'https://img.freepik.com/premium-vector/amazon-logotype-white-background-logo-internet-service-sale-goods-online-store-platform-arrow-free-shipping-worldwide-shopping-editorial_661108-8065.jpg?w=1060' },
-  { name: 'Microsoft', logo: 'https://img.freepik.com/premium-photo/letter-c-uppercase-colorful-font-black-background_1015980-296558.jpg?w=740' },
-  { name: 'Facebook', logo: 'https://img.freepik.com/free-psd/social-media-logo-design_23-2151296987.jpg?t=st=1731149882~exp=1731153482~hmac=01661e3525cd69c499cdde9c36cec73061bdde7ae3b1139fdc5591b5fb2dfa89&w=740' },
-  { name: 'Oracle', logo: 'https://th.bing.com/th/id/OIP.LCZOl2QttQ4OruepDG9p5gHaHa?w=500&h=500&rs=1&pid=ImgDetMain' },
-  { name: 'Cisco', logo: 'https://worldwide-wifi-experts.com/images/logos-vendors/cisco-logo.png' },
-  { name: 'Intel', logo: 'https://th.bing.com/th/id/R.8e8e5d3e0b38ecd0688082625bbf1591?rik=KXVMRQZ4DisUpA&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-intel-logologobrand-logoiconslogos-251519939644r68ft.png&ehk=jBzDgPyZuKWPCApTheGKUI2UkgluVE%2bhStxECioQ3lg%3d&risl=&pid=ImgRaw&r=0' },
+  { name: 'Tata Consultancy Services', logo: TCS },
+  { name: 'ICICI Bank', logo: ICICI },
+  { name: 'IDFC FIRST Bank Limited', logo: IDFC },
+  { name: 'Next Education', logo: NextEducation },
+  { name: 'SK Finance', logo: SKFinance },
+  { name: 'UPL Limited', logo: UPL },
+  { name: 'Equitas Small Finance Bank', logo: Equitas },
 ];
 
 const students = [
   {
-    name: 'John Doe',
-    course: 'B.Tech Computer Science',
-    company: 'Google',
-    position: 'Software Engineer',
-    image: 'https://th.bing.com/th/id/OIP.IQ6S3l9hywMapLzTA5M3bwAAAA?rs=1&pid=ImgDetMain',
+    name: 'Atul Bhaisaree',
+    passingyear:"2025",
+    companyname:"Central Bank of India",
+    Package:"6.70 LPA",
+    image: AtulBhaisare,
   },
   {
-    name: 'Jane Smith',
-    course: 'B.Tech Information Technology',
-    company: 'Amazon',
-    position: 'Data Analyst',
-    image: 'https://th.bing.com/th/id/OIP.toZe8IRYeEBghanNF8gmxwHaHG?w=480&h=460&rs=1&pid=ImgDetMain',
+    name: 'Falguni Rana',
+    passingyear:"2022",
+    companyname:"Accenture",
+    Package:"4.60 LPA",
+    image: FalguniRana,
   },
   {
-    name: 'Alice Johnson',
-    course: 'M.Tech Computer Science',
-    company: 'Microsoft',
-    position: 'Cloud Engineer',
-    image: 'https://ontechedge.com/wp-content/uploads/2022/10/istockphoto-1368496855-612x612-1.jpg',
+    name: 'Pranav Atre',
+    passingyear:"2023",
+    companyname:"SK FINANCE LIMITED",
+    Package:"3.18 LPA",
+    image: PranavAtre,
   },
   {
-    name: 'Bob Brown',
-    course: 'B.Tech Computer Engineering',
-    company: 'Facebook',
-    position: 'Frontend Developer',
-    image: 'https://img.freepik.com/premium-photo/female-student-home-office-learning-working-laptop-young-woman-engaged-remote-learning_94120-2490.jpg',
+    name: 'Ganesh Jadhav',
+    passingyear:"2023",
+    companyname:"Nurture.Farm (UPL)",
+    Package:"3.00 LPA",
+    image: GaneshJadhav,
   },
 ];
 
@@ -87,27 +98,31 @@ function PlacementSection() {
             <div className="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 rounded-bl-lg text-xs font-semibold">
               Placed by Techno Park
             </div>
-            <div className="flex flex-col items-center sm:flex-row sm:items-start space-x-0 sm:space-x-6 mb-4">
+            <div className="flex mb-4 h-2/3">
+              <div className='w-2/5 flex items-center'>
+              <div className='sm:w-[90px] rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden sm:h-[90px]'>
               <img
                 src={student.image}
                 alt={student.name}
-                className="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-blue-500"
+                className="sm:w-full sm:h-full object-top object-cover"
               />
-              <div className="text-center sm:text-left mt-4 sm:mt-0">
+              </div>
+              </div>
+              <div className="text-center pl-3 flex flex-col justify-center sm:text-left w-2/3 mt-4 sm:mt-0">
                 <h3 className="text-sm sm:text-lg font-semibold text-blue-600">
                   {student.name}
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-500">
-                  {student.course}
+                  {student.companyname}
                 </p>
               </div>
             </div>
             <div className="text-gray-700 text-xs sm:text-sm mt-4">
               <p>
-                <span className="font-semibold text-gray-600">Company:</span> {student.company}
+                <span className="font-semibold text-gray-600">Package - </span> {student.Package}
               </p>
               <p>
-                <span className="font-semibold text-gray-600">Position:</span> {student.position}
+                <span className="font-semibold text-gray-600">Passing Year - </span> {student.passingyear}
               </p>
             </div>
           </div>

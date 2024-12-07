@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Award from '../../../assets/acsilentes award.png';
-import Award2023 from '../../../assets/images/Award2023.jpeg'
+import Award2023 from '../../../assets/Award2023(1).jpg'
 
 const Achievements = () => {
   return (
@@ -25,7 +25,7 @@ const Achievements = () => {
                   <img
                     src={Award2023} // replace with the preview image URL
                     alt="Next Achievement Preview"
-                    className="w-full h-32 object-cover rounded-sm"
+                    className="w-full h-32 object-cover object-top rounded-sm"
                   />
                 </div>
                     <h3 className="text-lg font-semibold">Department Excellence Award (2023)</h3>

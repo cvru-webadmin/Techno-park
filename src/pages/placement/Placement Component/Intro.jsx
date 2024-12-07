@@ -15,7 +15,7 @@ export default function Intro() {
         </div>
         {/* Left Side: Content */}
         <div className="text-center lg:text-left lg:w-[65%] w-full flex flex-col justify-center h-auto lg:h-[25rem]">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold lg:py-4 flex flex-col gap-3 text-gray-800 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold lg:py-4 lg:text-left text-center gap-3 text-gray-800 leading-tight">
             TRAINING & PLACEMENT CELL
           </h1>
           <p className="lg:mt-4 mt-2 lg:text-2xl text-xl text-blue-600 font-semibold">

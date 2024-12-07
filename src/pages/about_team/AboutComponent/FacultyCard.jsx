@@ -1,10 +1,10 @@
 import React from "react";
 import './About.css'
 import Vaidehi from "../../../assets/images/Vaidehi.png"
-import Shruti from "../../../assets/images/Shruti.png"
+import Shruti from "../../../assets/images/Shruti2.jpeg"
 import Amit from "../../../assets/images/Amit.png"
-import Kunal from "../../../assets/images/Kunal.png"
-import Gourav from "../../../assets/images/Gourav.png"
+import Kunal from "../../../assets/images/Kunal2.jpg"
+import Gourav from "../../../assets/images/Gourav2.jpg"
 import Ganesh from "../../../assets/images/Ganesh_Nimje.jpeg"
 
 const cardData = [
@@ -60,7 +60,7 @@ const Card = ({ image, title, description, name }) => {
         <img
           src={image}
           alt={name}
-          className="w-full h-auto max-w-[150px] md:max-w-[200px] shadow-lg hover:shadow-xl rounded-full"
+          className="lg:w-52 lg:h-52 object-cover w-[150px] h-[150px] md:w-[200px] md:h-[200px] shadow-lg hover:shadow-xl rounded-full"
         />
       </div>
 
@@ -82,7 +82,7 @@ const FacultyCard = () => {
       <h1 className="about-title font-semibold">
         Meet Our Faculty
       </h1>
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 mb-10 gap-8">
         {cardData.map((card, index) => (
           <Card
             key={index}

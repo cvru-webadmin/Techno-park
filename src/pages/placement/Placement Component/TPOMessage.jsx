@@ -1,5 +1,5 @@
 import React from "react";
-import TPO from '../../../assets/images/TPO.png'
+import TPO from '../../../assets/images/TPO(1).jpg'
 
 const IntroTPO = () => {
   return (
@@ -30,7 +30,7 @@ const IntroTPO = () => {
           {/* Message Content */}
           <p className="text-gray-700 lg:mt-0 mt-5 mb-2">
             <h3 className="lg:text-[28px] text-[22px] font-semibold text-blue-700">
-            Mr. Abhilesh Kumar Kochle(TPO)
+            Mr. Abhilesh Kumar Kochle
             </h3>
             <p className="lg:text-[18px] text-[16px] text-[#555] font-medium mt-1">13 years of experience in Industries and Education Sector</p>
           </p>

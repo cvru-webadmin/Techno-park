@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import IOT from '../../../assets/images/IOT.png';
 import Library from '../../../assets/images/Library.jpeg';
 import ProgrammingLab from '../../../assets/images/ProgrammingLab.jpeg';
-import Seminar from '../../../assets/images/Seminar.jpeg';
+import Seminar from '../../../assets/images/Seminar.jpg';
 import ProjectLab from '../../../assets/images/LanguageLab.jpeg';
 import Lab from '../../../assets/images/Lab.png';
 import Cabin from '../../../assets/images/FacultyCabin.png';

@@ -19,6 +19,8 @@ import BCASlider from '../../../assets/images/BCA Slider.jpg'
 import GroupSlider from '../../../assets/images/Group Slider.jpg'
 import GardenStudents from '../../../assets/images/GardenStudent.jpg'
 import LibraryStudents from '../../../assets/images/LibraryStudent.jpg'
+import Studio from '../../../assets/images/Studio.jpg'
+import Canteen from '../../../assets/images/Canteen.jpg'
 
   const slides = [
     {
@@ -95,6 +97,18 @@ const data = [
     description:
       "A garden is a versatile outdoor space designed to provide a calm and inviting environment for relaxation, activities, and social interactions. It is filled with lush greenery, including a mix of flowering plants, shrubs, and trees, creating a natural ambiance that encourages tranquility. The garden is equipped with tables for sitting, offering a perfect spot for enjoying meals, reading, or socializing with friends and colleagues. There is also ample open space for various activities such as outdoor games, group discussions, creative projects, or simply enjoying the fresh air. The layout of the garden is designed to ensure both comfort and functionality, providing an ideal setting for lunchtime gatherings, casual meetings, or recreational time. This well-balanced design promotes relaxation, well-being, and connection with nature while supporting a variety of outdoor experiences. The peaceful surroundings and natural beauty also make it a perfect venue for mindfulness practices or enjoying a break from busy routines.",
     image: Garden,
+  },
+  {
+    title: "Raman Studio",
+    description:
+      "Raman Studio is a state-of-the-art facility designed for high-quality voice recording and professional studio work. Equipped with advanced audio recording equipment, soundproof walls, and acoustic panels, it ensures clear and precise sound output, free from external noise or disturbances. The studio features microphones, audio mixers, and digital editing software, allowing users to record, edit, and produce a variety of audio projects, including voiceovers, music, podcasts, and narrations. A dedicated control room enabling real-time monitoring and adjustments. Raman Studio provides a creative and focused environment for artists, students, and professionals to bring their ideas to life with precision and quality.",
+    image: Studio,
+  },
+  {
+    title: "Canteen",
+    description:
+      "A college canteen is a bustling and essential hub designed to cater to the diverse needs of students, faculty, and staff by providing affordable, nutritious, and tasty food in a lively environment. It features a spacious seating arrangement with tables and chairs that can accommodate large groups, fostering a sense of community and offering a space for informal discussions, group studies, or simply unwinding during breaks. The menu typically includes a wide range of freshly prepared meals, snacks, beverages, and desserts, catering to various dietary preferences and regional tastes. Equipped with clean and hygienic facilities, the canteen ensures high standards of food safety and quality. Beyond dining, the canteen serves as a vibrant social space where students can relax, network, and rejuvenate between academic sessions. Its welcoming ambiance, combined with its ability to provide an affordable and refreshing culinary experience, makes the college canteen an integral part of campus life, supporting both nourishment and camaraderie.",
+    image: Canteen,
   },
 ];
 

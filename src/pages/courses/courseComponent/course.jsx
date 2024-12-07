@@ -8,8 +8,8 @@ import BCA from '../../../assets/images/BCA.jpeg';
 import DCA from '../../../assets/images/DCA.jpg';
 import PGDCA from '../../../assets/images/PGDCA.png';
 import MCA from '../../../assets/images/mca stu lab.jpeg';
-import BSC from '../../../assets/images/BSC.jpeg'
-import MSC from '../../../assets/images/MSC.jpeg'
+import BSC from '../../../assets/images/BSC1.jpeg'
+import MSC from '../../../assets/images/MSC1.jpeg'
 // Sample data
 const courses = {
     diploma: [

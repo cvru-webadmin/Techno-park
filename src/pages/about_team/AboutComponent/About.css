@@ -92,7 +92,8 @@
   }
   
   .VisonMisonBg{
-    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url("src/assets/images/IOT.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url("src/assets/images/KhushiIoT.jpg");
     background-size: cover;
     background-position: center;
+    filter: brightness(1.5)
   }
