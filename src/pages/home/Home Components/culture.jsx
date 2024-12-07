@@ -34,65 +34,58 @@ const CultureAndActivities = () => {
   ];
 
   return (
+    <>
     <section className="flex flex-col items-center bg-white py-6 pb-10 px-4 sm:px-8 lg:px-16">
       <div className="max-w-[93%] w-full text-center">
         {/* Main Heading */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-600 mb-6">
           Culture & Activities
         </h2>
-        <p className="text-gray-600 mb-8 text-sm sm:text-base">
+        <p className="text-gray-600 lg:mb-8 text-sm sm:text-base">
           Explore the vibrant culture and engaging activities that bring our community together, fostering creativity, innovation, and unity.
         </p>
       </div>
 
-      {/* Events Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 max-w-[97%] mb-10">
-        {events.map((event, index) => (
-          <div key={index} className="flex flex-col h-[500px] lg:h-[420px] space-y-4">
-            {index % 2 === 0 ? (
-              <>
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="h-1/2 w-full object-cover rounded-lg"
-                />
-                <div className="px-4 py-3 border h-1/2 w-full rounded-lg shadow-sm">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm">
-                    {event.description}
-                  </p>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="px-4 py-3 h-1/2 border w-full rounded-lg shadow-sm">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm">
-                    {event.description}
-                  </p>
-                </div>
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="h-1/2 w-full object-cover rounded-lg"
-                />
-              </>
-            )}
-          </div>
-        ))}
-      </div>
+{/* Events Gallery */}
+<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto py-12">
+  {events.map((event, index) => (
+    <div
+      key={index}
+      className="relative rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl group"
+    >
+      {/* Event Image */}
+      <img
+        src={event.image}
+        alt={event.title || "Event image"}
+        className="h-60 w-full object-cover"
+        loading="lazy"
+      />
+
+      <h3 className="absolute min-[766px]:hidden bottom-4 w-full text-center flex justify-center">
+        <span className=' py-1.5 text-sm rounded-md font-bold bg-white w-10/12 text-gray-800 tracking-wide shadow-md'>{event.title}</span>
+      </h3>
+      <span className='md:block hidden'>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+      {/* Event Title */}
+      <h3 className="absolute bottom-4 left-4 text-base font-bold text-white tracking-wide shadow-md">
+        {event.title}
+      </h3>
+      </span>
+    </div>
+  ))}
+</div>
+
 
       {/* Add More Events Button */}
-      <div className="mt-5 text-center">
-        <NavLink to="/activities" onClick={()=>{("/activities");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-base sm:text-lg font-semibold rounded-md shadow-md hover:scale-105 transform transition">
-          Explore More
-        </NavLink>
+      <div className="md:mt-0 text-center">
+        <NavLink to="/activities" onClick={()=>{("/activities");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+            Explore More
+          </NavLink>
       </div>
     </section>
+    </>
   );
 };
 
