@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+import AwardDefualt from "../../../assets/AwardDefualt.png"
 import "slick-carousel/slick/slick-theme.css";
 
 
@@ -111,18 +112,27 @@ export default function TeachersAchievements({ achievements }) {
             <div key={index} className="p-4">
               <div className="bg-white border md:w-[80%] mx-auto w-full lg:w-full border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 {/* Achievement Image */}
-                <img
-                  src={achievement.image}
+                {!achievement.image==""?
+              <img
+              src={achievement.image}
+              alt={`${achievement.name} achievement`}
+              className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
+            />:
+            <div className="w-full h-60 bg-[#131f35]">
+              <img
+                  src={AwardDefualt}
                   alt={`${achievement.name} achievement`}
-                  className="w-full lg:h-60 h-60 md:h-72 object-cover"
+                  className="w-full lg:h-60 h-60 md:h-72 object-center object-contain"
                 />
+            </div>
+          }
 
                 {/* Achievement Details */}
                 <div className="md:p-10 lg:p-6 p-6">
                   <h3 className="lg:text-xl text-xl md:text-2xl font-bold text-gray-800 mb-2">
                     {achievement.name}
                   </h3>
-                  <p className="lg:text-lg md:text-xl text-lg font-semibold text-blue-700 mb-4">
+                  <p className="lg:text-lg md:text-xl h-24 text-lg font-semibold text-blue-700 mb-4">
                     {achievement.title}
                   </p>
                   <p className="lg:text-sm text-sm md:text-base text-gray-700 mb-3 leading-relaxed">

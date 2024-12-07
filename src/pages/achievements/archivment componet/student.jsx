@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import AwardDefualt from "../../../assets/AwardDefualt.png"
 
 
 // Custom Arrow components
@@ -108,11 +109,21 @@ export default function StudentAchievements({ achievements }) {
             <div key={index} className="p-4">
             <div className="bg-white border md:w-[80%] mx-auto w-full lg:w-full border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
               {/* Achievement Image */}
+              {!achievement.image==""?
               <img
-                src={achievement.image}
-                alt={`${achievement.name} achievement`}
-                className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
-              />
+              src={achievement.image}
+              alt={`${achievement.name} achievement`}
+              className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
+            />:
+            <div className="w-full h-60 bg-[#131f35]">
+              <img
+                  src={AwardDefualt}
+                  alt={`${achievement.name} achievement`}
+                  className="w-full lg:h-60 h-60 md:h-72 object-center object-contain"
+                />
+            </div>
+          }
+              
           
               {/* Achievement Details */}
               <div className="flex-1 p-6 flex flex-col justify-between">
@@ -127,7 +138,7 @@ export default function StudentAchievements({ achievements }) {
                 </p>
           
                 {/* Description */}
-                <p className="text-sm text-gray-700 mb-3 leading-relaxed line-clamp-2 flex-grow">
+                <p className="text-sm text-gray-700 mb-3 line-clamp-5 leading-relaxed h-28 flex-grow">
                   {achievement.description}
                 </p>
           

@@ -15,8 +15,13 @@ import ExcellenceAwards from "./archivment componet/ExcellenceAwards";
 import solor from "./../../assets/Student archivment/solar2.jpg"
 import merit from "./../../assets/Student archivment/merit.jpg"
 import Inovation from "./../../assets/Student archivment/Inovation.jpg"
+import Inovation2 from "./../../assets/Student archivment/Inovation2.jpg"
 import hackathon from "./../../assets/Student archivment/hackathon.jpg"
-import shoting from "./../../assets/Student archivment/shothing.png"
+import shooting from "./../../assets/Student archivment/shothing.png"
+import HackCraft1 from "./../../assets/Student archivment/Hackcraft1.jpg"
+import HackCraft2 from "./../../assets/images/hackathon.jpg"
+import LogoDesign1 from "./../../assets/Student archivment/LogoDesign1.jpg"
+import LogoDesign2 from "./../../assets/Student archivment/LogoDesign2.jpg"
 import respectEducationMinistor from "./../../assets/Student archivment/respectEducationMinistor.jpg"
 
 import facultAward from "./../../assets/FacultyAward.jpg"
@@ -56,11 +61,32 @@ const AchievementsPage = () => {
       image: AcharyaAward,
     },
     {
-      name: "Dr. Emily Davis",
-      title: "Teaching Excellence",
-      description: "Acknowledged for inspiring students and advancing pedagogy.",
-      year: 2021,
-      image: "https://via.placeholder.com/400x300",
+      name: "Prof. Swati Atre",
+      title: "Bhart Education Excellence Awards (Jyeshtha Acharya Award of recognition)",
+      description: "Received from BRAIN O VISION for significant contributions in the field of education.",
+      year: "2023-24",
+      image: "", // Empty string for image path
+    },
+    {
+      name: "Prof. Swati Atre",
+      title: "Vanmali Certificate of Recognition",
+      description: "Awarded by CVRUK for excellence in research and innovation.",
+      year: "2023-09-05",
+      image: "", // Empty string for image path
+    },
+    {
+      name: "Prof. Swati Atre",
+      title: "Certificate of Commendation (For Research & Innovation)",
+      description: "Recognized by CVRUK for exceptional research and innovative contributions.",
+      year: "2023-09-05",
+      image: "", // Empty string for image path
+    },
+    {
+      name: "Prof. Swati Atre",
+      title: "Certificate of Recognition (Reviewer for INSC International Publishing Platform)",
+      description: "Recognized by INSC for her contributions as a reviewer for CS & IT publications.",
+      year: "2023-24",
+      image: "", // Empty string for image path
     },
   ];
 
@@ -74,45 +100,109 @@ const AchievementsPage = () => {
       image: solor, // Update with the correct image path
     },
     {
-      name: "Hackathon",
-      title: "First Place in Robotics Competition",
-      description:
-        "Ryan's innovative robotics project won first place in the National Robotics Championship.",
-      year: 2022,
-      image: hackathon, // Update with the correct image path
-    },
-    {
-      name: "Education Minister Attribute",
-      title: "Published Research Paper",
-      description:
-        "Sophia published groundbreaking research on AI ethics in a renowned journal.",
-      year: 2023,
-      image: respectEducationMinistor, // Update with the correct image path
-    },
-    {
-      name: "Merit Student",
-      title: "First Place in Robotics Competition",
-      description:
-        "Ryan's innovative robotics project won first place in the National Robotics Championship.",
-      year: 2022,
-      image: merit, // Update with the correct image path
-    },
-    {
       name: "Innovation IDEA",
-      title: "Published Research Paper",
+      title: "Digital Water Footprint Calculator",
       description:
-        "Sophia published groundbreaking research on AI ethics in a renowned journal.",
+        "This project involves the development of a Digital Water Footprint Calculator, designed to track and reduce water consumption in various sectors. The tool aims to promote sustainability by providing users with insights into their water usage, helping industries and individuals make informed decisions to conserve water and reduce their environmental impact.",
       year: 2023,
       image: Inovation, // Update with the correct image path
+    },    
+    {
+      name: "Innovation IDEA",
+      title: "Hurbale Gallery",
+      description:
+        "This project involves the development of 'Hurbale Gallery', an innovative digital platform that showcases rural arts and crafts. It connects local artisans with a broader audience, providing them with a platform to display their work, promote cultural heritage, and boost their livelihoods. The project won the First Prize for its creativity and impact in preserving and promoting rural art forms.",
+      year: 2023,
+      image: Inovation2, // Update with the correct image path
+    },       
+    {
+      name: "National Shooting",
+      title: "Selected for Pre-National Shooting Competition",
+      description:
+        "Aksha Siddiqui, an NCC cadet, showcased exceptional performance in the 50-meter rifle shooting event and earned a silver medal. She has been selected for the Pre-National Shooting Competition, bringing pride to the region.",
+      year: 2024,
+      image:shooting,
     },
     {
-      name: "Shooting Competition",
-      title: "Akshara Selected for Pre-National Shooting Competition",
+      name: "Hackcraft Event",
+      title: "1st Rank in Idea Presentation Challenge",
       description:
-        "Akshara Siddiqui, an NCC cadet from Khandwa district, has been selected for the Pre-National Shooting Competition, bringing pride to the region. She showcased exceptional performance in the 50-meter rifle shooting event, earning a silver medal. Her achievement has been widely celebrated by her school and family",
+        "Rishabh Sharma achieved first place in the Idea Presentation Challenge during the Hackcraft event, demonstrating exceptional innovation and problem-solving skills.",
       year: 2024,
-      image: shoting, // Update with the correct image path
+      image:"",
     },
+    {
+      name: "Hackcraft Event",
+      title: "1st Rank in Webpage Design Challenge",
+      description:
+        "Yogesh Yadav secured first place in the Webpage Design Challenge at the Hackcraft event, showcasing outstanding creativity and technical expertise.",
+      year: 2024,
+      image:HackCraft1,
+    },
+    {
+      name: "Hackcraft Event",
+      title: "1st Rank in Logo Design Challenge",
+      description:
+        "Aditya Pratap Singh received the first prize in the Logo Design Challenge at the Hackcraft event, demonstrating creative excellence in branding and design.",
+      year: 2024,
+      image:LogoDesign1,
+    },
+    {
+      name: "Hackcraft Event",
+      title: "2nd Rank in Logo Design Challenge",
+      description:
+        "Geetansh jain received the second prize in the Logo Design Challenge at the Hackcraft event, demonstrating creative excellence in branding and design.",
+      year: 2024,
+      image:LogoDesign2,
+    },
+    {
+      name: "Shodh Shikhar",
+      title: "Research Paper Presentation",
+      description:
+        "Mr. Mandeep Pawar presented 'Transforming Education through Digital Technologies' at RNTU (Shodh Shikhar), highlighting the integration of innovative tools in education.",
+      year: 2024,
+      image:"",
+    },
+    {
+      name: "University Topper",
+      title: "BCA University Topper, June 2023",
+      description:
+        "Atul Bhaisare achieved the prestigious title of University Topper in BCA for June 2023, showcasing exceptional academic performance.",
+      year: 2023,
+      image: merit,
+    },
+    {
+      name: "Sports Shooting",
+      title: "Silver Medal in Inter-Group Sports Shooting Competition",
+      description:
+        "Aksha Siddiqui earned a silver medal in the Inter-Group Sports Shooting Competition, demonstrating her skill and dedication in sports.",
+      year: 2024,
+      image:shooting,
+    },
+    {
+      name: "Hackcraft Event",
+      title: "2nd Rank in Webpage Design Challenge",
+      description:
+        "Deepanshu Dashore earned second place in the Webpage Design Challenge at the Hackcraft event, showcasing his design acumen.",
+      year: 2024,
+      image:HackCraft2,
+    },
+    {
+      name: "Research Paper",
+      title: "AI & Marketing",
+      description:
+        "Ms. Payal Jagtap and Ms. Prachi Parwani presented their research paper 'AI & Marketing' at RNTU, exploring the integration of AI in market strategies.",
+      year: 2024,
+      image:"",
+    },
+    {
+      name: "Professional Program",
+      title: "Participation in Professional Advancement Program (Course III)",
+      description:
+        "Students from BCA and MCA actively participated in the Professional Advancement Program (Course III), gaining industry-relevant skills and knowledge.",
+      year: 2024,
+      image:"",
+    }
   ];
 
   const Sectionacroll=useRef(null);
