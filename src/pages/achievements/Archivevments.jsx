@@ -109,7 +109,7 @@ const AchievementsPage = () => {
     },    
     {
       name: "Innovation IDEA",
-      title: "Hurbale Gallery",
+      title: "Herbal Gallery",
       description:
         "This project involves the development of 'Hurbale Gallery', an innovative digital platform that showcases rural arts and crafts. It connects local artisans with a broader audience, providing them with a platform to display their work, promote cultural heritage, and boost their livelihoods. The project won the First Prize for its creativity and impact in preserving and promoting rural art forms.",
       year: 2023,
@@ -202,7 +202,47 @@ const AchievementsPage = () => {
         "Students from BCA and MCA actively participated in the Professional Advancement Program (Course III), gaining industry-relevant skills and knowledge.",
       year: 2024,
       image:"",
-    }
+    },
+    {
+      name: "Hackcraft Event",
+      title: "Participation in Web Designing Challenge",
+      description:
+        "Khushi Yadav participated in the Web Designing Challenge during the Hackcraft event, demonstrating her creativity and technical skills in crafting innovative and user-friendly web designs. Her efforts were recognized with a certificate of participation.",
+      year: 2024,
+      image: "", // No image provided
+    },
+    {
+      name: "IPR Seminar",
+      title: "Participation in IPR Seminar",
+      description:
+        "Deepnashu dashore participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
+      year: 2024,
+      image: "", // No image provided
+    },    
+    {
+      name: "IPR Seminar",
+      title: "Participation in IPR Seminar",
+      description:
+        "Shivam dubey participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
+      year: 2024,
+      image: "", // No image provided
+    },    
+    {
+      name: "IPR Seminar",
+      title: "Participation in IPR Seminar",
+      description:
+        "Geetensh Jain participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
+      year: 2024,
+      image: "", // No image provided
+    },    
+    {
+      name: "IPR Seminar",
+      title: "Participation in IPR Seminar",
+      description:
+        "Khushi Yadav participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
+      year: 2024,
+      image: "", // No image provided
+    },        
   ];
 
   const Sectionacroll=useRef(null);
