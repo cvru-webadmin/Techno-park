@@ -283,7 +283,7 @@ const DetailActivities = () => {
               <img
                 src={activity.image}
                 alt={activity.name}
-                className="shadow-md transform transition duration-300 hover:scale-105 w-full md:h-[450px] lg:h-[400px] object-cover"
+                className="shadow-md transform transition duration-300 hover:scale-105 w-full h-[250px] md:h-[450px] lg:h-[400px] object-cover"
               />
             </div>
 
