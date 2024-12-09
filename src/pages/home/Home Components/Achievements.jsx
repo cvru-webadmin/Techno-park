@@ -51,13 +51,13 @@ const Achievements = () => {
       </div>
 
       <div className="flex xl:hidden justify-center  sm:px-8">
-      <section className="bg-white rounded-xl w-full py-10 px-6">
+      <section className=" bg-gray-100 rounded-xl w-full py-10 px-6">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-600 text-center">
           Achievements
         </h2>
 
         {/* Achievements Section */}
-        <div className="flex flex-col md:flex-row bg-gray-100 rounded-lg shadow-md mt-7">
+        <div className="flex flex-col md:flex-row mt-7">
           {/* Left Side: Content */}
           <div className="md:hidden w-full">
             <img
