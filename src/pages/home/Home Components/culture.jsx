@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Hackathon from '../../../assets/images/hackathon.jpg';
+import Hackathon from '../../../assets/images/HackcraftChallenge.jpg';
 import Skitt from '../../../assets/images/Skitt.png';
-import TeachersDay from '../../../assets/images/TeachersDay.jpeg';
 import RepublicDay from '../../../assets/images/RepublicDay.jpeg';
 import GaneshJi from '../../../assets/images/Ganeshji.jpg'
 import HerbalGallery from '../../../assets/images/Herbal Gallery.jpg'
