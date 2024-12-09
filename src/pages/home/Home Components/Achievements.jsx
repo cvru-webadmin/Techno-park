@@ -50,8 +50,8 @@ const Achievements = () => {
         </section>
       </div>
 
-      <div className="flex xl:hidden justify-center px-4 sm:px-8">
-      <section className="bg-white rounded-xl w-full max-w-7xl py-10 px-6">
+      <div className="flex xl:hidden justify-center  sm:px-8">
+      <section className="bg-white rounded-xl w-full py-10 px-6">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-600 text-center">
           Achievements
         </h2>
@@ -77,7 +77,7 @@ const Achievements = () => {
               <img
                 src={Award2023}
                 alt="Next Achievement Preview"
-                className="w-full sm:w-64 h-32 object-cover rounded-sm"
+                className="w-full sm:w-64 h-42 object-cover rounded-sm"
               />
             </div>
             <h3 className="text-base sm:text-lg font-semibold">

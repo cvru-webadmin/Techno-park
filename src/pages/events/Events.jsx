@@ -80,7 +80,7 @@ const EventsPage = () => {
       <Header scroll={()=>scroll(expolor,80)} />
 
       <div className="py-0 px-6 lg:px-16 bg-gray-50" ref={expolor}>
-        <h2 className="text-3xl lg:text-4xl font-extrabold text-indigo-900 text-center mb-5">
+        <h2 className="text-3xl lg:text-4xl font-extrabold text-indigo-900 text-center mb-5  mt-2 md:mt-0">
           Explore Our Events
         </h2>
         <p className="text-md lg:text-lg text-gray-600 text-center">
