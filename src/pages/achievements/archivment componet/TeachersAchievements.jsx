@@ -58,7 +58,7 @@ const NextArrow = (props) => {
 
 
 const sliderSettings = {
-  dots: true,
+  dots: false,
   // infinite: true,
   // speed: 600,
   slidesToShow: 3,
@@ -97,49 +97,55 @@ export default function TeachersAchievements({ achievements }) {
       <div className="max-w-[82rem] mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+          <h2 className="md:text-3xl text-2xl font-extrabold text-gray-800 mb-4">
             Teacher's Achievements
           </h2>
-          <p className="text-gray-600 md:text-lg text-base">
+          <p className="text-gray-600 xl:text-lg md:text-base text-sm">
             Honoring the remarkable contributions and accomplishments of our
             educators.
           </p>
         </div>
 
         {/* Slider */}
-        <Slider {...sliderSettings}>
+        <Slider
+          {...sliderSettings}
+          prevArrow={<PrevArrow />}
+          nextArrow={<NextArrow />}
+        >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
               <div className="bg-white border md:w-[80%] mx-auto w-full lg:w-full border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 {/* Achievement Image */}
-                {!achievement.image==""?
-              <img
-              src={achievement.image}
-              alt={`${achievement.name} achievement`}
-              className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
-            />:
-            <div className="w-full h-60 bg-[#131f35]">
-              <img
-                  src={AwardDefualt}
-                  alt={`${achievement.name} achievement`}
-                  className="w-full lg:h-60 h-60 md:h-72 object-center object-contain"
-                />
-            </div>
-          }
+                {!achievement.image == "" ? (
+                  <img
+                    src={achievement.image}
+                    alt={`${achievement.name} achievement`}
+                    className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-60 bg-[#131f35]">
+                    <img
+                      src={AwardDefualt}
+                      alt={`${achievement.name} achievement`}
+                      className="w-full lg:h-60 h-60 md:h-60 object-center object-contain"
+                    />
+                  </div>
+                )}
 
                 {/* Achievement Details */}
                 <div className="md:p-10 lg:p-6 p-6">
                   <h3 className="lg:text-xl text-xl md:text-2xl font-bold text-gray-800 mb-2">
                     {achievement.name}
                   </h3>
-                  <p className="lg:text-lg md:text-xl h-24 text-lg font-semibold text-blue-700 mb-4">
+                  <p className="lg:text-lg md:text-xl md:h-24 text-sm font-semibold text-blue-700 mb-4">
                     {achievement.title}
                   </p>
                   <p className="lg:text-sm text-sm md:text-base text-gray-700 mb-3 leading-relaxed">
                     {achievement.description}
                   </p>
                   <p className="lg:text-sm text-sm md:text-base text-gray-600">
-                    <span className="font-semibold">Year:</span> {achievement.year}
+                    <span className="font-semibold">Year:</span>{" "}
+                    {achievement.year}
                   </p>
                 </div>
               </div>

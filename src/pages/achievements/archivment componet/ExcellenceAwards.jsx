@@ -35,13 +35,13 @@ const awardsData = [
 
 export default function ExcellenceAwards() {
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-10">
+    <div className="max-w-7xl mx-auto px-6 pt-5 sm:pt-6 md:pt-10">
       {/* Section Title */}
-      <div className="text-center mb-16 py-10 bg-gray-100 rounded-lg ">
-        <h2 className="md:text-4xl text-3xl font-bold text-gray-800 mb-4">
+      <div className="text-center mb-4 sm:mb-5 xl:mb-16 sm:py-10 py-5 bg-gray-100 rounded-lg ">
+        <h2 className="xl:text-4xl md:text-3xl text-2xl font-bold text-gray-800 mb-4">
           Department Achievements
         </h2>
-        <p className="text-gray-700 md:text-lg text-base max-w-4xl mx-auto leading-relaxed">
+        <p className="text-gray-700 md:text-md xl:text-lg text-sm max-w-4xl mx-auto leading-relaxed">
           Celebrating the groundbreaking milestones, innovations, and
           exceptional work of our department.
         </p>
@@ -50,19 +50,19 @@ export default function ExcellenceAwards() {
       {awardsData.map((award, index) => (
         <div
           key={award.year}
-          className={`flex flex-col lg:flex-row lg:gap-8 mb-8 lg:mb-20 ${
+          className={`flex flex-col lg:flex-row lg:gap-8 mb-12 lg:mb-20 ${
             index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
         >
           {/* Left Section: Image */}
           <div className="flex justify-center mb-8 lg:mb-0 lg:w-1/2">
-            <div className="relative w-full lg:max-w-[560px] h-[300px] overflow-hidden mx-auto">
+            <div className="relative w-full lg:max-w-[560px] h-[300px] overflow-hidden">
               <img
                 src={award.image}
                 alt={award.awardName}
-                className="rounded-lg object-center shadow-lg object-cover w-full md:h-full h-72"
+                className="rounded-lg object-center shadow-lg object-cover w-full h-full"
               />
-              <div className="absolute bottom-4 left-4 bg-white bg-opacity-80 px-6 py-3 rounded-lg shadow-md">
+              <div className="absolute bottom-4 left-4 bg-white bg-opacity-80 px-4 py-2 rounded-lg shadow-md">
                 <p className="text-sm font-semibold text-blue-800">
                   {award.awardName}
                 </p>
@@ -72,14 +72,14 @@ export default function ExcellenceAwards() {
 
           {/* Right Section: Award Information */}
           <div
-            className={`space-y-6 lg:w-1/2 ${
-              index % 2 === 0 ? "text-left " : "text-right"
+            className={`space-y-4 lg:space-y-6 text-center lg:w-1/2 ${
+              index % 2 === 0 ? "lg:text-left" : "lg:text-right"
             }`}
           >
-            <h2 className="text-3xl font-semibold text-blue-800">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-800">
               {award.awardName}
             </h2>
-            <p className="text-md leading-relaxed text-justify text-gray-700">
+            <p className="text-sm sm:text-md lg:text-lg text-justify leading-relaxed text-gray-700">
               {award.description}
             </p>
           </div>

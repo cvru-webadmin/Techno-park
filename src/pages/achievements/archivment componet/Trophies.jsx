@@ -39,10 +39,10 @@ export default function Trophies({ trophies }) {
       <div className="max-w-[90rem] mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+          <h2 className="md:text-3xl text-2xl font-extrabold text-gray-800 mb-4">
             Our Trophies
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 xl:text-lg md:text-base text-sm">
             Showcasing the prestigious awards and accolades we’ve earned over
             the years.
           </p>
