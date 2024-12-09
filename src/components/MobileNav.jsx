@@ -67,7 +67,7 @@ const MobilNavbar = () => {
           {/* Drawer Toggle Button */}
           <button
             onClick={toggleDrawer}
-            className="text-white bg-blue-700 hover:bg-blue-800 p-2 rounded-lg focus:outline-none"
+            className="text-white  hover:bg-blue-800 p-2 rounded-lg focus:outline-none"
           >
             <svg
               className="w-6 h-6"

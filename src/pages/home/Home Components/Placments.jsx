@@ -100,7 +100,7 @@ function PlacementSection() {
             </div>
             <div className="flex mb-4 h-2/3">
               <div className='w-2/5 flex items-center'>
-              <div className='sm:w-[90px] rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden sm:h-[90px]'>
+              <div className='w-[90px] rounded-full flex items-center justify-center border-4 border-blue-500 overflow-hidden h-[90px]'>
               <img
                 src={student.image}
                 alt={student.name}

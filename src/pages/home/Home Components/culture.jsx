@@ -4,9 +4,24 @@ import Hackathon from '../../../assets/images/hackathon.jpg';
 import Skitt from '../../../assets/images/Skitt.png';
 import TeachersDay from '../../../assets/images/TeachersDay.jpeg';
 import RepublicDay from '../../../assets/images/RepublicDay.jpeg';
+import GaneshJi from '../../../assets/images/Ganeshji.jpg'
+import HerbalGallery from '../../../assets/images/Herbal Gallery.jpg'
+import OutdoorGame from '../../../assets/images/OutdoorGame.jpg'
 
 const CultureAndActivities = () => {
   const events = [
+    {
+      title: "Ganesh Chaturthi",
+      description:
+        "A Hackathon is an immersive and fast-paced innovation marathon where participants come together to solve real-world problems, create impactful solutions, and turn ideas into reality. It's a collaborative event that fosters creativity, teamwork, and out-of-the-box thinking.",
+      image: GaneshJi,
+    },
+    {
+      title: "Skitt Play on Social Media",
+      description:
+      "These performances combine creativity with purpose, often addressing relatable issues, highlighting societal themes, or delivering inspiring messages. Skitt play on social media leverage the power of visuals to make a lasting impression on viewers.",
+      image: Skitt,
+    },
     {
       title: "Hackathon",
       description:
@@ -14,22 +29,22 @@ const CultureAndActivities = () => {
       image: Hackathon,
     },
     {
-      title: "Skitt Play on Social Media",
-      description:
-        "These performances combine creativity with purpose, often addressing relatable issues, highlighting societal themes, or delivering inspiring messages. Skitt play on social media leverage the power of visuals to make a lasting impression on viewers.",
-      image: Skitt,
-    },
-    {
-      title: "Teacher’s Day Celebration",
-      description:
-        "Teacher’s Day is a special occasion to honor the incredible role educators play in shaping minds and building the foundation of our future. It is a day to reflect on the tireless efforts, patience, and dedication that teachers bring to their work and guiding the challenges of life.",
-      image: TeachersDay,
-    },
-    {
       title: "Republic Day Celebration",
       description:
         "Republic Day is more than just a date on the calendar; it’s a celebration of India’s vibrant culture, diversity, and democratic values. Observed every year on January 26, it marks the day when the Constitution of India came into effect in 1950, transforming India into a sovereign, democratic republic.",
       image: RepublicDay,
+    },
+    {
+      title: "Outdoor Games",
+      description:
+        "Republic Day is more than just a date on the calendar; it’s a celebration of India’s vibrant culture, diversity, and democratic values. Observed every year on January 26, it marks the day when the Constitution of India came into effect in 1950, transforming India into a sovereign, democratic republic.",
+      image: OutdoorGame,
+    },
+    {
+      title: "Idea Presentation",
+      description:
+        "Republic Day is more than just a date on the calendar; it’s a celebration of India’s vibrant culture, diversity, and democratic values. Observed every year on January 26, it marks the day when the Constitution of India came into effect in 1950, transforming India into a sovereign, democratic republic.",
+      image: HerbalGallery,
     },
   ];
 
@@ -66,10 +81,11 @@ const CultureAndActivities = () => {
       </h3>
       <span className='md:block hidden'>
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute md:hidden inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent transition-opacity duration-300"></div>
+      <div className="md:absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       {/* Event Title */}
-      <h3 className="absolute bottom-4 left-4 text-base font-bold text-white tracking-wide shadow-md">
+      <h3 className="absolute bottom-4 left-4 text-base font-bold text-white tracking-wide shadow-md font-sans" style={{textShadow:"2px 2px 0.5px rgba(0,0,0,0.5)"}}>
         {event.title}
       </h3>
       </span>
