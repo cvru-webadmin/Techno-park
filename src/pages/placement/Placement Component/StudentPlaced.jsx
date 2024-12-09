@@ -143,7 +143,7 @@ export default function StudentPlaced() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:w-[85%] mx-auto lg:gap-10 gap-5 mb-12">
   {StuData.map((student, index) => {
     return (
-      <div className="w-[370px] md:w-[350px] lg:w-[400px] h-[150px] lg:h-[200px] mx-auto p-4 bg-white shadow-sm border rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+      <div className="w-11/12 md:w-[350px] lg:w-[400px] h-auto lg:h-[200px] mx-auto p-4 bg-white shadow-sm border rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
       <div className="flex items-center h-full">
         {/* Left Side - Image with Gradient Border */}
         <div className="relative w-24 h-24 flex-shrink-0">
