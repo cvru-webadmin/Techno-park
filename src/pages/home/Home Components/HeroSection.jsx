@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import CvruLogo from "../../../assets/LOGO_CVRUMP.png";
 import "./Home.css";
 import About from "./About";
+import HeroImage from "../../../assets/cvru_campus.jpg"
 
 function HomePage() {
   const myRef = useRef(null);

@@ -8,7 +8,7 @@ const EventCard = ({ title, date, description, status, image }) => {
   return (
     <div className="group flex flex-col md:flex-row border rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-2xl w-full transition-shadow duration-300">
     {/* Image Section */}
-    <div className={`w-full flex justify-center items-center lg:w-1/2 h-full ${image? "lg:h-auto":"lg:h-40"}`}>
+    <div className={`w-full relative flex justify-center items-center lg:w-1/2 h-full ${image? "lg:h-auto":"lg:h-40"}`}>
     {image? (
       <img
         src={image}
@@ -24,6 +24,9 @@ const EventCard = ({ title, date, description, status, image }) => {
       />
     )
     }
+    <span className="text-xs absolute right-3 top-3 md:hidden bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-3 py-1 rounded-full font-semibold">
+          {status}
+        </span>
     </div>
   
     {/* Content Section */}
@@ -33,7 +36,7 @@ const EventCard = ({ title, date, description, status, image }) => {
         <h3 className="text-lg capitalize text-nowrap lg:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
           {title}
         </h3>
-        <span className="text-xs bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-3 py-1 rounded-full font-semibold">
+        <span className="text-xs hidden md:block bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-3 py-1 rounded-full font-semibold">
           {status}
         </span>
       </div>

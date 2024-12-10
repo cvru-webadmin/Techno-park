@@ -1,5 +1,6 @@
+
 .parallax-bg {
-    background-image: linear-gradient(rgba(1, 1, 35, 0.402),rgba(1, 1, 35, 0.402)), url('src/assets/cvru_campus.jpg'); /* Background image */
+    background-image: linear-gradient(rgba(1, 1, 35, 0.402),rgba(1, 1, 35, 0.402)), url('https://res.cloudinary.com/dcbniehli/image/upload/v1733834410/jtldsg3l70i6cpesuckh.jpg'); /* Background image */
     background-attachment: fixed;
     background-size: cover;
     z-index: -10;

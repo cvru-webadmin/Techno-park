@@ -3,6 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// import image for slider 
+import Front from "../../../assets/images/Front.jpeg"
+import SkittPlay from "../../../assets/images/Skitt.png"
+import TechersDay from "../../../assets/images/TeacherDay.jpeg"
+
 const CarouselComponent = () => {
   const sliderRef = useRef(null); // Create a ref to control the slider
   const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide
@@ -12,19 +17,19 @@ const CarouselComponent = () => {
       id: 1,
       title: "CULTURE & ACTIVITES",
       description:"Celebrating Diversity, Inspiring Connections.",
-      image: "src/assets/images/Front.jpeg", // Replace with actual image paths.
+      image: Front, // Replace with actual image paths.
     },
     {
       id: 2,
       title: "SKITT play on social media",
       description:"Unleashing Creativity and Connection in the Social Media Sphere",
-      image: "src/assets/images/Skitt.png",
+      image: SkittPlay,
     },
     {
       id: 3,
       title: "Teacher's Day Celebration",
       description:"A Day to Celebrate Wisdom and Inspiration",
-      image: "src/assets/images/TeacherDay.jpeg", // Replace with actual image paths.
+      image: TechersDay, // Replace with actual image paths.
     },
   ];
 

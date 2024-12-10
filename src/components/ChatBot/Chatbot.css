@@ -2,7 +2,7 @@
   display: none;
 }
 .ChatBotBG{
-  background: linear-gradient(rgba(251, 255, 232, 0.8),rgba(255, 255, 255, 0.8)),url("src/components/ChatBot/ChatBotBg.jpg");
+  background: linear-gradient(rgba(251, 255, 232, 0.8),rgba(255, 255, 255, 0.8)),url("https://res.cloudinary.com/dcbniehli/image/upload/v1733834530/xnppjjhmo8kdddpa8qdq.jpg");
   background-size: 50%;
   background-blend-mode: lighten;
   

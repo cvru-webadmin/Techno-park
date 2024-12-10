@@ -89,7 +89,7 @@ const ChatBot = () => {
   const [isHover,setHover]=useState(false);
 
   return (
-    <div className="fixed z-50 bottom-16 right-16">
+    <div className="fixed z-50 bottom-16 right-5 md:right-16">
       {/* Button to open chatbot */}
 <button
   onClick={toggleChat}
@@ -110,13 +110,13 @@ const ChatBot = () => {
   {/* Tooltip on hover */}
   {!isOpen&&<div className={`absolute left-[-180px] bottom-12 px-4 py-2 bg-white border border-gray-400/40 rounded-br-none text-gray-700 text-[11px] rounded-lg shadow-md opacity-0 transition-opacity duration-300 ${isHover&&"opacity-100"}`}>
      <p><span className='font-bold'>Techno Bot Assistant:</span><br/>Here to assist you every step of the way!</p>
-    <div className=' absolute bottom-0 left-1 rounded-l-full rounded-xl h-1 w-[96%] bg-gradient-to-r from-purple-600 via-teal-500  to-amber-400'></div>
+    <div className='absolute bottom-0 left-1 rounded-l-full rounded-xl h-1 w-[96%] bg-gradient-to-r from-purple-600 via-teal-500  to-amber-400'></div>
   </div>}
 
 
       {/* Chat modal */}
       {isOpen && (
-        <div className="mt-3 w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 py-2 transition-transform transform-gpu duration-300 ease-out">
+        <div className="mt-3 md:block absolute -bottom-16 -right-4 h-[98dvh] md:h-auto w-[98dvw] md:w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 py-2 transition-transform transform-gpu duration-300 ease-out">
          {/* Header with chatbot name and close button */}
          <div className="flex justify-between items-center pb-2 border-b bg-white border-gray-300 px-4 py-2">
            <div className="flex items-center space-x-2">
@@ -136,7 +136,7 @@ const ChatBot = () => {
 
 
        {/* Chat messages */}
-       <div className="flex flex-col chatbot space-y-3 h-72 overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
+       <div className="flex flex-col chatbot space-y-3 h-[26rem] md:h-72 overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
          {messages.map((msg, index) => (
            <div
              key={index}

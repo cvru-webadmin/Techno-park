@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEye, FaBullseye, FaHistory } from "react-icons/fa"; // Import icons
+import KhushiIoT from "../../../assets/images/KhushiIoT.jpg"
 
 const VisionMission = () => {
   return (

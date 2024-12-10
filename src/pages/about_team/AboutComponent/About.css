@@ -67,7 +67,7 @@
     .about-title {
       font-size: 1.875rem;
       line-height: 2.25rem;
-      text-wrap: nowrap;
+      /* text-wrap: nowrap; */
     }
   }
   
@@ -98,7 +98,7 @@
   }
   
   .VisonMisonBg{
-    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url("src/assets/images/KhushiIoT.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url("https://res.cloudinary.com/dcbniehli/image/upload/v1733834342/wiukivwq8xeqvvev6lsz.jpg");
     background-size: cover;
     background-position: center;
     filter: brightness(1.5)
