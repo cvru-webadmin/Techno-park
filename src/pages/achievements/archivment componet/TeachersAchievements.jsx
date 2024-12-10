@@ -114,42 +114,43 @@ export default function TeachersAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-              <div className="bg-white border md:w-[80%] mx-auto w-full lg:w-full border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                {/* Achievement Image */}
-                {!achievement.image == "" ? (
+            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full">
+              {/* Achievement Image */}
+              
+              {achievement.image !== "" ? (
+                <img
+                  src={achievement.image}
+                  alt={`${achievement.name} achievement`}
+                  className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-top object-cover"
+                />
+              ) : (
+                <div className="w-full h-48 sm:h-56 md:h-72 lg:h-60 bg-[#131f35]">
                   <img
-                    src={achievement.image}
+                    src={AwardDefualt}
                     alt={`${achievement.name} achievement`}
-                    className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
+                    className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-center object-contain"
                   />
-                ) : (
-                  <div className="w-full h-60 bg-[#131f35]">
-                    <img
-                      src={AwardDefualt}
-                      alt={`${achievement.name} achievement`}
-                      className="w-full lg:h-60 h-60 md:h-60 object-center object-contain"
-                    />
-                  </div>
-                )}
-
-                {/* Achievement Details */}
-                <div className="md:p-10 lg:p-6 p-6">
-                  <h3 className="lg:text-xl text-xl md:text-2xl font-bold text-gray-800 mb-2">
-                    {achievement.name}
-                  </h3>
-                  <p className="lg:text-lg md:text-xl md:h-24 text-sm font-semibold text-blue-700 mb-4">
-                    {achievement.title}
-                  </p>
-                  <p className="lg:text-sm text-sm md:text-base text-gray-700 mb-3 leading-relaxed">
-                    {achievement.description}
-                  </p>
-                  <p className="lg:text-sm text-sm md:text-base text-gray-600">
-                    <span className="font-semibold">Year:</span>{" "}
-                    {achievement.year}
-                  </p>
                 </div>
+              )}
+          
+              {/* Achievement Details */}
+              <div className="p-4 sm:p-6 md:p-8 lg:p-6">
+                <h3 className="text-lg sm:text-xl  font-bold text-gray-800 mb-2">
+                  {achievement.name}
+                </h3>
+                <p className="text-sm sm:text-base md:h-14 md:text-lg font-semibold text-blue-700 mb-4 line-clamp-2">
+                  {achievement.title}
+                </p>
+                <p className="text-xs sm:text-sm md:h-20 line-clamp-4 text-gray-700 mb-3 leading-relaxed">
+                  {achievement.description}
+                </p>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                  <span className="font-semibold">Year:</span> {achievement.year}
+                </p>
               </div>
             </div>
+          </div>
+          
           ))}
         </Slider>
       </div>

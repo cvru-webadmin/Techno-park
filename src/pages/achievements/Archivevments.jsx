@@ -12,6 +12,8 @@ import StudentAchievements from "./archivment componet/student";
 import ExcellenceAwards from "./archivment componet/ExcellenceAwards";
 // import InovationAward1 from "./../assets/Trophies/BestIdea1.jpg"
 
+
+// student archivment image import 
 import solor from "./../../assets/Student archivment/solar2.jpg"
 import merit from "./../../assets/Student archivment/merit.jpg"
 import Inovation from "./../../assets/Student archivment/Inovation.jpg"
@@ -22,10 +24,20 @@ import HackCraft1 from "./../../assets/Student archivment/Hackcraft1.jpg"
 import HackCraft2 from "./../../assets/images/hackathon.jpg"
 import LogoDesign1 from "./../../assets/Student archivment/LogoDesign1.jpg"
 import LogoDesign2 from "./../../assets/Student archivment/LogoDesign2.jpg"
-import respectEducationMinistor from "./../../assets/Student archivment/respectEducationMinistor.jpg"
+import Ideapresent1 from "./../../assets/Student archivment/IdeaPresent1.jpg"
+import MathExivition3 from "./../../assets/Student archivment/Math3.jpg"
+import MathExivition from "./../../assets/Student archivment/GeetMaths.jpg"
+import Debt1 from "./../../assets/Student archivment/Debet 1.jpg"
+import Aditya from "./../../assets/Student archivment/Aditya.jpg"
 
+
+//techers archivment image import
 import facultAward from "./../../assets/FacultyAward.jpg"
 import AcharyaAward from "./../../assets/Acharya award.jpg"
+import KunalCyber from "../../assets/Techers Archivment/Cyber Security Certificate.png"
+import KunalAqua from "../../assets/Techers Archivment/AQUA ASPIRE'24.png"
+import KunalExcilance from "../../assets/Techers Archivment/image.png"
+import AiPaper from "../../assets/Techers Archivment/AiPaper.png"
 
 
 const AchievementsPage = () => {
@@ -88,6 +100,124 @@ const AchievementsPage = () => {
       year: "2023-24",
       image: "", // Empty string for image path
     },
+      {
+        name: "Mr. Kunal Mishra",
+        title: "Department Excellence Award",
+        description: "Awarded for excellence in academics and contributions to the department.",
+        year: "2024-12-09",
+        image: KunalExcilance  // Empty string for image path
+      },
+      {
+        name: "Mr. Kunal Mishra",
+        title: "AQUA ASPIRE'24 Certificate of Appreciation",
+        description: "Awarded for significant contribution to the event AQUA ASPIRE'24.",
+        year: "2024-12-09",
+        image: KunalAqua  // Empty string for image path
+      },
+      {
+        name: "Mr. Kunal Mishra",
+        title: "Cyber Security Certificate",
+        description: "Completed training session in Cyber Security under AISECT's initiative.",
+        year: "2024-08-09",
+        image: KunalCyber  // Empty string for image path
+      },
+      {
+        name: "Ms. Swati Atre",
+        patentNumber: "202321087483",
+        title: "Blockchain-based secure data management system for Internet of Things (IoT) Devices",
+        dateOfFiling: "2023-12-21",
+        status: "Published",
+        image: "",
+        description: "This patent presents a secure data management system leveraging blockchain technology for enhancing data integrity and security in IoT devices."
+      },
+      {
+        name: "Ms. Swati Atre",
+        patentNumber: "202221069879",
+        title: "A novel method for preparing data for processing by artificial intelligence and machine learning systems",
+        dateOfFiling: "2022-12-04",
+        status: "Published",
+        image: "",
+        description: "This patent introduces an innovative method to preprocess data effectively for AI and ML systems, improving the accuracy and efficiency of computations."
+      },
+      {
+        name: "Ms. Vaidehi Bakshi",
+        patentNumber: "6303338",
+        title: "Biogas Leakage Detecting Device",
+        dateOfFiling: "2023-08-13",
+        dateOfGrant: "2023-08-25",
+        status: "Granted",
+        image: "",
+        description: "This patent describes a device designed to detect and mitigate biogas leakage, ensuring safety and environmental protection in biogas systems."
+      },
+        {
+          name: "Ms. Swati Atre",
+          title: "Published in World Journal of Engineering",
+          description: "Ms. Swati Atre published research on using convolution neural networks for COVID-19 prediction through X-ray images in the World Journal of Engineering (2022, ISSN 1708-5284).",
+          year: "2022",
+          image: ""
+        },
+        {
+          name: "Ms. Swati Atre",
+          title: "Published in International Conference IEEE",
+          description: "Ms. Swati Atre published a paper on leveraging blockchain for credit card data privacy at the International Conference IEEE (2022, ISSN 54933-117).",
+          year: "2022",
+          image: ""
+        },
+        {
+          name: "Ms. Swati Atre",
+          title: "Published in IRJMETS",
+          description: "Ms. Swati Atre published research on using blockchain technology to improve transparency, traceability, and efficiency in agriculture in IRJMETS (2023, ISSN 2582-5208).",
+          year: "2023",
+          image: ""
+        },
+        {
+          name: "Ms. Swati Atre",
+          title: "Published in JETIR",
+          description: "Ms. Swati Atre published a paper on data mining techniques for detecting network intrusions in JETIR (2023, ISSN 2349-5162).",
+          year: "2023",
+          image: ""
+        },
+        {
+          name: "Mr. Amit Sawanni & Ms. Vaidehi Bakshi",
+          title: "Published in IJAEM",
+          description: "Mr. Amit Sawanni and Ms. Vaidehi Bakshi co-authored a paper on machine learning approaches for stock market prediction, published in IJAEM (2023, ISSN 23198-8753).",
+          year: "2023",
+          image: ""
+        },
+        {
+          name: "Ms. Vaidehi Bakshi",
+          title: "Published in IJRESM",
+          description: "Ms. Vaidehi Bakshi published a paper on detecting DIO suppression attacks in RPL and IoT networks in IJRESM (2023, ISSN 2455-9679).",
+          year: "2023",
+          image: ""
+        },
+        {
+          name: "Ms. Vaidehi Bakshi",
+          title: "Published in ICSSR",
+          description: "Ms. Vaidehi Bakshi published a paper on innovative teaching methods for vocational education to improve skill development and employability, published in ICSSR (2024).",
+          year: "2024",
+          image: ""
+        },
+        {
+          name: "Mr. Amit Sawanni",
+          title: "Published in IJETAE",
+          description: "Mr. Amit Sawanni published research on an efficient multipath routing technique using directed acyclic graphs in IJETAE (2015, ISSN 2250-2459).",
+          year: "2015",
+          image: ""
+        }, 
+        {
+          name: "Ms. Shruti Sriwas",
+          title: "Impact of Artificial Intelligence on Human Society",
+          description: "This paper reviews the impact of artificial intelligence on human society, highlighting its contributions to various fields such as healthcare, mental health, industry, and transportation. It also discusses concerns regarding AI's infringement on human rights and its potential to replicate human consciousness.",
+          author: "Ms. Shruti Sriwas",
+          institution: "Dr. C.V. Raman University, Khandwa (M.P), India",
+          contact: "shrutisriwascvru@gmail.com",
+          abstract: "The paper explores how artificial intelligence influences human society, from AI-assisted surgeries and mental health applications to its role in factories and transportation. It also discusses concerns over AI's impact on human rights and the debate around artificial consciousness. The conclusion suggests AI is both a potential boon and a risk for humanity, depending on how it is utilized.",
+          keywords: ["Artificial Intelligence", "human intelligence", "human emotion", "human communication", "Natural Language Processing", "Knowledge Base System"],
+          year: "2023",
+          image:AiPaper
+        },
+            
   ];
 
   const Studentachievements = [
@@ -129,7 +259,7 @@ const AchievementsPage = () => {
       description:
         "Rishabh Sharma achieved first place in the Idea Presentation Challenge during the Hackcraft event, demonstrating exceptional innovation and problem-solving skills.",
       year: 2024,
-      image:"",
+      image:Ideapresent1,
     },
     {
       name: "Hackcraft Event",
@@ -242,7 +372,35 @@ const AchievementsPage = () => {
         "Khushi Yadav participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
       year: 2024,
       image: "", // No image provided
-    },        
+    },  
+    {
+      name: "Maths Exhibition",
+      title: "Participation in of Maths Exhibition",
+      description: "Awarded for outstanding participation in Maths Exhibition, securing a position.",
+      year: "2023-12-21",
+      image: MathExivition,
+    },
+    {
+      name: "participation Certificate",
+      title: "Certificate of participation in the Professional Advancement Program",
+      description: "In recognition of your participation in the Professional Advancement Program - Course III: Taking Invention to Market and to Commerce: Role of Intellectual Property.",
+      year: "2024-05-21",
+      image: Aditya,  
+    },
+    {
+      name: "Maths Exhibition",
+      title: "Certificate of Achievement",
+      description: "This certificate is presented to Rishabh Sharma for his exceptional performance in the Maths Exhibition, where he demonstrated outstanding dedication and skills. He secured the 3rd position in the exhibition held on December 21, 2023, organized by Dr. C.V. Raman University, Khandwa, Madhya Pradesh. His active participation and commitment to excellence have been recognized with this achievement.",
+      year: "2023-12-21",
+      image: MathExivition3  // Empty string for image path
+    },
+    {
+      name: "Debate Competition",
+      title: "Participation in Debate Competition",
+      description: "Awarded for outstanding participation in the Debate Competition, securing the first position.",
+      year: "2023-12-14",
+      image: Debt1,
+    },    
   ];
 
   const Sectionacroll=useRef(null);

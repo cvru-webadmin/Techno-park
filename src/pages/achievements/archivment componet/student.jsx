@@ -111,49 +111,49 @@ export default function StudentAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-              <div className="bg-white border md:w-[80%] mx-auto w-full lg:w-full border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                {/* Achievement Image */}
-                {!achievement.image == "" ? (
+            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full flex flex-col">
+              {/* Achievement Image */}
+              {achievement.image !== "" ? (
+                <img
+                  src={achievement.image}
+                  alt={`${achievement.name} achievement`}
+                  className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-top object-cover"
+                />
+              ) : (
+                <div className="w-full h-48 sm:h-56 md:h-72 lg:h-60 bg-[#131f35]">
                   <img
-                    src={achievement.image}
+                    src={AwardDefualt}
                     alt={`${achievement.name} achievement`}
-                    className="w-full lg:h-60 h-60 md:h-72 object-top object-cover"
+                    className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-center object-contain"
                   />
-                ) : (
-                  <div className="w-full h-60 bg-[#131f35]">
-                    <img
-                      src={AwardDefualt}
-                      alt={`${achievement.name} achievement`}
-                      className="w-full lg:h-60 h-60 md:h-60   object-center object-contain"
-                    />
-                  </div>
-                )}
-
-                {/* Achievement Details */}
-                <div className="flex-1 p-6 flex flex-col justify-between">
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {achievement.name}
-                  </h3>
-
-                  {/* Award or Title */}
-                  <p className="lg:text-lg md:text-xl md:h-12 text-sm font-semibold text-blue-700 mb-4">
-                    {achievement.title}
-                  </p>
-
-                  {/* Description */}
-                  <p className="text-sm text-gray-700 mb-3 line-clamp-5 leading-relaxed h-28 flex-grow">
-                    {achievement.description}
-                  </p>
-
-                  {/* Year */}
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold">Year:</span>{" "}
-                    {achievement.year}
-                  </p>
                 </div>
+              )}
+          
+              {/* Achievement Details */}
+              <div className="flex-1 p-4 sm:p-6 md:p-8 lg:p-6 flex flex-col justify-between">
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                  {achievement.name}
+                </h3>
+          
+                {/* Award or Title */}
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-blue-700 mb-4 line-clamp-2 md:h-12">
+                  {achievement.title}
+                </p>
+          
+                {/* Description */}
+                <p className="text-xs sm:text-sm text-gray-700 mb-3 line-clamp-4 h-28 flex-grow">
+                  {achievement.description}
+                </p>
+          
+                {/* Year */}
+                <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                  <span className="font-semibold">Year:</span> {achievement.year}
+                </p>
               </div>
             </div>
+          </div>
+          
           ))}
         </Slider>
       </div>
