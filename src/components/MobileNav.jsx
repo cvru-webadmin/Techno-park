@@ -90,13 +90,13 @@ const MobilNavbar = () => {
       {/* Drawer with Backdrop */}
       {isDrawerOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black bg-opacity-50"
+          className="fixed inset-0 z-40 lg:hidden bg-black bg-opacity-50"
           onClick={toggleDrawer}
         ></div>
       )}
 
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-64 bg-gray-900 text-white transform transition-transform duration-300 ${
+        className={`fixed lg:hidden top-0 right-0 z-50 h-full w-64 bg-gray-900 text-white transform transition-transform duration-300 ${
           isDrawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

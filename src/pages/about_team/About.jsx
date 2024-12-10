@@ -8,6 +8,7 @@ import FacultyCard from './AboutComponent/FacultyCard'
 import { useEffect } from 'react'
 import { ScrollContext } from '../../context/DropDownScrollContext'
 import Chancellor from './AboutComponent/Chancellor'
+import ViceChancellor from './AboutComponent/ViceChancellor'
 
 export default function About() {
   const {dropDown,setDropDown}=useContext(ScrollContext)
@@ -36,6 +37,7 @@ export default function About() {
     <AboutTopImage/>
     <AboutUniversity/>
     <Chancellor/>
+    <ViceChancellor />
     <AboutSchool/>
     <span ref={(e)=>{Mission.current[0]=e}}><VisionMission/></span>
     <span ref={(e)=>{Mission.current[1]=e}}>
