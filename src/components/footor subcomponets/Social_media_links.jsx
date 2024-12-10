@@ -7,7 +7,7 @@ export default function Social_media_links() {
       <div className="flex text-sm flex-col items-start space-y-3">
         {/* Facebook */}
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/cvru.khandwa"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center space-x-2 group transition duration-200"

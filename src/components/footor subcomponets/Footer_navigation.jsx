@@ -10,12 +10,14 @@ export default function Footer_navigation() {
           { to: "/", label: "Home" },
           { to: "/about", label: "About Us" },
           { to: "/courses", label: "Courses" },
-          { to: "/admission", label: "Admission" },
+          { to: "/event", label: "Event & News" },
           { to: "/contact", label: "Contact" },
+          { to: "/feedback", label: "Feedback" },
         ].map((link, index) => (
           <li key={index}>
             <NavLink
               to={link.to}
+              onClick={()=>window.scrollTo(0,0)}
               className="text-sm text-gray-300 hover:text-blue-400 transition duration-200 ease-in-out"
             >
               {link.label}
