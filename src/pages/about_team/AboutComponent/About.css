@@ -59,9 +59,15 @@
     .about-content {
       flex-direction: column;
     }
+    .about-description{
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   
     .about-title {
-      font-size: 2rem;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      text-wrap: nowrap;
     }
   }
   

@@ -23,6 +23,10 @@ import EventPage from '../admin_panel/pages/events/EnevetPage';
 import FeedbackPage from '../admin_panel/pages/feedback/FeedbackPage';
 import FeedbackForm from '../pages/Feedback form/FeedbackFrom';
 import EventsPage from '../pages/events/Events';
+import Chancellor from '../pages/about_team/AboutComponent/Chancellor';
+import AboutPage from '../pages/about_team/AboutPage';
+import ViceChancellor from '../pages/about_team/AboutComponent/ViceChancellor';
+import Registrar from '../pages/about_team/AboutComponent/Rigistar';
 
 const router =createBrowserRouter([
     {
@@ -35,7 +39,13 @@ const router =createBrowserRouter([
             },
             {
              path:"/about",
-             element:<About/>
+             element:<AboutPage/>,
+             children:[
+                {path:"/about",element:<About />},
+                {path:"Chancellor-Message",element:<Chancellor />},
+                {path:"Vice-Chancellor-Message",element:<ViceChancellor />},
+                {path:"Registrar-Message",element:<Registrar />},
+             ]
             },
             {
              path:"/courses",

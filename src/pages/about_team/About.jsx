@@ -36,8 +36,8 @@ export default function About() {
     <>
     <AboutTopImage/>
     <AboutUniversity/>
-    <Chancellor/>
-    <ViceChancellor />
+    {/* <Chancellor/>
+    <ViceChancellor /> */}
     <AboutSchool/>
     <span ref={(e)=>{Mission.current[0]=e}}><VisionMission/></span>
     <span ref={(e)=>{Mission.current[1]=e}}>

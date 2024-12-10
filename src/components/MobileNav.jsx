@@ -1,16 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ScrollContext } from "../context/DropDownScrollContext";
 
 const MobilNavbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [tab, settab] = useState("Home");
   const [sticky, setSticky] = useState(false);
+  const { setDropDown } = useContext(ScrollContext);
+
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about", submenu: ["Our Mission", "Faculty", "Facilities"] },
-    { name: "Courses", path: "/courses", submenu: ["Undergraduate", "Postgraduate", "Diploma"] },
+    {
+      name: "About",
+      path: "/about",
+      submenu: [
+        "Our Mission",
+        "Faculty",
+        { name: "Chancellor's Message", path: "/about/chancellor-message" },
+        {
+          name: "Vice Chancellor's Message",
+          path: "/about/vice-chancellor-message",
+        },
+        { name: "Registrar's Message", path: "/about/registrar-message" },
+      ],
+    },
+    {
+      name: "Courses",
+      path: "/courses",
+      submenu: ["Diploma", "Undergraduate", "Postgraduate"],
+    },
     { name: "Activities", path: "/activities" },
     { name: "Campus", path: "/campus" },
     { name: "Achievements", path: "/achievements" },
@@ -170,17 +190,36 @@ const MobilNavbar = () => {
               {/* Submenu */}
               {link.submenu && openSubmenu === link.name && (
                 <ul className="pl-4 mt-2 space-y-2 text-sm">
-                  {link.submenu.map((subitem, subIndex) => (
-                    <li key={subIndex}>
-                      <NavLink
-                        to={`${link.path}/${subitem.toLowerCase().replace(/ /g, "-")}`}
-                        onClick={toggleDrawer}
-                        className="block py-1 hover:text-amber-400"
-                      >
-                        {subitem}
+                  {link.submenu.map((subitem, subIndex) => {
+                    if (typeof subitem === "object") {
+                      return (
+                        <NavLink key={subIndex} to={subitem.path}>
+                          <li
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="block py-1 hover:text-amber-400"
+                          >
+                            {subitem.name}
+                          </li>
+                        </NavLink>
+                      );
+                    } else {
+                      return (
+                        
+                        <NavLink to={link.path}>
+                        <li
+                          onClick={() => {
+                            setDropDown(subitem);
+                            toggleDrawer();
+                          }}
+                          key={subIndex}
+                          className="block py-1 hover:text-amber-400"
+                        >
+                          {subitem}
+                        </li>
                       </NavLink>
-                    </li>
-                  ))}
+                      );
+                    }
+                  })}
                 </ul>
               )}
             </li>

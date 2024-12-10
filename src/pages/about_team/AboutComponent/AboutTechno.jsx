@@ -82,7 +82,9 @@ const AboutSchool = () => {
     
       {/* Call-to-Action */}
       <div className="w-full lg:w-1/2 flex mt-4 justify-center lg:justify-start">
-          <NavLink to="/contact" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-10 text-lg font-semibold rounded-md shadow-md hover:scale-105">
+          <NavLink to="/contact"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-10 text-base sm:text-lg font-semibold rounded-md shadow-md hover:scale-105 transition-transform duration-300 ease-in-out"
+           >
           Contact Us
           </NavLink>
           </div>

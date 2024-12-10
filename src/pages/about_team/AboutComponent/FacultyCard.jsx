@@ -79,7 +79,7 @@ const Card = ({ image, title, description, name }) => {
 const FacultyCard = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 lg:py-8">
-      <h1 className="about-title font-semibold">
+      <h1 className="about-title md:text-left text-center font-semibold">
         Meet Our Faculty
       </h1>
       <div className="grid grid-cols-1 mb-10 gap-8">
