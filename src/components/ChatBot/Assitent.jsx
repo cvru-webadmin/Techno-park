@@ -116,7 +116,7 @@ const ChatBot = () => {
 
       {/* Chat modal */}
       {isOpen && (
-        <div className="mt-3 md:block absolute -bottom-16 -right-4 h-[98dvh] md:h-auto w-[98dvw] md:w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 py-2 transition-transform transform-gpu duration-300 ease-out">
+        <div className="mt-3 md:static absolute md:bottom-0 md:right-0 -bottom-16 -right-4 h-[98dvh] md:h-auto w-[98dvw] md:w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 py-2 transition-transform transform-gpu duration-300 ease-out">
          {/* Header with chatbot name and close button */}
          <div className="flex justify-between items-center pb-2 border-b bg-white border-gray-300 px-4 py-2">
            <div className="flex items-center space-x-2">
