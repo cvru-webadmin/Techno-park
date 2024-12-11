@@ -1,8 +1,8 @@
 import React from "react";
-import UpcomingImg from "../image/upcoming event.avif";
-import active from "../image/image.png";
-import news from "../image/news.jpg";
-import all from "../image/all events.avif";
+import UpcomingImg from "../image/upcoming event.webp";
+import active from "../image/image.webp";
+import news from "../image/news.webp";
+import all from "../image/all events.webp";
 
 export default function SelectionCard({Upcoming,Active,News,AllEvent,setEvent,scroll,tab}) {
   // Array of card objects

@@ -94,9 +94,9 @@ const CultureAndActivities = () => {
     </div>
 
     {/* Event Description */}
-    <div className="absolute bottom-14 text-justify line-clamp-6 left-4 text-white text-xs md:text-sm w-11/12 bg-black bg-opacity-70 rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+    {/* <div className="absolute bottom-14 text-justify line-clamp-6 left-4 text-white text-xs md:text-sm w-11/12 bg-black bg-opacity-70 rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
       <p>{event.description || "Description of the event"}</p>
-    </div>
+    </div> */}
 
     {/* Hover effect for the entire card */}
     {/* <div className="absolute inset-0 bg-transparent group-hover:bg-black/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}

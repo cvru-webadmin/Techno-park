@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Notimage from '../image/not_image.jpg'
+import Notimage from '../image/not_image.webp'
 
 const EventCard = ({ title, date, description, status, image }) => {
   // State to track if the description is expanded

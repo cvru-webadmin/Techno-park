@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Header from "./componet/Header";
 import EventCard from "./componet/EventCard";
-import upcoming from "./image/upcoming-events-label-collection_662550-1788.jpg";
+import upcoming from "./image/upcoming-events-label-collection_662550-1788.webp";
 import SelectionCard from "./componet/SelectionCard";
 import { FireContext } from "../../Context/context";
 
