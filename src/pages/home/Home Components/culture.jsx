@@ -56,7 +56,7 @@ const CultureAndActivities = () => {
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-600 mb-6">
           Culture & Activities
         </h2>
-        <p className="text-gray-600 lg:mb-8 text-sm sm:text-base">
+        <p className="text-gray-600 text-justify md:text-center  lg:mb-8 text-sm sm:text-base">
           Explore the vibrant culture and engaging activities that bring our community together, fostering creativity, innovation, and unity.
         </p>
       </div>
@@ -80,21 +80,21 @@ const CultureAndActivities = () => {
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
 
     {/* Event Title - Hidden on smaller screens */}
-    {/* <h3 className="absolute bottom-4 w-full text-center flex justify-center px-2 min-[766px]:hidden">
-      <span className="py-2 px-4 text-sm rounded-md font-semibold bg-white text-gray-800 shadow-lg transform transition-all duration-300 tracking-wide">
+    <h3 className="absolute bottom-4 w-full text-center flex justify-center px-2 min-[766px]:hidden">
+      <span className="py-2 px-4 text-xs rounded-md font-semibold bg-white text-gray-800 shadow-lg transform transition-all duration-300 tracking-wide">
         {event.title}
       </span>
-    </h3> */}
+    </h3>
 
     {/* Event Title and Description on larger screens */}
     <div className="absolute bottom-4 left-4 px-6 py-2 rounded-lg text-white font-semibold text-xl tracking-wide shadow-lg flex items-center">
-      <h3 className="text-base md:text-base font-bold text-white shadow-md" style={{textShadow: "2px 2px 3px rgba(0,0,0,0.5)"}}>
+      <h3 className="text-base hidden md:block md:text-base font-bold text-white shadow-md" style={{textShadow: "2px 2px 3px rgba(0,0,0,0.5)"}}>
         {event.title}
       </h3>
     </div>
 
     {/* Event Description */}
-    <div className="absolute bottom-12 line-clamp-6 left-4 text-white text-xs md:text-sm w-11/12 bg-black bg-opacity-70 rounded-md py-1 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+    <div className="absolute bottom-14 text-justify line-clamp-6 left-4 text-white text-xs md:text-sm w-11/12 bg-black bg-opacity-70 rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
       <p>{event.description || "Description of the event"}</p>
     </div>
 

@@ -7,9 +7,14 @@ import HeroImage from "../../../assets/cvru_campus.jpg"
 function HomePage() {
   const myRef = useRef(null);
   const scrollToRef = () => {
-    if (myRef.current) {
-      myRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    const offset = 50; // Adjust this value to control the offset
+    const elementPosition = myRef.current.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -56,7 +61,7 @@ function HomePage() {
       </div>
 
       {/* Content Section with Transparent Background */}
-      <div ref={myRef} className="h-14 bg-[#012970]"></div>
+      <div ref={myRef} className=" bg-[#012970]"></div>
       <About />
     </div>
   );

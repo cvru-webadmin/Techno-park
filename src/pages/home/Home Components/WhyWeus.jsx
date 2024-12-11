@@ -38,10 +38,10 @@ function WhyChooseUsCard() {
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto text-center mb-8">
-        <h2 className="text-4xl font-semibold text-gray-800">Why Choose Us?</h2>
-        <p className="text-gray-600 mt-2">Empowering students to shape the future with knowledge and innovation</p>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Why Choose Us?</h2>
+        <p className="text-gray-600 mt-2 text-sm sm:text-base ">Empowering students to shape the future with knowledge and innovation</p>
       </div>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-4">
         {features.map((feature, index) => (
           <div 
             key={index} 
@@ -49,9 +49,9 @@ function WhyChooseUsCard() {
             data-aos="fade-up"
           >
             <feature.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-            <p className="text-gray-600 mb-4">{feature.description}</p>
-            <p className="text-gray-500 text-sm">{feature.additionalInfo}</p>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{feature.title}</h3>
+            <p className="text-gray-600 mb-4 text-sm md:text-base xl:text-base lg:text-sm text-center">{feature.description}</p>
+            <p className="text-gray-500 text-sm text-center">{feature.additionalInfo}</p>
           </div>
         ))}
       </div>

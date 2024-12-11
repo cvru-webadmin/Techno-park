@@ -63,10 +63,10 @@ const About = () => {
       </div>
 
       {/* Row 3 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 bg-white py-8 px-6 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 bg-white py-8 px-6 gap-6">
         {/* Column 1: About Computer Science */}
         <div className="flex flex-col justify-center">
-          <h3 className="text-lg md:text-xl font-bold text-gray-800">
+          <h3 className="text-lg md:text-xl font-bold text-gray-800 lg:h-14">
             About Computer Science & Technology
           </h3>
           <p className="mt-4 text-gray-600 leading-relaxed">
@@ -79,7 +79,7 @@ const About = () => {
 
         {/* Column 2: Tech Placements & Future */}
         <div className="flex flex-col justify-center">
-          <h3 className="text-lg md:text-xl font-bold text-gray-800">
+          <h3 className="text-lg md:text-xl font-bold text-gray-800 lg:h-14">
             Tech Placements & Future
           </h3>
           <p className="mt-4 text-gray-600 leading-relaxed">
@@ -91,7 +91,7 @@ const About = () => {
 
         {/* Column 3: Research & Innovations */}
         <div className="flex flex-col justify-center">
-          <h3 className="text-lg md:text-xl font-bold text-gray-800">
+          <h3 className="text-lg md:text-xl font-bold text-gray-800 lg:h-14">
             Research & Innovations
           </h3>
           <p className="mt-4 text-gray-600 leading-relaxed">

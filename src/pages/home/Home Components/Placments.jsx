@@ -19,7 +19,7 @@ const companies = [
   { name: 'Next Education', logo: NextEducation },
   { name: 'SK Finance', logo: SKFinance },
   { name: 'UPL Limited', logo: UPL },
-  { name: 'Equitas Small Finance Bank', logo: Equitas },
+  // { name: 'Equitas Small Finance Bank', logo: Equitas },
 ];
 
 const students = [
@@ -61,7 +61,7 @@ function PlacementSection() {
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600">
           Campus Placements
         </h2>
-        <p className="text-gray-600 mt-2 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
+        <p className="text-gray-600 mt-2 max-w-5xl mx-auto text-justify md:text-center  text-sm sm:text-base lg:text-lg">
           Our department has placed students in top tech companies, highlighting our commitment to excellence in technical education and industry partnerships.
         </p>
       </div>

@@ -28,7 +28,7 @@ const CampusExplore = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-gray-600 mb-8 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto">
+        <p className="text-gray-600 text-justify md:text-center  mb-8 text-sm sm:text-base lg:text-lg max-w-5xl mx-auto">
           Discover the vibrant life, cutting-edge facilities, and inspiring spaces that make our campus a hub for learning and innovation. Take a virtual tour or visit us in person to experience it yourself.
         </p>
       </div>

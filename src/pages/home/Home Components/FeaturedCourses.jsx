@@ -17,10 +17,10 @@ const CourseCard = ({ image, title, description }) => {
           className="w-full h-48 object-cover"
         />
         <div className="p-4">
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          <h3 className="md:text-lg font-semibold text-gray-800 mb-2">
             {title}
           </h3>
-          <p className="text-gray-600 text-sm mb-4 line-clamp-4">
+          <p className="text-gray-600 md:text-sm text-xs mb-4 line-clamp-4">
             {description}
           </p>
         </div>
@@ -73,10 +73,10 @@ const FeaturedCourses = () => {
     <>
       <div className="flex justify-center">
         <section className="bg-white rounded-xl items-center flex flex-col w-[98%] pt-8 px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-600 text-center mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600">
             Featured Courses
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg text-center mt-4 mb-8">
+          <p className="text-gray-600 mt-2 max-w-5xl mx-auto md:px-10 text-justify md:text-center lg-px-5 xl:px-0 text-sm sm:text-base lg:text-lg mb-5">
             Offering a diverse range of cutting-edge courses designed to equip
             students with in-demand skills and hands-on experience across
             various industries.
@@ -104,7 +104,7 @@ const FeaturedCourses = () => {
                   window.scrollTo(0, 0);
                 }, []);
               }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 sm:px-10 text-base md:text-lg font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 sm:px-10 text-sm sm:text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105"
             >
               Explore More
             </NavLink>
