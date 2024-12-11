@@ -70,7 +70,7 @@ const Card = ({ image, title, description, name }) => {
           {name}
         </h2>
         <h3 className="text-lg text-blue-600 mb-4">{title}</h3>
-        <p className="font-[1.1rem] mb-1 text-[#2c3e50] md:text-justify text-center">{description}</p>
+        <p className="font-[1.1rem] mb-1 text-[#2c3e50] text-justify md:text-base text-sm">{description}</p>
       </div>
     </div>
   );

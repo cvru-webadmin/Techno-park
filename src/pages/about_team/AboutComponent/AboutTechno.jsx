@@ -63,7 +63,7 @@ const AboutSchool = () => {
       </h2>
     
       {/* Introduction Paragraph */}
-      <p className="about-description ">
+      <p className="about-description mt-4 lg:mt-0">
         Techno Park School of Computer Science and Information Technology, affiliated with
         <strong className="text-indigo-600"> Dr. C.V. Raman University</strong> and ISO 9001:2015 certified,
         is a premier institution offering programs like BCA, PGDCA, DCA, B.Sc. (IT), M.Sc. (IT), and MCA.
