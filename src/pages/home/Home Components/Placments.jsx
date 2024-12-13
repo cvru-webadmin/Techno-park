@@ -131,7 +131,7 @@ function PlacementSection() {
 
       {/* Explore Placements Button */}
       <div className="text-center">
-        <NavLink to="/placement" onClick={()=>{("/placement");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 sm:px-10 text-sm sm:text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+        <NavLink to="/placement" onClick={()=>{("/placement");window.scrollTo(0, 0);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 sm:px-10 text-sm sm:text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
           Explore More Placements
         </NavLink>
       </div>

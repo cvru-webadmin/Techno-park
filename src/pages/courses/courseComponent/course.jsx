@@ -10,6 +10,7 @@ import PGDCA from '../../../assets/images/PGDCA.png';
 import MCA from '../../../assets/images/mca stu lab.jpeg';
 import BSC from '../../../assets/images/BSC1.jpeg'
 import MSC from '../../../assets/images/MSC1.jpeg'
+import { NavLink } from "react-router-dom";
 // Sample data
 const courses = {
     diploma: [
@@ -17,7 +18,7 @@ const courses = {
           name: "Diploma in Computer Applications (DCA)",
           duration: "1 Year",
           description: "An introductory program designed to impart foundational knowledge in computer applications, including programming, office automation, and IT fundamentals.",
-          fees: "₹20,000 per year",
+          fees: "₹ per year",
           eligibility: "10+2 with any subject.",
           image: DCA, // Replace with actual image URL
         },
@@ -25,7 +26,7 @@ const courses = {
           name: "Post Graduate Diploma in Computer Applications (PGDCA)",
           duration: "1 Year",
           description: "A postgraduate program emphasizing advanced topics in computer applications, database management, and software development.",
-          fees: "₹30,000 per year",
+          fees: "₹ per year",
           eligibility: "Graduate in any discipline.",
           image: PGDCA, // Replace with actual image URL
         },
@@ -35,7 +36,7 @@ const courses = {
           name: "Bachelor of Computer Applications (BCA)",
           duration: "3 Years",
           description: "A comprehensive undergraduate program focused on computer programming, software development, and IT infrastructure management.",
-          fees: "₹25,000 per year",
+          fees: "₹ per year",
           eligibility: "10+2 (PCB/PCM/Commerce/Agriculture).",
           image: BCA, // Replace with actual image URL
         },
@@ -43,7 +44,7 @@ const courses = {
           name: "B.Sc. in Information Technology (B.Sc.(IT))",
           duration: "3 Years",
           description: "A specialized undergraduate course offering an in-depth understanding of information technology systems, networking, and software design.",
-          fees: "₹25,000 per year",
+          fees: "₹ per year",
           eligibility: "10+2 with Mathematics.",
           image: BSC, // Replace with actual image URL
         },
@@ -53,7 +54,7 @@ const courses = {
           name: "Master of Computer Applications (MCA)",
           duration: "2 Years",
           description: "A professional master's degree focusing on advanced computing skills, software engineering, and IT project management.",
-          fees: "₹30,000 per year",
+          fees: "₹ per year",
           eligibility: "Graduation with Mathematics.",
           image: MCA, // Replace with actual image URL
         },
@@ -61,7 +62,7 @@ const courses = {
           name: "M.Sc. in Information Technology (M.Sc.(IT))",
           duration: "2 Years",
           description: "An advanced program specializing in system design, big data analytics, and emerging IT technologies.",
-          fees: "₹35,000 per year",
+          fees: "₹ per year",
           eligibility: "B.Sc.(Maths/IT/CS), BCA.",
           image: MSC, // Replace with actual image URL
         },
@@ -155,10 +156,10 @@ const CoursePage = () => {
       {/* Footer Call-to-Action */}
       <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-6 mt-12 rounded-lg">
         <h3 className="text-2xl font-semibold">Need More Information?</h3>
-        <p className="text-gray-200 mt-2 lg:p-0 p-2">Contact our department office for detailed information on admissions and courses.</p>
-        <button className="lg:mt-4 mt-2 px-6 py-2 bg-white text-blue-700 font-semibold rounded-md shadow-md hover:bg-gray-100">
+        <p className="text-gray-200 mt-2 lg:p-0 p-2 mb-6">Contact our department office for detailed information on admissions and courses.</p>
+        <NavLink to={"/contact"} onClick={()=>{("/contact");window.scrollTo(0, 0);}} className="lg:mt-4 mt-2 px-6 py-2 bg-white text-blue-700 font-semibold rounded-md shadow-md hover:bg-gray-100">
           Contact Us
-        </button>
+        </NavLink>
       </footer>
     </div>
   );

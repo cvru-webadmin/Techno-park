@@ -105,7 +105,7 @@ const About = () => {
       {/* Row 4: Read More Button */}
       <div className="flex justify-center bg-white py-4">
         <NavLink
-          to="/about" onClick={()=>{("/about");useEffect(() => {window.scrollTo(0, 0);},[]);}}
+          to="/about" onClick={()=>{("/about");window.scrollTo(0, 0);}}
           className="capitalize bg-[#012970] text-white text-center px-6 py-3 rounded-md text-sm md:text-base font-medium hover:bg-[#011d53] transition-all"
         >
           Read More About Techno Park

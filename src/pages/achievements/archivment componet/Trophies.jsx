@@ -46,7 +46,7 @@ export default function Trophies({ trophies }) {
             Showcasing the prestigious awards and accolades we’ve earned over
             the years.
           </p>
-        </div>
+        </div>  
 
         {/* Trophy Slider */}
         <Slider {...sliderSettings}>

@@ -41,83 +41,77 @@ import AiPaper from "../../assets/Techers Archivment/AiPaper.png"
 
 
 const AchievementsPage = () => {
-  const departments = [
-    { name: "Computer Science", description: "Excellence in Research and AI", image: "https://via.placeholder.com/150" },
-    { name: "Mechanical Engineering", description: "Best Innovation in Robotics", image: "https://via.placeholder.com/150" },
-    { name: "Biotechnology", description: "Top Academic Achievement", image: "https://via.placeholder.com/150" },
-    { name: "Business Administration", description: "Leadership and Strategy Award", image: "https://via.placeholder.com/150" },
-  ];
 
   const trophies = [
-    { title: "National Excellence Trophy", year: 2023, image: departmet_excel },
-    { title: "Best University Award", year: 2022, image: best_perfomnce },
-    { title: "Sports Championship Trophy", year: 2021, image: best_perfomnce2 },
-    { title: "Innovation in Teaching Award", year: 2020, image: acadmicAward },
-    { title: "Best Innovation Award First prize", year: 2020, image: InovationAward },
-    { title: "Best Innovation Award second prize", year: 2020, image: InovationAward1 },
+    { title: "University Department Excellence Award", year: 2024, image: departmet_excel },
+    { title: "Department Excellence Award", year: 2023, image: best_perfomnce },
+    { title: "Department Excellence Award", year: 2022, image: best_perfomnce2 },
+    { title: "Raman Best Academic Professional Award", year: 2023, image: acadmicAward },
+    { title: "Innovative Idea Presentation (I prize)", year: 2024, image: InovationAward1 },
+    { title: "Innovative Idea Presentation (II prize)", year: 2024, image: InovationAward },
   ];
 
   const achievements = [
     {
-      name: "Mis. Swati Atre",
-      title: "Best Faculty Award",
-      description: "Recognized for outstanding contributions to educational innovation.",
+      name: "Ms. Swati Atre",
+      title: "Raman Best Academic Professional Award",
+      description: "Recognized for outstanding contributions to educational innovation, this award celebrates the impact of creative solutions in enhancing learning experiences and advancing education.",
       year: 2023,
       image: facultAward,
     },
     {
-      name: "Mis. Swati Atre",
-      title: "Acharya Award",
-      description: "Awarded for groundbreaking research in machine learning.",
+      name: "Ms. Swati Atre",
+      title: "Jyestha Acharya Award",
+      description: "Awarded for groundbreaking research in machine learning, this recognition highlights exceptional contributions to the field, advancing the understanding and application of AI tech.",
       year: 2022,
       image: AcharyaAward,
     },
     {
       name: "Prof. Swati Atre",
-      title: "Bhart Education Excellence Awards (Jyeshtha Acharya Award of recognition)",
-      description: "Received from BRAIN O VISION for significant contributions in the field of education.",
-      year: "2023-24",
+      title: "Bharat Education Excellence Awards (Jyeshtha Acharya Award of recognition)",
+      description: "Received from BRAIN O VISION for significant contributions in education, this recognition acknowledges dedication to advancing teaching methods and fostering innovation.",
+      year: 2023-24,
       image: "", // Empty string for image path
     },
     {
       name: "Prof. Swati Atre",
       title: "Vanmali Certificate of Recognition",
-      description: "Awarded by CVRUK for excellence in research and innovation.",
+      description: "Awarded by CVRUK for excellence in research and innovation, this recognition highlights groundbreaking work and the commitment to advancing knowledge in the field.",
       year: "2023-09-05",
       image: "", // Empty string for image path
     },
     {
       name: "Prof. Swati Atre",
       title: "Certificate of Commendation (For Research & Innovation)",
-      description: "Recognized by CVRUK for exceptional research and innovative contributions.",
+      description: "Recognized by CVRUK for exceptional research and innovative contributions, this award celebrates efforts in advancing knowledge and shaping new possibilities.",
       year: "2023-09-05",
       image: "", // Empty string for image path
     },
     {
       name: "Prof. Swati Atre",
       title: "Certificate of Recognition (Reviewer for INSC International Publishing Platform)",
-      description: "Recognized by INSC for her contributions as a reviewer for CS & IT publications.",
+      description: "Recognized by INSC for her contributions as a reviewer for CS & IT publications, highlighting her expertise and commitment to advancing research.",
       year: "2023-24",
       image: "", // Empty string for image path
     },
       {
         name: "Mr. Kunal Mishra",
-        title: "Department Excellence Award",
-        description: "Awarded for excellence in academics and contributions to the department.",
+        title: "Bhartiya Gyan Parampara (Certificate of Appreciation)",
+        description: "Awarded for excellence in academics and contributions to the department, recognizing both academic achievement and departmental growth.",
         year: "2024-12-09",
         image: KunalExcilance  // Empty string for image path
       },
       {
         name: "Mr. Kunal Mishra",
-        title: "AQUA ASPIRE'24 Certificate of Appreciation",
-        description: "Awarded for significant contribution to the event AQUA ASPIRE'24.",
+        title: "ACU ASPIRE'24 (Certificate of Appreciation)",
+        description: "Awarded for significant contribution to the event ACU ASPIRE'24, this recognition celebrates dedication and effort in making the event a success.",
         year: "2024-12-09",
         image: KunalAqua  // Empty string for image path
       },
       {
         name: "Mr. Kunal Mishra",
         title: "Cyber Security Certificate",
-        description: "Completed training session in Cyber Security under AISECT's initiative.",
+        description: "Completed training session in Cyber Security under AISECT's initiative, gaining valuable skills to enhance expertise in safeguarding digital environments.",
         year: "2024-08-09",
         image: KunalCyber  // Empty string for image path
       },
@@ -173,21 +167,28 @@ const AchievementsPage = () => {
         {
           name: "Ms. Swati Atre",
           title: "Published in JETIR",
-          description: "Ms. Swati Atre published a paper on data mining techniques for detecting network intrusions in JETIR (2023, ISSN 2349-5162).",
+          description: "Ms. Swati Atre published a paper on data mining techniques for detecting network intrusions in JETIR (2023, ISSN 2349-5162), contributing valuable insights to the field of cybersecurity.",
           year: "2023",
           image: ""
         },
         {
-          name: "Mr. Amit Sawanni & Ms. Vaidehi Bakshi",
+          name: "Ms. Vaidehi Bakshi",
           title: "Published in IJAEM",
-          description: "Mr. Amit Sawanni and Ms. Vaidehi Bakshi co-authored a paper on machine learning approaches for stock market prediction, published in IJAEM (2023, ISSN 23198-8753).",
+          description: "Ms. Vaidehi Bakshi co-authored a paper on machine learning approaches for stock market prediction, published in IJAEM (2023, ISSN 23198-8753).",
+          year: "2023",
+          image: ""
+        },
+        {
+          name: "Mr. Amit Sawanni",
+          title: "Published in IJAEM",
+          description: "Mr. Amit Sawanni co-authored a paper on machine learning approaches for stock market prediction, published in IJAEM (2023, ISSN 23198-8753).",
           year: "2023",
           image: ""
         },
         {
           name: "Ms. Vaidehi Bakshi",
           title: "Published in IJRESM",
-          description: "Ms. Vaidehi Bakshi published a paper on detecting DIO suppression attacks in RPL and IoT networks in IJRESM (2023, ISSN 2455-9679).",
+          description: "Ms. Vaidehi Bakshi published a paper on detecting DIO suppression attacks in RPL and IoT networks in IJRESM (2023, ISSN 2455-9679), research in network security and IoT protection.",
           year: "2023",
           image: ""
         },
@@ -208,7 +209,7 @@ const AchievementsPage = () => {
         {
           name: "Ms. Shruti Sriwas",
           title: "Impact of Artificial Intelligence on Human Society",
-          description: "This paper reviews the impact of artificial intelligence on human society, highlighting its contributions to various fields such as healthcare, mental health, industry, and transportation. It also discusses concerns regarding AI's infringement on human rights and its potential to replicate human consciousness.",
+          description: "This paper reviews AI's impact on society, highlighting its contributions and concerns about its effects on human rights and consciousness.",
           author: "Ms. Shruti Sriwas",
           institution: "Dr. C.V. Raman University, Khandwa (M.P), India",
           contact: "shrutisriwascvru@gmail.com",
@@ -223,25 +224,25 @@ const AchievementsPage = () => {
   const Studentachievements = [
     {
       name: "Solar Model",
-      title: "Solar mobile charging station",
+      title: "Solar Mobile Charging Station",
       description:
-        "solar mobile charging station is a portable, eco-friendly charging solution powered by solar energy. It typically consists of photovoltaic panels to capture sunlight, a battery storage system to store excess energy, and multiple USB or power outlets to charge devices such as smartphones, tablets, and laptops.",
+        "A solar mobile charging station is a portable, eco-friendly solution with photovoltaic panels, a battery storage system, and multiple outlets for charging devices like smartphones, tablets, and laptops, offering a sustainable alternative to traditional charging methods.",
       year: 2023,
       image: solor, // Update with the correct image path
     },
     {
-      name: "Innovation IDEA",
+      name: "Innovative Idea",
       title: "Digital Water Footprint Calculator",
       description:
-        "This project involves the development of a Digital Water Footprint Calculator, designed to track and reduce water consumption in various sectors. The tool aims to promote sustainability by providing users with insights into their water usage, helping industries and individuals make informed decisions to conserve water and reduce their environmental impact.",
+        "Our students won second prize for their innovative digital water footprinting concept, using IoT and AI to optimize water use in farming and promote sustainability. This achievement reflects their creativity and commitment to environmental conservation.",
       year: 2023,
       image: Inovation, // Update with the correct image path
     },    
     {
-      name: "Innovation IDEA",
+      name: "Innovative Idea",
       title: "Herbal Gallery",
       description:
-        "This project involves the development of 'Hurbale Gallery', an innovative digital platform that showcases rural arts and crafts. It connects local artisans with a broader audience, providing them with a platform to display their work, promote cultural heritage, and boost their livelihoods. The project won the First Prize for its creativity and impact in preserving and promoting rural art forms.",
+        "Our students won 1st prize for their Herbal Gallery project, showcasing the medicinal benefits of herbal plants and promoting wellness through engaging visuals. Their creativity highlighted the importance of herbal medicine and sustainable living.",
       year: 2023,
       image: Inovation2, // Update with the correct image path
     },       
@@ -257,7 +258,7 @@ const AchievementsPage = () => {
       name: "Hackcraft Event",
       title: "1st Rank in Idea Presentation Challenge",
       description:
-        "Rishabh Sharma achieved first place in the Idea Presentation Challenge during the Hackcraft event, demonstrating exceptional innovation and problem-solving skills.",
+        "Rishabh Sharma secured first place in the Hackcraft Idea Presentation Challenge, showcasing innovation, problem-solving, and impactful solutions. His achievement highlights his talent and inspires aspiring innovators.",
       year: 2024,
       image:Ideapresent1,
     },
@@ -265,7 +266,7 @@ const AchievementsPage = () => {
       name: "Hackcraft Event",
       title: "1st Rank in Webpage Design Challenge",
       description:
-        "Yogesh Yadav secured first place in the Webpage Design Challenge at the Hackcraft event, showcasing outstanding creativity and technical expertise.",
+        "Yogesh Yadav won first place in the Hackcraft Webpage Design Challenge, impressing judges with his creative, user-friendly, and functional design, showcasing his expertise in web development and setting a high standard for innovation.",
       year: 2024,
       image:HackCraft1,
     },
@@ -273,7 +274,7 @@ const AchievementsPage = () => {
       name: "Hackcraft Event",
       title: "1st Rank in Logo Design Challenge",
       description:
-        "Aditya Pratap Singh received the first prize in the Logo Design Challenge at the Hackcraft event, demonstrating creative excellence in branding and design.",
+        "Aditya Pratap Singh won first prize in the Hackcraft Logo Design Challenge, showcasing creativity and skill in branding with a unique and impactful design, setting a high standard for visual communication and inspiring future designers.",
       year: 2024,
       image:LogoDesign1,
     },
@@ -281,7 +282,7 @@ const AchievementsPage = () => {
       name: "Hackcraft Event",
       title: "2nd Rank in Logo Design Challenge",
       description:
-        "Geetansh jain received the second prize in the Logo Design Challenge at the Hackcraft event, demonstrating creative excellence in branding and design.",
+        "Geetansh Jain won second prize in the Hackcraft Logo Design Challenge, demonstrating creativity and skill in impactful branding, with a design that effectively captured the brand’s essence and stood out for its originality.",
       year: 2024,
       image:LogoDesign2,
     },
@@ -289,7 +290,7 @@ const AchievementsPage = () => {
       name: "Shodh Shikhar",
       title: "Research Paper Presentation",
       description:
-        "Mr. Mandeep Pawar presented 'Transforming Education through Digital Technologies' at RNTU (Shodh Shikhar), highlighting the integration of innovative tools in education.",
+        "Mr. Mandeep Pawar presented 'Transforming Education through Digital Technologies' at RNTU (Shodh Shikhar), highlighting the integration of innovative tools in education, emphasizing their potential to revolutionize teaching and learning.",
       year: 2024,
       image:"",
     },
@@ -297,7 +298,7 @@ const AchievementsPage = () => {
       name: "University Topper",
       title: "BCA University Topper, June 2023",
       description:
-        "Atul Bhaisare achieved the prestigious title of University Topper in BCA for June 2023, showcasing exceptional academic performance.",
+        "Atul Bhaisare achieved the prestigious title of University Topper in BCA for June 2023, showcasing exceptional academic performance, and setting a benchmark for excellence among his peers with his hard work and dedication.",
       year: 2023,
       image: merit,
     },
@@ -305,7 +306,7 @@ const AchievementsPage = () => {
       name: "Sports Shooting",
       title: "Silver Medal in Inter-Group Sports Shooting Competition",
       description:
-        "Aksha Siddiqui earned a silver medal in the Inter-Group Sports Shooting Competition, demonstrating her skill and dedication in sports.",
+        "Aksha Siddiqui earned a silver medal in the Inter-Group Sports Shooting Competition, demonstrating her skill and dedication in sports, and reflecting her commitment to excellence and focus in competitive shooting, inspiring others to pursue their passions.",
       year: 2024,
       image:shooting,
     },
@@ -313,7 +314,7 @@ const AchievementsPage = () => {
       name: "Hackcraft Event",
       title: "2nd Rank in Webpage Design Challenge",
       description:
-        "Deepanshu Dashore earned second place in the Webpage Design Challenge at the Hackcraft event, showcasing his design acumen.",
+        "Deepanshu Dashore earned second place in the Webpage Design Challenge at the Hackcraft event, showcasing his design acumen. His innovative approach to layout and user experience impressed the judges, highlighting his potential in web design.",
       year: 2024,
       image:HackCraft2,
     },
@@ -321,7 +322,7 @@ const AchievementsPage = () => {
       name: "Research Paper",
       title: "AI & Marketing",
       description:
-        "Ms. Payal Jagtap and Ms. Prachi Parwani presented their research paper 'AI & Marketing' at RNTU, exploring the integration of AI in market strategies.",
+        "Ms. Payal Jagtap and Ms. Prachi Parwani presented their research paper 'AI & Marketing' at RNTU, exploring the integration of AI in market strategies, and highlighting its potential to revolutionize the marketing landscape with data-driven insights.",
       year: 2024,
       image:"",
     },
@@ -329,7 +330,7 @@ const AchievementsPage = () => {
       name: "Professional Program",
       title: "Participation in Professional Advancement Program (Course III)",
       description:
-        "Students from BCA and MCA actively participated in the Professional Advancement Program (Course III), gaining industry-relevant skills and knowledge.",
+        "Students from BCA and MCA actively participated in the Professional Advancement Program (Course III), gaining industry-relevant skills and knowledge, and preparing themselves for future career success in the tech industry.",
       year: 2024,
       image:"",
     },
@@ -376,29 +377,29 @@ const AchievementsPage = () => {
     {
       name: "Maths Exhibition",
       title: "Participation in of Maths Exhibition",
-      description: "Awarded for outstanding participation in Maths Exhibition, securing a position.",
-      year: "2023-12-21",
+      description: "Awarded for outstanding participation in the Maths Exhibition, securing a position, the recognition highlights the student's creativity in presenting mathematical concepts and dedication to academic excellence, showcasing their problem-solving abilities.",
+      year: 2023,
       image: MathExivition,
     },
     {
-      name: "participation Certificate",
+      name: "Participation Certificate",
       title: "Certificate of participation in the Professional Advancement Program",
-      description: "In recognition of your participation in the Professional Advancement Program - Course III: Taking Invention to Market and to Commerce: Role of Intellectual Property.",
-      year: "2024-05-21",
+      description: "In recognition of your participation in the Professional Advancement Program - Course III: Taking Invention to Market and to Commerce: Role of Intellectual Property, highlighting your understanding of the link between innovation and intellectual property.",
+      year: 2024,
       image: Aditya,  
     },
     {
       name: "Maths Exhibition",
       title: "Certificate of Achievement",
-      description: "This certificate is presented to Rishabh Sharma for his exceptional performance in the Maths Exhibition, where he demonstrated outstanding dedication and skills. He secured the 3rd position in the exhibition held on December 21, 2023, organized by Dr. C.V. Raman University, Khandwa, Madhya Pradesh. His active participation and commitment to excellence have been recognized with this achievement.",
-      year: "2023-12-21",
+      description: "This certificate is presented to Rishabh Sharma for his exceptional performance in the Maths Exhibition, securing 3rd position on December 21, 2023, at Dr. C.V. Raman University, Khandwa. His dedication and skills have been recognized with this achievement.",
+      year: 2023,
       image: MathExivition3  // Empty string for image path
     },
     {
       name: "Debate Competition",
       title: "Participation in Debate Competition",
-      description: "Awarded for outstanding participation in the Debate Competition, securing the first position.",
-      year: "2023-12-14",
+      description: "Awarded for outstanding participation in the Debate Competition, securing the first position, this recognition highlights exceptional communication skills, critical thinking, and the ability to engage effectively in discussions, setting a high standard for future participants.",
+      year: 2023,
       image: Debt1,
     },    
   ];

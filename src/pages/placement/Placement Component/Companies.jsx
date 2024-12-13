@@ -116,7 +116,7 @@ export default function Companies() {
         {/* Trophy Slider */}
         <Slider {...sliderSettings}>
           {companies.map((company, index) => (
-            <div key={index} className="p-4 lg:mb-2 w-full mb-1">
+            <div key={index} className="p-4 lg:mb-2 w-full mb-3">
               <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
                 {/* Trophy Image */}
                 <div className="h-52 w-full flex items-center justify-center bg-gray-50">

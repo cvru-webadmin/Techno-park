@@ -4,7 +4,7 @@ import calenderIluustration from "../image/freepik__retouch__10656.webp";
 export default function Header({scroll}) {
   return (
     // from-[#fff3e7]
-    <header className="bg-gradient-to-r from-gray-100 to-gray-50 py-20">
+    <header className="bg-gradient-to-r from-gray-100 to-gray-50 mb-8 py-16">
       <div className="container mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10 px-6 lg:px-20">
         {/* Right Side: Image or SVG */}
         <div className="flex-shrink-0 w-full lg:w-1/2">

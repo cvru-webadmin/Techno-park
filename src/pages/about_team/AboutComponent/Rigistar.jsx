@@ -7,7 +7,7 @@ const Registrar = () => {
     <>
       {/* nav and header  */}
       <nav className="h-16 bg-gray-900 text-white shadow-lg"></nav>
-      <section className="p-6 lg:p-12 justify-center flex items-center">
+      <section className="p-6 pb-0 lg:p-12 lg:pb-4 justify-center flex items-center">
         <div className="w-[100%] text-justify flex justify-evenly flex-col lg:flex-row overflow-hidden">
           {/* Section Title */}
           <h2 className="about-title lg:hidden text-left font-semibold">
@@ -65,8 +65,8 @@ const Registrar = () => {
               entrepreneurship development, incubation, and mentoring as its key
               strategies.
             </p>
-            <p className="text-gray-700 mb-4 text-justify leading-relaxed">
-              CVRUK provides an outstanding learning environment with
+            <p className="text-gray-700 lg:hidden block mb-4 text-justify leading-relaxed">
+            CVRUK provides an outstanding learning environment with
               experienced academic professionals, global experts, Professors of
               Practice, visiting and adjunct faculties, and researchers.
               Industry professionals bridge the gap between academic principles
@@ -76,7 +76,25 @@ const Registrar = () => {
               skill-based education forms the foundation for students'
               holistic development.
             </p>
-            <p className="text-gray-700 mb-4 text-justify leading-relaxed">
+            <p className="text-gray-700 lg:block hidden text-justify leading-relaxed">
+              CVRUK provides an outstanding learning environment with
+              experienced academic professionals, global experts, Professors of
+              Practice, visiting and adjunct faculties, and researchers.
+              Industry
+            </p>
+          </div>
+        </div>
+      </section>
+      <div className="lg:max-w-7xl px-6 lg:px-0 mx-auto lg:mb-10">
+        <p className="text-gray-700 lg:mb-4 lg:block hidden text-justify leading-relaxed">
+        professionals bridge the gap between academic principles
+              and real-world practices. CVRUK goes the extra mile to offer
+              library facilities, live laboratories, field exposures,
+              internships, and apprenticeship-based learning. Vocational and
+              skill-based education forms the foundation for students'
+              holistic development.
+        </p>
+      <p className="text-gray-700 mb-4 text-justify leading-relaxed">
               The university offers sports facilities, NCC, NSS, student clubs,
               innovation cells, cultural activities, and memberships in
               professional bodies to enrich campus life. Government-sponsored
@@ -89,9 +107,7 @@ const Registrar = () => {
               of the nation. Join us in building the nation during this "Amrut
               Kal."
             </p>
-          </div>
-        </div>
-      </section>
+      </div>
     </>
   );
 };

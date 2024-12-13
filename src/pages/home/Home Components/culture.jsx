@@ -10,19 +10,19 @@ import OutdoorGame from '../../../assets/images/OutdoorGame.jpg'
 const CultureAndActivities = () => {
   const events = [
     {
-      title: "Ganesh Chaturthi",
+      title: "Ganesh Chaturthi Celebration",
       description:
         "Ganesh Chaturthi is a vibrant and joyous festival that celebrates the birth of Lord Ganesha, the remover of obstacles. During this time, communities come together to honor Lord Ganesha through elaborate decorations, processions, and prayers. It is a festival that brings together creativity, devotion, and cultural unity, with participants often engaging in artistic activities, performances, and traditional rituals.",
       image: GaneshJi,
     },
     {
-      title: "Skitt Play on Social Media",
+      title: "Skitt play on social media",
       description:
         "Skitt Play on Social Media combines creativity with purpose, often addressing relatable social issues or delivering inspiring messages. These performances leverage the power of visuals and storytelling on digital platforms to engage viewers and create a lasting impact. The performances aim to raise awareness, provoke thought, and entertain, making a difference in how society perceives important themes through the lens of social media.",
       image: Skitt,
     },
     {
-      title: "Hackathon",
+      title: "Hackathon Challenge",
       description:
         "A Hackathon is an intense and fast-paced event where participants, often in teams, come together to solve real-world problems through technology and innovation. Participants work relentlessly to create functional prototypes, apps, or solutions within a short time frame, typically 24-48 hours. It fosters teamwork, creativity, and problem-solving skills, and provides an opportunity for participants to push their limits while contributing to impactful solutions.",
       image: Hackathon,
@@ -40,7 +40,7 @@ const CultureAndActivities = () => {
       image: OutdoorGame,
     },
     {
-      title: "Idea Presentation",
+      title: "Innovative Idea Presentation",
       description:
         "The Idea Presentation event is an exciting opportunity for participants to showcase their innovative ideas, projects, or solutions in front of an audience. This platform allows individuals to pitch their ideas to potential investors, collaborators, or mentors, encouraging creativity, problem-solving, and entrepreneurship. Presenters communicate their vision, strategy, and impact, with the goal of inspiring others and potentially turning ideas into actionable plans.",
       image: HerbalGallery,
@@ -56,13 +56,13 @@ const CultureAndActivities = () => {
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-600 mb-6">
           Culture & Activities
         </h2>
-        <p className="text-gray-600 text-justify md:text-center  lg:mb-8 text-sm sm:text-base">
+        <p className="text-gray-600 text-justify md:text-center text-sm sm:text-base">
           Explore the vibrant culture and engaging activities that bring our community together, fostering creativity, innovation, and unity.
         </p>
       </div>
 
 {/* Events Gallery */}
-<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto py-12">
+<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 max-w-[87%] w-full mx-auto pt-10 pb-12">
 {events.map((event, index) => (
   <div
     key={index}
@@ -108,7 +108,7 @@ const CultureAndActivities = () => {
 
       {/* Add More Events Button */}
       <div className="md:mt-0 text-center">
-        <NavLink to="/activities" onClick={()=>{("/activities");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+        <NavLink to="/activities" onClick={()=>{("/activities");window.scrollTo(0, 0);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
             Explore More
           </NavLink>
       </div>

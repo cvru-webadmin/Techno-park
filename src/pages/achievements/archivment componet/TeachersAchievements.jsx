@@ -114,7 +114,7 @@ export default function TeachersAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full">
+            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto lg:h-auto h-[420px] w-full sm:w-[90%] md:w-[80%] lg:w-full">
               {/* Achievement Image */}
               
               {achievement.image !== "" ? (

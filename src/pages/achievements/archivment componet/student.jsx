@@ -111,7 +111,7 @@ export default function StudentAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full flex flex-col">
+            <div className="bg-white border lg:h-[550px] h-[435px] border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full flex flex-col">
               {/* Achievement Image */}
               {achievement.image !== "" ? (
                 <img
@@ -137,12 +137,12 @@ export default function StudentAchievements({ achievements }) {
                 </h3>
           
                 {/* Award or Title */}
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-blue-700 mb-4 line-clamp-2 md:h-12">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-blue-700 md:h-[60px] lg:mb-0 mb-1 line-clamp-2">
                   {achievement.title}
                 </p>
           
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-gray-700 mb-3 line-clamp-4 h-28 flex-grow">
+                <p className="text-xs sm:text-sm text-justify text-gray-700 mb-3 flex-grow">
                   {achievement.description}
                 </p>
           

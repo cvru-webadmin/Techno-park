@@ -2,7 +2,7 @@ import React from "react";
 import './About.css'
 import Vaidehi from "../../../assets/images/Vaidehi.png"
 import Shruti from "../../../assets/images/Shruti2.jpeg"
-import Amit from "../../../assets/images/Amit.png"
+import Amit from "../../../assets/images/Amit.jpeg"
 import Kunal from "../../../assets/images/Kunal2.jpg"
 import Gourav from "../../../assets/images/Gourav2.jpg"
 import Ganesh from "../../../assets/images/Ganesh_Nimje.jpeg"
@@ -60,7 +60,7 @@ const Card = ({ image, title, description, name }) => {
         <img
           src={image}
           alt={name}
-          className="lg:w-52 lg:h-52 object-cover w-[150px] h-[150px] md:w-[200px] md:h-[200px] shadow-lg hover:shadow-xl rounded-full"
+          className="lg:w-52 lg:h-52 object-top object-cover w-[150px] h-[150px] md:w-[200px] md:h-[200px] shadow-lg hover:shadow-xl rounded-full"
         />
       </div>
 

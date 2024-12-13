@@ -59,7 +59,7 @@ const AboutSchool = () => {
     <div className="w-full lg:w-[45%]">
       {/* Main Heading */}
       <h2 className="about-title lg:block hidden font-semibold -mt-4">
-        About Our Department
+        About Our School
       </h2>
     
       {/* Introduction Paragraph */}
@@ -82,7 +82,7 @@ const AboutSchool = () => {
     
       {/* Call-to-Action */}
       <div className="w-full lg:w-1/2 flex mt-4 justify-center lg:justify-start">
-          <NavLink to="/contact"
+          <NavLink to="/contact" onClick={()=>{("/contact");window.scrollTo(0, 0);}}
             className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-10 text-base sm:text-lg font-semibold rounded-md shadow-md hover:scale-105 transition-transform duration-300 ease-in-out"
            >
           Contact Us

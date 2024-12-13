@@ -32,7 +32,7 @@ const Achievements = () => {
 
                 {/* Explore More Button */}
                 <div className='flex justify-center'>
-                <NavLink to="/achievements" onClick={()=>{("/achievements");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
+                <NavLink to="/achievements" onClick={()=>{("/achievements");window.scrollTo(0, 0);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-4 py-3 px-10 text-base font-semibold rounded-md shadow-md transform transition-all duration-300 ease-in-out hover:scale-105">
                   View Achievements
                 </NavLink>
                 </div>

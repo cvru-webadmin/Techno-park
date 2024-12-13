@@ -6,7 +6,7 @@ import Ai_lab from '../../../assets/BestSchool2021.jpg';
 const awardsData = [
   {
     year: "2024",
-    awardName: "Best Department Award 2024",
+    awardName: "Department Excellence Award 2024",
     description: "The 'Best Department Award 2024' recognizes the Techno Park in the School of Computer Science and Information Technology at Dr. C.V. Raman University for its outstanding performance, innovation, and collaboration. This prestigious award celebrates the department's remarkable contributions to academia and its unwavering commitment to advancing the university’s mission. Through continuous research, development, and excellence in teaching, the Techno Park has set a high standard of achievement, shaping the future of computer science and technology education.",
     image: Award // Add the path to the image for 2024 award
   },
@@ -56,7 +56,7 @@ export default function ExcellenceAwards() {
         >
           {/* Left Section: Image */}
           <div className="flex justify-center mb-8 lg:mb-0 lg:w-1/2">
-            <div className="relative w-full lg:max-w-[560px] h-[300px] overflow-hidden">
+            <div className="relative w-full lg:max-w-[560px] h-[350px] overflow-hidden">
               <img
                 src={award.image}
                 alt={award.awardName}
@@ -72,7 +72,7 @@ export default function ExcellenceAwards() {
 
           {/* Right Section: Award Information */}
           <div
-            className={`space-y-4 lg:space-y-6 text-center lg:w-1/2 ${
+            className={`space-y-4 lg:my-auto text-center lg:w-1/2 ${
               index % 2 === 0 ? "lg:text-left" : "lg:text-right"
             }`}
           >

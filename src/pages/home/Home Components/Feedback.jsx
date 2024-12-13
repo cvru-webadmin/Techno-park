@@ -5,7 +5,8 @@ const GoToFeedback = () => {
   const navigate = useNavigate();
 
   const handleFeedbackRedirect = () => {
-    navigate('/feedback'); // Ensure this route matches your feedback form's location
+    navigate('/feedback');
+    window.scrollTo(0, 0); // Ensure this route matches your feedback form's location
   };
 
   return (

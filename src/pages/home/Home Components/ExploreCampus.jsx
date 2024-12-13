@@ -64,7 +64,7 @@ const CampusExplore = () => {
           <p className="text-gray-600 mb-8 text-sm sm:text-base lg:text-lg">
             Techno Park School: Empowering future innovators with cutting-edge technology and hands-on learning in a vibrant, collaborative environment.
           </p>
-          <NavLink to="/campus" onClick={()=>{("/campus");useEffect(() => {window.scrollTo(0, 0);},[]);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+          <NavLink to="/campus" onClick={()=>{("/campus");window.scrollTo(0, 0);}} className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 sm:py-3 sm:px-8 text-sm sm:text-lg font-semibold rounded-md shadow-md transform transition duration-300 ease-in-out hover:scale-105">
             Take a Virtual Tour
           </NavLink>
         </div>

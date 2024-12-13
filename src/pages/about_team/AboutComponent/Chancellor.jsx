@@ -7,7 +7,7 @@ const Chancellor = () => {
     <>
       {/* nav and header  */}
       <nav className="h-16 bg-gray-900 text-white shadow-lg"></nav>
-      <section className="p-6 lg:p-12 justify-center flex items-center">
+      <section className="p-6 pb-0 lg:p-12 lg:pb-4 justify-center flex items-center">
         <div className="w-[100%] text-justify flex justify-evenly flex-col lg:flex-row overflow-hidden">
           {/* Section Title */}
           <h2 className="about-title lg:hidden text-left font-semibold">
@@ -64,8 +64,8 @@ const Chancellor = () => {
               CV Raman University (Khandwa) the best option for a promising
               career.
             </p>
-            <p className="text-gray-700 mb-4 text-justify leading-relaxed">
-              Dr. CV Raman University (Khandwa) offers a large number of
+            <p className="text-gray-700 lg:hidden block mb-4 text-justify leading-relaxed">
+            Dr. CV Raman University (Khandwa) offers a large number of
               programs ranging from one-month certificate courses to diploma,
               UG, and PG level programs. All courses are designed to include
               emerging technologies from the field, meeting industrial needs,
@@ -73,7 +73,23 @@ const Chancellor = () => {
               sponsoring body of Dr. CV Raman University (Khandwa), are pioneers
               of skill education at a national level.
             </p>
-            <p className="text-gray-700 mb-4 text-justify leading-relaxed">
+            <p className="text-gray-700 lg:block hidden text-justify leading-relaxed">
+              Dr. CV Raman University (Khandwa) offers a large number of
+              programs ranging from one-month certificate courses to diploma,
+              UG, and PG level programs. All courses are designed to include
+              emerging technologies from the field, meeting industrial needs,
+              while following
+            </p>
+          </div>
+        </div>
+      </section>
+      <div className="lg:max-w-7xl px-6 lg:px-0 mx-auto lg:mb-10">
+        <p className="text-gray-700 lg:mb-4 lg:block hidden text-justify leading-relaxed">
+        government-approved skill frameworks. AISECT, the
+              sponsoring body of Dr. CV Raman University (Khandwa), are pioneers
+              of skill education at a national level.
+        </p>
+      <p className="text-gray-700 mb-4 text-justify leading-relaxed">
               The teaching-learning methodology at the university emphasizes
               hands-on experience through various Skill Academies under
               conventional teaching departments. The pedagogy includes
@@ -88,9 +104,7 @@ const Chancellor = () => {
               will have a unique learning experience and campus life that
               transforms them into competent professionals and worthy citizens.
             </p>
-          </div>
-        </div>
-      </section>
+      </div>
     </>
   );
 };

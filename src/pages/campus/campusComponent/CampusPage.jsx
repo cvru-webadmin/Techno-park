@@ -196,12 +196,12 @@ const CampusPage = () => {
               <img
                 src={section.image}
                 alt={section.title}
-                className="sm:h-[470px] w-full md:mb-5 sm:object-cover object-contain shadow-lg"
+                className="sm:h-[470px] h-[250px] w-full md:mb-5 sm:object-cover object-cover shadow-lg"
               />
             </div>
             <div className={`lg:w-[44%] lg:h-[470px] h-auto mt-3 w-full lg:px-14 md:px-8 px-6 py-4 ${index % 2 !== 0 ?"lg:py-1 md:py-0":"w-full sm:px-[70px] sm:py-[45px] md:py-[20px] bg-[#e3e3e373] lg:py-10 lg:w-[66%] mt-5 md:mt-0"}`}>
               <h2 className="md:text-[2.2rem] lg:text-[1.8rem] text-[1.4rem] font-bold">{section.title}</h2>
-              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/IOT" className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
+              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/IOT" onClick={()=>{("/IOT");window.scrollTo(0, 0);}} className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
             </div>
           </div>
         ))}
