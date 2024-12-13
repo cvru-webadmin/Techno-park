@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import Chancellorsir from "../../../assets/images/callcor sir.jpg";
+import Chancellorsir2 from '../../../assets/images/Chancellorsir.jpg'
 
 const Chancellor = () => {
   return (
@@ -18,7 +19,12 @@ const Chancellor = () => {
             <img
               src={Chancellorsir}
               alt="Chancellor Sir"
-              className="object-cover object-top h-full w-full lg:w-[450px] transition-transform duration-300 group-hover:scale-105"
+              className="object-cover object-top md:hidden lg:block block h-full w-full lg:w-[450px] transition-transform duration-300 group-hover:scale-105"
+            />
+                <img
+              src={Chancellorsir2}
+              alt="Chancellor Sir"
+              className="object-cover object-top md:block lg:hidden hidden h-full w-full lg:w-[450px] transition-transform duration-300 group-hover:scale-105"
             />
             {/* Overlay Effect */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
