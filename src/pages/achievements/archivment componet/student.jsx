@@ -111,7 +111,7 @@ export default function StudentAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-            <div className="bg-white border lg:h-[550px] h-[435px] border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full flex flex-col">
+            <div className="bg-white border lg:h-[550px] md:h-[550px] h-[435px] border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full flex flex-col">
               {/* Achievement Image */}
               {achievement.image !== "" ? (
                 <img
@@ -130,14 +130,14 @@ export default function StudentAchievements({ achievements }) {
               )}
           
               {/* Achievement Details */}
-              <div className="flex-1 p-4 sm:p-6 md:p-8 lg:p-6 flex flex-col justify-between">
+              <div className="flex-1 p-4 sm:p-6 md:p-4 lg:p-6 flex flex-col justify-between">
                 {/* Title */}
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
                   {achievement.name}
                 </h3>
           
                 {/* Award or Title */}
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-blue-700 md:h-[60px] lg:mb-0 mb-1 line-clamp-2">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-blue-700 md:h-[60px] lg:mb-0 md:mb-0 mb-1 line-clamp-2">
                   {achievement.title}
                 </p>
           

@@ -12,8 +12,11 @@ import StudentAchievements from "./archivment componet/student";
 import ExcellenceAwards from "./archivment componet/ExcellenceAwards";
 // import InovationAward1 from "./../assets/Trophies/BestIdea1.jpg"
 
-
 // student archivment image import 
+import RajyaAnand from './../../assets/Student archivment/RajyaAnand.jpeg'
+import WomanDay from './../../assets/Student archivment/WomanDay.jpeg'
+import IPRKhushi from './../../assets/Student archivment/IPRKhushi.jpeg'
+import KhushiHackCraft from './../../assets/Student archivment/khushi_Hackathon.jpg' 
 import solor from "./../../assets/Student archivment/solar2.jpg"
 import merit from "./../../assets/Student archivment/merit.jpg"
 import Inovation from "./../../assets/Student archivment/Inovation.jpg"
@@ -340,7 +343,7 @@ const AchievementsPage = () => {
       description:
         "Khushi Yadav participated in the Web Designing Challenge during the Hackcraft event, demonstrating her creativity and technical skills in crafting innovative and user-friendly web designs. Her efforts were recognized with a certificate of participation.",
       year: 2024,
-      image: "", // No image provided
+      image: KhushiHackCraft, // No image provided
     },
     {
       name: "IPR Seminar",
@@ -372,7 +375,7 @@ const AchievementsPage = () => {
       description:
         "Khushi Yadav participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
       year: 2024,
-      image: "", // No image provided
+      image: IPRKhushi, // No image provided
     },  
     {
       name: "Maths Exhibition",
@@ -396,11 +399,27 @@ const AchievementsPage = () => {
       image: MathExivition3  // Empty string for image path
     },
     {
+      name: "Woman's Day Celebration",
+      title: "Participation in Woman's Day Programs",
+      description:
+        "Khushi Yadav participated in the Women’s Day Program, engaging in activities like sack race, kho-kho, documentary making, and managing a food stall. Her dedication was recognized with a certificate of participation, reflecting her enthusiasm and teamwork.",
+      year: 2024,
+      image: WomanDay, // No image provided
+    },  
+    {
       name: "Debate Competition",
       title: "Participation in Debate Competition",
       description: "Awarded for outstanding participation in the Debate Competition, securing the first position, this recognition highlights exceptional communication skills, critical thinking, and the ability to engage effectively in discussions, setting a high standard for future participants.",
       year: 2023,
       image: Debt1,
+    },  
+    {
+      name: "Rajya Anand Sansthan Workshop",
+      title: "Participation in Rajya Anand Sansthan Seminar",
+      description:
+        "Khushi Yadav participated in the Rajya Anand Sansthan Workshop, focusing on well-being and mindfulness. Her involvement earned a certificate of participation, highlighting her commitment to growth.",
+      year: 2024,
+      image: RajyaAnand, // No image provided
     },    
   ];
 
