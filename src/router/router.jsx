@@ -25,7 +25,6 @@ import Chancellor from '../pages/about_team/AboutComponent/Chancellor';
 import AboutPage from '../pages/about_team/AboutPage';
 import ViceChancellor from '../pages/about_team/AboutComponent/ViceChancellor';
 import Registrar from '../pages/about_team/AboutComponent/Rigistar';
-import FacultyPage from '../admin_panel/pages/faculty/facultyPage';
 
 const router =createBrowserRouter([
     {
