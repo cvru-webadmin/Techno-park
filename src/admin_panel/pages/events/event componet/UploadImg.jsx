@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import {useDropzone} from 'react-dropzone';
-import { FireContext } from "../../../../Context/context";
+import { FireContext } from "../../../../context/context";
 
 const UploadModal = ({ isOpen, onClose, setImageUrl }) => {
     const {acceptedFiles, getRootProps, getInputProps,isDragActive} = useDropzone();

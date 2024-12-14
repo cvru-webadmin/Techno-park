@@ -84,27 +84,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Hamburger Menu for Mobile */}
-          <button
-            className="hidden focus:outline-none"
-            onClick={toggleMobileMenu}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-
           {/* Navigation Links */}
           <ul
             className={`flex-col lg:flex-row lg:flex xl:space-x-6 lg:space-x-3 absolute z-30 lg:z-0 lg:space-y-0 space-y-5 lg:py-0 py-5 top-[3.6rem] lg:top-0 w-full lg:w-auto lg:right-0 right-0 pl-5 lg:relative bg-gray-900 lg:bg-transparent ${

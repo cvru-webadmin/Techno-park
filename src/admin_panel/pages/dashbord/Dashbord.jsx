@@ -3,8 +3,8 @@ import Welocome_model from './dashbord componet/welocome_model';
 import DashboardPage from './dashbord componet/UnansweredQuestions';
 import Topcards from './dashbord componet/Topcards';
 import UnansweredQuestions from './dashbord componet/UnansweredQuestions';
-import { FireContext } from '../../../Context/context';
 import AnsweredNotAnsweredGraph from './dashbord componet/AnswerGraph';
+import { FireContext } from '../../../context/context';
 
 export default function Dashbord() {
  
@@ -71,7 +71,7 @@ export default function Dashbord() {
       {/* main dashbord start here---- */}
       <div className='min-h-screen bg-gray-100 px-3 pb-6 w-full'>
       <Topcards isTime={isTime} events={totalEvents} feedbacks={totalFeedbacks} Inqueris={totalInqueies} />
-      {/* <AnsweredNotAnsweredGraph answered={answer} notAnswered={notAnswer} /> */}
+      {/* <AnsweredNotAnsweredGraph answered={answer} notAnswered={notAnswer} />  */}
       <UnansweredQuestions Inqueris={totalInqueies} />
       </div>
     </section>
