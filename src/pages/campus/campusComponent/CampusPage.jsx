@@ -21,6 +21,7 @@ import GardenStudents from '../../../assets/images/GardenStudent.jpg'
 import LibraryStudents from '../../../assets/images/LibraryStudent.jpg'
 import Studio from '../../../assets/images/Studio.jpg'
 import Canteen from '../../../assets/images/Canteen.jpg'
+import Parking from '../../../assets/images/Parking.jpg'
 
   const slides = [
     {
@@ -110,6 +111,15 @@ const data = [
       "A college canteen is a bustling and essential hub designed to cater to the diverse needs of students, faculty, and staff by providing affordable, nutritious, and tasty food in a lively environment. It features a spacious seating arrangement with tables and chairs that can accommodate large groups, fostering a sense of community and offering a space for informal discussions, group studies, or simply unwinding during breaks. The menu typically includes a wide range of freshly prepared meals, snacks, beverages, and desserts, catering to various dietary preferences and regional tastes. Equipped with clean and hygienic facilities, the canteen ensures high standards of food safety and quality. Beyond dining, the canteen serves as a vibrant social space where students can relax, network, and rejuvenate between academic sessions. Its welcoming ambiance, combined with its ability to provide an affordable and refreshing culinary experience, makes the college canteen an integral part of campus life, supporting both nourishment and camaraderie.",
     image: Canteen,
   },
+  {
+    title: "Parking",
+    description: 
+    "The college parking facility is a well-organized and secure space designed to cater to the needs of students, faculty, and visitors. It features designated spots for two-wheelers, four-wheelers, and bicycles, with proper lighting and surveillance ensuring safety and convenience. The facility includes spaces for individuals with disabilities, promoting inclusivity and accessibility. Regular maintenance and cleanliness provide a hassle-free experience for all users. Strategically located for easy access, the parking area enhances campus functionality and supports a seamless commuting experience. Security personnel and cameras ensure protection against unauthorized access, while the efficient layout minimizes congestion during peak hours.",
+    image: Parking,
+  }
+  
+
+  
 ];
 
 const CampusPage = () => {
