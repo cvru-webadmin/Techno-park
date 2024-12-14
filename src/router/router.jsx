@@ -18,7 +18,6 @@ import AdminLogin from '../admin_panel/componet/sub Componet/Login';
 import NotFoundPage from './Componet/NotFound';
 import AdminRoute from './Componet/AdminRoute';
 import Enquery from '../admin_panel/pages/enquery/Enquery';
-import FacultyPage from '../admin_panel/pages/faculty/facultyPage';
 import EventPage from '../admin_panel/pages/events/EnevetPage';
 import FeedbackPage from '../admin_panel/pages/feedback/FeedbackPage';
 import FeedbackForm from '../pages/Feedback form/FeedbackFrom';
