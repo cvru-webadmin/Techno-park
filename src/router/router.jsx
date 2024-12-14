@@ -96,7 +96,6 @@ const router =createBrowserRouter([
         ),
         children: [
             { path: "/admin",element: <Dashbord /> },
-            { path: "faculty",element: <FacultyPage /> },
             { path: "events",element: <EventPage /> },
             { path: "feedbacks",element: <FeedbackPage /> },
             { path: "enquers",element: <Enquery /> },
