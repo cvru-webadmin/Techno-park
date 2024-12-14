@@ -4,7 +4,7 @@ import DashboardPage from './dashbord componet/UnansweredQuestions';
 import Topcards from './dashbord componet/Topcards';
 import UnansweredQuestions from './dashbord componet/UnansweredQuestions';
 import AnsweredNotAnsweredGraph from './dashbord componet/AnswerGraph';
-import { FireContext } from '../../../context/context';
+import { FireContext } from '../../../Context/context';
 
 export default function Dashbord() {
  
