@@ -12,7 +12,6 @@ import Placement from '../pages/placement/Placement';
 import Admin from '../admin_panel/Admin_App';
 import Dashbord from '../admin_panel/pages/dashbord/Dashbord';
 import Contact from '../pages/contact us/Contact';
-import { Contact2 } from 'lucide-react';
 import ContactPage from '../pages/contact us/Contact2';
 import AdminLogin from '../admin_panel/componet/sub Componet/Login';
 import NotFoundPage from './Componet/NotFound';
