@@ -13,24 +13,24 @@ import ExcellenceAwards from "./archivment componet/ExcellenceAwards";
 // import InovationAward1 from "./../assets/Trophies/BestIdea1.jpg"
 
 // student archivment image import 
-import RajyaAnand from './../../assets/Student archivment/RajyaAnand.jpeg';
-import WomanDay from './../../assets/Student archivment/WomanDay.jpeg';
-import IPRKhushi from './../../assets/Student archivment/IPRKhushi.jpeg';
-import KhushiHackCraft from './../../assets/Student archivment/khushi_Hackathon.jpg';
-import solor from "./../../assets/Student archivment/solar2.jpg";
-import merit from "./../../assets/Student archivment/merit.jpg";
-import Inovation from "./../../assets/Student archivment/Inovation.jpg";
-import Inovation2 from "./../../assets/Student archivment/Inovation2.jpg";
-import HackCraft2 from './../../assets/Student archivment/hackathon.jpg';
-import shooting from "./../../assets/Student archivment/shothing.png";
-import HackCraft1 from "./../../assets/Student archivment/Hackcraft1.jpg";
-import LogoDesign1 from "./../../assets/Student archivment/LogoDesign1.jpg";
-import LogoDesign2 from "./../../assets/Student archivment/LogoDesign2.jpg";
-import Ideapresent1 from "./../../assets/Student archivment/IdeaPresent1.jpg";
-import MathExivition3 from "./../../assets/Student archivment/Math3.jpg";
-import MathExivition from "./../../assets/Student archivment/GeetMaths.jpg";
-import Debt1 from "./../../assets/Student archivment/Debet 1.jpg";
-import Aditya from "./../../assets/Student archivment/Aditya.jpg";
+import RajyaAnand from './../../assets/Student_archivment/RajyaAnand.jpeg';
+import WomanDay from './../../assets/Student_archivment/WomanDay.jpeg';
+import IPRKhushi from './../../assets/Student_archivment/IPRKhushi.jpeg';
+import KhushiHackCraft from './../../assets/Student_archivment/khushi_Hackathon.jpg';
+import solor from "./../../assets/Student_archivment/solar2.jpg";
+import merit from "./../../assets/Student_archivment/merit.jpg";
+import Inovation from "./../../assets/Student_archivment/Inovation.jpg";
+import Inovation2 from "./../../assets/Student_archivment/Inovation2.jpg";
+import HackCraft2 from './../../assets/Student_archivment/hackathon.jpg';
+import shooting from "./../../assets/Student_archivment/shothing.png";
+import HackCraft1 from "./../../assets/Student_archivment/Hackcraft1.jpg";
+import LogoDesign1 from "./../../assets/Student_archivment/LogoDesign1.jpg";
+import LogoDesign2 from "./../../assets/Student_archivment/LogoDesign2.jpg";
+import Ideapresent1 from "./../../assets/Student_archivment/IdeaPresent1.jpg";
+import MathExivition3 from "./../../assets/Student_archivment/Math3.jpg";
+import MathExivition from "./../../assets/Student_archivment/GeetMaths.jpg";
+import Debt1 from "./../../assets/Student_archivment/Debet 1.jpg";
+import Aditya from "./../../assets/Student_archivment/Aditya.jpg";
 
 
 //techers archivment image import
@@ -40,6 +40,10 @@ import KunalCyber from "../../assets/Techers Archivment/Cyber Security Certifica
 import KunalAqua from "../../assets/Techers Archivment/AQUA ASPIRE'24.png"
 import KunalExcilance from "../../assets/Techers Archivment/image.png"
 import AiPaper from "../../assets/Techers Archivment/AiPaper.png"
+
+
+//cusror import 
+import AwardCursor from "./archivment componet/AwardCursor.png"
 
 
 const AchievementsPage = () => {
@@ -430,7 +434,11 @@ const AchievementsPage = () => {
   
 
   return (
-    <div className=" min-h-screen">
+    <div className=" min-h-screen"
+    style={{
+      cursor: `url(${AwardCursor}), auto`,
+    }}
+    >
       {/* Header Section */}
       <Header scroll={gotoAchivment} />
        {/* Trophies  */}

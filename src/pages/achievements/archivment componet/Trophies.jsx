@@ -58,6 +58,7 @@ export default function Trophies({ trophies }) {
                   <img
                     src={trophy.image}
                     alt={`${trophy.title} image`}
+                    style={{mixBlendMode:"darken"}}
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>

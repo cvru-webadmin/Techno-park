@@ -18,12 +18,14 @@ const PrevArrow = (props) => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="w-6 h-6 text-gray-600 bg-black/20 p-0.5"
-      >
+        className="w-8 h-8 text-gray-800 rounded-md absolute top-0 bg-white p-1.5"
+        style={{
+          boxShadow:"0.5px 0.5px 60px rgb(107 114 128),Inset -1px -1px 5px rgb(131 137 149 1)"
+        }} >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={3}
           d="M15 19l-7-7 7-7"
         />
       </svg>
@@ -35,7 +37,7 @@ const NextArrow = (props) => {
   const { className, onClick } = props;
   return (
     <div
-      className={`${className} absolute right-0 top-1/2 rounded-full p-2 shadow-lg cursor-pointer z-10`}
+      className={`${className} relative right-0 top-1/2 rounded-full p-2 cursor-pointer z-10`}
       onClick={onClick}
     >
       <svg
@@ -43,12 +45,15 @@ const NextArrow = (props) => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="w-6 h-6 text-gray-600 bg-black/20 p-0.5"
+        className="w-8 h-8 text-gray-800 rounded-md absolute top-0 bg-white p-1.5"
+        style={{
+          boxShadow:"0.5px 0.5px 60px rgb(107 114 128),Inset -1px -1px 5px rgb(131 137 149 1)"
+        }}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={3}
           d="M9 5l7 7-7 7"
         />
       </svg>
