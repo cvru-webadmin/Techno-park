@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import FAQ from './componet/FAQ';
 import FAQSection from './componet/FAQ';
 import { FireContext } from '../../Context/context';
-import { Link } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import MessageReply from './componet/Replay';
 
@@ -110,7 +110,7 @@ const ContactUs = () => {
               </div>
               
               {/* card  */}
-              <div className="gap-5 border-2 border-gray-300/30 h-auto group hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-sm flex p-5 rounded-lg">
+              <a href="mailto:info@cvru.ac.in" className="gap-5 border-2 border-gray-300/30 h-auto group hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-sm flex p-5 rounded-lg">
                 <span className='h-full'>
                  <svg xmlns="http://www.w3.org/2000/svg" className='text-blue-800 transition-colors duration-300  group-hover:bg-[var(--DarkBlue)] group-hover:text-white  p-3 border-2 shadow-sm rounded-md h-14 w-14 border-gray-400/20' viewBox="0 0 24 24">
                  	<rect width="24" height="24" fill="none" />
@@ -123,9 +123,9 @@ const ContactUs = () => {
                 <p className="text-gray-500 text-sm">we are here to help you</p>
                 <p className="text-gray-700 text-sm">info@cvru.ac.in</p>
                 </span>
-              </div>
+              </a>
               {/* card  */}
-              <div className="gap-5 border-2 border-gray-300/30 h-auto group hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-sm flex p-5 rounded-lg">
+              <a target='_blank' href="https://www.google.co.in/maps/place/Dr.+C.V.+Raman+University/@21.8222294,76.2278547,3a,75y/data=!3m8!1e2!3m6!1sAF1QipOYMP2iK141W7tuc9yJgSIs0EIsU-ZZ_-XyYK3f!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOYMP2iK141W7tuc9yJgSIs0EIsU-ZZ_-XyYK3f%3Dw114-h86-k-no!7i4160!8i3120!4m11!1m2!2m1!1scvruk+!3m7!1s0x3bd8116f759b43d1:0x7f69c9b8c7674282!8m2!3d21.8222294!4d76.2278547!10e5!15sCgVjdnJ1a1oHIgVjdnJ1a5IBEnByaXZhdGVfdW5pdmVyc2l0eZoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOSE9FMUhjRGRCUlJBQuABAPoBBAgAEBQ!16s%2Fg%2F11fk1jvk4m?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" className="gap-5 border-2 border-gray-300/30 h-auto group hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-sm flex p-5 rounded-lg">
                 <span className='h-full'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='text-blue-800 transition-colors duration-300  group-hover:bg-[var(--DarkBlue)] group-hover:text-white  p-3 border-2 shadow-sm rounded-md h-14 w-14 border-gray-400/20' viewBox="0 0 512 512">
                  	<rect width="512" height="512" fill="none" />
@@ -138,7 +138,8 @@ const ContactUs = () => {
                 <p className="text-gray-500 text-sm">come viste University</p>
                 <p className="text-gray-700 text-sm">Balkhandsura,chhaigaon Makhan, Khandwa MP, 450771</p>
                 </span>
-              </div>
+              </a>
+
               {/* card  */}
               <div className="gap-5 border-2 border-gray-300/30 h-auto group hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-sm flex p-5 rounded-lg">
                 <span className='h-full'>
