@@ -13,6 +13,7 @@ export default function Footer_navigation() {
           { to: "/event", label: "Event & News" },
           { to: "/contact", label: "Contact" },
           { to: "/feedback", label: "Feedback" },
+          { to: "/admin", label: "Admin" },
         ].map((link, index) => (
           <li key={index}>
             <NavLink
