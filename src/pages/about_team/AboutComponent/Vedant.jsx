@@ -73,7 +73,7 @@ export default function Vedant() {
       </section>
       <section className='lg:px-24 px-5 text-gray-700 text-justify pb-10'>
        {/* Leadership & Contributions */}
-       <div>
+       <div className='pb-5'>
                 <h3 className="text-2xl font-semibold text-blue-700">
                   Leadership & Contributions
                 </h3>
@@ -86,7 +86,7 @@ export default function Vedant() {
               </div>
 
               {/* Global Reach & Influence */}
-              <div>
+              <div className='pb-5'>
                 <h3 className="text-2xl font-semibold text-blue-700">
                   Global Reach & Influence
                 </h3>
@@ -96,8 +96,8 @@ export default function Vedant() {
               </div>
 
               {/* Career & Research Achievements */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-700">
+              <div className='pb-5'>
+                <h3 className="md:text-2xl text-xl text-nowrap font-semibold text-blue-700">
                   Career & Research Achievements
                 </h3>
                 <p>
@@ -109,7 +109,7 @@ export default function Vedant() {
               </div>
 
               {/* Additional Contributions */}
-              <div>
+              <div className='pb-5'>
                 <h3 className="text-2xl font-semibold text-blue-700">
                   Additional Contributions
                 </h3>
