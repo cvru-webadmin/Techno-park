@@ -18,7 +18,7 @@ const courses = {
           name: "Diploma in Computer Applications (DCA)",
           duration: "1 Year",
           description: "An introductory program designed to impart foundational knowledge in computer applications, including programming, office automation, and IT fundamentals.",
-          fees: "₹ per year",
+          fees: "₹ 12,000 per year",
           eligibility: "10+2 with any subject.",
           image: DCA, // Replace with actual image URL
         },
@@ -26,7 +26,7 @@ const courses = {
           name: "Post Graduate Diploma in Computer Applications (PGDCA)",
           duration: "1 Year",
           description: "A postgraduate program emphasizing advanced topics in computer applications, database management, and software development.",
-          fees: "₹ per year",
+          fees: "₹ 15,000 per year",
           eligibility: "Graduate in any discipline.",
           image: PGDCA, // Replace with actual image URL
         },
@@ -36,8 +36,8 @@ const courses = {
           name: "Bachelor of Computer Applications (BCA)",
           duration: "3 Years",
           description: "A comprehensive undergraduate program focused on computer programming, software development, and IT infrastructure management.",
-          fees: "₹ per year",
-          eligibility: "10+2 (PCB/PCM/Commerce/Agriculture).",
+          fees: "₹ 25,000 per year",
+          eligibility: "10+2 with any subject.",
           image: BCA, // Replace with actual image URL
         },
         {
@@ -54,8 +54,8 @@ const courses = {
           name: "Master of Computer Applications (MCA)",
           duration: "2 Years",
           description: "A professional master's degree focusing on advanced computing skills, software engineering, and IT project management.",
-          fees: "₹ per year",
-          eligibility: "Graduation with Mathematics.",
+          fees: "₹ 42,000 per year",
+          eligibility: "Graduation(e.g., B.E., B.Tech., B.Sc., B.Com., B.A., B.Voc., BCA, etc.) with at least 50% marks(45% for reserved categories).",
           image: MCA, // Replace with actual image URL
         },
         {
@@ -63,7 +63,7 @@ const courses = {
           duration: "2 Years",
           description: "An advanced program specializing in system design, big data analytics, and emerging IT technologies.",
           fees: "₹ per year",
-          eligibility: "B.Sc.(Maths/IT/CS), BCA.",
+          eligibility: "B.Sc.(IT/CS/BCA), B.E.(CS/IT).",
           image: MSC, // Replace with actual image URL
         },
     ],

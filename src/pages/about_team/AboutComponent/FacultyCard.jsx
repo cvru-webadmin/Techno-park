@@ -6,6 +6,7 @@ import Amit from "../../../assets/images/Amit.jpeg"
 import Kunal from "../../../assets/images/Kunal2.jpg"
 import Gourav from "../../../assets/images/Gourav2.jpg"
 import Ganesh from "../../../assets/images/Ganesh_Nimje.jpeg"
+import Vedant from "../../../assets/images/VedantAhluwalia.png"
 
 const cardData = [
   {
@@ -48,7 +49,14 @@ const cardData = [
     title: "Research Assistant",
     image: Ganesh,
     description:
-      "With 5 years of professional experience, Mr. Nimje specializes in Full Stack Development. His teaching approach emphasizes real-world application, empowering students with hands-on skills in web and software development.",
+    "With 5 years of professional experience, Mr. Nimje specializes in Full Stack Development. His teaching approach emphasizes real-world application, empowering students with hands-on skills in web and software development.",
+  },
+  {
+    name: "Mr. Vedant Ahluwalia",
+    title: "Professor of Practice(AI)",
+    image: Vedant,
+    description:
+    "Vedant Ahluwalia is a pioneering figure in Artificial Intelligence Brain Technology and the Managing Director of Dataviv Technologies. With an MS in AI from Stanford University, he has worked under the Father of AI Brain Technology and contributed to groundbreaking innovations. His experience spans AI research, billion-dollar startups (Coursera, Earnin), fintech, and government technology projects. He has also collaborated with NASA professors, the White House, and Stanford Angels in investment and advisory roles. His global impact includes work across healthcare, education, pharmaceuticals, real estate, and IT, influencing over 32 corporates, 56 startups, and 9 government institutions."
   },
 ];
 

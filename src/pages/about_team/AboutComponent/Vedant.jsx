@@ -1,5 +1,5 @@
 import './About.css';
-import Chancellorsir from "../../../assets/images/vedant.png";
+import VedantImage from "../../../assets/images/vedant.png";
 
 // import VedantImage from '../../../assets/images/vedant.png';
 
@@ -17,7 +17,7 @@ export default function Vedant() {
           {/* Image Container */}
           <div className="relative lg:h-[520px] h-[400px] overflow-hidden rounded-lg shadow-lg group">
             <img
-              src={Chancellorsir}
+              src={VedantImage}
               alt="Vedant Ahluwalia"
               className="object-cover object-top md:hidden lg:block block h-full w-full lg:w-[450px] transition-transform duration-300 group-hover:scale-105"
             />
@@ -26,25 +26,39 @@ export default function Vedant() {
             {/* Image Label */}
             <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded-lg shadow-md">
               <span className="text-gray-800 font-semibold text-lg">
-                Vedant Ahluwalia
+                Mr. Vedant Ahluwalia
               </span>
-              <p className="text-sm text-gray-600">Founder Profile - Dataviv Technologies</p>
+              <p className="text-sm text-gray-600">Professor of Practice(AI)</p>
             </div>
           </div>
 
           {/* Right Column: Content */}
-          <div className="lg:w-[55%] mt-6 lg:mt-0 text-gray-700 space-y-6">
-            
-            {/* Section Title for Large Screens */}
-            <h2 className="about-title lg:block hidden font-semibold">
-              Vedant Ahluwalia
+          <div className="lg:w-[55%] mt-6 lg:-mt-2 text-gray-700 space-y-4">
+          <h2 className="about-title lg:block hidden font-semibold">
+          Professor of Practice(AI)
             </h2>
+            {/* Section Title for Large Screens */}
+            <p className="text-gray-700 lg:mt-0 mt-5">
+              <h3 className="text-2xl font-semibold text-blue-700">
+              Mr. Vedant Ahluwalia
+              </h3>
+              <p className="about-description">
+              Managing Director Dataviv Technology
+              </p>
+            </p>
+            <p className="text-gray-700 mb-4 text-justify leading-relaxed">
+            Vedant Ahluwalia is a trailblazer in artificial intelligence brain technology and the managing director of Dataviv Technologies. Holding an MS in AI from Stanford University, he has worked under the father of AI brain technology, including the creator of Google’s AI Brain and the inventor of the self-driving car. His contributions extend to AI research, fintech, edtech, and government technology projects, having played a key role in the early growth of billion-dollar startups like Coursera and Earnin.<br/><br/>
 
-            {/* Profile Details */}
-            <div className="space-y-6">
-              
-              {/* Education & AI Expertise */}
-              <div>
+He has collaborated with NASA professors, the White House, and Stanford Angels, supporting investments in high-impact ventures such as Unacademy and Tread (acquired by Tata). Additionally, he has been instrumental in global AI advancements, working with corporations, startups, universities, and government institutions across regions including the USA, Canada, India, Singapore, Dubai, Germany, and Australia.
+
+His influence spans healthcare, pharmaceuticals, education, real estate, media, advertising, and IT, driving innovation and fostering the next generation of AI-powered solutions on a global scale.            </p>
+          </div>        
+        </div>
+        
+      </section>
+      <section className='lg:px-24 px-5 text-gray-700 text-justify pt-5 pb-10'>
+                      {/* Education & AI Expertise */}
+                      <div className='pb-5'>
                 <h3 className="text-2xl font-semibold text-blue-700">
                   Education & AI Expertise
                 </h3>
@@ -54,7 +68,7 @@ export default function Vedant() {
               </div>
 
               {/* Professional Experience */}
-              <div>
+              <div className='pb-5'>
                 <h3 className="text-2xl font-semibold text-blue-700">
                   Professional Experience
                 </h3>
@@ -65,13 +79,6 @@ export default function Vedant() {
                   Beyond academia and corporate ventures, Vedant has been an influential figure in venture capital and early-stage investment. As Vice President at Stanford Angels, he was instrumental in funding and mentoring high-potential startups, including Unacademy and Tread (later acquired by Tata). He has also contributed to the UNDP Social Impact Venture Fund and held key positions at Siemens Financial Services and BlackRock Assets.
                 </p>
               </div>
-            </div>
-          </div>
-          
-        </div>
-        
-      </section>
-      <section className='lg:px-24 px-5 text-gray-700 text-justify pb-10'>
        {/* Leadership & Contributions */}
        <div className='pb-5'>
                 <h3 className="text-2xl font-semibold text-blue-700">

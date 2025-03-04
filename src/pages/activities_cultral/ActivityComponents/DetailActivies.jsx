@@ -1,5 +1,5 @@
 import React from "react";
-import SocialSkitt from "../../../assets/images/Skitt.png"
+import SocialSkit from "../../../assets/images/Skitt.png"
 import Teachersday from "../../../assets/images/TeachersDay.jpeg"
 import Hackathon from '../../../assets/images/HackcraftChallenge.jpg'
 import ProjectPresentation1 from '../../../assets/images/ProjectPresentation1.jpg'
@@ -17,7 +17,7 @@ import ITClub from '../../../assets/images/ITClub.jpg'
 import ClimateClock from '../../../assets/images/ClimateClock.jpg'
 import BinarySearch from '../../../assets/images/BinarySearch.png'
 import Documentary from '../../../assets/images/Documentary.png'
-import FunnySkitt from '../../../assets/images/FunnySkitt.png'
+import FunnySkit from '../../../assets/images/FunnySkitt.png'
 import EnvironmentDay from '../../../assets/images/EnvironmentDay.png'
 import SolarMobile from '../../../assets/images/SolarMobile.jpg'
 import SaveEnv from '../../../assets/images/SaveEnv.png'
@@ -37,10 +37,10 @@ const DetailActivities = () => {
   const activities = [
     {
       id: 1,
-      name: "Skitt play on social media",
+      name: "Skit play on social media",
       description:
-        "A skitt play on social media can creatively depict its impact on everyday life, blending humor and serious moments to deliver an engaging message. The story might follow a group of friends navigating different aspects of social media, such as seeking validation through likes, falling into the trap of misinformation, or dealing with cyberbullying. Alongside these challenges, the skit can also show positive aspects, like staying connected with loved ones, learning new skills, or spreading awareness for social causes. By portraying relatable scenarios, exaggerated behaviors, and thought-provoking outcomes, the play can encourage the audience to reflect on their own social media habits and promote mindful usage.",
-      image: SocialSkitt,
+        "A skit play on social media can creatively depict its impact on everyday life, blending humor and serious moments to deliver an engaging message. The story might follow a group of friends navigating different aspects of social media, such as seeking validation through likes, falling into the trap of misinformation, or dealing with cyberbullying. Alongside these challenges, the skit can also show positive aspects, like staying connected with loved ones, learning new skills, or spreading awareness for social causes. By portraying relatable scenarios, exaggerated behaviors, and thought-provoking outcomes, the play can encourage the audience to reflect on their own social media habits and promote mindful usage.",
+      image: SocialSkit,
     },
     {
       id: 2,
@@ -166,7 +166,7 @@ const DetailActivities = () => {
       name: "Thakur-Sambha Comedy Play",
       description:
         "The `Thakur-Sambha` comedy play is a delightful and humorous performance that has become a favorite. The play features two central characters, Thakur and Sambha, who engage in witty banter and amusing situations that highlight their unique personalities. Thakur, with his serious demeanor, is often caught in comical circumstances due to Sambha's playful and mischievous nature. Their interactions lead to a series of laugh-out-loud moments, filled with clever dialogues and slapstick humor. The play not only entertains the audience but also brings out themes of friendship and miscommunication, leaving everyone in high spirits and eager for more, making it a highly anticipated event in the school.",
-      image: FunnySkitt,
+      image: FunnySkit,
     },
     {
       id: 20,
@@ -184,7 +184,7 @@ const DetailActivities = () => {
     },
     {
       id: 22,
-      name: "Skitt Play on Save Environment",
+      name: "Skit Play on Save Environment",
       description:
         "The skit play on saving the environment, performed by our school students, was an engaging way to raise awareness about environmental conservation. The students depicted various environmental issues such as pollution, deforestation, and climate change, emphasizing the importance of taking action to protect the planet. Through their performances, they conveyed the message that small changes in daily habits, like reducing waste, conserving water, and planting trees, can make a big difference. The skit was both entertaining and educational, leaving the audience with a powerful message about the need for collective efforts to preserve the environment and inspire positive change.",
       image: SaveEnv,

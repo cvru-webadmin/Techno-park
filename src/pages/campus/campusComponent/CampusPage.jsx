@@ -71,7 +71,7 @@ const data = [
     image: ProgrammingLab,
   },
   {
-    title: "Main Library",
+    title: "Vanamali Central Library",
     description:
       "A library is a resource-rich facility that serves as a hub for learning, research, and knowledge acquisition. It houses a diverse collection of books, journals, magazines, digital media, and other resources across various disciplines, along with modern tools like e-books, online databases, and multimedia platforms to support both traditional and digital learning. Designed to foster a quiet and focused environment, libraries also offer study areas, collaborative spaces, and technology resources like computers and printers. Serving as community and academic centers, they host workshops, seminars, and events that encourage knowledge sharing and skill development. Many libraries feature advanced facilities such as digital archives, interactive learning tools, and virtual reality systems, enabling innovative exploration. By providing services like interlibrary loans, research assistance, and inclusive resources for diverse audiences, libraries remain a cornerstone of education, personal growth, and innovation in the digital age.",
     image: Library,
@@ -82,7 +82,7 @@ const data = [
     image: Cabin,
   },
   {
-    title: "Seminar Hall",
+    title: "Raman(Seminar) Hall",
     description:
       "A Seminar Hall is a versatile venue designed to cater to a variety of events such as academic lectures, corporate meetings, training sessions, cultural programs, and panel discussions. It is typically equipped with state-of-the-art technology, including high-resolution projectors, interactive whiteboards, wireless microphones, advanced sound systems, and sometimes video conferencing facilities for virtual or hybrid events. The hall is designed with ergonomic seating, proper ventilation, and acoustics to ensure comfort and clarity for participants. Many seminar halls also feature podiums, stages, and lighting systems to accommodate formal presentations and performances. They are often adaptable to different seating arrangements, such as U-shaped, theater-style, or banquet-style layouts, depending on the event's nature. By providing an engaging and professional atmosphere, seminar halls play a critical role in fostering knowledge dissemination, innovation, and collaboration in educational, corporate, and community settings.",
     image: Seminar,
@@ -100,9 +100,9 @@ const data = [
     image: Garden,
   },
   {
-    title: "Raman Studio",
+    title: "Vanamali Sampreshan Kendra",
     description:
-      "Raman Studio is a state-of-the-art facility designed for high-quality voice recording and professional studio work. Equipped with advanced audio recording equipment, soundproof walls, and acoustic panels, it ensures clear and precise sound output, free from external noise or disturbances. The studio features microphones, audio mixers, and digital editing software, allowing users to record, edit, and produce a variety of audio projects, including voiceovers, music, podcasts, and narrations. A dedicated control room enabling real-time monitoring and adjustments. Raman Studio provides a creative and focused environment for artists, students, and professionals to bring their ideas to life with precision and quality.",
+      "Raman Studio is a state-of-the-art facility designed for high-quality voice recording and professional studio work. Equipped with advanced audio recording equipment, soundproof walls, and acoustic panels, it ensures clear and precise sound output, free from external noise or disturbances. The studio features microphones, audio mixers, and digital editing software, allowing users to record, edit, and produce a variety of audio projects, including voiceovers, music, podcasts, and narrations. A dedicated control room enabling real-time monitoring and adjustments. Raman Studio provides a creative and focused environment.",
     image: Studio,
   },
   {

@@ -24,7 +24,7 @@ const companies = [
 
 const students = [
   {
-    name: 'Atul Bhaisaree',
+    name: 'Atul Bhaisare',
     passingyear:"2025",
     companyname:"Central Bank of India",
     Package:"6.70 LPA",

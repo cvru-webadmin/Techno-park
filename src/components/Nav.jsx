@@ -18,10 +18,10 @@ const Navbar = () => {
       submenu: [
         "Our Mission",
         "Faculty",
+        { name: "Prof. Vedant Ahluwalia", path: "/about/Vedant-Profile" },
         { name: "Chancellor's Message", path: "/about/chancellor-message" },
         { name: "Vice Chancellor's Message", path: "/about/vice-chancellor-message"},
         { name: "Registrar's Message", path: "/about/registrar-message" },
-        { name: "Vedant Ahluwalia", path: "/about/Vedant-Profile" },
       ],
     },
     {

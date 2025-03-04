@@ -6,6 +6,7 @@ import Amit from "../../../assets/images/Amit.png"
 import Kunal from "../../../assets/images/Kunal.png"
 import Gourav from "../../../assets/images/Gourav.png"
 import Ganesh from "../../../assets/images/Ganesh_Nimje.jpeg"
+import Vedant from "../../../assets/images/VedantAhluwalia.png"
 
 const teamMembers = [
   { name: "Ms. Swati Atre", title: "Chair of the School", imageUrl: SwatiAtre},
@@ -15,6 +16,7 @@ const teamMembers = [
   { name: "Mr. Kunal Mishra", title: "Network Administrator", imageUrl: Kunal },
   { name: "Mr. Gourav Soni", title: "Research Assistant", imageUrl: Gourav },
   { name: "Mr. Ganesh Nimje", title: "Research Assistant", imageUrl: Ganesh },
+  { name: "Mr. Vedant Ahluwalia", title: "Professor of Practice(AI)", imageUrl: Vedant },
 ];
 
 function Our_Team() {

@@ -149,9 +149,9 @@ export default function TeachersAchievements({ achievements }) {
                 <p className="text-xs sm:text-sm md:h-20 line-clamp-4 text-gray-700 mb-3 leading-relaxed">
                   {achievement.description}
                 </p>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                {/* <p className="text-xs sm:text-sm md:text-base text-gray-600">
                   <span className="font-semibold">Year:</span> {achievement.year}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ const CultureAndActivities = () => {
       image: GaneshJi,
     },
     {
-      title: "Skitt play on social media",
+      title: "Skit play on social media",
       description:
         "Skitt Play on Social Media combines creativity with purpose, often addressing relatable social issues or delivering inspiring messages. These performances leverage the power of visuals and storytelling on digital platforms to engage viewers and create a lasting impact. The performances aim to raise awareness, provoke thought, and entertain, making a difference in how society perceives important themes through the lens of social media.",
       image: Skitt,

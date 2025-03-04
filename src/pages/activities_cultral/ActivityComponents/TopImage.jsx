@@ -21,7 +21,7 @@ const CarouselComponent = () => {
     },
     {
       id: 2,
-      title: "SKITT play on social media",
+      title: "SKIT play on social media",
       description:"Unleashing Creativity and Connection in the Social Media Sphere",
       image: SkittPlay,
     },

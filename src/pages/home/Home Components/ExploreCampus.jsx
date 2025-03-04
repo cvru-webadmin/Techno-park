@@ -14,8 +14,8 @@ const campusImages = [
   { src: ProgrammingLab, name: "Programming Lab" },
   { src: Cabin, name: "Faculty Cabin" },
   { src: ProjectLab, name: "Project Lab" },
-  { src: Library, name: "Main Library" },
-  { src: Seminar, name: "Seminar Hall" },
+  { src: Library, name: "Vanamali Central Library" },
+  { src: Seminar, name: "Raman(Seminar) Hall" },
 ];
 
 const CampusExplore = () => {
