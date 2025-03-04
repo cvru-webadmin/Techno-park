@@ -263,7 +263,7 @@ const handleSend = async () => {
 
 
        {/* Chat messages */}
-       <div className="flex flex-col chatbot space-y-3 h-[26rem] md:h-[22.59rem] overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
+       <div className="flex flex-col chatbot space-y-3 h-[32rem] md:h-[22.59rem] overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
          {messages.map((msg, index) => (
            <div
              key={index}
