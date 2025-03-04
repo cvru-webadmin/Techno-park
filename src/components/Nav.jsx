@@ -34,6 +34,7 @@ const Navbar = () => {
     { name: "Achievements", path: "/achievements" },
     { name: "Placement", path: "/placement" },
     { name: "Events", path: "/event" },
+    { name: "Student Corner", path: "/student-Corner" },
     { name: "Contact", path: "/contact" },
   ];
 
