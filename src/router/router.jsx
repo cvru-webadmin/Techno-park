@@ -25,6 +25,7 @@ import Chancellor from '../pages/about_team/AboutComponent/Chancellor';
 import AboutPage from '../pages/about_team/AboutPage';
 import ViceChancellor from '../pages/about_team/AboutComponent/ViceChancellor';
 import Registrar from '../pages/about_team/AboutComponent/Rigistar';
+import Vedant from '../pages/about_team/AboutComponent/Vedant';
 
 const router =createBrowserRouter([
     {
@@ -43,6 +44,7 @@ const router =createBrowserRouter([
                 {path:"Chancellor-Message",element:<Chancellor />},
                 {path:"Vice-Chancellor-Message",element:<ViceChancellor />},
                 {path:"Registrar-Message",element:<Registrar />},
+                {path:"Vedant-Profile",element:<Vedant />},
              ]
             },
             {
