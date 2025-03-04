@@ -1,0 +1,176 @@
+/* Global Styling */
+  
+  /* Page Container */
+  .student-corner-container {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Section Titles */
+  .student-corner-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e3a8a; /* Deep Blue */
+    margin-bottom: 2rem;
+  }
+  
+  .student-corner-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #374151; /* Dark Gray */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* === Internships & Placements === */
+  .placement-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .placement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .placement-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+  
+  .placement-card p {
+    font-size: 1rem;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .placement-card p svg {
+    color: #1e40af; /* Icon color */
+  }
+  
+  /* === Student Achievements === */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .achievement-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .achievement-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .achievement-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .achievement-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .achievement-item:hover::before {
+    opacity: 1;
+  }
+  
+  .achievement-item p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .achievement-item:hover p {
+    opacity: 1;
+  }
+  
+  /* === Video Section === */
+  .video-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .video-section iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .video-section iframe:hover {
+    transform: scale(1.02);
+  }
+  
+  /* === Call to Action === */
+  .cta-section {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .cta-section p {
+    font-size: 1.2rem;
+    color: #374151;
+  }
+  
+  .cta-section button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: #2563eb;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cta-section button:hover {
+    background: #1e40af;
+    transform: scale(1.05);
+  }
+  
+  /* === Responsive Design === */
+  @media (max-width: 768px) {
+    .student-corner-container h1 {
+      font-size: 2rem;
+    }
+  
+    .student-corner-container h2 {
+      font-size: 1.75rem;
+    }
+  
+    .placement-card h3 {
+      font-size: 1.25rem;
+    }
+  
+    .video-section iframe {
+      height: 200px;
+    }
+  }
+  

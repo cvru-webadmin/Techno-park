@@ -33,48 +33,175 @@ const ChatBot = () => {
 
   
   // Handle send message
-  const handleSend = async() => {
-    if (userInput.trim()) {
-      addMessage('User', userInput);
-      setUserInput('');
-      setIsLoading(true);
-      try{
-        let response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${API_key}`,
+ // Handle Send Message
+const handleSend = async () => {
+  if (userInput.trim()) {
+    addMessage('User', userInput);
+    setUserInput('');
+    setIsLoading(true);
+
+    // Predefined responses for common questions
+    const predefinedResponses = {
+      // 🔹 Greetings
+      "hello": "Hello! 😊 How can I assist you today?",
+      "hi": "Hi there! How can I help?",
+      "hey": "Hey! What would you like to know?",
+      "hy": "Hi! Feel free to ask any questions.",
+    
+      // 🔹 Admissions & Programs
+      "admissions info": `We offer a variety of programs in Computer Science & IT. Here are the details:\n\n
+        Undergraduate Programs:  
+        *BCA (3 Years) Eligibility: 12th Pass (Any Stream)*  
+        *B.Sc IT (3 Years) Eligibility: 12th Pass with Mathematics*  
+    
+        Postgraduate Programs:  
+        *MCA (2 Years) Eligibility: Graduation with 50% marks (45% for reserved categories)*  
+        *M.Sc IT (2 Years) Eligibility: B.Sc (IT/CS/BCA) or BE (CS/IT)*  
+    
+        Diploma & Certificate Courses:  
+        *PGDCA (1 Year) Eligibility: Any Graduate*  
+        *DCA (1 Year) Eligibility: 12th Pass (Any Stream)*  
+    
+        📩 *For more details, contact us at* info@cvrump.ac.in *or call* +07320-247700.`,
+    
+      "eligibility criteria": `The eligibility criteria for each program are as follows:\n
+        *BCA: 12th Pass (Any Stream)  
+        *PGDCA: Any Graduate  
+        *DCA: 12th Pass (Any Stream)  
+        *B.Sc IT: 12th Pass with Mathematics  
+        *M.Sc IT: B.Sc (IT/CS/BCA) or BE (CS/IT)  
+        *MCA: Graduation with minimum 50% marks (45% for reserved categories)  
+        📞 *Need more details? Feel free to ask!*`,
+    
+      "fees structure": `Our fee structure varies based on the program. Please contact our admissions office for the latest details:\n
+        📩 Email: info@cvrump.ac.in  
+        📞 Phone: +07320-247700`,
+    
+      // 🔹 Contact & Support
+      "contact support": `For any assistance, reach out to us:\n
+        📧 Email: info@cvrump.ac.in  
+        📞 Phone: +07320-247700  
+        🌐 Website: [www.cvrump.ac.in](https://www.cvrump.ac.in)`,
+    
+      "campus address": `📍 Our campus is located at:\n
+        Dr. C.V. Raman University, Khandwa, Madhya Pradesh, India.`,
+    
+      "website": `🌐 Visit our official website at [www.cvrump.ac.in](https://www.cvrump.ac.in) for more information.`,
+    
+      // 🔹 Faculty & HOD
+      "hod": `👩‍🏫 Our Head of Department (HOD) is Ms. Swati Atre, an MCA graduate with 12 years of experience in Programming & Web Technology.`,
+    
+      "faculty members": `📚 Our experienced faculty includes:\n
+        *Ms. Swati Atre (MCA) Programming, Web Technology*  
+        *Mr. Amit Sawanni (M.Tech CS) Programming*  
+        *Ms. Vaidehi Bakshi (M.Tech CS) IoT*  
+        *Mr. Ganesh Nimje (MCA) Full Stack Development*  
+        *Mr. Gourav Soni (B.Tech) Digital Marketing*  
+        🏫 *For a complete faculty list, visit our official website!*`,
+    
+      // 🔹 Infrastructure & Labs
+      "labs": `🔬 Our school is equipped with state-of-the-art labs to enhance practical learning:\n
+        *🖥️ Programming Lab (*Capacity: 56 students*)  
+        *💾 Database Lab (*Capacity: 48 students*)  
+        *📡 IoT Lab (*Capacity: 28 students*)  
+        *🗣️ Language Lab (*Capacity: 48 students*)  
+        *🔬 Project Lab (*Capacity: 28 students*)  
+        💡 These labs provide hands-on experience with the latest technologies!`,
+    
+      // 🔹 About the Institution
+      "vision": `🌍 Vision:\n${chatbotContext.schoolInfo.vision}`,
+      "mission": `🎯 Mission:\n${chatbotContext.schoolInfo.mission}`,
+      "objective": `🏆 Objective:\n${chatbotContext.schoolInfo.introduction.objective}`,
+    
+      "about college": `🏛️ About Us:\n
+        Techno Park School of Computer Science and Information Technology is an ISO 9001:2015 certified institution, affiliated with CVRUK.  
+        Our mission is to provide high-quality education in computing technology, focusing on innovation, research, and industry readiness.  
+        🎓 *Shaping the future of IT professionals!*`,
+    
+      // 🔹 Placements & Achievements
+      "placements": `🎓 Placement Opportunities:\n
+        Our students have secured jobs in top companies, including:\n
+        *💼 Accenture  
+        *💼 Central Bank of India  
+        *💼 Post Office  
+        *💼 Various IT Companies  
+        🏆 We also support internships and research collaborations for skill enhancement!`,
+    
+      "student achievements": `🏅 Student Achievements:\n
+        Our students excel in:\n
+        *🏆 Hackathons & Coding Competitions  
+        *📜 Research & Paper Presentations  
+        *🎨 Logo & Web Design Contests  
+        *🏅 Sports & Extra-Curricular Activities`,
+    
+      // 🔹 Student Life & Facilities
+      "library": `📚 Library:\n
+        Our digital library provides access to thousands of books, research papers, and online journals to support student learning!`,
+    
+      "scholarships": `💰 Scholarships:\n
+        We offer scholarships based on merit and financial need. Contact our admissions office for eligibility and application details!`,
+    
+      "events": `🎤 Campus Events:\n
+        We regularly organize technical workshops, hackathons, and seminars to keep students engaged with industry trends.\n
+        Stay updated on our events through our website!`
+    };
+    
+    
+
+    // Convert user input to lowercase to ensure case-insensitive matching
+    const normalizedInput = userInput.trim().toLowerCase();
+
+    // Check if the user question matches a predefined response
+    if (predefinedResponses[normalizedInput]) {
+      addMessage('Techno Bot', predefinedResponses[normalizedInput]);
+      setIsLoading(false);
+      return;
+    }
+
+    // If no predefined response, proceed with API call
+    try {
+      let response = await axios.post(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${API_key}`,
+        {
+          contents: [
             {
-              contents: [
+              parts: [
                 {
-                  parts: [
-                         {
-                           text: `
-                             Context: ${JSON.stringify(chatbotContext)}
-                       
-                             Instruction: Please respond to the user's question based on the information in the context. If only part of the answer is available, provide that information in a friendly and helpful manner, even if it does not fully address the question. If there is no relevant information in the context,dont inlude ** , respond with "I'm sorry, I don't have that information right now."
-                       
-                             User question: ${userInput}
-                           `
-                         }]}]});
-          setIsLoading(false);
-          addMessage('Techno Bot', response.data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.");
+                  text: `
+                  Context: ${JSON.stringify(chatbotContext)}
+
+                  Instruction: Please respond to the user's question based on the information in the context. If only part of the answer is available, provide that information in a friendly and helpful manner. If no relevant information is found, respond with "I'm sorry, I don't have that information right now."
+
+                  User question: ${userInput}
+                  `
+                }
+              ]
+            }
+          ]
         }
-      catch(error){
-        if(error.status==503){
-          addMessage('Techno Bot',"Sorry, For problem server.");
-        }
-        console.log(error)
+      );
+
+      setIsLoading(false);
+      let clendata=response.data.candidates?.[0]?.content?.parts?.[0]?.text.replace(/\*\*/g, "").trim();
+      addMessage('Techno Bot', clendata || "Sorry, I couldn't understand that.");
+    } catch (error) {
+      if (error.status === 503) {
+        addMessage('Techno Bot', "Sorry, there's a server issue.");
       }
-      finally{
-        setIsLoading(false);
-      }
-      
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+};
+
     //   Simulate a bot response delay
     //   setTimeout(() => {
     //     addMessage('Techno Bot', 'Thanks for reaching out! I’ll get back to you shortly.');
     //     setIsLoading(false);
     //   }, 1000);
     
-  }
 
-  };
 
   const messagesEndRef = useRef(null);
 
@@ -116,7 +243,7 @@ const ChatBot = () => {
 
       {/* Chat modal */}
       {isOpen && (
-        <div className="mt-3 md:static absolute md:bottom-0 md:right-0 -bottom-16 -right-4 h-[98dvh] md:h-auto w-[98dvw] md:w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 py-2 transition-transform transform-gpu duration-300 ease-out">
+        <div className="mt-3 md:static absolute md:bottom-0 md:right-0 -bottom-16 -right-4 h-[98dvh] md:h-[77dvh] w-[98dvw] md:w-96 bg-opacity-10 ChatBotBG rounded-lg shadow-2xl border border-gray-400/20 py-2 transition-transform transform-gpu duration-300 ease-out">
          {/* Header with chatbot name and close button */}
          <div className="flex justify-between items-center pb-2 border-b bg-white border-gray-300 px-4 py-2">
            <div className="flex items-center space-x-2">
@@ -136,7 +263,7 @@ const ChatBot = () => {
 
 
        {/* Chat messages */}
-       <div className="flex flex-col chatbot space-y-3 h-[26rem] md:h-72 overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
+       <div className="flex flex-col chatbot space-y-3 h-[32rem] md:h-[22.59rem] overflow-y-auto mb-4 p-4 bg-gray-100/20 rounded-lg shadow-inner">
          {messages.map((msg, index) => (
            <div
              key={index}

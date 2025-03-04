@@ -26,6 +26,7 @@ import AboutPage from '../pages/about_team/AboutPage';
 import ViceChancellor from '../pages/about_team/AboutComponent/ViceChancellor';
 import Registrar from '../pages/about_team/AboutComponent/Rigistar';
 import Vedant from '../pages/about_team/AboutComponent/Vedant';
+import StudentCorner from '../pages/student_corner/StudentCorner';
 
 const router =createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router =createBrowserRouter([
             {
              path:"/courses",
              element:<Courses/>
+            },
+            {
+             path:"/student-Corner",
+             element:<StudentCorner/>
             },
             {
                 path: "/activities",
