@@ -15,6 +15,8 @@ import ShubhamRajawat from '../../../assets/images/ShubhamRajawat.png'
 import DevanshSharma from '../../../assets/images/DevanshSharma.png'
 import SameerKhan from '../../../assets/images/SameerKhan.png'
 import DanveerSingh from '../../../assets/images/DanveerSingh.png'
+import PriyankaChouhan from '../../../assets/images/PriyankaChouhan.jpeg'
+import GauravSugandhi from '../../../assets/images/GauravSugandhi.jpeg'
 
 const StuData=[
     {
@@ -31,6 +33,34 @@ const StuData=[
         companyname:"Accenture",
         Package:"4.60 LPA"
     },
+    {
+      image:"",
+      name:"Ayush Rathore",
+      passingyear:"2024",
+      companyname:"AISECT Infotech Ltd, Khandwa",
+      Package:"2.40 LPA"
+  },
+  {
+    image:"",
+    name:"Shreya Chouhan",
+    passingyear:"2022-2025",
+    companyname:"Post Office",
+    Package:"2.40 LPA"
+},
+    {
+      image:PriyankaChouhan,
+      name:"Priyanka Chouhan",
+      passingyear:"2022",
+      companyname:"WNS Global Services",
+      Package:"3.00 LPA"
+  },
+  {
+    image:GauravSugandhi,
+    name:"Gaurav Sugandhi",
+    passingyear:"2022",
+    companyname:"Orarega Technologies OPC PVT LTD ",
+    Package:"2.40 LPA"
+},
     {
         image:PranavAtre,
         name:"Pranav Atre",

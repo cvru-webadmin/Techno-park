@@ -3,10 +3,10 @@ import React from "react";
 // Student Activity Data
 const studentActivities = [
   {
-    title: "Skitt Play on Social Media",
+    title: "Skit Play on Social Media",
     description:
       "A skit play on social media creatively depicts its impact on daily life, blending humor and serious moments to highlight both the positive and negative aspects. It encourages mindful usage through engaging storytelling.",
-    videoUrl: "https://www.youtube.com/embed/NYtjcM3dnkg",
+    videoUrl: "https://www.youtube.com/embed/sKn7J4k0ipA?si=ar4n1bBm1REJYCL1",
   },
   {
     title: "Explaining Binary Search by Play",
@@ -21,10 +21,10 @@ const studentActivities = [
     videoUrl: "https://www.youtube.com/embed/QSqtXi-rkbY",
   },
   {
-    title: "Skitt Play on Save Environment",
+    title: "Skit Play on Save Environment",
     description:
       "A powerful skit on saving the environment highlights issues like pollution and deforestation while emphasizing small everyday actions that can help protect the planet. This engaging performance leaves a lasting message.",
-    videoUrl: "https://www.youtube.com/embed/QSqtXi-rkbY",
+    videoUrl: "https://www.youtube.com/embed/Hcsww6uCufY?si=UX6jpasFt4_e9F0v",
   },
 ];
 

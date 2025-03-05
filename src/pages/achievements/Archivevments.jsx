@@ -21,7 +21,7 @@ import solor from "./../../assets/Student_archivment/solar2.jpg";
 import merit from "./../../assets/Student_archivment/merit.jpg";
 import Inovation from "./../../assets/Student_archivment/Inovation.jpg";
 import Inovation2 from "./../../assets/Student_archivment/Inovation2.jpg";
-import HackCraft2 from './../../assets/Student_archivment/hackathon.jpg';
+import HackCraft2 from './../../assets/images/hackathon.jpg';
 import shooting from "./../../assets/Student_archivment/shothing.png";
 import HackCraft1 from "./../../assets/Student_archivment/Hackcraft1.jpg";
 import LogoDesign1 from "./../../assets/Student_archivment/LogoDesign1.jpg";

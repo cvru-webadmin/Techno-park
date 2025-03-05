@@ -9,7 +9,7 @@ import solor from "./../../../assets/Student_archivment/solar2.jpg";
 import merit from "./../../../assets/Student_archivment/merit.jpg";
 import Inovation from "./../../../assets/Student_archivment/Inovation.jpg";
 import Inovation2 from "./../../../assets/Student_archivment/Inovation2.jpg";
-import HackCraft2 from './../../../assets/Student_archivment/hackathon.jpg';
+import HackCraft2 from './../../../assets/images/hackathon.jpg';
 import shooting from "./../../../assets/Student_archivment/shothing.png";
 import HackCraft1 from "./../../../assets/Student_archivment/Hackcraft1.jpg";
 import LogoDesign1 from "./../../../assets/Student_archivment/LogoDesign1.jpg";
@@ -184,8 +184,8 @@ const achievements =[
     },
     {
       name: "Participation Certificate",
-      title: "Certificate of participation in the Professional Advancement Program",
-      description: "In recognition of your participation in the Professional Advancement Program - Course III: Taking Invention to Market and to Commerce: Role of Intellectual Property, highlighting your understanding of the link between innovation and intellectual property.",
+      title: "Participation in IPR Seminar",
+      description: "Aditya Pratap Singh participated in the IPR Seminar, gaining valuable insights into intellectual property rights and their role in fostering innovation and protecting creative works. Her active involvement was recognized with a certificate of participation.",
       year: 2024,
       image: Aditya,  
     },

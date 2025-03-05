@@ -138,9 +138,9 @@ const CoursePage = () => {
                       <span className="font-semibold">Duration:</span>{" "}
                       {course.duration}
                     </li>
-                    <li>
+                    {/* <li>
                       <span className="font-semibold">Fees:</span> {course.fees}
-                    </li>
+                    </li> */}
                     <li>
                       <span className="font-semibold">Eligibility:</span>{" "}
                       {course.eligibility}
