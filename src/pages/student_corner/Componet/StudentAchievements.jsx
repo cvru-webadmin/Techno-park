@@ -226,34 +226,39 @@ const StudentAchievement = () => {
     <section className="bg-gray-100 py-16 px-6 lg:px-20">
       {/* Section Title */}
       {/* <h2 className="text-3xl font-bold text-blue-700 text-center mb-10">🏆 Student Achievements</h2> */}
-      <h2 className="text-3xl font-semibold text-center  text-gray-800 mb-6">🏆 Student Achievements</h2>
+      {/* <h2 className="text-3xl font-semibold text-center  text-gray-800 mb-6">🏆 Student Achievements</h2> */}
+      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6 ">
+      🏆  <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 inline-block text-transparent bg-clip-text drop-shadow-lg">Student Excellence </span>
+      🏆  <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500  text-transparent bg-clip-text drop-shadow-lg block">____________________________</span>
+</h2>
 
       {/* Achievements Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {achievements.map((achievement, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200 overflow-hidden"
-          >
-            {/* Achievement Image */}
-            <div className="relative group">
-              <img
-                src={achievement.image}
-                alt={achievement.title}
-                className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                <p className="text-white font-bold text-lg">View More</p>
-              </div>
-            </div>
-
-            {/* Achievement Details */}
-            <div className="p-5">
-              <h3 className="text-xl font-semibold text-gray-900">{achievement.title}</h3>
-              <p className="text-gray-600 text-sm italic">{achievement.year}</p>
-              <p className="text-gray-700 mt-2">{achievement.description}</p>
-            </div>
+          <div key={index} className="relative group rounded-lg bg-gradient-to-b from-blue-600 via-purple-500 to-red-500">
+          <div className="relative h-full bg-white ml-1 text-gray-900 p-4 rounded-lg shadow-md max-w-lg mx-auto flex flex-col md:flex-row items-center space-x-4 transition-transform duration-500 hover:scale-105 overflow-hidden">
+          {/* Default & Hover Image with Blur Effect */}
+          <div className="absolute inset-0 transition-opacity opacity-0 duration-500 group-hover:opacity-100">
+            <img 
+              src={achievement.image || 'https://via.placeholder.com/300'} 
+              alt={achievement.title} 
+              className="w-full h-full object-cover transition-all duration-500 group-hover"
+            />
           </div>
+          
+          {/* Achievement Icon */}
+          <div className="relative w-12 h-12 bg-gradient-to-b from-blue-600 via-purple-500 to-red-500 text-white flex items-center justify-center rounded-full shadow-md z-10 group-hover:opacity-0 transition-opacity duration-500">
+          <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="m305.975 298.814l22.704 2.383V486l-62.712-66.965V312.499l18.214 8.895zm-99.95 0l-22.716 2.383V486l62.711-66.965V312.499l-18.213 8.895zm171.98-115.78l7.347 25.574l-22.055 14.87l-1.847 26.571l-25.81 6.425l-10.803 24.314l-26.46-2.795l-18.475 19.087L256 285.403l-23.902 11.677l-18.475-19.15l-26.46 2.795l-10.803-24.313l-25.81-6.363l-1.847-26.534l-22.118-14.92l7.348-25.573l-15.594-21.544l15.644-21.52l-7.398-25.523l22.068-14.87L150.5 73.03l25.86-6.362l10.803-24.313l26.46 2.794L232.098 26L256 37.677L279.902 26l18.475 19.149l26.46-2.794l10.803 24.313l25.81 6.425l1.847 26.534l22.055 14.87l-7.347 25.574l15.656 21.407zm-49.214-21.556a72.242 72.242 0 1 0-72.242 72.242a72.355 72.355 0 0 0 72.242-72.242m-72.242-52.283a52.282 52.282 0 1 0 52.282 52.283a52.395 52.395 0 0 0-52.282-52.245z"></path></svg>
+          </div>
+          
+          {/* Achievement Content (Hidden on Hover) */}
+          <div className="relative flex-1 z-10 bg-white p-4 rounded-md shadow-sm transition-opacity duration-500 group-hover:opacity-0">
+            <h3 className="text-lg font-semibold">{achievement.title}</h3>
+            <p className="text-blue-600 text-xs mt-1 font-medium">{achievement.year}</p>
+            <p className="mt-2 text-gray-700 text-sm leading-relaxed">{achievement.description}</p>
+          </div>
+        </div>
+        </div>
         ))}
       </div>
     </section>

@@ -3,6 +3,8 @@ import "./StudentCorner.css"; // Optional for extra styling
 import { Link as ScrollLink } from "react-scroll"; // Smooth scrolling
 import { FaMapMarkerAlt, FaBriefcase, FaBuilding, FaRupeeSign } from "react-icons/fa";
 import MainImage from "./Componet/happy-group.avif"
+import cornner from "./Componet/7103-removebg-preview.png"
+
 
 // Student Internship & Placement Data
 const studentPlacements = [
@@ -43,6 +45,7 @@ import shooting from "./../../assets/Student_archivment/shothing.png";
 import StudentAchievement from "./Componet/StudentAchievements";
 import StudentActivityHighlights from "./Componet/StudentActivityHighlights";
 import { Info } from "lucide-react";
+import InternshipList from "./Componet/Intership";
 
 const StudentCorner = () => {
   return (
@@ -82,28 +85,13 @@ const StudentCorner = () => {
     </section>
 
     {/* Internships & Placements Section */}
-    <section className="my-6 px-10">
-        <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">📌 Internships & Placements</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {studentPlacements.map((student, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-gray-900">{student.name}</h3>
-              <p className="text-gray-700 flex items-center gap-2">
-                <FaBuilding className="text-blue-600" /> {student.organization}
-              </p>
-              <p className="text-gray-700 flex items-center gap-2">
-                <FaBriefcase className="text-green-600" /> {student.position}
-              </p>
-              <p className="text-gray-700 flex items-center gap-2">
-                <FaRupeeSign className="text-yellow-600" /> {student.package}
-              </p>
-              <p className="text-gray-700 flex items-center gap-2">
-                <FaMapMarkerAlt className="text-red-600" /> {student.address}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+    <h2 className="text-2xl border-2 relative overflow-hidden bg-white shadow-sm py-5 rounded-md font-semibold text-gray-800 text-center my-6">
+      🌟 Stepping Stones to Success: Our Internship Achievers!
+      <img src={cornner} alt="pattern" className=" absolute rotate-90 opacity-30 top-0 left-0 h-44" />
+      <img src={cornner} alt="pattern" className=" absolute -rotate-90 opacity-30 bottom-0 right-0 h-44" />
+               
+    </h2>
+    <InternshipList />
 
 <StudentAchievement />
 <StudentActivityHighlights/>
