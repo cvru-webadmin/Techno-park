@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import FAQSection from "./componet/FAQ";
 import { FireContext } from "../../Context/context";
 
+
 const ContactPage = () => {
 
   //import Firebase context for send message

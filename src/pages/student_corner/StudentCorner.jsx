@@ -40,7 +40,8 @@ import solor from "./../../assets/Student_archivment/solar2.jpg";
 import merit from "./../../assets/Student_archivment/merit.jpg";
 import Inovation from "./../../assets/Student_archivment/Inovation.jpg";
 import Inovation2 from "./../../assets/Student_archivment/Inovation2.jpg";
-import HackCraft2 from "./../../assets/Student_archivment/hackathon.jpg";
+import HackCraft2 from "../../assets/Student_archivment/Hackathon.jpg";
+
 import shooting from "./../../assets/Student_archivment/shothing.png";
 import StudentAchievement from "./Componet/StudentAchievements";
 import StudentActivityHighlights from "./Componet/StudentActivityHighlights";

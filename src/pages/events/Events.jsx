@@ -5,6 +5,7 @@ import upcoming from "./image/upcoming-events-label-collection_662550-1788.webp"
 import SelectionCard from "./componet/SelectionCard";
 import { FireContext } from "../../Context/context";
 
+
 const EventsPage = () => {
 
   const {GetEvents}=useContext(FireContext);

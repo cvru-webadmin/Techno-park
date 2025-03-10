@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { FireContext } from "../../context/context";
+import { FireContext } from "../../Context/context";
+
 
 const FeedbackForm = () => {
   const [selectedPosition, setSelectedPosition] = useState("Select your position");
