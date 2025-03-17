@@ -17,6 +17,8 @@ import SameerKhan from '../../../assets/images/SameerKhan.png'
 import DanveerSingh from '../../../assets/images/DanveerSingh.png'
 import PriyankaChouhan from '../../../assets/images/PriyankaChouhan.jpeg'
 import GauravSugandhi from '../../../assets/images/GauravSugandhi.jpeg'
+import AyushRathore from '../../../assets/images/AayushRathore.jpeg'
+import Shreya from '../../../assets/images/Shreya.jpeg'
 
 const StuData=[
     {
@@ -34,14 +36,14 @@ const StuData=[
         Package:"4.60 LPA"
     },
     {
-      image:"",
+      image:AyushRathore,
       name:"Ayush Rathore",
       passingyear:"2024",
       companyname:"AISECT Infotech Ltd, Khandwa",
       Package:"2.40 LPA"
   },
   {
-    image:"",
+    image:Shreya,
     name:"Shreya Chouhan",
     passingyear:"2022-2025",
     companyname:"Post Office",

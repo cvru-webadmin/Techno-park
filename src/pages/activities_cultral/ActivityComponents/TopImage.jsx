@@ -66,7 +66,7 @@ const CarouselComponent = () => {
             ></div>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
             {/* Content */}
             <div className="relative z-10 lg:top-[500px] lg:left-60 md:top-[250px] top-[100px] text-center flex flex-col items-center justify-center px-6 max-w-5xl">

@@ -135,7 +135,7 @@ const ContactUs = () => {
                 
                 <span className='flex flex-col gap-1'>
                 <span className="text-blue-800 text-md font-bold">Visit us</span>
-                <p className="text-gray-500 text-sm">come viste University</p>
+                <p className="text-gray-500 text-sm">come visit University</p>
                 <p className="text-gray-700 text-sm">Balkhandsura,chhaigaon Makhan, Khandwa MP, 450771</p>
                 </span>
               </a>

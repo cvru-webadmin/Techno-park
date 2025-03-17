@@ -28,10 +28,13 @@ import BloodCamp from '../../../assets/images/BloodCamp.jpg'
 import AbhimanyuYojna from '../../../assets/images/AbhimanyuYojna.jpg'
 import WomenDay from '../../../assets/images/WomenDay.jpg'
 import PosterMaking from '../../../assets/images/PosterMaking.jpg'
-import Counsil from '../../../assets/images/Counsil.jpg'
+import Counsil from '../../../assets/images/Council.jpeg'
 import GaneshVisarjan from '../../../assets/images/GaneshVisarjan.jpg'
 import Plantation from '../../../assets/images/Plantation.jpg'
 import HerbalGallery from '../../../assets/images/Herbal Gallery.jpg'
+import FlagCeremony from '../../../assets/images/FlagCeremony.jpeg'
+import AIPledge from '../../../assets/images/AIPledge.jpeg'
+import WomenDay2 from '../../../assets/images/WomenDay.jpeg'
 
 const DetailActivities = () => {
   const activities = [
@@ -148,6 +151,13 @@ const DetailActivities = () => {
       image: ClimateClock,
     },
     {
+      id: 34,
+      name: "Flag Taking Ceremony",
+      description:
+        "This ceremony takes place during the oath-taking ceremony of the Student Council. In this event, the Vice Chancellor (VC) and esteemed guests present the flag of the respective school to the school's representative and the chair of the school. The ceremony symbolizes respect, responsibility, and the new potential that the student leadership holds for the future. It serves as a moment of pride and inspiration, encouraging students to uphold the values and vision of their school. This tradition fosters a sense of unity, leadership, and commitment among the students.",
+      image: FlagCeremony,
+    },
+    {
       id: 17,
       name: "Explaining Binary Search by Play",
       description:
@@ -240,7 +250,7 @@ const DetailActivities = () => {
     },
     {
       id: 30,
-      name: "Student Counsil",
+      name: "Student Council",
       description:
         "The Student Council at our university manages various programs and ensures smooth communication across schools and departments. Comprised of elected student representatives, the council organizes academic, cultural, and extracurricular events efficiently. They act as a bridge between students and the administration, providing a platform for students to voice their concerns and ideas. The council is also responsible for disseminating important information to the student body, including event updates and academic notices. Through their leadership and coordination, the Student Council fosters a sense of community and collaboration among students and faculty.",
       image: Counsil,
@@ -265,6 +275,13 @@ const DetailActivities = () => {
       description:
         "The Herbal Gallery project idea presentation, presented by our school's students, earned them the 1st prize. The project showcased various herbal plants and their medicinal benefits, explaining how they can treat common ailments and promote wellness. The students presented their research with engaging visuals and interactive elements, highlighting the importance of herbal medicine and sustainable living. Their creativity and dedication to spreading awareness about the benefits of herbal solutions earned them recognition and the top award.",
       image: HerbalGallery,
+    },
+    {
+      id: 35,
+      name: "AI Pledge Ceremony",
+      description:
+        "This ceremony is conducted to encourage ethical and responsible use of Artificial Intelligence. During the event, students take a pledge to utilize AI for the betterment of society, ensuring fairness, transparency, and accountability in its application. The ceremony reinforces the importance of ethical AI practices and inspires students to innovate while upholding moral and professional integrity in the field of technology. It also highlights the role of AI in shaping the future and the responsibility of young minds in harnessing its potential wisely. Through this pledge, students commit to using AI as a tool for positive transformation and societal progress.",
+      image: AIPledge,
     },
   ];
 

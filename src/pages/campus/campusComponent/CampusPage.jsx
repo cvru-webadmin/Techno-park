@@ -17,6 +17,10 @@ import Garden from '../../../assets/images/Garden.jpg'
 import MCASlider from '../../../assets/images/MCA Slider.jpeg'
 import BCASlider from '../../../assets/images/BCA Slider.jpg'
 import GroupSlider from '../../../assets/images/Group Slider.jpg'
+import Slide2 from '../../../assets/images/2.jpeg'
+import Slide1 from '../../../assets/images/1.jpeg'
+import Slide3 from '../../../assets/images/3.jpeg'
+import Slide4 from '../../../assets/images/4.jpeg'
 import GardenStudents from '../../../assets/images/GardenStudent.jpg'
 import LibraryStudents from '../../../assets/images/LibraryStudent.jpg'
 import Studio from '../../../assets/images/Studio.jpg'
@@ -43,6 +47,22 @@ import Parking from '../../../assets/images/Parking.jpg'
     {
       id: 5,
       image: LibraryStudents, // Replace with actual image paths.
+    },
+    {
+      id: 6,
+      image: Slide1,
+    },
+    {
+      id: 7,
+      image: Slide2,
+    },
+    {
+      id: 8,
+      image: Slide3,
+    },
+    {
+      id: 9,
+      image: Slide4,
     },
   ];
 
@@ -156,7 +176,7 @@ const CampusPage = () => {
         className="relative bg-cover w-full bg-center h-[100dvh] text-white"
         style={{ backgroundImage:`url(${Front})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="absolute -inset-[50px] inset-x-10 flex flex-col sm:mt-40 mt-28 text-left">
           <h1 className="md:text-5xl font-bold text-3xl w-full">Discover Your Future with Us</h1>
           <p className="lg:text-xl md:text-2xl text-justify text-gray-200 md:mt-4 mt-1 text-[15px] w-full sm:w-[650px]">Explore our campus, where learning goes beyond the classroom– it's a place to unlock your potential and shape your future.</p>

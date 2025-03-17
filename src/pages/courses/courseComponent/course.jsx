@@ -55,7 +55,7 @@ const courses = {
           duration: "2 Years",
           description: "A professional master's degree focusing on advanced computing skills, software engineering, and IT project management.",
           fees: "₹ 42,000 per year",
-          eligibility: "Graduation(e.g., B.E., B.Tech., B.Sc., B.Com., B.A., B.Voc., BCA, etc.) with at least 50% marks(45% for reserved categories).",
+          eligibility: "Passed any graduation degree(e.g. B.E./B.Tech./B.Sc./B.Com./ B.A./B.Voc./BCA etc.) preferably with mathematics at 10+2 level or at Graduation level obtained at least 50% marks(45% marks in case of candidates belonging to reserved category) in the qualifying examination.(For non mathematics background students,  a bridge course is compulsory)",
           image: MCA, // Replace with actual image URL
         },
         {

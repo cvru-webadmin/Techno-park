@@ -13,7 +13,7 @@ const AboutTopImage = () => {
           className="w-full h-full object-cover"
         />
         {/* Overlay with text */}
-         <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4">
+         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4">
            {/* Main Heading */}
            <h1
              className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight text-center"

@@ -9,8 +9,8 @@ import UPL from '../../../assets/images/UPL.png'
 import Equitas from '../../../assets/images/Equitas.png'
 import AtulBhaisare from '../../../assets/images/Atul-Bhaisare.png'
 import FalguniRana from '../../../assets/images/Falguni-Rana.png'
-import PranavAtre from '../../../assets/images/Pranav-Atre.png'
-import GaneshJadhav from '../../../assets/images/Ganesh-Jadhav.png'
+import PriyankaChouhan from '../../../assets/images/PriyankaChouhan.jpeg'
+import AayushRathore from '../../../assets/images/AayushRathore.jpeg'
 
 const companies = [
   { name: 'Tata Consultancy Services', logo: TCS },
@@ -38,18 +38,18 @@ const students = [
     image: FalguniRana,
   },
   {
-    name: 'Pranav Atre',
-    passingyear:"2023",
-    companyname:"SK FINANCE LIMITED",
-    Package:"3.18 LPA",
-    image: PranavAtre,
+    image:PriyankaChouhan,
+    name:"Priyanka Chouhan",
+    passingyear:"2022",
+    companyname:"WNS Global Services",
+    Package:"3.00 LPA"
   },
   {
-    name: 'Ganesh Jadhav',
-    passingyear:"2023",
-    companyname:"Nurture.Farm (UPL)",
-    Package:"3.00 LPA",
-    image: GaneshJadhav,
+    image:AayushRathore,
+    name:"Ayush Rathore",
+    passingyear:"2024",
+    companyname:"AISECT Infotech Ltd, Khandwa",
+    Package:"2.40 LPA"
   },
 ];
 

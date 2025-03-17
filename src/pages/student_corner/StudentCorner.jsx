@@ -47,12 +47,13 @@ import StudentAchievement from "./Componet/StudentAchievements";
 import StudentActivityHighlights from "./Componet/StudentActivityHighlights";
 import { Info } from "lucide-react";
 import InternshipList from "./Componet/Intership";
+import TeamPage from "./Componet/MadeBy";
 
 const StudentCorner = () => {
   return (
     <>
         <div className="h-16 bg-blue-500"></div>
-
+        <TeamPage/>
     <div className="bg-gray-100 py-12 px-4 lg:px-10">
          <section className="bg-gray-50 py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-between">
       {/* Left Content: Heading, Description, Button */}
