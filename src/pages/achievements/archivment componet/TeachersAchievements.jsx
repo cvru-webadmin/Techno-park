@@ -37,7 +37,7 @@ const NextArrow = (props) => {
   const { className, onClick } = props;
   return (
     <div
-      className={`${className} relative right-0 top-1/2 rounded-full p-2 cursor-pointer z-10`}
+      className={`${className} absolute right-0 p-2 top-1/2 rounded-full cursor-pointer z-10`}
       onClick={onClick}
     >
       <svg
@@ -119,21 +119,21 @@ export default function TeachersAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto lg:h-auto md:h-auto h-[420px] w-full sm:w-[90%] md:w-[80%] lg:w-full">
+            <div className="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto lg:h-auto md:h-auto h-[440px] w-full sm:w-[90%] md:w-[90%] lg:w-full">
               {/* Achievement Image */}
               
               {achievement.image !== "" ? (
                 <img
                   src={achievement.image}
                   alt={`${achievement.name} achievement`}
-                  className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-top object-cover"
+                  className="w-full h-60 sm:h-56 md:h-72 lg:h-60 object-top object-cover"
                 />
               ) : (
-                <div className="w-full h-48 sm:h-56 md:h-72 lg:h-60 bg-[#131f35]">
+                <div className="w-full h-60 sm:h-56 md:h-72 lg:h-60 bg-[#131f35]">
                   <img
                     src={AwardDefualt}
                     alt={`${achievement.name} achievement`}
-                    className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-center object-contain"
+                    className="w-full h-60 sm:h-56 md:h-72 lg:h-60 object-center object-contain"
                   />
                 </div>
               )}

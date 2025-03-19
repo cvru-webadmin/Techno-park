@@ -7,7 +7,7 @@ const VisionMission = () => {
     <>
     <div className="relative text-center lg:mb-8 lg:mt-8 mt-4">
     <h2 className="about-title font-semibold capitalize">
-      Our Vission & Mission
+      Our Vision & Mission
     </h2>
     <p className="text-gray-600 md:text-lg text-base -mt-3">
     To foster innovation and excellence in computer science education and research.

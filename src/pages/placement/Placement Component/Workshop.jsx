@@ -24,14 +24,14 @@ export default function Workshop() {
           <img
             src={Workshop1}
             alt="Workshop1"
-            className="w-full object-cover rounded-lg lg:h-96 h-60 max-w-md lg:max-w-lg"
+            className="w-full object-cover rounded-lg lg:h-96 h-60 lg:max-w-lg"
           />
         </div>
         <div className="flex-shrink-0 w-full lg:w-[50%] md:w-[48%]">
           <img
             src={Workshop2}
             alt="Workshop2"
-            className="w-full object-cover rounded-lg lg:h-96 h-60 max-w-md lg:max-w-lg"
+            className="w-full object-cover rounded-lg lg:h-96 h-60 lg:max-w-lg"
           />
         </div>
         </div>

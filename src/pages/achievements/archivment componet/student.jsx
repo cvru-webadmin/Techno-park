@@ -35,7 +35,7 @@ const PrevArrow = (props) => {
     const { className, onClick } = props;
     return (
       <div
-        className={`${className} absolute -right-10 top-1/2 transform -translate-y-1/2 rounded-full p-2 shadow-lg cursor-pointer z-10`}
+        className={`${className} absolute right-0 top-1/2 p-2 transform -translate-y-1/2 rounded-full shadow-lg cursor-pointer z-10`}
         onClick={onClick}
       >
         <svg
@@ -115,20 +115,20 @@ export default function StudentAchievements({ achievements }) {
         >
           {achievements.map((achievement, index) => (
             <div key={index} className="p-4">
-            <div className="bg-white border lg:h-[550px] md:h-[550px] h-[435px] border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-full flex flex-col">
+            <div className="bg-white border lg:h-[550px] md:h-[550px] h-[500px] border-gray-200 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full sm:w-[90%] md:w-[90%] lg:w-full flex flex-col">
               {/* Achievement Image */}
               {achievement.image !== "" ? (
                 <img
                   src={achievement.image}
                   alt={`${achievement.name} achievement`}
-                  className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-top object-cover"
+                  className="w-full h-60 sm:h-56 md:h-72 lg:h-60 object-top object-cover"
                 />
               ) : (
-                <div className="w-full h-48 sm:h-56 md:h-72 lg:h-60 bg-[#131f35]">
+                <div className="w-full h-60 sm:h-56 md:h-72 lg:h-60 bg-[#131f35]">
                   <img
                     src={AwardDefualt}
                     alt={`${achievement.name} achievement`}
-                    className="w-full h-48 sm:h-56 md:h-72 lg:h-60 object-center object-contain"
+                    className="w-full h-60 sm:h-56 md:h-72 lg:h-60 object-center object-contain"
                   />
                 </div>
               )}

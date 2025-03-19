@@ -11,7 +11,7 @@ const AboutSchool = () => {
     <section className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-3 px-6 lg:py-12 py-7 bg-white">
    {/* Left Side Section: Images */}
    <h2 className="about-title font-semibold text-center lg:hidden block -mt-4">
-        About Our Department
+        About Our School
       </h2>
    <div className="flex flex-col md:flex-row w-full lg:w-1/2 gap-6">
       {/* Single Large Image */}
@@ -22,7 +22,7 @@ const AboutSchool = () => {
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute bottom-4 left-4 bg-white bg-opacity-80 px-3 py-1 rounded-lg shadow-md">
-          <span className="text-sm font-semibold text-gray-800">Department Building</span>
+          <span className="text-sm font-semibold text-gray-800">School Building</span>
         </div>
       </div>
     

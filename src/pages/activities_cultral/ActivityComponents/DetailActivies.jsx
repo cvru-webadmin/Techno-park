@@ -306,8 +306,8 @@ const DetailActivities = () => {
 
             {/* Text Section */}
             <div className="md:w-[95%] w-full lg:w-1/2 text-center lg:text-left">
-              <h3 className="md:text-[2.5rem] lg:text-[2rem] text-[1.4rem] text-[#2c3e50] font-semibold capitalize mb-2">{activity.name}</h3>
-              <p className="text-[#555] text-justify lg:text-[1.1rem] md:text-[1.3rem] text-[0.9rem] leading-relaxed">{activity.description}</p>
+              <h3 className="md:text-[2rem] lg:text-[2rem] text-[1.4rem] text-[#2c3e50] font-semibold capitalize mb-2">{activity.name}</h3>
+              <p className="text-[#555] text-justify lg:text-[1.1rem] md:text-[1.1rem] text-[0.9rem] leading-relaxed">{activity.description}</p>
             </div>
           </div>
         ))}

@@ -186,7 +186,7 @@ const CampusPage = () => {
       {/* slider section */}
       <div className="flex flex-col items-center">
       <h1 className="lg:text-4xl md:text-[43px] font-bold text-3xl mt-8 text-gray-800 text-center w-full">Campus Life</h1>
-      <div className="lg:w-[96%] w-[86%] mb-8 mt-4">
+      <div className="lg:w-[96%] w-[92%] mb-8 mt-4">
       <Slider {...settings} ref={sliderRef} centerMode={true} centerPadding="0px">
   {slides.map((slide, index) => (
     <div key={slide.id} className="p-10 mb-3">
@@ -222,7 +222,7 @@ const CampusPage = () => {
               index % 2 !== 0 ? "" : "lg:flex-row-reverse"
             }`}
           >
-            <div className={`${index % 2 !== 0 ?"lg:w-[69%] ":"lg:w-[44%]"}`}>
+            <div className={`${index % 2 !== 0 ?"lg:w-[69%] md:w-full w-full sm:w-full ":"lg:w-[44%] w-full md:w-full sm:w-full"}`}>
               <img
                 src={section.image}
                 alt={section.title}
@@ -230,8 +230,8 @@ const CampusPage = () => {
               />
             </div>
             <div className={`lg:w-[44%] lg:h-[470px] h-auto mt-3 w-full lg:px-14 md:px-8 px-6 py-4 ${index % 2 !== 0 ?"lg:py-1 md:py-0":"w-full sm:px-[70px] sm:py-[45px] md:py-[20px] bg-[#e3e3e373] lg:py-10 lg:w-[66%] mt-5 md:mt-0"}`}>
-              <h2 className="md:text-[2.2rem] lg:text-[1.8rem] text-[1.4rem] font-bold">{section.title}</h2>
-              <p className="mt-4 lg:text-base text-base md:text-xl text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/IOT" onClick={()=>{("/IOT");window.scrollTo(0, 0);}} className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
+              <h2 className="md:text-[2rem] lg:text-[1.8rem] text-[1.4rem] font-bold">{section.title}</h2>
+              <p className="mt-4 lg:text-base text-base md:text-lg text-gray-600 text-justify">{section.description} {section.title=="IoT Lab"?<NavLink to="/IOT" onClick={()=>{("/IOT");window.scrollTo(0, 0);}} className="text-blue-600 font-semibold">Explore More</NavLink>:""}</p>
             </div>
           </div>
         ))}

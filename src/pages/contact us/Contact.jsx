@@ -76,7 +76,7 @@ const ContactUs = () => {
     
     <div className="bg-gray-100 py-10 px-5 md:px-20">
       <div className="flex justify-center">
-        <div className="lg:grid lg:grid-cols-3 gap-8 mx-auto max-w-7xl">
+        <div className="lg:grid lg:grid-cols-3 gap-8 mx-auto w-full">
           {/* Contact Info */}
           <div className="bg-white shadow-md rounded-lg p-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
@@ -136,7 +136,7 @@ const ContactUs = () => {
                 <span className='flex flex-col gap-1'>
                 <span className="text-blue-800 text-md font-bold">Visit us</span>
                 <p className="text-gray-500 text-sm">come visit University</p>
-                <p className="text-gray-700 text-sm">Balkhandsura,chhaigaon Makhan, Khandwa MP, 450771</p>
+                <p className="text-gray-700 text-sm">Balkhandsura, chhaigaon Makhan, Khandwa MP, 450771</p>
                 </span>
               </a>
 

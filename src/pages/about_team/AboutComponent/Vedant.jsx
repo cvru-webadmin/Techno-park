@@ -12,14 +12,14 @@ export default function Vedant() {
         <div className="w-[100%] text-justify flex justify-evenly flex-col lg:flex-row overflow-hidden">
           {/* Section Title */}
           <h2 className="about-title lg:hidden text-left font-semibold">
-            Vedant Ahluwalia Profile
+          Professor of Practice(AI)
           </h2>
           {/* Image Container */}
           <div className="relative lg:h-[520px] h-[400px] overflow-hidden rounded-lg shadow-lg group">
             <img
               src={VedantImage}
               alt="Vedant Ahluwalia"
-              className="object-cover object-top md:hidden lg:block block h-full w-full lg:w-[450px] transition-transform duration-300 group-hover:scale-105"
+              className="object-cover object-top lg:block block h-full w-full lg:w-[450px] transition-transform duration-300 group-hover:scale-105"
             />
             {/* Overlay Effect */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -104,7 +104,7 @@ His influence spans healthcare, pharmaceuticals, education, real estate, media, 
 
               {/* Career & Research Achievements */}
               <div className='pb-5'>
-                <h3 className="md:text-2xl text-xl text-nowrap font-semibold text-blue-700">
+                <h3 className="md:text-2xl text-xl font-semibold text-blue-700">
                   Career & Research Achievements
                 </h3>
                 <p>

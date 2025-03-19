@@ -70,10 +70,10 @@ const CarouselComponent = () => {
 
             {/* Content */}
             <div className="relative z-10 lg:top-[500px] lg:left-60 md:top-[250px] top-[100px] text-center flex flex-col items-center justify-center px-6 max-w-5xl">
-              <h1 className="text-white w-[350px] md:w-full lg:w-full text-2xl lg:text-6xl md:text-5xl font-bold uppercase">
+              <h1 className="text-white md:w-full lg:w-full text-2xl lg:text-6xl md:text-5xl font-bold uppercase">
                 {slide.title}
               </h1>
-              <p className="text-[#F9A826] w-[350px] md:w-full lg:w-full font-extrabold uppercase text-sm md:text-xl mt-3 md:mt-4 leading-relaxed">
+              <p className="text-[#F9A826] md:w-full lg:w-full font-extrabold uppercase text-sm md:text-xl mt-3 md:mt-4 leading-relaxed">
                 {slide.description}
               </p>
             </div>
