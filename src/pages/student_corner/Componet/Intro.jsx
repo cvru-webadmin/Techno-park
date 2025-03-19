@@ -30,7 +30,7 @@ const StudentCornerIntro = () => {
         <img
           src={StudentCornerImage}
           alt="Student Corner"
-          className="w-full max-w-lg rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          className="w-full rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
         />
       </div>
     </section>
